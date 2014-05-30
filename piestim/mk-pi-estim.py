@@ -1,6 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 # mk-pi-estim.py
+# Mikhail (myke) Kolodin
+# 2014-01 .. 2014-05-30
 
 from __future__ import division
 import random, math
