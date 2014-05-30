@@ -3,6 +3,7 @@
 #
 # mk-genspeech.py 2014-05-25 1.1
 # Генератор речей
+# Mikhail (myke) Kolodin, mykespb@gmail.com 
 
 import random
 
