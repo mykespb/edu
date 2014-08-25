@@ -1,4 +1,4 @@
 edu
 ===
 
-educational software
+educational software by myke
