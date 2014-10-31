@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-# mk-magic3.py
+# mk-magic3.py Mikhail (myke) Kolodin
 # myke 2014-05-25 1.1
 # построение всех магических квадратов 3 порядка, 2 способами
 
