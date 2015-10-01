@@ -1,4 +1,4 @@
 edu
 ===
 
-Educational software by myke
+Educational software by myke.
