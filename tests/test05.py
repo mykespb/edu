@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# myke 2019-01-22 1.0
+# myke 2019-01-22 1.1
 
 # ~ http://company.yandex.ru/job/vacancies/python_pit.xml
 # ~ Продемонстрируйте свои знания
@@ -34,7 +34,7 @@ def one_test (test):
     k = test["first"][:]
     v = test["second"][:]
     while k:
-        d [k.pop(0)] = v.pop(0) if len(v) else None
+        d [k.pop(0)] = v.pop(0) if v else None
     return d
 
 tester()
