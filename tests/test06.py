@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 # myke 2019-01-23 1.0
 # read rss from yandex
+# see details below
 
 import feedparser
 import pprint
@@ -18,7 +19,14 @@ print ("Got records: ", len(NewsFeed.entries))
 for entry in NewsFeed["entries"]:
     print (entry["published"], entry["title"])
 
-# ------------------------------- done.
+# ------------------------------- details
+
+# ~ external libraries:
+
+    # ~ feedparser
+    # ~ (virtualenv recommended)
+
+# ------------------------------- result
 
 # ~ dict_keys(['title', 'title_detail', 'links', 'link', 'id', 'guidislink', 'summary', 'summary_detail', 'published', 'published_parsed'])
 # ~ Got records:  17
