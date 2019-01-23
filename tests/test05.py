@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# myke 2019-01-22 1.1
+# myke 2019-01-23 1.1
 
 # ~ http://company.yandex.ru/job/vacancies/python_pit.xml
 # ~ Продемонстрируйте свои знания
@@ -49,3 +49,5 @@ tester()
 
 # ~ test 3 ['see', 'you', 'again'] -> [1, 2, 3, 4, 5]
 # ~ makes {'see': 1, 'you': 2, 'again': 3}
+
+# заметмм, что простой dict(zip(a, b)) не сработает, ибо завершится при исчерпании самого короткого списка
