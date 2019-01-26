@@ -1,6 +1,9 @@
 FROM python:3.7-alpine
-ADD . /code
+
+ADD ./requirements.txt /code/
 WORKDIR /code
 RUN pip install -r requirements.txt
-CMD ["python", "app.py"]
 
+ADD . /code
+
+CMD ["python", "app.py"]
