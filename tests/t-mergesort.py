@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # python3, mergesort
-# myke 2019-01-27 1.0
+# myke 2019-01-27 1.1
 
-# make 10 tests of merge sorting with 2 random lists of random size
+# make tests of merge sorting with 2 random lists of random size
 
 import random
 
