@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # testing requests library
 # python3, requests (virtualenv)
-# myke 2019-01-24 1.1
+# myke 2019-01-27 1.2
 
 import requests
 import re
@@ -22,7 +22,7 @@ def main():
 
         try:
             r = requests.get(url)
-            m = re.search('<title>([^<]+)</title>', r.text)
+            m = re.search(r'<title>([^<]+)</title>', r.text)
             print (f"Title = {m.group(1)}")
         except:
             print("no good answer")
