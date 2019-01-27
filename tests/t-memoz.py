@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# python3, quicksort, with timeit
+# python3, fibos, with timeit
 # myke 2019-01-26 1.3
 
 import timeit
