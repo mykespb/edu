@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # python3, quicksort
-# myke 2019-01-25 1.1
+# myke 2019-01-27 1.2
 # non-swap version of quicksort,
 # with magic creation of qsorted subarrays
 
@@ -24,7 +24,7 @@ def dotest (a):
 
     if len (a) < 2: return a[:]
 
-    pivot = a[0]
+    pivot = a[len(a) // 2]
 
     left  = [x for x in a if x <  pivot]
     mid   = [x for x in a if x == pivot]
