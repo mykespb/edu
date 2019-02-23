@@ -1,24 +1,23 @@
 #! /usr/bin/env python3
 # arc1.py
 # python3
-# myke 2019-02-23 0.3
+# myke 2019-02-23 1.0
+
 # arithmetic expressions solver
+# school example of parsing arithmetic expressions
+
 # given 1+2*3-4/5 count result
+
 # use integer numbers, +-*/
 # any spaces are allowed
 # can signal errors (bad syntax, zdiv)
+
 # extensions: (), ^, 2+-digits_integers, real_numbers, etc
+# maybe we'll 'add exceptions for zdiv etc
+
 
 import logging
 logging.basicConfig (level = logging.DEBUG)
-
-tests = (
-"1",
-"2 +3",
-"1+2-3*4/5",
-"1/0",
-"",
-)
 
 class Task:
     text = ""       # text to process
@@ -42,35 +41,37 @@ class Task:
 
     digits = "0123456789"
 
+    def _sum (a, b):
+        return a+b
+
+    def _sub (a, b):
+        return a-b
+
+    def _mult (a, b):
+        return a*b
+
+    def _div (a, b):
+        return a//b if b else 0
+
+    ops = {
+    "+": _sum,
+    "-": _sub,
+    "*": _mult,
+    "/": _div
+    }
+
 
     def __init__ (self, text):
+        """ make new task """
+
         self.text = text
         self.alen = len (self.text)
         self.pos = 0
         self.state = 1 if self.alen else 0
         self.oper = []
         self.vals = []
+
         logging.debug ("task initiated")
-
-
-    def give (self):
-        """ give next char """
-
-        if not self.state:
-            return ""
-        if self.pos == self.alen:
-            self.state = 0
-            return ""
-        while self.state:
-            logging.debug (f"pos={self.pos}")
-            if self.pos >= self.alen :
-                self.state = 0
-                return ""
-            if self.text [self.pos] not in " \t":
-                outchar = self.text [self.pos]
-                logging.debug (f"outchar={outchar}")
-                self.pos += 1
-                return outchar
 
 
     def __str__ (self):
@@ -79,57 +80,59 @@ class Task:
         return self.text
 
 
-    def solve (self):
-        """ calculate 1 expression """
-
-        if not self.text:
-            return 0
-            # TBD: maybe exceptions?
-
-        while self.state:
-            eltype, elval = self.getelem ()
-            logging.debug (f"eltype={eltype}, elval={elval}")
-
-            if eltype == Task.ET_NUMBER:
-                self.vals.append (elval)
-            elif eltype == Task.ET_SIGN:
-                newoper = (elval, Task.prio [elval])
-                self.proc_oper (newoper)
-                self.oper.append (newoper)
-            else:
-                break
-
-        self.fin_oper ()
-
-        return self.vals [0] if len (self.vals) else "bad expression"
-
-
-    def getelem (self):
-        """ get next lexem """
-
-        c = self.give ()
-        logging.debug (f"given c = [{c}]")
-        if c in Task.prio:
-            return (Task.ET_SIGN, c)
-        elif c in Task.digits:
-            return (Task.ET_NUMBER, c)
-        else:
-            return (Task.ET_NONE, c)
-
-
-    def proc_oper (self, newoper):
-        """ comparing new operator with contents of oper stack,
-        execute necessary operators from oper stack with numbers from vals stack
+    def simple_solve (self):
+        """ solver for simple case
+        with 1-digit numbers, integers only, +-*/,
+        maybe with spaces
         """
-        pass
 
+        try:
+            logging.debug (f"simple solver")
 
-    def fin_oper (self):
-       """ finalize processing of expression
-       if there are unexecuted operators in oper stack
-       """
-       pass
+            for c in self.text:
+                logging.debug (f"got char [{c}]")
 
+                if c in Task.digits:
+                    self.vals.append (int (c))
+                    logging.debug (f"append int {c}")
+
+                elif c in Task.prio:
+                    newprio = Task.prio [c]
+                    logging.debug (f"got oper {c, newprio}")
+                    while len (self.oper) and self.oper [-1] [1] >= newprio:
+                        logging.debug (f"exec stack len: vals={len(self.vals)}, oper={len(self.oper)}")
+                        x2 = self.vals.pop ()
+                        x1 = self.vals.pop ()
+                        op = self.oper.pop() [0]
+                        logging.debug (f"to do {(x1, op, x2)}")
+                        fun = Task.ops [op]
+                        opres = fun (x1, x2)
+                        self.vals.append (opres)
+                        logging.debug (f"make oper {op} result {opres}")
+                    else:
+                        logging.debug (f"bypass")
+                    logging.debug (f"add oper start {(c, newprio)}")
+                    self.oper.append ((c, newprio))
+                    logging.debug (f"add oper done {(c, newprio)}")
+
+            if len (self.oper):
+                logging.debug (f"finalize start")
+                while len (self.oper) and self.oper [-1] [1] >= newprio:
+                    logging.debug (f"exec stack len: vals={len(self.vals)}, oper={len(self.oper)}")
+                    x2 = self.vals.pop ()
+                    x1 = self.vals.pop ()
+                    op = self.oper.pop() [0]
+                    logging.debug (f"to do {(x1, op, x2)}")
+                    fun = Task.ops [op]
+                    opres = fun (x1, x2)
+                    self.vals.append (opres)
+                    logging.debug (f"make oper {op} result {opres}")
+                logging.debug (f"finalize end")
+
+        except:
+            return "bad expression"
+
+        return self.vals[0] if len(self.vals) else "no data"
 
 
 def main ():
@@ -138,8 +141,19 @@ def main ():
     for test in tests:
         task = Task (test)
         print ("input expression:", task)
-        result = task.solve ()
+        result = task.simple_solve ()
         print ("result:", result)
+
+
+# test samples:
+
+tests = (
+"1",
+"2 +3",
+"1+2-3*4/5",
+"1/0",
+"",
+)
 
 
 if __name__ == "__main__":
