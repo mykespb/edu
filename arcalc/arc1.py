@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # arc1.py
 # python3
-# myke 2019-02-23 1.0
+# myke 2019-02-23 1.1
 
 # arithmetic expressions solver
 # school example of parsing arithmetic expressions
@@ -10,14 +10,15 @@
 
 # use integer numbers, +-*/
 # any spaces are allowed
-# can signal errors (bad syntax, zdiv)
+# can signal errors (bad syntax)
+# zdiv is 0
 
 # extensions: (), ^, 2+-digits_integers, real_numbers, etc
 # maybe we'll 'add exceptions for zdiv etc
 
 
 import logging
-logging.basicConfig (level = logging.DEBUG)
+logging.basicConfig (level = logging.INFO)
 
 class Task:
     text = ""       # text to process
@@ -27,10 +28,10 @@ class Task:
     oper = []       # operators stack
     vals = []       # values stack
 
-    # eltypes:
-    ET_NONE   = 0
-    ET_NUMBER = 1
-    ET_SIGN   = 2
+    # ~ # eltypes:
+    # ~ ET_NONE   = 0
+    # ~ ET_NUMBER = 1
+    # ~ ET_SIGN   = 2
 
     prio = {
     "+": 1,
@@ -70,8 +71,6 @@ class Task:
         self.state = 1 if self.alen else 0
         self.oper = []
         self.vals = []
-
-        logging.debug ("task initiated")
 
 
     def __str__ (self):
@@ -140,7 +139,7 @@ def main ():
 
     for test in tests:
         task = Task (test)
-        print ("input expression:", task)
+        print ("\n--------------------------\ninput expression:", task)
         result = task.simple_solve ()
         print ("result:", result)
 
@@ -151,8 +150,10 @@ tests = (
 "1",
 "2 +3",
 "1+2-3*4/5",
+"2  3  + +",
 "1/0",
 "",
+"   ",
 )
 
 
