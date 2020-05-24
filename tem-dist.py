@@ -19,9 +19,9 @@ cwd = os.getcwd()
 tpl_file = 'tem-dist.tpl'
 tpls = []
 no_tpl = 0
+good_exts = "pdf txt djv djvu doc docx".split()
 
 files = []
-
 
 def main(args):
     """ main dispatcher """
@@ -35,6 +35,8 @@ def main(args):
     return 0
 
 def get_tpl():
+    """ get list of templates"""
+
     global no_tpl
     if (os.path.isfile (tpl_file)):
         print (f"file {tpl_file} exists ok, working")
@@ -56,10 +58,33 @@ def get_tpl():
     pass
 
 def get_files():
-    pass
+    """ get current files list """
+    global files
+
+    files = os.listdir('.')
+    if files:
+        print (f"ok, got {len(files)} files to test")
+    else:
+        print ("alas, no files found in current directory")
 
 def scan_all():
-    pass
+    """ scan all files names and move them to subdi\rectories
+    according to their names, comapred to all compex templates"""
+
+    for myfile in files:
+        print (myfile, end="")
+        ext = myfile.split('.')[-1]
+        if myfile.startswith('.'):
+            print (" - is a dot-file, skipping")
+            continue
+        if os.path.isdir(myfile):
+            print  (" - is directory, skipping")
+            continue
+        if ext not in good_exts:
+            print (" - probably not a documentation file, skipping")
+            continue
+        print (f" - processing file {myfile}")
+
 
 def print_report():
     """ print what we did"""
@@ -67,7 +92,10 @@ def print_report():
     print ("\nTemplates read: ")
     pprint.pprint (tpls)
 
+    print ("\nFiles to scan", files)
+
 
 if __name__ == '__main__':
     import sys
     sys.exit(main(sys.argv))
+
