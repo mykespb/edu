@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 0.1
+# 2020-05-24 2020-05-25 0.2
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "0.1"
-__date__    = "2020-05-24"
+__version__ = "0.2"
+__date__    = "2020-05-25"
 
 import os, os.path
+import pprint
 
 cwd = os.getcwd()
 
@@ -47,6 +48,7 @@ def get_tpl():
                 pat, dir = tpl.split(maxsplit=1)
                 print (no_tpl, tpl, "=>", pat, dir)
 
+                tpls.append((tuple(pat.split(",")), dir))
 
     else:
         print (f"file {tpl_file} does not exist, quitting")
@@ -60,7 +62,11 @@ def scan_all():
     pass
 
 def print_report():
-    pass
+    """ print what we did"""
+
+    print ("\nTemplates read: ")
+    pprint.pprint (tpls)
+
 
 if __name__ == '__main__':
     import sys
