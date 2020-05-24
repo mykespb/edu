@@ -17,6 +17,9 @@ react,native js/react_native
 angular js/angular
 c++ ccpp/cpp
 golang go
+julia julia
+prolog prolog
+pascal pascal
 ansible devops/ansible
 docker devops/docker
 DBMS dbms
@@ -33,7 +36,6 @@ sql dems/sql
 bigdata bigdata
 react js/react
 forth forth
-_c ccpp/c
 html web/html
 css web/css
 asm asm
@@ -41,6 +43,11 @@ assembly asm
 1c buch/1c
 1s buch/1c
 vzlom hack/hack
+virus hack/hack
+вирус hack/hack
+вторжен hack/hack
+защита hack/hack
+защищ hack/hack
 vred hack/hack
 взлом hack/hack
 безопас hack/secure

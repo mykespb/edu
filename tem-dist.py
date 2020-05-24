@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-05-25 0.2
+# 2020-05-24 2020-05-25 1.0
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "0.2"
+__version__ = "1.0"
 __date__    = "2020-05-25"
 
 import os, os.path
@@ -19,7 +19,7 @@ cwd = os.getcwd()
 tpl_file = 'tem-dist.tpl'
 tpls = []
 no_tpl = 0
-good_exts = "pdf txt djv djvu doc docx".split()
+good_exts = "pdf txt djv djvu doc docx epub".split()
 
 files = []
 
@@ -71,6 +71,8 @@ def scan_all():
     """ scan all files names and move them to subdi\rectories
     according to their names, comapred to all compex templates"""
 
+    good, bad = 0, 0
+
     for myfile in files:
         print (myfile, end="")
         ext = myfile.split('.')[-1]
@@ -83,16 +85,31 @@ def scan_all():
         if ext not in good_exts:
             print (" - probably not a documentation file, skipping")
             continue
-        print (f" - processing file {myfile}")
 
+        print (f" - processing file {myfile}")
+        subfile = myfile.lower()
+        for tpl in tpls:
+            for word in tpl[0]:
+                if word not in subfile:
+                    break
+            else:
+                print (f"!!! file {myfile} goes to {tpl[1]}")
+                good += 1
+                break
+
+        else:
+#            print (f"file {myfile} cannot find its new destination, alas")
+            bad += 1
+
+    print (f"\nResult: {good} file(s) and {bad} bad file(s)\n")
 
 def print_report():
     """ print what we did"""
+    pass
 
-    print ("\nTemplates read: ")
-    pprint.pprint (tpls)
-
-    print ("\nFiles to scan", files)
+#    print ("\nTemplates read: ")
+#    pprint.pprint (tpls)
+#    print ("\nFiles to scan", files)
 
 
 if __name__ == '__main__':
