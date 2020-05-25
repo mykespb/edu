@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-05-25 1.3
+# 2020-05-24 2020-05-25 1.5
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.3"
+__version__ = "1.5"
 __date__    = "2020-05-25"
 
 import os, os.path, pathlib
@@ -20,7 +20,7 @@ cwd = os.getcwd()
 tpl_file = 'tem-dist.tpl'
 tpls = []
 no_tpl = 0
-good_exts = "pdf txt djv djvu doc docx epub fb2 arj zip rar lzh tar png gif jpg xml bmp pic mp3 mp4 avi".split()
+good_exts = "pdf txt djv djvu doc docx epub fb2 arj zip rar lzh tar png gif jpg xml bmp pic mp3 mp4 avi 7z xz pptx ppt xls xlsx odt odp odx".split()
 
 files = []
 
@@ -76,7 +76,7 @@ def scan_all():
     for myfile in files:
         print (f"\n{myfile}", end="")
 
-        ext = myfile.split('.')[-1]
+        ext = (myfile.split('.')[-1]).lower()
         if myfile.startswith('.'):
             print (" - is a dot-file, skipping")
             continue
