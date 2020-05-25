@@ -5,6 +5,9 @@ django python/django
 php php
 javascript js
 java java
+visual,cpp ccpp/cpp
+visual,c ccpp/c
+borland,c++ ccpp/cpp
 kotlin kotlin
 flask python/flask
 tensorflow python/tensorflow
