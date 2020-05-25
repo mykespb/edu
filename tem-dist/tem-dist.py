@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-05-25 1.5
+# 2020-05-24 2020-05-25 1.6
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.5"
+__version__ = "1.6"
 __date__    = "2020-05-25"
 
 import os, os.path, pathlib
@@ -20,7 +20,7 @@ cwd = os.getcwd()
 tpl_file = 'tem-dist.tpl'
 tpls = []
 no_tpl = 0
-good_exts = "pdf txt djv djvu doc docx epub fb2 arj zip rar lzh tar png gif jpg xml bmp pic mp3 mp4 avi 7z xz pptx ppt xls xlsx odt odp odx".split()
+good_exts = "pdf txt djv djvu doc docx epub fb2 arj zip rar lzh tar png gif jpg xml bmp pic mp3 mp4 avi 7z xz pptx ppt xls xlsx odt odp odx flv html htm mobi mht mhtml chm md gz ".split()
 
 files = []
 
