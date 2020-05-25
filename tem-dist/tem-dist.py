@@ -2,31 +2,32 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-05-25 1.0
+# 2020-05-24 2020-05-25 1.3
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.0"
+__version__ = "1.3"
 __date__    = "2020-05-25"
 
-import os, os.path
+import os, os.path, pathlib
 import pprint
+import shutil
 
 cwd = os.getcwd()
 
 tpl_file = 'tem-dist.tpl'
 tpls = []
 no_tpl = 0
-good_exts = "pdf txt djv djvu doc docx epub".split()
+good_exts = "pdf txt djv djvu doc docx epub fb2 arj zip rar lzh tar png gif jpg xml bmp pic mp3 mp4 avi".split()
 
 files = []
 
 def main(args):
     """ main dispatcher """
 
-    print (f"This is tem-dist, ver. {__version__} of {__date__}")
+    print (f"This is tem-dist by myke, ver. {__version__} of {__date__}")
     print (f"current directoory is {cwd}")
     get_tpl()
     get_files()
@@ -55,7 +56,6 @@ def get_tpl():
     else:
         print (f"file {tpl_file} does not exist, quitting")
         raise "no template file"
-    pass
 
 def get_files():
     """ get current files list """
@@ -74,7 +74,8 @@ def scan_all():
     good, bad = 0, 0
 
     for myfile in files:
-        print (myfile, end="")
+        print (f"\n{myfile}", end="")
+
         ext = myfile.split('.')[-1]
         if myfile.startswith('.'):
             print (" - is a dot-file, skipping")
@@ -93,12 +94,25 @@ def scan_all():
                 if word not in subfile:
                     break
             else:
-                print (f"!!! file {myfile} goes to {tpl[1]}")
+                if not tpl[1]: break
+                original  = cwd + "/" + myfile
+                targetdir = cwd + "/" + tpl[1]
+                target    = cwd + "/" + tpl[1] + "/" + myfile
+                print (f"! file {myfile} goes to {tpl[1]}\n! {original} -> {target}")
+                if not os.path.isdir(targetdir):
+                    pathlib.Path(targetdir).mkdir(parents=True, exist_ok=True)
+                shutil.move (original, target)
                 good += 1
                 break
 
         else:
-#            print (f"file {myfile} cannot find its new destination, alas")
+            original  = cwd + "/" + myfile
+            targetdir = cwd + "/etc"
+            target    = cwd + "/etc/" + myfile
+            print (f"! file {myfile} goes to etc\n{original} -> {target}")
+            if not os.path.isdir(targetdir):
+                pathlib.Path(targetdir).mkdir(parents=True, exist_ok=True)
+            shutil.move (original, target)
             bad += 1
 
     print (f"\nResult: {good} file(s) and {bad} bad file(s)\n")
