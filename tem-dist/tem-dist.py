@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-05-25 1.6
+# 2020-05-24 2020-05-27 1.7
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.6"
-__date__    = "2020-05-25"
+__version__ = "1.7"
+__date__    = "2020-05-27"
 
 import os, os.path, pathlib
 import pprint
@@ -39,9 +39,11 @@ def get_tpl():
     """ get list of templates"""
 
     global no_tpl
-    if (os.path.isfile (tpl_file)):
-        print (f"file {tpl_file} exists ok, working")
-        with open (tpl_file) as tplfile:
+    progpath = os.path.dirname(__file__)
+    tplpath = progpath + '/' + tpl_file
+    if (os.path.isfile (tplpath)):
+        print (f"file {tplpath} exists ok, working")
+        with open (tplpath) as tplfile:
             for tplka in tplfile:
                 tpl = tplka.strip()
                 if tpl.startswith("#"): continue
@@ -54,7 +56,7 @@ def get_tpl():
                 tpls.append((tuple(pat.split(",")), dir))
 
     else:
-        print (f"file {tpl_file} does not exist, quitting")
+        print (f"file {tplpath} does not exist, quitting")
         raise "no template file"
 
 def get_files():
