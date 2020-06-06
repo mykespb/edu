@@ -1,5 +1,8 @@
-# tem-dist.tpl 2020-05-27
+# tem-dist.tpl 2020-06-06
 
+python,ai python/AI
+python,artificial,intelligence python/ai
+python,machine,learning python/AI
 python python
 питон python
 джанго python/django
@@ -34,13 +37,10 @@ tex,dtp dtp/tex
 flask python/flask
 tensorflow python/tensorflow
 asyncio python/async
-python,ai python/AI
-python,artificial,intelligence python/ai
-python,machine,learning python/AI
 agile tech/agile
 react,native js/react_native
 angular js/angular
-c++ ccpp/cpp
+c++ ccpp
 golang go
 julia julia
 prolog prolog
