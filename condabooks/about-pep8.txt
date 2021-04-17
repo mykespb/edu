@@ -1,0 +1,12 @@
+PEP(8) Notes
+===============
+
+We respect PEPs, especially PEP(8),
+but only if they help us write good programs.
+
+Some aspects of PEP(8) are not good, 
+so we make corrections to them.
+
+We'll discuss it below.
+
+TBC...
