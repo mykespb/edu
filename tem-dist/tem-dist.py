@@ -8,8 +8,8 @@
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.10"
-__date__    = "2020-06-10"
+__version__ = "1.11"
+__date__    = "2021-05-15"
 
 import os, os.path, pathlib
 import pprint
