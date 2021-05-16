@@ -80,13 +80,13 @@ def scan_all():
 
         ext = (myfile.split('.')[-1]).lower()
         if myfile.startswith('.'):
-            print (" - is a dot-file, skipping")
+            print (" - is a dot-file, skipping", end=" ")
             continue
         if os.path.isdir(myfile):
-            print  (" - is directory, skipping")
+            print  (" - is directory, skipping", end=" ")
             continue
         if ext not in good_exts:
-            print (" - probably not a documentation file, skipping")
+            print (" - probably not a documentation file, skipping", end=" ")
             continue
 
         print (f" - processing file {myfile}")
