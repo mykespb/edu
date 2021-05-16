@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2020-06-10 1.10
+# 2020-05-24 2021-05-15 1.11
 # (C) Mikhail (myke) Kolodin, 2020
 #
 # program scans current directory and puts into subdirectories fiels with names
@@ -41,7 +41,7 @@ def get_tpl():
     global no_tpl
     progpath = os.path.dirname(__file__)
     tplpath = progpath + '/' + tpl_file
-    if (os.path.isfile (tplpath)):
+    if os.path.isfile (tplpath):
         print (f"file {tplpath} exists ok, working")
         with open (tplpath) as tplfile:
             for tplka in tplfile:
