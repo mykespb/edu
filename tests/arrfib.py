@@ -3,7 +3,8 @@
 # myke's test for Fibonacci numbers again
 # 2021-05-20 1.0
 
-def fib(n=10):
+def fib1(n=10):
+    """ 1st version: dynamic list """
     if n < 1:
         return []
 
@@ -21,6 +22,32 @@ def fib(n=10):
 
     return f
 
+
+def fib2(n=10):
+    """ 2nd version: pre-allocate list """
+    if n < 1:
+        return []
+
+    if n == 1:
+        return [1]
+
+    if n == 2:
+        return [1, 1]
+
+    f = [0 for _ in range(n)]
+    f[0] = f[1] = 1
+
+    for i in range(2, n):
+        f[i] = f[i-2] + f[i-1]
+
+    return f
+
+
+# choose your function
+fib = fib1
+# ~ fib = fib2
+
+# make tests
 print(fib(0))
 print(fib(1))
 print(fib(2))
@@ -31,6 +58,8 @@ print(fib())
 
 print(fib(100))
 
+
+# results are:
 
 # ~ []
 # ~ [1]
