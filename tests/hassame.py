@@ -1,7 +1,7 @@
 #/usr/bin/env python3
 
 # программа ищет одинаковые элементы
-# (C) М.Колодин, 2021-06-23, 1.0
+# (C) М.Колодин, 2021-06-23, 1.1
 
 # функции для поиска
 
@@ -19,7 +19,7 @@ def has1(l):
 def has2(l):
     """ преобразуем ко множеству,
     тем самым удаляем повторы,
-    и сравниаем длины до и после
+    и сравниваем длины до и после
     """
     return len(l) != len(set(l))
 
@@ -27,9 +27,9 @@ def has3(l):
     """ сортируем список,
     а потом сравниваем только рядом стоящие элементы
     """
-    l.sort()
-    for i in range(0, len(l)-1):
-        if l[i] == l[i+1]:
+    ll = sorted(l)
+    for i in range(0, len(ll)-1):
+        if ll[i] == ll[i+1]:
             return True
     return False
 
@@ -43,6 +43,16 @@ def has4(l):
     """
     if not l: return False
     return Counter(l).most_common(1)[0][1] > 1
+
+def has5(l):
+    """ работаем как со стеком с доступом вглубь -
+    с подсчётом числа вхождений вершины в глубине стека
+    """
+    while l:
+        e = l.pop()
+        if l.count(e):
+            return True
+    return False
 
 # утилиты для тестирования
 
@@ -66,10 +76,11 @@ ls = [
     [],
     [1, 2, 3],
     [1, 2, 3, 2, 1, 2, 3],
-    "this is a program".split(),
-    "here we go again and again".split()
+    ["this", "is", "a", "program"],
+    "here we go again and again".split(),
+    "Return the number of times x appears in the list".split()
     ]
 
-hasfs = has1, has2, has3, has4
+hasfs = has1, has2, has3, has4, has5
 
 tests()
