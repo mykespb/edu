@@ -1,0 +1,256 @@
+
+----------------------
+testing has1 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has1 for list [1, 2, 3]
+False
+
+----------------------
+testing has1 for list []
+False
+
+----------------------
+testing has1 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has1 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has1 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has1 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has1 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has2 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has2 for list [1, 2, 3]
+False
+
+----------------------
+testing has2 for list []
+False
+
+----------------------
+testing has2 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has2 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has2 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has2 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has2 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has3 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has3 for list [1, 2, 3]
+False
+
+----------------------
+testing has3 for list []
+False
+
+----------------------
+testing has3 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has3 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has3 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has3 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has3 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+*** Exception!
+
+----------------------
+testing has4 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has4 for list [1, 2, 3]
+False
+
+----------------------
+testing has4 for list []
+False
+
+----------------------
+testing has4 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has4 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has4 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has4 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has4 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has5 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has5 for list [1, 2, 3]
+False
+
+----------------------
+testing has5 for list []
+False
+
+----------------------
+testing has5 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has5 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has5 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has5 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has5 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has6 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has6 for list [1, 2, 3]
+False
+
+----------------------
+testing has6 for list []
+False
+
+----------------------
+testing has6 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has6 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has6 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has6 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has6 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has7 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has7 for list [1, 2, 3]
+False
+
+----------------------
+testing has7 for list []
+False
+
+----------------------
+testing has7 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has7 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has7 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has7 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has7 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False
+
+----------------------
+testing has8 for list [1, 1, 2, 3]
+True
+
+----------------------
+testing has8 for list [1, 2, 3]
+False
+
+----------------------
+testing has8 for list []
+False
+
+----------------------
+testing has8 for list [1, 2, 3, 2, 1, 2, 3]
+True
+
+----------------------
+testing has8 for list ['this', 'is', 'a', 'program']
+False
+
+----------------------
+testing has8 for list ['here', 'we', 'go', 'again', 'and', 'again']
+True
+
+----------------------
+testing has8 for list ['Return', 'the', 'number', 'of', 'times', 'x', 'appears', 'in', 'the', 'list']
+True
+
+----------------------
+testing has8 for list [1, 0, -1, 'hello', 'world', 'привет', 'мир']
+False

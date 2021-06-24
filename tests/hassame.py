@@ -1,13 +1,13 @@
 #/usr/bin/env python3
 
 # программа ищет одинаковые элементы
-# (C) М.Колодин, 2021-06-23, 1.1
+# (C) М.Колодин, 2021-06-23, 2021-06-25 1.4
 
 # функции для поиска
 
 def has1(l):
     """ классический вариант,
-    сравниваем каждый элемент списка с каэжым после него
+    сравниваем каждый элемент списка с каждым после него
     """
     lenl = len(l)
     for i in range(0, lenl-1):
@@ -48,10 +48,43 @@ def has5(l):
     """ работаем как со стеком с доступом вглубь -
     с подсчётом числа вхождений вершины в глубине стека
     """
-    while l:
-        e = l.pop()
-        if l.count(e):
+    ll = l.copy()
+    while ll:
+        e = ll.pop()
+        if ll.count(e):
             return True
+    return False
+
+def has6(l):
+    """ применяем обычные словари
+    """
+    d = {}
+    for e in l:
+        if e in d:
+            return True
+        d[e] = 1
+    return False
+
+from collections import defaultdict
+
+def has7(l):
+    """ применяем словари с инициализацией по умолчанию (defaultdict)
+    """
+    if not l: return False
+    d = defaultdict(int)
+    for e in l:
+        d[e] += 1
+    f = list(filter(lambda x: x>1, d.values()))
+    return len(f) > 0
+
+def has8(l):
+    """ применяем множества
+    """
+    s = set()
+    for e in l:
+        if e in s:
+            return True
+        s |= {e}
     return False
 
 # утилиты для тестирования
@@ -67,20 +100,24 @@ def tests():
     """
     for hasf in hasfs:
         for l in ls:
-            test(l, hasf)
+            try:
+                test(l, hasf)
+            except:
+                print("*** Exception!")
 
 # запуск тестов
 
 ls = [
     [1, 1, 2, 3],
-    [],
     [1, 2, 3],
+    [],
     [1, 2, 3, 2, 1, 2, 3],
     ["this", "is", "a", "program"],
     "here we go again and again".split(),
-    "Return the number of times x appears in the list".split()
+    "Return the number of times x appears in the list".split(),
+    [1, 0, -1, "hello", "world", "привет", "мир"]
     ]
 
-hasfs = has1, has2, has3, has4, has5
+hasfs = has1, has2, has3, has4, has5, has6, has7, has8
 
 tests()
