@@ -60,7 +60,7 @@ def getmin2(a):
     if not a: return None
     m = a[0]
     for e in a:
-        if e > m:
+        if e < m:
             m = e
     return m
 
