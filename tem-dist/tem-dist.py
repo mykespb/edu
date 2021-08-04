@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 #
 # tem-dist.py
-# 2020-05-24 2021-05-15 1.11
-# (C) Mikhail (myke) Kolodin, 2020
+# 2020-05-24 2021-08-04 1.12
+# (C) Mikhail (myke) Kolodin, 2020, 2021
 #
 # program scans current directory and puts into subdirectories fiels with names
 # that are compatible with patterns set in file tem-dist.tpl
 
-__version__ = "1.11"
-__date__    = "2021-05-15"
+__version__ = "1.12"
+__date__    = "2021-08-04"
 
 import os, os.path, pathlib
 import pprint
@@ -117,7 +117,7 @@ def scan_all():
             shutil.move (original, target)
             bad += 1
 
-    print (f"\nResult: {good} file(s) and {bad} bad file(s)\n")
+    print (f"\nResult: {good} good file(s) and {bad} bad file(s)\n")
 
 def print_report():
     """ print what we did"""
