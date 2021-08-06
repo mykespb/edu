@@ -15,7 +15,7 @@ done = {}
 def test(i, j):
     global done
     print(f"{i} ({j})", end=", ")
-    if i in done:
+    if i in done and j:
         print("done.")
         return
     if j:

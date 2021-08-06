@@ -9,36 +9,44 @@
 # I tested it up to 1 million
 # make good graph
 
-LIM = 10
+LIM = 20
 
 done = {}
 
+def ext(i, j):
+    if i in done:
+        done[i] |= {j}
+    else:
+        done[i] = {j}
+
 def test(i, j):
     global done
-    # ~ print(f"{i} ({j})", end=", ")
     if i in done:
-        # ~ print("done.")
+        if j:
+            ext(i, j)
         return
     if j:
-        done[i] = j
+        ext(i, j)
     if i % 2:
-        # ~ done[i] = j
         test(3*i+1, i)
     else:
-        # ~ done[i] = j
         test(i//2, i)
-    # ~ print()
 
 def main():
     for i in range(1, LIM+1):
         test(i, 0)
 
-main()
+def digr():
+    print("digraph G {")
+    for k, v in done.items():
+        for e in v:
+            print(f"{e} -> {k};")
+    print("}")
 
-print("digraph G {")
-for p in done:
-    print(f'"{p}" -> "{done[p]}";')
-print("}")
+
+main()
+# ~ print(done)
+digr()
 
 
 # ~ 1 (0), 4 (1), 2 (4), 1 (2), 4 (1), done.
