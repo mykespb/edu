@@ -31,7 +31,7 @@ def main(args):
     todo = [i for i in range(1, LIM+1)]
     print("todo:", todo, "\ndoing all the rest...")
     while todo:
-        test(todo.pop())
+        test(todo.pop(0))
     print("done:", done)
     print("pre-para:", para)
     para = [ (x[0], x[1]) for x in para if x[0] <= LIM and x[1] <= LIM]
