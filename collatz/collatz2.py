@@ -1,19 +1,21 @@
 #!/usr/bin/env python3.9
-# Mikhail Kolodin 2021-08-04 2021-08-06 4.1
+# Mikhail Kolodin 2021-08-04 2021-08-10 4.2
 
-# solving Collatz problem... showing it :)
+# solving Collatz problem... well, showing it :)
 # non-recursive version
 
+# limit of calculations
 LIM = 500
 
+# output file for .dot data
 of = "collatz2.gv"
 
-todo = []
-done = []
-para = []
+todo = []    # list of todo numbers
+done = []    # list of done numbers
+para = []    # pairs of numbers done: "from -> to;""
 
 def test(n):
-    """ process n """
+    """ process number n and plan next number """
     global todo, done, para
     print(n)
     if n in done:
@@ -25,7 +27,7 @@ def test(n):
         todo.append(itodo)
 
 def main(args):
-    """ organize """
+    """ organize work """
     global todo, done, para
     print("filling start")
     todo = [i for i in range(1, LIM+1)]
@@ -39,7 +41,7 @@ def main(args):
     draw()
 
 def draw():
-    """ make dot task """
+    """ prepare data for .dot file """
     with open(of, 'w') as f:
         f.write("digraph G {\n")
         for k, v in para:
