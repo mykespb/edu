@@ -76,6 +76,7 @@ print(len(nums), max(nums))
 # однострочник
 
 print("вариант 2a")
+
 print(len(nums := [i for i in range(1016, 7937+1) if i%3==0 and i%7 and i%17 and i%19 and i%27]), max(nums))
 
 # ----------------------------------------- вывод
