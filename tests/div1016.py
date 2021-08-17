@@ -37,7 +37,7 @@ def howmany(scope=None, divs=None, nodivs=None):
         return 0, 0
 
 # ~ print(howmany([1, 15], [3], [5]))
-print(howmany())
+print(*howmany())
 
 # variant 2
 
