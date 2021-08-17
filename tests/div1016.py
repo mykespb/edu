@@ -45,3 +45,9 @@ print("вариант 2")
 
 nums = [i for i in range(1016, 7937+1) if i%3==0 and i%7 and i%17 and i%19 and i%27]
 print(len(nums), max(nums))
+
+# вариант 1
+# 1568 7935
+# вариант 2
+# 1568 7935
+
