@@ -30,17 +30,24 @@ print("вариант 1")
 def howmany(scope=None, divs=None, nodivs=None):
     """ найти числа """
 
-    if scope  == None: scope  = [1016, 7937+1]
-    if divs   == None: divs   = [3]
-    if nodivs == None: nodivs = [7, 17, 19, 27]
+    if scope  == None:
+        scope  = [1016, 7937+1]
+    else:
+        scope[1] += 1
+    if divs   == None:
+        divs   = [3]
+    if nodivs == None:
+        nodivs = [7, 17, 19, 27]
 
     # ~ print(f"{scope=}, {divs=}, {nodivs=}")
 
     res = []
 
     for n in range(*scope):
-        if any([n % x for x in divs]): continue
-        if any([n % x == 0 for x in nodivs]): continue
+        if any([n % x for x in divs]):
+            continue
+        if any([n % x == 0 for x in nodivs]):
+            continue
         res.append(n)
 
     if res:
@@ -63,4 +70,3 @@ print(len(nums), max(nums))
 # 1568 7935
 # вариант 2
 # 1568 7935
-
