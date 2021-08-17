@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.9
 
 # div1016.py
-# 2021-08-17 2021-08-17 1.6
+# 2021-08-17 2021-08-17 1.7
 # (C) Mikhail (myke) Kolodin
 
 # задание из ЕГЭ:
@@ -58,6 +58,7 @@ def howmany(scope=None, divs=None, nodivs=None):
         return 0, 0
 
 # ~ print(*howmany([1, 15], [3], [5]))
+# ~ print(*howmany([1016, 7937], [3], [7, 17, 19, 27]))
 print(*howmany())
 
 # ----------------------------------------- 2
