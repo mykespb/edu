@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.9
-# feicita.py
+# felicita.py
 # (C) Mikhail Kolodin, 2021
 # ver. 2021-08-26 2021-08-26 1.2
 
