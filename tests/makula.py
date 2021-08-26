@@ -47,8 +47,8 @@ got = 34, 15, 11, 10, 11, 17, 42, 42, 33, 23, 10
 
 # ~ решение:
 print()
-for klass, gotmoney in enumerate(got):
-    print("класс", klass+1, "сдал", round(gotmoney), "кг")
+for klass, kg in enumerate(got):
+    print("класс", klass+1, "сдал", round(kg), "кг")
 
 # всего сдали
 kgall = sum(got)
