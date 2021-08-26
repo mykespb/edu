@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.9
 # makula.py
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-26 2021-08-27 1.5
+# ver. 2021-08-26 2021-08-27 1.7
 
 # ----------------------------------------------
 
@@ -50,10 +50,17 @@ print()
 for klass, gotmoney in enumerate(got):
     print("класс", klass+1, "сдал", round(gotmoney), "кг")
 
-maks  = max(got)
+# всего сдали
+kgall = sum(got)
+
+maks = max(got)
+avg  = kgall / len(got)
+print("всего сдали:", kgall, ", максимум равен", maks, ", в среднем по", round(avg), "кг на класс")
+
 best = [i+1 for i, j in enumerate(got) if j == maks]
 print("победили классы:" if len(best)>1 else "победил класс", end=" ")
 print(*best, sep=", ")
+print()
 
 # ----------------------------------------------
 
@@ -66,11 +73,6 @@ print(*best, sep=", ")
 money = 1000
 
 # ~ решение
-print()
-
-# всего сдали
-kgall = sum(got)
-
 prop = [money * x / kgall for x in got]
 
 print("всего денег:", round(sum(prop)))
@@ -94,6 +96,7 @@ for klass, gotmoney in enumerate(prop):
 # ~ класс 9 сдал 33 кг
 # ~ класс 10 сдал 23 кг
 # ~ класс 11 сдал 10 кг
+# ~ всего сдали: 248 , максимум равен 42 , в среднем по 23 кг на класс
 # ~ победили классы: 7, 8
 
 # ~ всего денег: 1000
