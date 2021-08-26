@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # программа ищет суммы положительных и отрицательных чисел в списке
-# (C) М.Колодин, 2021-06-25, 2021-06-25 1.1
+# (C) М.Колодин, 2021-06-25, 2021-08-26 1.2
 
 # -------------------------------------- подготовка
 
@@ -9,12 +9,12 @@ import random
 
 ranger = range(10)
 
-def makerand(size=10, lower=-100, upper=100):
+def makerand(size=10, low=-100, upp=100):
     """ сделать список из size элементов,
     минимальное допустимое значение lower,
     максимальное допустимое значение upper
     """
-    return [random.randint(lower, upper) for _ in range(size)]
+    return [random.randint(low, upp) for _ in range(size)]
 
 def head(s):
     """ напечатать заголовок
