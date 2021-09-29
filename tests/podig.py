@@ -1,4 +1,4 @@
-#!python3
+#!/usr/bin/env python3
 # Mikhail Kolodin
 # печать числа по цифрам
 # 2021-09-22 1.0
