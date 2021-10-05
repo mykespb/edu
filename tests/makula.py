@@ -1,7 +1,8 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.10
 # makula.py
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-26 2021-08-27 1.7
+# ver. 2021-08-26 2021-08-27 1.8
+# updated 2021-10-05 to py3.10
 
 # ----------------------------------------------
 

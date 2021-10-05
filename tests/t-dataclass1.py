@@ -1,7 +1,8 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.10
 # dataclass test 1
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-24 2021-08-24 1.1
+# ver. 2021-08-24 2021-08-24 1.2
+# updated 2021-10-05 to py3.10
 
 from dataclasses import dataclass, field
 import uuid

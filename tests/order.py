@@ -1,7 +1,8 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.10
 # order.py
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-27 2021-08-27 1.0
+# ver. 2021-08-27 2021-08-27 1.1
+# updated 2021-10-05 to py3.10
 
 # ~ "порядок числа"
 # ~ дано натуральное число

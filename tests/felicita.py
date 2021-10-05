@@ -1,7 +1,8 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.10
 # felicita.py
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-26 2021-08-26 1.2
+# ver. 2021-08-26 2021-10-05 1.3
+# updated 2021-10-05 to py3.10
 
 # Сложные проценты
 

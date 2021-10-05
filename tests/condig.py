@@ -1,7 +1,8 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3.10
 # condig.py
 # (C) Mikhail Kolodin, 2021
-# ver. 2021-08-26 2021-08-26 1.0
+# ver. 2021-08-26 2021-10-05 1.1
+# updated 2021-10-05 to py3.10
 
 # ~ контрольная цифра
 
