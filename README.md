@@ -2,3 +2,6 @@ edu
 ===
 
 Educational software by myke.
+
+2021-10-05 upgraded to python 3.10, OK
+
