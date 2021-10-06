@@ -4,6 +4,7 @@
 # simply  know parameters of platform used, from python dis-list, corrected
 # 2014-06-21, 2019-01-27
 # 2021-05-16
+# 2021-10-06
 
 import platform
 
@@ -48,3 +49,13 @@ print_sysinfo()
 # ~ machine         : x86_64
 # ~ processor       : x86_64
 # ~ interpreter     : 64bit
+
+# 2021-10-06
+# Python version  : 3.10.0
+# compiler        : GCC 9.3.0
+# system          : Linux
+# release         : 5.4.0-88-generic
+# machine         : x86_64
+# processor       : x86_64
+# interpreter     : 64bit
+
