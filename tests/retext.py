@@ -9,6 +9,9 @@
 
 import re, random, sys
 
+fin = 'retext-in.txt'
+fot = 'retext-out.txt'
+
 t1 = """
 here we go again and we know:
 here we do the same
@@ -24,5 +27,21 @@ def test1():
     s = ["they", "he", "she"]
     print(w, "->", s, "\n", t1, "\n", redo(t1, w, s))
 
-test1()
+#test1()
 
+def main():
+    """ запуск """
+    print("got params:", sys.argv)
+    argc = len(sys.argv)
+    if argc < 3:
+        print("Not enough parameters")
+        return
+    w, *subs = sys.argv[2:]
+    #print(w, subs)
+    with open(fin) as fi:
+        text = fi.read()
+    out = redo(text, w, subs)
+    with open(fot, 'w') as fo:
+        fo.write(out)
+
+main()
