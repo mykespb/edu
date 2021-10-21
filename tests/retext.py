@@ -1,7 +1,7 @@
-#!/python3.10
+#  -- !/python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-10-21 2021-10-21 1.0
+# 2021-10-21 2021-10-21 1.1
 # retext.py
 # Заменить во входном тексте указанное слово на случайный вариант
 # из предложенного набора заменителей.
@@ -19,7 +19,7 @@ here we do the same
 
 def redo(text: str, aword: str, subs: list) -> str:
     """ заменятель """
-    return re.sub(f'(\W{aword}\W)', " "+random.choice(subs)+" ", text)
+    return re.sub(f'(\W{aword}\W)', " "+random.choice(subs)+" ", " "+text+" ").strip()
 
 def test1():
     """ тестировщик """
@@ -36,11 +36,13 @@ def main():
     if argc < 3:
         print("Not enough parameters")
         return
-    w, *subs = sys.argv[2:]
-    #print(w, subs)
+    w, *subs = sys.argv[1:]
+    print(w, subs)
     with open(fin) as fi:
         text = fi.read()
     out = redo(text, w, subs)
+    print("text:", text)
+    print("out:",  out)
     with open(fot, 'w') as fo:
         fo.write(out)
 

@@ -1,1 +1,1 @@
-python3.10 ./retext.py we he she they
+python3.10 ./retext.py деньги баксы гроши зелёные деньжищи
