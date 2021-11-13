@@ -1,4 +1,4 @@
-#  -- !/python3.10
+#!/python3.10
 
 # Mikhail (myke) Kolodin, 2021
 # 2021-11-13 2021-11-13 1.0
