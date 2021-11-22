@@ -1,7 +1,7 @@
 #!/python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-19 2021-11-19 0.1
+# 2021-11-19 2021-11-22 1.1
 
 # ~ Домашнее задание - про лобзик
 
@@ -20,7 +20,7 @@ if levels <= 0:
     print("Не, ну я так не играю...")
     exit(1)
 
-print(f"Делаем уровней: {levels}.")
+print("Делаем уровней:", levels)
 
 summa = 0
 
@@ -28,6 +28,6 @@ for level in range(levels):
     levlen = (level*2+1) * 4
     summa += levlen
 
-    print(f"уровень {level+1}, длина {levlen}, напилили {summa}")
+    print("уровень", level+1, "длина", levlen, "напилили", summa)
 
-print(f"Всего надо пропилить {summa} см.")
+print("Всего надо пропилить", summa, "см.")
