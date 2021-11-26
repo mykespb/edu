@@ -1,7 +1,7 @@
 #!python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-26 2021-11-26 0.1
+# 2021-11-26 2021-11-26 1.1
 # fly-trains.py
 # про поезда и муху между ними
 
@@ -16,15 +16,92 @@
 # ~ поезду А и т.п.
 # ~ Сколько пролетит муха, прежде чем поезда встретятся?
 
+DAB = 400.
+VA  = 100.
+VB  = 100.
+VM  = 150.
+
+print (f"{DAB=}, {VA=}, {VB=}, {VM=}")
+
 def var1():
     """ расчёт по общему времени движения
     """
-    ...
+    print ("\nрасчёт по общему времени движения")
+
+    print ("муха пролетит", DAB / (VA + VB) * VM, "км")
 
 def var2():
     """ расчёт суммированием ряда
     """
-    ...
+
+    print ("\nрасчёт суммированием ряда")
+    # координаты поездов и мухи
+    xa = xm = 0.
+    xb = DAB
+
+    # куда летит муха? True == A->B, False == B->A
+    flyto = True
+
+    # точность вычислений: очередное пролетаемое расстояние менее EPS=0.1 м
+    EPS = 1e-5
+
+    # номер полёта и предел числа полётов
+    num = 0
+    nummax = 1000
+
+    # сколько уже пролетела
+    sumfly = 0.
+
+    print (f"{num=}, {xa=}, {xb=}, {xm=}, {flyto=}")
+
+    while num < nummax:
+        num += 1
+
+        if flyto:
+            if abs(xb-xm) <= EPS:
+                break
+            dist    = xb - xm
+            ttf     = dist / (VM + VB)
+            distfly = ttf * VM
+            xm     += distfly
+            xa     += ttf * VA
+            xb     -= ttf * VB
+
+        else:
+            if abs(xm-xa) <= EPS:
+                break
+            dist    = xm - xa
+            ttf     = dist / (VM + VA)
+            distfly = ttf * VM
+            xm     -= distfly
+            xa     += ttf * VA
+            xb     -= ttf * VB
+
+        sumfly += distfly
+
+        print (f"{num=}, {ttf=}, {distfly=}, {sumfly=}, {xa=}, {xb=}, {xm=}, {flyto=}")
+        flyto = not flyto
+
 
 var1()
 var2()
+
+
+# ~ DAB=400.0, VA=100.0, VB=100.0, VM=150.0
+
+# ~ расчёт по общему времени движения
+# ~ муха пролетит 300.0 км
+
+# ~ расчёт суммированием ряда
+# ~ num=0, xa=0.0, xb=400.0, xm=0.0, flyto=True
+# ~ num=1, ttf=1.6, distfly=240.0, sumfly=240.0, xa=160.0, xb=240.0, xm=240.0, flyto=True
+# ~ num=2, ttf=0.32, distfly=48.0, sumfly=288.0, xa=192.0, xb=208.0, xm=192.0, flyto=False
+# ~ num=3, ttf=0.064, distfly=9.6, sumfly=297.6, xa=198.4, xb=201.6, xm=201.6, flyto=True
+# ~ num=4, ttf=0.012799999999999954, distfly=1.919999999999993, sumfly=299.52000000000004, xa=199.68, xb=200.32, xm=199.68, flyto=False
+# ~ num=5, ttf=0.0025599999999999456, distfly=0.38399999999999185, sumfly=299.90400000000005, xa=199.936, xb=200.064, xm=200.064, flyto=True
+# ~ num=6, ttf=0.0005119999999999436, distfly=0.07679999999999154, sumfly=299.98080000000004, xa=199.9872, xb=200.0128, xm=199.9872, flyto=False
+# ~ num=7, ttf=0.00010239999999998872, distfly=0.015359999999998307, sumfly=299.99616000000003, xa=199.99744, xb=200.00256, xm=200.00256, flyto=True
+# ~ num=8, ttf=2.0479999999906796e-05, distfly=0.0030719999999860195, sumfly=299.999232, xa=199.999488, xb=200.000512, xm=199.999488, flyto=False
+# ~ num=9, ttf=4.0959999998904094e-06, distfly=0.0006143999999835614, sumfly=299.99984639999997, xa=199.9998976, xb=200.0001024, xm=200.0001024, flyto=True
+# ~ num=10, ttf=8.192000000235567e-07, distfly=0.00012288000000353349, sumfly=299.99996927999996, xa=199.99997952, xb=200.00002048, xm=199.99997952, flyto=False
+# ~ num=11, ttf=1.6383999991376185e-07, distfly=2.4575999987064275e-05, sumfly=299.99999385599995, xa=199.999995904, xb=200.000004096, xm=200.000004096, flyto=True
