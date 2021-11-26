@@ -1,7 +1,7 @@
 #!python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-16 2021-11-16 1.3
+# 2021-11-16 2021-11-26 1.4
 # pentagon.py
 # (условие внизу)
 
@@ -14,19 +14,12 @@ total_length = 5 * SIDE * 100    # сторон * длина * см в метр�
 M_STEP  = 50
 L_STEP  = 40
 
-m_total = 0
-l_total = 0
+moment   = 1
+m_off    = m_total   = M_STEP
+l_off    = l_total   = L_STEP
 
-m_off   = 0
-l_off   = 0
-
-moment   = 0
-m_total += M_STEP
-l_total += L_STEP
-m_off    = m_total % total_length
-l_off    = l_total % total_length
-
-print ("moment %d, misha %d cm (%d cm), lena %d cm (%d cm)" %
+print ("moment %d, misha off %d cm (total %d cm), "
+    "lena off %d cm (total %d cm)" %
     (moment, m_off, m_total, l_off, l_total))
 
 while m_off != l_off and moment < LIMIT:
@@ -36,11 +29,11 @@ while m_off != l_off and moment < LIMIT:
     m_off    = m_total % total_length
     l_off    = l_total % total_length
 
-    print ("!" if moment % 1000 == 0 else
-        ":" if moment % 100 == 0 else
-        "." if moment % 10 == 0 else "", end="")
+    print ((moment // 1000 % 10) if moment % 1000 == 0 else
+        "." if moment % 100 == 0 else "", end="")
 
-print ("\n\nmoment {:_}, misha {:_} cm ({:_}) cm, lena {:_} cm ({:_} cm)"
+print ("\n\nmoment {:_}, misha off {:_} cm (total {:_}) cm, "
+    "lena off {:_} cm (total {:_} cm)"
     .format (moment, m_off, m_total, l_off, l_total))
 
 hours   = moment // (60 * 60)
