@@ -1,7 +1,7 @@
-#!/python3.10
+#!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-26 2021-11-26 1.0
+# 2021-11-26 2021-11-27 1.1
 # isnumber.py
 
 print("""
@@ -19,7 +19,7 @@ print("""
 digits = "0123456789"
 
 while True:
-    human = input("\nвведи слово: ")
+    human = input("\nВведи слово: ")
     if human == "" or human == ".":
         break
 
@@ -30,9 +30,9 @@ while True:
 
     for c in human:
         if c not in digits:
-            print ("это не число")
+            print ("Нет, это не целое число.")
             break
     else:
-        print ("это целое число")
+        print ("Да, это целое число.")
 
 print ("\nПока...")
