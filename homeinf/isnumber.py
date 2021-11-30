@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-26 2021-11-27 1.1
+# 2021-11-26 2021-11-30 1.2
 # isnumber.py
 
 print("""
@@ -23,9 +23,7 @@ while True:
     if human == "" or human == ".":
         break
 
-    if human[0] == "+":
-        human = human[1:]
-    elif human[0] == "-":
+    if human.startswith("-") or human.startswith("+"):
         human = human[1:]
 
     for c in human:
@@ -36,3 +34,9 @@ while True:
         print ("Да, это целое число.")
 
 print ("\nПока...")
+
+# ~ вариант:
+    # ~ if human[0] == "+":
+        # ~ human = human[1:]
+    # ~ elif human[0] == "-":
+        # ~ human = human[1:]
