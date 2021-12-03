@@ -7,12 +7,13 @@
 
 import itertools, random
 
-subj = "русский литература физкультура математика география"\
+subj = "русский литература физкультура математика география "\
     "история английский технология".split()
 
 for num in itertools.count():
-    ri = random.randint (2, 5)
+    rm = random.randint (2, 5)
     rs = random.choice (subj)
-    print (num, "-->", ri, rs)
-    if ri % 5 == 0:
+    re = random.randint (1, 100)
+    print (num, ". предмет", rs, "оценка", rm)
+    if re % 10 == 0:
         break
