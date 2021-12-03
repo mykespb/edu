@@ -57,7 +57,8 @@ for afrase in stroki.split("\n"):
         continue
 
     frase = frase.lower()
-    frase = (frase.replace (" ", "")
+    frase = (frase
+        .replace(" ", "")
         .replace("\t", "")
         .replace(".", "")
         .replace(",", "")
@@ -65,7 +66,6 @@ for afrase in stroki.split("\n"):
         .replace(";", "")
         .replace("!", "")
         .replace("?", "")
-        .replace(":", "")
         .replace("-", "")
         .replace("ь", "")
         .replace("ъ", "")
@@ -75,4 +75,3 @@ for afrase in stroki.split("\n"):
         print ("да: ", afrase)
     else:
         print ("нет:", afrase)
-
