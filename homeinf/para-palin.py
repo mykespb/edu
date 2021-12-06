@@ -1,7 +1,7 @@
 #!/python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-12-04 2021-12-04 1.2
+# 2021-12-04 2021-12-04 1.3
 # para-palin.py
 
 # ~ найти в строке все пары слов-палиндромов
@@ -25,5 +25,5 @@ for frase in stroki.split("\n"):
 
     for one in frase.split():
         for two in frase.split():
-            if one != two and one == two[::-1] and one < two:
+            if one < two and one == two[::-1]:
                 print (f"пара:  {one}, {two}")
