@@ -9,3 +9,4 @@ for i in range(6):
         left(10)
 hideturtle()
 done()
+# https://www.youtube.com/watch?v=w0LO0Ff7WRo
