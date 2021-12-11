@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-12-02 2021-12-02 1.1
+# 2021-12-02 2021-12-11 1.2
 # inteam.py
 
 # ~ В научном исследовании принимает участие азиопский коллектив.
@@ -18,21 +18,15 @@
 # ~ Александр Иванов, Бо Си Ким, К. Сидорова,
 # ~ Пешкомморепереходищева,
 
-team1 = """
+team = """
 Иван Иванов, Василий Пупкин, Ким Мин Пан, По Си Дим Ли, Поку Рим,
 Александр Иванов, Бо Си Ким, К. Сидорова,
 Пешкомморепереходищева,
 """
 
-team2 = ""
-
-team = team1
-
 rus = chi = jap = kor = other = 0
 
-ateam = team.split(",")
-
-for aname in ateam:
+for aname in team.split(","):
     name = aname.strip()
     if not name:
         continue
@@ -61,7 +55,7 @@ summa = (rus + kor + chi + jap + other)
 
 if summa:
     print (f"""
-всего:\t{summa}
+всего:    {summa:5} (100%)
 из них:
 русских:  {rus:5} ({rus/summa*100:.2f}%)
 корейцев: {kor:5} ({kor/summa*100:.2f}%)
