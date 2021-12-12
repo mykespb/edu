@@ -56,7 +56,7 @@ print(fib(10))
 
 print(fib())
 
-print(fib(100))
+#print(fib(100))
 
 
 # results are:
