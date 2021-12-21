@@ -1,7 +1,7 @@
-#!/python3.10
+#!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-12-21 2021-12-21 1.0
+# 2021-12-21 2021-12-21 1.1
 # fullqw.py
 
 print("""
@@ -17,3 +17,5 @@ a, b = map(int, input("укажите через пробел 2 числа - г�
 for i in range(a, b+1):
 	if math.isqrt(i)**2 == i:
 		print(i, end=", ")
+
+print("\n")
