@@ -6,25 +6,45 @@
 
 # test input - process - output scheme
 
-def in():
+global data, lodata
+
+
+def fin():
     """ ввести данные
     """
-    ...
+    global data
+    data = input("введите текст:")
+    return True
 
-def proc():
+
+def fproc():
     """ обработать данные
     """
-    ...
+    global lodata
+    lodata = len(data)
+    return True
+   
 
-def out():
+def fout():
     """ вывести данные
     """
-    ...
+    print(f"длина текста равна {lodata}")
+    return True
+
 
 def main():
     """ диспетчер
     """
-    if in() and proc() and out():
+    if fin() and fproc() and fout():
         print("всё готово")
 
 main()
+
+
+# ~ введите текст:53453453453
+# ~ длина текста равна 11
+# ~ всё готово
+
+# ~ что плохо?
+# ~ необоснованное использование глобальных данных.
+# ~ но так тоже можно.
