@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2022-01-08 2022-01-08 1.2
+# 2022-01-08 2022-01-08 1.3
 # камень - ножницы - бумага
 
 from random import choice
@@ -32,8 +32,15 @@ def play():
         print("не знаю такого предмета! повтори!")
         return True
 
+    print("ты сказал:",
+        "камень" if human[0] == "к"
+        else "ножницы" if human[0] == "н"
+        else "бумага" if human[0] == "б"
+        else "чёрте-что"
+        )
+
     comp = choice("камень ножницы бумага".split())
-    print(f"у меня {comp}.") 
+    print(f"у меня: {comp}.") 
 
     who = compwin(comp[0], human[0])
     
