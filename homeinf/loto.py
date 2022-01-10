@@ -46,8 +46,6 @@ PLAYERS = list(NAMES.values())
 # ~ print(PLAYERS)
 
 LIMIT   = 90     # до скольки бочонки и номера
-ROWS    =  3     # сколько рядов
-COLS    =  5     # сколько колонок
 ONCARD  = 15     # сколько чисел на карточке
 
 def play():
