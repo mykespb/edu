@@ -2,7 +2,7 @@
 
 # farenh.py
 # (C) Mikhail (myke) Kolodin, 2021
-# 2022-01-10 2022-01-10 1.0
+# 2022-01-10 2022-01-10 1.1
 
 # ~ перевод температуры между градусами Цельсия и Фаренгейта
 
@@ -12,7 +12,7 @@ def c2f(d):
     return 9/5*d+32
 
 def f2c(d):
-    """fahrenheit to celsius"""
+    """fahrenheit -> celsius"""
 
     return (d-32)*5/9
 
