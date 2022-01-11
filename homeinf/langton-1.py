@@ -29,7 +29,7 @@ import turtle
 
 ri = random.randint
 
-STEPS = 300
+STEPS = 1500
 
 t = turtle.Turtle()
 t.speed(0)
