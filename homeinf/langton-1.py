@@ -3,7 +3,7 @@
 
 # icmp1.py
 # (C) Mikhail (myke) Kolodin, 2021
-# 2022-01-11 2022-01-11 2.0
+# 2022-01-11 2022-01-11 2.1
 
 # ~ https://habr.com/ru/post/599275/
 # ~ Муравей Лэнгтона — загадочный клеточный автомат
@@ -29,7 +29,7 @@ import turtle
 
 ri = random.randint
 
-STEPS = 1500
+STEPS = 150
 
 t = turtle.Turtle()
 t.speed(0)
@@ -40,7 +40,7 @@ OFX = -100
 OFY = -100
 
 blacks = set()
-napr   = 'n'
+napr   = 'north'
 
 SIZE = 5
 alldirs = "left", "right"
@@ -58,41 +58,41 @@ def randots(times=100):
 
 def turn(to):
     global napr, x, y
-    if napr == 'n':
+    if napr == 'north':
         if to == 'right':
-            napr = 'e'
-            x += 1 * SIZE
+            napr = 'east'
+            x += SIZE
         else:
-            napr = 'w'
-            x -= 1 * SIZE
-    elif napr == 'e':
+            napr = 'west'
+            x -= SIZE
+    elif napr == 'east':
         if to == 'right':
-            napr = 's'
-            y -= 1 * SIZE
+            napr = 'south'
+            y -= SIZE
         else:
-            napr = 'w'
-            y += 1 * SIZE
-    elif napr == 's':
+            napr = 'west'
+            y += SIZE
+    elif napr == 'south':
         if to == 'right':
-            napr = 'w'
-            x -= 1 * SIZE
+            napr = 'west'
+            x -= SIZE
         else:
-            napr = 'e'
-            x += 1 * SIZE
-    elif napr == 'w':
+            napr = 'east'
+            x += SIZE
+    elif napr == 'west':
         if to == 'right':
-            napr = 'n'
-            y += 1 * SIZE
+            napr = 'north'
+            y += SIZE
         else:
-            napr = 's'
-            y -= 1 * SIZE
+            napr = 'south'
+            y -= SIZE
         
 
 def ant(times=100):
     global blacks, x, y, napr
     t.home()
     x = y = 0
-    napr = 'n'
+    napr = 'north'
     for i in range(times):
         pos = x, y
         if pos in blacks:
