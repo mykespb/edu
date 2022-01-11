@@ -13,6 +13,9 @@ import turtle
 t = turtle.Turtle()
 t.speed(0)
 
+OFX = -100
+OFY = -100
+
 def square(size, cx, cy):
     """нарисовать квадрат со стороной size и центром в точке cx, cy"""
     t.penup()
@@ -34,7 +37,7 @@ def manysq():
     """много квадратов"""
     for i in  range(10):
         for j in range(10):
-            square(40, i*50, j*50)
+            square(40, i*50 + OFX, j*50 + OFY)
 
 
 manysq()
