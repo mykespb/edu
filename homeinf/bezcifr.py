@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-23 2022-02-23 1.0
+# 2022-02-23 2022-02-23 1.8
 # bezcifr.py
 
 # ~ Считаем до 100…
@@ -28,7 +28,7 @@ def ver_ab():
 # ~ Напечатать натуральные числа до 100 включительно через запятую.
 # ~ не используя в программе ни одной цифры.
 
-import math, random
+import math
 
 def ver_bc():
     """и без цифр"""
@@ -58,6 +58,8 @@ def ver_ba():
         print(i, end=", ")
 
 # ~ ver_ba()
+
+import random
 
 def ver_bb():
     """и без цифр"""
@@ -92,33 +94,41 @@ def ver_be():
     for i in range(ifrom, ito + ifrom):
         print(i, end=", ")        
 
-ver_be()
+# ~ ver_be()
 
+def ver_bf():
+    """и без цифр"""
 
+    for i in range(ord('B')-ord('A'), ord('e')):
+        print(i, end=", ")        
 
+# ~ ver_bf()        
 
+import string
 
+def ver_bg():
+    """и без цифр"""
 
+    ten     = len(string.digits)
+    hundred = ten *  ten
+    one     = ten // ten
 
+    for i in range(one, hundred + one):
+        print(i, end=", ")        
 
+# ~ ver_bg()
 
+import datetime
 
+def ver_bh():
+    """и без цифр"""
 
+    d = datetime.date.today().ctime()[-4:]
+    da, db = int(d[:3]), int(d[0])
+    one     = da // da
+    hundred = da // db
+    
+    for i in range(one, hundred):
+        print(i, end=", ")        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ver_bh()
