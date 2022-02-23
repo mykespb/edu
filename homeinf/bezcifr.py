@@ -28,13 +28,26 @@ def ver_ab():
 # ~ Напечатать натуральные числа до 100 включительно через запятую.
 # ~ не используя в программе ни одной цифры.
 
-import math
+import math, random
+
+def ver_bc():
+    """и без цифр"""
+
+    sa = len("a")
+    sb = len("aaaaaaaaaa")
+    sb *= sb
+    sb += sa
+
+    for i in range(sa, sb):
+        print(i, end=", ")
+
+# ~ ver_bc()
 
 def ver_ba():
     """и без цифр"""
 
     zero     = int()
-    one      = int(round(math.e / math.pi))
+    one      = int(math.pi // math.e)
 
     szero    = str(zero)
     sone     = str(one)
@@ -49,7 +62,8 @@ def ver_ba():
 def ver_bb():
     """и без цифр"""
 
-    zero = int()
+    na, nb = random.random(), random.random()
+    zero = int(min(na, nb) // max(na, nb))
     one  = int(round(math.cos(zero)))
     two  = one + one
 
@@ -58,20 +72,8 @@ def ver_bb():
     for i in range(one, mdg):
         print(i, end=", ")
 
-# ~ ver_bb()
+ver_bb()
 
-def ver_bc():
-    """и без цифр"""
-
-    sa = len("a")
-    sb = len("aaaaaaaaaa")
-    sb *= sb
-    sb += sa
-
-    for i in range(sa, sb):
-        print(i, end=", ")
-
-ver_bc()
 
 
 
