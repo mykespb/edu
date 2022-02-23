@@ -72,9 +72,27 @@ def ver_bb():
     for i in range(one, mdg):
         print(i, end=", ")
 
-ver_bb()
+# ~ ver_bb()
 
+def ver_bd():
+    """и без цифр все числа от 1 до 100"""
 
+    ifrom, ito = ver_bd.__doc__.split()[-3::2]
+
+    for i in range(int(ifrom), int(ito)+int(ifrom)):
+        print(i, end=", ")        
+
+# ~ ver_bd()
+
+def ver_be():
+    """и без цифр все числа от 1 до 100"""
+
+    ifrom, ito = map(int, ver_be.__doc__.split()[-3::2])
+
+    for i in range(ifrom, ito + ifrom):
+        print(i, end=", ")        
+
+ver_be()
 
 
 
