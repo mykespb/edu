@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-23 2022-02-24 1.9
+# 2022-02-23 2022-02-24 1.10
 # bezcifr.py
 
 # ~ Считаем до 100…
@@ -79,7 +79,8 @@ def ver_bb():
 def ver_bd():
     """и без цифр все числа от 1 до 100"""
 
-    ifrom, ito = ver_bd.__doc__.split()[-3::2]
+    saa, saaa = len("aa"), len("aaa")
+    ifrom, ito = ver_bd.__doc__.split()[-saaa::saa]
 
     for i in range(int(ifrom), int(ito)+int(ifrom)):
         print(i, end=", ")        
@@ -89,7 +90,8 @@ def ver_bd():
 def ver_be():
     """и без цифр все числа от 1 до 100"""
 
-    ifrom, ito = map(int, ver_be.__doc__.split()[-3::2])
+    saa, saaa = len("aa"), len("aaa")
+    ifrom, ito = map(int, ver_be.__doc__.split()[-saaa::saa])
 
     for i in range(ifrom, ito + ifrom):
         print(i, end=", ")        
@@ -123,15 +125,16 @@ import datetime
 def ver_bh():
     """и без цифр"""
 
-    d       = datetime.date.today().ctime()[-4:]
-    da, db  = int(d[:3]), int(d[0])
+    s, saaa, saaaa = len(""), len("aaa"), len("aaaa")
+    d       = datetime.date.today().ctime()[-saaaa:]
+    da, db  = int(d[:saaa]), int(d[s])
     one     = da // da
     hundred = da // db
     
     for i in range(one, hundred):
         print(i, end=", ")        
 
-# ~ ver_bh()
+ver_bh()
 
 import sys
 
@@ -187,7 +190,7 @@ def ver_bl():
     for i in range(one, len(text) + one):
         print(i, end=", ")
 
-ver_bl()
+# ~ ver_bl()
 
 
 
