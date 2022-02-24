@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-23 2022-02-23 1.8
+# 2022-02-23 2022-02-24 1.9
 # bezcifr.py
 
 # ~ Считаем до 100…
@@ -123,12 +123,68 @@ import datetime
 def ver_bh():
     """и без цифр"""
 
-    d = datetime.date.today().ctime()[-4:]
-    da, db = int(d[:3]), int(d[0])
+    d       = datetime.date.today().ctime()[-4:]
+    da, db  = int(d[:3]), int(d[0])
     one     = da // da
     hundred = da // db
     
     for i in range(one, hundred):
         print(i, end=", ")        
 
-ver_bh()
+# ~ ver_bh()
+
+import sys
+
+def ver_bi():
+    """и без цифр"""
+
+    tri     = sys.version_info.major
+    odin    = tri // tri
+    desat   = tri * tri + odin
+    sto     = desat * desat
+    stoodin = sto + odin
+
+    for i in range(odin, stoodin):
+        print(i, end=", ")
+
+# ~ ver_bi()
+
+def ver_bj():
+    """и без цифр"""
+
+    one     = int(... is ...)
+    zero    = one - one
+    stoodin = int(str(one) + str(zero) + str(one))
+
+    for i in range(one, stoodin):
+        print(i, end=", ")
+
+# ~ ver_bj()
+
+import string
+
+def ver_bk():
+    """и без цифр"""
+
+    digs    = list(map(int, [c for c in string.digits]))
+    zero    = min(digs)
+    nine    = max(digs)
+    one     = nine // nine
+    stoodin = nine * nine + nine + nine + one + one
+
+    for i in range(one, stoodin):
+        print(i, end=", ")
+
+# ~ ver_bk()
+
+def ver_bl():
+    """и без цифр"""
+
+    one  = int(True)
+    text = ("Печать натуральных чисел до ста включительно через запятую, "
+        "не используя в программе ни одной цифры.")
+    
+    for i in range(one, len(text) + one):
+        print(i, end=", ")
+
+ver_bl()
