@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-25 2022-02-25 1.0
+# 2022-02-25 2022-02-25 1.1
 # str2.py
 
 # ~ в данном тексте найти английские имена, записанные по-английски,
@@ -77,34 +77,32 @@ names = '''
 
 import string
 
-letters = string.ascii_lowercase
-chars = letters + " "
-
-s = names.lower()
-
-so = ""
-for c in s:
-    if c in chars:
-        so += c
-
-s = so
-del so
-
 def good(name):
     """есть ли в имени одинаковые буквы"""
     ln = len(name)
     if ln < 2:
         return False
+    name = name.lower()
     for c1 in range(ln-1):
         for c2 in range(c1+1, ln):
             if name[c1] == name[c2]:
                 return True
     return False
-    
 
-for word in s.split():
+
+letters = string.ascii_lowercase + string.ascii_uppercase
+chars = letters + " "
+
+so = ""
+for c in names:
+    if c in chars:
+        so += c
+names = so
+
+for word in names.split():
     if good(word):
         print(word, end=', ')
 
 
-# ~ olivia, ava, amelia, jessica, isabella, poppy, lily, evie, ella, scarlett, isabelle, phoebe, ellie, maryam, heidi, florence, hurriet, maddison, harry, william, george, david, dexter, connor, theodore,
+# ~ Olivia, Ava, Amelia, Jessica, Isabella, Poppy, Lily, Evie, Ella, Scarlett, Isabelle, Phoebe, Ellie, Maryam, Heidi, Florence, Hurriet, Maddison, Harry, William, George, David, Dexter, Connor, Theodore, 
+

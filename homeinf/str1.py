@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-25 2022-02-25 1.0
+# 2022-02-25 2022-02-25 1.1
 # str1.py
 
 # ~ найти в тексте все слова-палиндромы (регистром пренебречь)
@@ -29,7 +29,6 @@ for c in s:
         so += c
 
 s = so
-del so
 
 for word in s.split():
     if word == word[::-1]:
