@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-03-13 2022-03-13 1.0
+# 2022-03-13 2022-03-13 1.1
 # langage.py
 
 # ~ Дан текст,
@@ -37,7 +37,7 @@ Ada 1980 Жан Ишбиа
 """
 
 langl = []
-for l in langs.split("\n"):
+for l in langs.strip().split("\n"):
     if not l: continue
     ls = l.split(maxsplit=2)
     langl.append((ls[1], ls[0]))
