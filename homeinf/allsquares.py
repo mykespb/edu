@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-03-15 2022-03-15 1.0
+# 2022-03-15 2022-03-15 1.1
 # allsquares.py
 
 # ~ Дан текст. В нём есть целые числа.
@@ -9,7 +9,7 @@
 
 text1 = """
 3 - очень постоянное число.
-Жили в квартире 44 весёлых чижа.
+Жили в квартире 44 44 весёлых чижа.
 """
 
 text2 = """
@@ -20,21 +20,9 @@ text2 = """
 
 import math
 
-def myint(t):
-    try:
-        n = int(t)
-    except:
-        n = 1
-    return n
-
-def issq(n):
-    sq = math.isqrt(n)
-    return n == sq*sq
-
 def check(text):
     """проверить текст"""
-
-    print(all([issq(x) for x in [myint(word) for word in text.split()] ] ))
+    print(all([x == math.isqrt(x)**2 for x in [int(word if all([c in '0123456789' for c in word]) else 1) for word in text.split()] ] ))
 
 check(text1)
 check(text2)
