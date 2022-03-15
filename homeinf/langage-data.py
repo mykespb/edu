@@ -35,31 +35,3 @@ Simula 1967 Кристен Нюгор и Оле-Йохан Даль
 Algol68 1964 Адриан ван Вейнгаарден, Барри Майо и Грегори Пек
 Ada 1980 Жан Ишбиа
 """
-
-langl = []
-for l in langs.split("\n"):
-    if not l: continue
-    ls = l.split(maxsplit=2)
-    langl.append((ls[1], ls[0]))
-langl.sort()
-for l in langl:
-    print(l[0], '-', l[1])
-
-
-# ~ 1957 - Fortran
-# ~ 1964 - Algol68
-# ~ 1967 - Simula
-# ~ 1969 - Smalltalk
-# ~ 1970 - Pascal
-# ~ 1972 - C
-# ~ 1978 - Modula-2
-# ~ 1980 - Ada
-# ~ 1983 - C++
-# ~ 1986 - Delphi
-# ~ 1986 - Erlang
-# ~ 1986 - Oberon
-# ~ 1995 - Java
-# ~ 1995 - Ruby
-# ~ 2000 - C#
-# ~ 2003 - Groovy
-# ~ 2004 - Scala
