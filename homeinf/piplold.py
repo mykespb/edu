@@ -49,7 +49,7 @@ homoj = """
 """
 
 pipl = []
-for homo in homoj.split("\n"):
+for homo in homoj.strip().split("\n"):
     if not homo: continue
     born, died, name = homo.split(maxsplit=2)
     pipl.append((int(died) - int(born), name))
