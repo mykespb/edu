@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-03-07 2022-03-16 2.0
+# 2022-03-07 2022-03-25 2.1
 # list-zavod.py
 
 # ~ Дан список сотрудников, их должностей и зарплат вида
@@ -14,7 +14,7 @@ zavod = [["Иванов И.И.", "директор", 1000000], ["Петров П
 
 # вариант 1
 
-def avg(zav):
+def mean(zav):
     """считаем среднее"""
     summa = 0
     for e in zav:
@@ -37,7 +37,7 @@ def greater(zav, e):
             num += 1
     return num
 
-def mean(zav):
+def median(zav):
     """считаем медиану"""
     lm = []
     for v in zav:
@@ -49,8 +49,8 @@ def mean(zav):
     
 
 print(f"завод: {zavod}"
-    f"\n\nсредняя зарплата:   {avg(zavod) : 10_}"
-    f"\nмедианная зарплата: {mean(zavod) : 10_}"
+    f"\n\nсредняя зарплата:   {mean(zavod) : 10_}"
+    f"\nмедианная зарплата: {median(zavod) : 10_}"
     )
 
 # вариант 2
