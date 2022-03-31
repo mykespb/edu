@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-23 2022-02-24 1.10
+# 2022-02-23 2022-03-31 1.11
 # bezcifr.py
 
 # ~ Считаем до 100…
@@ -64,8 +64,7 @@ import random
 def ver_bb():
     """и без цифр"""
 
-    na, nb = random.random(), random.random()
-    zero = int(min(na, nb) // max(na, nb))
+    zero = int(random.random())
     one  = int(round(math.cos(zero)))
     two  = one + one
 
