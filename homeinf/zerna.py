@@ -13,7 +13,7 @@ cold = 0
 for day in range(len(temp)):
     if temp[day] < 0:
         cold += 1
-        if cold>6:
+        if cold > 6:
             print("Замёрзли на", day, "день.")
             break
     else:
