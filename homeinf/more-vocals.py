@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-04-08 2022-04-08 1.0
+# 2022-04-08 2022-04-08 1.1
 # more-vocals.py
 
 # ~ ДЗ3. Больше гласности!
@@ -12,18 +12,18 @@
 
 
 strs = """
-какая славная погода
-как хорошо хоть песню пой
-над границей тучи ходят хмуро
+Какая славная погода
+Как хорошо хоть песню пой
+Над границей тучи ходят хмуро
 """
 
 def tests():
-    for test in strs.lower().strip().split("\n"):
+    for test in strs.strip().split("\n"):
         show(test)
 
 def show(s):
     print(" -->", s, "\n", "<--", 
-        " ".join(sorted(s.split(), key=lambda k: sum(map(int, [c in "eyuioaуеыаоэяию" for c in k])), reverse=True)),
+        " ".join(sorted(s.split(), key=lambda k: sum(map(int, [c.lower() in "eyuioaуеыаоэяию" for c in k])), reverse=True)),
         "\n")
 
 tests()
