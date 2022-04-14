@@ -1,5 +1,5 @@
 # Mikhail Kolodin
-# 2022-04-11 v.1.0
+# 2022-04-11 2022-04-14 1.1
 
 # make non-intersecting rectangles in big rectangle area
 
@@ -28,7 +28,6 @@ def mysolver(a):
             elif x == 0 and a[y-1][0] == 0:
                 num += 1
                 
-            # ~ elif a[y-1][x-1] == 0 and a[y-1][x] == 0 and a[y][x-1] == 0:
             elif a[y-1][x] == 0 and a[y][x-1] == 0:
                 num += 1
                 
