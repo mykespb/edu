@@ -1,5 +1,5 @@
 # Mikhail Kolodin
-# 2022-04-11 2022-04-14 1.1
+# 2022-04-11 2022-04-12 v.1.1
 
 # make non-intersecting rectangles in big rectangle area
 
