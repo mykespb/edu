@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # Mikhail Kolodin
 # 2022-04-22 2022-04-22 v.1.1
 

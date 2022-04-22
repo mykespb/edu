@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+
 # Mikhail Kolodin
+# div7.py
 # 2022-04-22 2022-04-23 v.2.1
 
 # ~ Дан случайный список.
