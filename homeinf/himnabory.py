@@ -1,8 +1,8 @@
 #!/python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2021-11-26 2021-11-26 0.1
-# imnabory.py
+# 2021-11-26 2022-04-22 0.1
+# himnabory.py
 
 nabor1 = "H2SO4 H2O марганцовка NaCl HCl NH3 NaOH CuOH спирт"
 nabor2 = "нашатырь H2O спирт фенолфталеин Cu Fe Zn KBrO3 NaOH"
