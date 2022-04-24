@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-04-23 2022-04-23 1.0
+# 2022-04-23 2022-04-24 1.1
 # regdrob.py
 
 # ~ Дан список натуральных чисел.
@@ -26,10 +26,8 @@ print("числа:", lon)
 lod = []
 
 for a in lon:
-    if a <= 0:
-        continue
     for b in lon:
-        if b <= 0 or a >= b:
+        if a >= b:
             continue
         q = a / b
         lod.append((q, a, b))
