@@ -7,8 +7,8 @@
 akapi = 5
 kapi  = 8
 
-debug = 0
-# ~ debug = 1
+# ~ debug = 0
+debug = 1
 
 days = 365
 
