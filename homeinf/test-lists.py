@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# myke 2022-04-26 2022-05-01 2.1
+# test-lists.py 
+
 # tests fot lists
 
 # Дана строка с именами.
@@ -20,6 +24,28 @@ def cap(stroka):
     """capitalize"""
     return stroka[0].upper() + stroka[1:].lower() if stroka else ""
 
-print(*(sorted(cap(q[::-1]) for q in s.split())))
+# ~ print(*(sorted(cap(q[::-1]) for q in s.split())))
 
 # ~ Acissej Aihpos Ailema Aim Aivilo Alle Allebasi Alsi Auhsoj Ava Ayerf Belac Bocaj Divad Ebeohp Ecarg Ecila Ecnerolf Egiap Egroeg Eifla Eihcra Eihpos Eille Eille Eille Eille Eilrahc Eive Ellebasi Ellebasi Ellebasi Ellebasi Ellebasi Eolhc Eolhc Eolhc Eolhc Eoz Erodoeht Esor Haon Hpesoj Htiaf Idieh Kcaj Leumas Mailliw Mayram Nahte Nayr Newo Nhoj Nitsua Nitsua Nitsua Nosiddam Oel Racso Retxed Revilo Ronnoc Samoht Semaj Teirruh Trebla Trebla Trebla Ttelracs Ttelracs Ttelracs Ttelracs Ybur Yelnats Ylil Ylime Ynahteb Yppop Yrneh Yrrah Yvi
+
+
+# быки
+# даны 2 списка по 4 элемента из чисел от 0 до 9.
+# определить, сколько цифр стоят на одинаковых местах в этих списках
+
+from random import randint as ri
+from random import shuffle
+
+digs = [x for x in range(10)]
+print(digs)
+
+shuffle(digs)
+la = digs[:4]
+
+shuffle(digs)
+lb = digs[:4]
+
+print(la)
+print(lb)
+
+print(sum( map(lambda x: x[0] == x[1], zip(la, lb) )))
