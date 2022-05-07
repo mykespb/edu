@@ -26,7 +26,7 @@ def prepare():
 
 rock = prepare()
 rock.sort()
-# ~ pp(rock)
+pp(rock)
 
 # ~ ныне год 2022
 # ~ [[1961, 2022, 'Удачное приобретение'],
@@ -84,7 +84,7 @@ def count_duration():
 
 count_duration()
 
-# ~ pp(sorted(rock, key=lambda x: x[3], reverse=True))
+pp(sorted(rock, key=lambda x: x[3], reverse=True))
 
 # ~ [[1961, 2022, 'Удачное приобретение', 61],
  # ~ [1969, 2022, 'Машина времени', 53],
