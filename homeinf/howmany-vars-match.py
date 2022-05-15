@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2022
 # 2022-04-15 2022-04-15 1.1
-# howmany-vars.py
+# howmany-vars-match.py
 
 # ~ ДЗ2. Сколько каких?
 # ~ Дан случайный список вида
@@ -22,28 +22,29 @@ n0 = n1 = n2 = n3 = n4 = n5 = n6 = n7 = n8 = n9 = n10 = 0
 print("число сколько")
 
 for e in a:
-    if e == 0:
-        n0 += 1
-    elif e == 1:
-        n1 += 1
-    elif e == 2:
-        n2 += 1
-    elif e == 3:
-        n3 += 1
-    elif e == 4:
-        n4 += 1
-    elif e == 5:
-        n5 += 1
-    elif e == 6:
-        n6 += 1
-    elif e == 7:
-        n7 += 1
-    elif e == 8:
-        n8 += 1
-    elif e == 9:
-        n9 += 1
-    elif e == 10:
-        n10 += 1
+    match e:
+        case 0:
+            n0 += 1
+        case 1:
+            n1 += 1
+        case 2:
+            n2 += 1
+        case 3:
+            n3 += 1
+        case 4:
+            n4 += 1
+        case 5:
+            n5 += 1
+        case 6:
+            n6 += 1
+        case 7:
+            n7 += 1
+        case 8:
+            n8 += 1
+        case 9:
+            n9 += 1
+        case 10:
+            n10 += 1
 
 # печать результата
 if n0 > 0:
@@ -68,4 +69,3 @@ if n9 > 0:
     print(f"{9:3}   {n9:4}")
 if n10 > 0:
     print(f"{10:3}   {n10:4}")
-
