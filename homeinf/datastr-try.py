@@ -27,4 +27,7 @@ print(stroka, "\n", strol)
 for c in stroka:
     print(c, end=", ")
 
-# ===
+# ~ строка 
+ # ~ ['с', 'т', 'р', 'о', 'к', 'а']
+# ~ с, т, р, о, к, а, 
+
