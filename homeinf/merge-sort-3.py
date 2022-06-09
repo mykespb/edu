@@ -72,6 +72,7 @@ def autotest(times=10):
 
     ok = 0
     for num in range(times):
+        print(f"тест номер {num+1}")
         ok += int(test())
 
     print(f"tested {times=}, result is {ok * 100 / times}%\n")
