@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# 2 arrays merge sort 2022-06-07 2022-06-07 3.0
+# 2 arrays merge sort 2022-06-07 2022-06-09 3.1
 # merge-sort-3.py (C) M.Kolodin 2022
 
 # ~ good sorter and autotester
@@ -60,7 +60,7 @@ def test():
         print("yes, it is correct")
     else:
         print("no, it is wrong")
-    print(f"{result=}")
+    print(f"{result=}\n")
     return result
 
 # ~ test()
@@ -74,6 +74,6 @@ def autotest(times=10):
     for num in range(times):
         ok += int(test())
 
-    print(f"\ntested {times=}, result is {ok * 100 / times}%")
+    print(f"tested {times=}, result is {ok * 100 / times}%\n")
 
 autotest()
