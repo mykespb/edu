@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-09-04 2022-09-04 0.1
+# 2022-09-04 2022-09-04 1.0
 # plus-minus.py
 
 # ~ выставляем оценки ученикам по плюсам и минусам
@@ -46,6 +46,6 @@ def test(num, size):
         index = "".join(index)
         out += [marks[index]]
 
-    print("student", num, "got", arr, "marks", out)
+    print(f"student {num+1:02d} got", arr, "marks", out)
 
-tests(10, 10)
+tests(times=10, size=10)
