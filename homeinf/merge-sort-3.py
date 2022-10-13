@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# 2 arrays merge sort 2022-06-07 2022-06-09 3.1
+# 2 arrays merge sort 2022-06-07 2022-06-09 3.2
 # merge-sort-3.py (C) M.Kolodin 2022
 
 # ~ good sorter and autotester
