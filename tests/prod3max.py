@@ -14,21 +14,20 @@ MINVAL = -100   # мин. число
 MAXVAL = 100    # макс. число
 LEN    = 10     # длина массива
 SUB    = 3      # длина вырезки
+TESTS  = 10     # сколько тестов
 
-def doit(larr=LEN):
-    """
-    выполнить 1 тест?
-    длина массива len=10
-    """
+def doit():
+    """ выполнить 1 тест """
 
-    arr = [randint(MINVAL, MAXVAL) for _ in range(larr)]
+    arr = [randint(MINVAL, MAXVAL) for _ in range(LEN)]
     print("исходный массив", arr)
 
     vals = sorted(list(set(arr)), reverse=True)[:SUB]
     res  = prod(vals)
     print("числа:", vals, ", произведение:", res)
 
-for test in range(1, 11):
+# выполнить все тесты
+for test in range(1, TESTS+1):
     print("\nтест №", test)
     doit()
 
