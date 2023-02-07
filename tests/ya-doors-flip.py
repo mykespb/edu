@@ -18,6 +18,12 @@ def runs():
             if door % run == 0:
                 doors[door] = not doors[door]
 
+def runs():
+    for run in range(1, LEN+1):
+        for door in range(1, LEN+1):
+            if door % run == 0:
+                doors[door] = not doors[door]
+
 runs()
 
 for n, e in enumerate(doors[1:], start=1):
