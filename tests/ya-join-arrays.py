@@ -7,6 +7,7 @@
 # ~ Задача F. Слияние $k$ сортированных списков
 
 from random import randint
+from collections import Counter
 
 K = 3
 
@@ -66,11 +67,23 @@ def proc2(ars):
 
     return best
 
+def proc3(ars):
+    """3 способ, хитрый"""
+
+    # готовим счётчик
+    cnt = Counter(ars[0])
+    for arr in ars[1:]:
+        cnt.update(arr)
+    print(cnt)
+    car = sorted(cnt.elements())
+    print(car)
+    return car
 
 # ~ 3. Тестируем решалку
 
 ars = make()
-best = proc2(ars)
+# ~ best = proc2(ars)
+best = proc3(ars)
 
 print(f"""
 -----------------------------------------------------------------------
