@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2023
-# 2023-02-08 2023-02-08 0.1
+# 2023-02-08 2023-02-08 1.1
 # ya-astones-jewels.py
 
 # ~ Задача из яндекса.
@@ -33,7 +33,10 @@ def solve1(j, s):
 
     return count
 
+def solve2(j, s):
+    """find common chars"""
 
+    return sum( map( lambda x: x in j, s)) 
 
 # ~ 3. запуск тестов
 
@@ -42,6 +45,16 @@ def run_tests(times = 10):
 
     for test in range(times):
         J, S = gen()
-        print(f"{test=}, {J=}, {S=}, count=", solve(J, S))
+        print(f"{test=}, {J=}, {S=}, count=", solve1(J, S), ",", solve2(J, S))
 
 run_tests(10)
+
+# ~ test=0, J='WGxEQ', S='njTeCSBcPRHubsoFNTjy', count= 0 , 0
+# ~ test=1, J='BvufF', S='oRxbLXWIIWYlnjbCULvp', count= 1 , 1
+# ~ test=2, J='SRFQP', S='SYZcrbvfjbuiwdULJJBn', count= 1 , 1
+# ~ test=3, J='GfFoj', S='WinvlAoxwdOMuwHgveln', count= 1 , 1
+# ~ test=4, J='oqGh', S='ZVxPYowojufGwjbMnbkx', count= 3 , 3
+# ~ test=5, J='SbRXx', S='kbawEjZRyzljAehQfSZR', count= 4 , 4
+# ~ test=6, J='ehJFy', S='oXvoRPPuIOcrwsMsPJuy', count= 2 , 2
+# ~ test=7, J='ZagQC', S='kaUezTPuWfVDXlampiIi', count= 2 , 2
+# ~ test=8, J='GzxgI', S='GtrYaqFjxgzDQChhmSPY', count= 4 , 4
