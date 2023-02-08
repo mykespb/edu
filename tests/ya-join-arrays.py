@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2023
-# 2023-02-08 2023-02-08 1.2
+# 2023-02-08 2023-02-08 1.3
 # ya-join-arrays.py
 
 # ~ Задача из яндекса
@@ -35,7 +35,8 @@ def proc1(ars):
         best.extend(ar)
     # ~ print(best)
     best.sort()
-    print(best)
+    # ~ print(best)
+
 
 def proc2(ars):
     """2 способ, умный... слишком..."""
@@ -67,23 +68,44 @@ def proc2(ars):
 
     return best
 
+
 def proc3(ars):
     """3 способ, хитрый"""
 
-    # готовим счётчик
     cnt = Counter(ars[0])
+    
     for arr in ars[1:]:
         cnt.update(arr)
     print(cnt)
+
     car = sorted(cnt.elements())
-    print(car)
+
+    # ~ print(car)
+    return car
+
+
+def proc4(ars):
+    """4 способ, хитрый"""
+
+    cnt = [0 for i in range(0, 101)]
+    
+    for arr in ars:
+        for e in arr:
+            cnt[e] += 1
+    # ~ print(cnt)
+
+    car = []
+    for i in range(0, 101):
+        for c in range(cnt[i]):
+            car.append(i)
+
+    # ~ print(car)
     return car
 
 # ~ 3. Тестируем решалку
 
 ars = make()
-# ~ best = proc2(ars)
-best = proc3(ars)
+best = proc4(ars)
 
 print(f"""
 -----------------------------------------------------------------------
