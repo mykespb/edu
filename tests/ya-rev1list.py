@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2023
-# 2023-02-09 2023-02-09 1.1
+# 2023-02-09 2023-02-09 1.2
 # ya-rev1list.py
 
 # ~ Задача из яндекса
@@ -37,7 +37,7 @@ class Osl:
     def __repr__(self):
         node = self.head
         sout = "OSL( "
-        while node is not None:
+        while node:
             sout += str(node.value) + ", "
             node = node.link
         if sout.endswith(", "):
@@ -48,7 +48,7 @@ class Osl:
     def reverse(self):
         obr = Osl()
         node = self.head
-        while node is not None:
+        while node:
             obr.add(node.value)
             node = node.link
         self.head = obr.head
@@ -75,7 +75,7 @@ def make(items = 10):
 
 lo = Osl(1)
 print(lo)
-lo.add(2)
+lo.add([1])
 print(lo)
 lx = make()
 print(lx)
@@ -83,7 +83,7 @@ lx.reverse()
 print(lx)
 
 # ~ OSL( 1) 
-# ~ OSL( 2, 1) 
+# ~ OSL( [1], 1) 
 # ~ making: 10 9 8 7 6 5 4 3 2 1 
 # ~ OSL( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10) 
 # ~ OSL( 10, 9, 8, 7, 6, 5, 4, 3, 2, 1) 
