@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail Kolodin
-# allsubs2.py 2023-04-17 2023-04-17 0.1
+# allsubs2.py 2023-04-17 2023-04-17 1.1
 # compare substrings of 2 strings
 
 from itertools import combinations as comb
@@ -32,8 +32,9 @@ def have_common(a1, a2):
 
     for e1 in a1:
         if e1 in a2:
-            return True
-    return False
+            return True, e1
+        
+    return False, ""
 
 
 def comp(s1, s2):
@@ -42,18 +43,18 @@ def comp(s1, s2):
     c1 = subs(s1)
     c2 = subs(s2)
 
-    minlen = min(max(c1.keys(), max(c2.keys())))
+    minlen = min(max(c1.keys()), max(c2.keys()))
 
     if minlen < 1:
         return 0, []
 
     for alen in range(minlen, 0, -1):
-        if (good := have_common(c1[alen], c2[alen])):
-            return alen, good
+        if (good := have_common(c1[alen], c2[alen]))[0]:
+            return alen, good[1]
         
     return 0, []
 
 
 print(comp('abcde', 'ace'))
 print(comp('abc', 'def'))
-      
+    
