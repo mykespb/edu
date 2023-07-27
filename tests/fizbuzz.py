@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# fizbuzz.py 2023-07-27 2023-07-27 4.0
+# fizbuzz.py 2023-07-27 2023-07-27 5.0
 # (C) Mikhail Kolodin, 2023
 
 # Напишите программу, которая выводит на экран чис-
@@ -12,18 +12,21 @@
 # числа или слова «Fizz», «Buzz» и «FizzBuzz» по тем
 # же правилам.
 
+# separator: " " or ", "
+fino = ", "
+
 def fizbuzz1():
     for i in range(1,101):
         if i % 15 == 0:
-            print("FizBuzz", end=" ")
+            print("FizBuzz", end=fino)
         elif i % 3 == 0:
-            print("Fiz", end=" ")
+            print("Fiz", end=fino)
         elif i % 5 == 0:
-            print("Buzz", end=" ")
+            print("Buzz", end=fino)
         else:
-            print(i, end=" ")
+            print(i, end=fino)
 
-# fizbuzz1()
+fizbuzz1()
 
 def fizbuzz2():
     for i in range(1, 101):
@@ -33,11 +36,11 @@ def fizbuzz2():
         if i % 5 == 0:
             out += "Buzz"
         if len(out):
-            print(out, end=" ")
+            print(out, end=fino)
         else:
-            print(i, end=" ")
+            print(i, end=fino)
         
-# fizbuzz2()
+fizbuzz2()
 
 def fizbuzz3():
 
@@ -45,17 +48,17 @@ def fizbuzz3():
 
     for i in range(1, 101):
         if rems[i % 15]:
-            print(rems[i % 15], end=" ")
+            print(rems[i % 15], end=fino)
         else:
-            print(i, end=" ")
+            print(i, end=fino)
 
-# fizbuzz3()
+fizbuzz3()
 
 def fizbuzz4():
     for i in range(1, 101):
         r3, r5 = i % 3 == 0, i % 5 == 0
         koef = r3 * 2 + r5
         magic = i, "Buzz", "Fiz", "FizBuzz"
-        print(magic[koef], end=" ")
+        print(magic[koef], end=fino)
 
 fizbuzz4()
