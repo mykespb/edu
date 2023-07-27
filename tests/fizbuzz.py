@@ -12,10 +12,14 @@
 # числа или слова «Fizz», «Buzz» и «FizzBuzz» по тем
 # же правилам.
 
-# separator: " " or ", "
+# items separator: " " or ", "
 fino = ", "
+# solutions separator: 
+sepa = "\n" + 80 * '-'
+
 
 def fizbuzz1():
+    print(sepa)
     for i in range(1,101):
         if i % 15 == 0:
             print("FizBuzz", end=fino)
@@ -29,6 +33,7 @@ def fizbuzz1():
 fizbuzz1()
 
 def fizbuzz2():
+    print(sepa)
     for i in range(1, 101):
         out = ""
         if i % 3 == 0:
@@ -43,6 +48,7 @@ def fizbuzz2():
 fizbuzz2()
 
 def fizbuzz3():
+    print(sepa)
 
     rems = "FizzBuzz", "", "", "Fiz", "", "Buzz", "Fiz", "", "", "Fiz", "Buzz", "", "Fiz", "", ""
 
@@ -55,6 +61,8 @@ def fizbuzz3():
 fizbuzz3()
 
 def fizbuzz4():
+    print(sepa)
+
     for i in range(1, 101):
         r3, r5 = i % 3 == 0, i % 5 == 0
         koef = r3 * 2 + r5
@@ -62,3 +70,5 @@ def fizbuzz4():
         print(magic[koef], end=fino)
 
 fizbuzz4()
+
+print(sepa)
