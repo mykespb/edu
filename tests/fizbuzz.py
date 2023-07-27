@@ -49,4 +49,13 @@ def fizbuzz3():
         else:
             print(i, end=" ")
 
-fizbuzz3()
+# fizbuzz3()
+
+def fizbuzz4():
+    for i in range(1, 101):
+        r3, r5 = i % 3 == 0, i % 5 == 0
+        koef = r3 * 2 + r5
+        magic = i, "Buzz", "Fiz", "FizBuzz"
+        print(magic[koef], end=" ")
+
+fizbuzz4()
