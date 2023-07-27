@@ -37,5 +37,16 @@ def fizbuzz2():
         else:
             print(i, end=" ")
         
-fizbuzz2()
+# fizbuzz2()
 
+def fizbuzz3():
+
+    rems = "FizzBuzz", "", "", "Fiz", "", "Buzz", "Fiz", "", "", "Fiz", "Buzz", "", "Fiz", "", ""
+
+    for i in range(1, 101):
+        if rems[i % 15]:
+            print(rems[i % 15], end=" ")
+        else:
+            print(i, end=" ")
+
+fizbuzz3()
