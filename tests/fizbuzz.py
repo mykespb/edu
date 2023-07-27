@@ -23,6 +23,19 @@ def fizbuzz1():
         else:
             print(i, end=" ")
 
-fizbuzz1()
+# fizbuzz1()
 
+def fizbuzz2():
+    for i in range(1, 101):
+        out = ""
+        if i % 3 == 0:
+            out += "Fiz"
+        if i % 5 == 0:
+            out += "Buzz"
+        if len(out):
+            print(out, end=" ")
+        else:
+            print(i, end=" ")
+        
+fizbuzz2()
 
