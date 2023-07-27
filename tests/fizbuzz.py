@@ -32,6 +32,7 @@ def fizbuzz1():
 
 fizbuzz1()
 
+
 def fizbuzz2():
     print(sepa)
     for i in range(1, 101):
@@ -47,6 +48,7 @@ def fizbuzz2():
         
 fizbuzz2()
 
+
 def fizbuzz3():
     print(sepa)
 
@@ -60,6 +62,7 @@ def fizbuzz3():
 
 fizbuzz3()
 
+
 def fizbuzz4():
     print(sepa)
 
@@ -71,4 +74,5 @@ def fizbuzz4():
 
 fizbuzz4()
 
+# finally:
 print(sepa)
