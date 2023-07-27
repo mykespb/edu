@@ -22,9 +22,9 @@ def fizbuzz1():
     print(sepa)
     for i in range(1,101):
         if i % 15 == 0:
-            print("FizBuzz", end=fino)
+            print("FizzBuzz", end=fino)
         elif i % 3 == 0:
-            print("Fiz", end=fino)
+            print("Fizz", end=fino)
         elif i % 5 == 0:
             print("Buzz", end=fino)
         else:
@@ -38,7 +38,7 @@ def fizbuzz2():
     for i in range(1, 101):
         out = ""
         if i % 3 == 0:
-            out += "Fiz"
+            out += "Fizz"
         if i % 5 == 0:
             out += "Buzz"
         if len(out):
@@ -52,7 +52,7 @@ fizbuzz2()
 def fizbuzz3():
     print(sepa)
 
-    rems = "FizzBuzz", "", "", "Fiz", "", "Buzz", "Fiz", "", "", "Fiz", "Buzz", "", "Fiz", "", ""
+    rems = "FizzBuzz", "", "", "Fizz", "", "Buzz", "Fizz", "", "", "Fizz", "Buzz", "", "Fizz", "", ""
 
     for i in range(1, 101):
         if rems[i % 15]:
@@ -69,7 +69,7 @@ def fizbuzz4():
     for i in range(1, 101):
         r3, r5 = i % 3 == 0, i % 5 == 0
         koef = r3 * 2 + r5
-        magic = i, "Buzz", "Fiz", "FizBuzz"
+        magic = i, "Buzz", "Fizz", "FizBuzz"
         print(magic[koef], end=fino)
 
 fizbuzz4()
