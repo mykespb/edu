@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find1.py 2023-08-03 2023-08-03 2.0
+# find1.py 2023-08-03 2023-08-03 2.1
 # (C) Mikhail Kolodin, 2023
 
 # Дан список целых чисел.
@@ -33,5 +33,10 @@ def test(arr: list[int]) -> int:
     print(f"{arr=} -> {find1(arr)}")
     print(f"{arr=} -> {find2(arr)}")
 
-test([1, 2, 2, 2, 2, 1, 3, 4, 4])
+test([1, 2, 2, 8, 1, 8, 3, 4, 4])
 test([1])
+
+# ~ arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ~ arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ~ arr=[1] -> 1
+# ~ arr=[1] -> 1
