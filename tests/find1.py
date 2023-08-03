@@ -52,9 +52,18 @@ def find5(arr: list[int]) -> int:
     """find 1, ver.5"""
 
     cnt = Counter(arr)
-    ones = [k for k, v in cnt.items() if v == 1]
+    ones = [k for k, v in cnt.items() if v == 1]   # slow
 
     return ones[0]
+
+
+def find6(arr: list[int]) -> int:
+    """find 1, ver.5"""
+
+    cnt = Counter(arr)
+    for k, v in cnt.items():
+        if v == 1:
+            return k     # faster
 
 
 def test(arr: list[int]) -> int:
@@ -65,6 +74,7 @@ def test(arr: list[int]) -> int:
     print(f"{arr=} -> {find3(arr)}")
     print(f"{arr=} -> {find4(arr)}")
     print(f"{arr=} -> {find5(arr)}")
+    print(f"{arr=} -> {find6(arr)}")
 
 test([1, 2, 2, 8, 1, 8, 3, 4, 4])
 test([1])
@@ -74,6 +84,8 @@ test([1])
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# arr=[1] -> 1
 # arr=[1] -> 1
 # arr=[1] -> 1
 # arr=[1] -> 1
