@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find1.py 2023-08-03 2023-08-03 5.0
+# find1.py 2023-08-03 2023-08-03 7.0
 # (C) Mikhail Kolodin, 2023
 
 # Дан список целых чисел.
@@ -69,25 +69,25 @@ def find6(arr: list[int]) -> int:
 def test(arr: list[int]) -> int:
     """run 1 test"""
 
-    print(f"{arr=} -> {find1(arr)}")
-    print(f"{arr=} -> {find2(arr)}")
-    print(f"{arr=} -> {find3(arr)}")
-    print(f"{arr=} -> {find4(arr)}")
-    print(f"{arr=} -> {find5(arr)}")
-    print(f"{arr=} -> {find6(arr)}")
+    print(f"ver.1: {arr=} -> {find1(arr)}")
+    print(f"ver.2: {arr=} -> {find2(arr)}")
+    print(f"ver.3: {arr=} -> {find3(arr)}")
+    print(f"ver.4: {arr=} -> {find4(arr)}")
+    print(f"ver.5: {arr=} -> {find5(arr)}")
+    print(f"ver.6: {arr=} -> {find6(arr)}")
 
 test([1, 2, 2, 8, 1, 8, 3, 4, 4])
 test([1])
 
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
-# arr=[1] -> 1
-# arr=[1] -> 1
-# arr=[1] -> 1
-# arr=[1] -> 1
-# arr=[1] -> 1
-# arr=[1] -> 1
+# ver.1: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.2: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.3: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.4: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.5: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.6: arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# ver.1: arr=[1] -> 1
+# ver.2: arr=[1] -> 1
+# ver.3: arr=[1] -> 1
+# ver.4: arr=[1] -> 1
+# ver.5: arr=[1] -> 1
+# ver.6: arr=[1] -> 1
