@@ -52,7 +52,7 @@ def find5(arr: list[int]) -> int:
     """find 1, ver.5"""
 
     cnt = Counter(arr)
-    ones = [k for k, v in cnt.items() if v == 1]   # slow
+    ones = [k for k, v in cnt.items() if v == 1]   # slower
 
     return ones[0]
 
