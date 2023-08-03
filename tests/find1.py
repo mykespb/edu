@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find1.py 2023-08-03 2023-08-03 4.0
+# find1.py 2023-08-03 2023-08-03 5.0
 # (C) Mikhail Kolodin, 2023
 
 # Дан список целых чисел.
@@ -29,7 +29,7 @@ def find2(arr: list[int]) -> int:
 
 
 def find3(arr: list[int]) -> int:
-    """find 1, ver.2"""
+    """find 1, ver.3"""
 
     res = 0    
     for n in arr:
@@ -41,9 +41,20 @@ def find3(arr: list[int]) -> int:
 from functools import reduce
 
 def find4(arr: list[int]) -> int:
-    """find 1, ver.2"""
+    """find 1, ver.4"""
 
     return reduce(lambda x, y: x^y, arr)
+
+
+from collections import Counter
+
+def find5(arr: list[int]) -> int:
+    """find 1, ver.5"""
+
+    cnt = Counter(arr)
+    ones = [k for k, v in cnt.items() if v == 1]
+
+    return ones[0]
 
 
 def test(arr: list[int]) -> int:
@@ -53,6 +64,7 @@ def test(arr: list[int]) -> int:
     print(f"{arr=} -> {find2(arr)}")
     print(f"{arr=} -> {find3(arr)}")
     print(f"{arr=} -> {find4(arr)}")
+    print(f"{arr=} -> {find5(arr)}")
 
 test([1, 2, 2, 8, 1, 8, 3, 4, 4])
 test([1])
@@ -61,6 +73,8 @@ test([1])
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
 # arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# arr=[1, 2, 2, 8, 1, 8, 3, 4, 4] -> 3
+# arr=[1] -> 1
 # arr=[1] -> 1
 # arr=[1] -> 1
 # arr=[1] -> 1
