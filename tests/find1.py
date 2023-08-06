@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find1.py 2023-08-03 2023-08-03 7.0
+# find1.py 2023-08-03 2023-08-03 7.1
 # (C) Mikhail Kolodin, 2023
 
 # Дан список целых чисел.
@@ -52,7 +52,7 @@ def find5(arr: list[int]) -> int:
     """find 1, ver.5"""
 
     cnt = Counter(arr)
-    ones = [k for k, v in cnt.items() if v == 1]   # slower
+    ones = [k for k, v in cnt.items() if v == 1]   
 
     return ones[0]
 
@@ -63,7 +63,7 @@ def find6(arr: list[int]) -> int:
     cnt = Counter(arr)
     for k, v in cnt.items():
         if v == 1:
-            return k     # faster
+            return k    
 
 
 def test(arr: list[int]) -> int:

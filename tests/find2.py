@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find2.py 2023-08-03 2023-08-03 2.0
+# find2.py 2023-08-03 2023-08-03 2.1
 # (C) Mikhail Kolodin, 2023
 
 # A list of integers is  given.
@@ -55,7 +55,7 @@ def find5(arr: list[int]) -> int:
     """find 1, ver.5"""
 
     cnt = Counter(arr)
-    ones = [k for k, v in cnt.items() if v == 1]   # slower
+    ones = [k for k, v in cnt.items() if v == 1]  
 
     return ones[0]
 
@@ -66,7 +66,7 @@ def find6(arr: list[int]) -> int:
     cnt = Counter(arr)
     for k, v in cnt.items():
         if v == 1:
-            return k     # faster
+            return k     
 
 
 # -------------------- simple test  --------------------
