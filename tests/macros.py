@@ -26,7 +26,7 @@ All done.
 
 from collections import defaultdict
 
-def macro(text: str):
+def macro(text: str) -> None:
 
     macros = defaultdict(str)
 
@@ -53,3 +53,15 @@ def macro(text: str):
 
 
 macro(text)
+
+#The text
+#
+#Remember it all:
+#VAR1="Hello"
+#VAR2="World"
+#and make subs
+#Var1 is Hello
+#Var2 is World
+#
+#All done.
+
