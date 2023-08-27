@@ -18,7 +18,7 @@ log = """
 from collections import defaultdict
 
 
-def stat(log: list[str]):
+def stat(log: str):
     """calculate all and return dict"""
 
     st = defaultdict(int)
