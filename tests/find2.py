@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# find2.py 2023-08-03 2023-08-03 2.1
+# logstatistics.py 2023-08-27 2023-08-27 0.1
 # (C) Mikhail Kolodin, 2023
 
 # A list of integers is  given.
