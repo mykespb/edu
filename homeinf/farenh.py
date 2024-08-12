@@ -2,9 +2,9 @@
 
 # farenh.py
 # (C) Mikhail (myke) Kolodin, 2021
-# 2022-01-10 2022-01-10 1.1
+# 2022-01-10 2024-07-05 1.2
 
-# ~ перевод температуры между градусами Цельсия и Фаренгейта
+# перевод температуры между градусами Цельсия и Фаренгейта
 
 def c2f(d):
     """celsius -> fahrenheit"""
@@ -19,12 +19,11 @@ def f2c(d):
 def test():
     """make tests"""
 
-    print("Celsius Fahrenheit   Fahrenheit Celsius")
-    for d in range(-30, 31, 10):
-        print(f"{d:+06.2f} = {c2f(d):+06.2f}      {d:+06.2f} = {f2c(d):+06.2f}")
+    print("Celsius -> Fahrenheit  Fahrenheit -> Celsius")
+    for d in range(-50, 51, 10):
+        print(f"{d:+07.2f} = {c2f(d):+07.2f}      {d:+07.2f} = {f2c(d):+07.2f}")
 
 test()
-
 
 # ~ Celsius Fahrenheit   Fahrenheit Celsius
 # ~ -30.00 = -22.00      -30.00 = -34.44
