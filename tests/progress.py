@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python3
 # progress.py
 # (C) Mikhail Kolodin, 2021
 # ver. 2021-08-26 2021-10-05 1.3
