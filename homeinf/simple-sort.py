@@ -20,7 +20,7 @@ def sorter(arr: list) -> list:
     return out
 
 
-def test(times=1) -> None:
+def test(times: int =1) -> None:
     for rept in range(times):
         arr = [random.randint(-99, 99) for _ in range(10)]
         print(f"{rept}: {arr} => {sorter(arr)}")
