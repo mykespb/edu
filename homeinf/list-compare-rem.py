@@ -1,4 +1,4 @@
-#!isr/bin/env python
+#!usr/bin/env python
 # Mikhail Kolodin, 2024
 # 2024-10-05 2024-10-05 1.0
 # определить, одинаковы ли списки с точностью до перестановок
@@ -20,8 +20,6 @@ def cmp(a1, a2):
             ca2.remove(e)
         else:
             return False
-    else:
-        return True
 
     return ca1 == ca2
 
