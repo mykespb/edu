@@ -5,6 +5,7 @@
 # lcom-starter.py
 
 # import random
+from pprint import pp, pprint
     
 # Играем со списковыми включениями
 
@@ -33,9 +34,15 @@ def triarray(size=3):
     """make triangle array"""
     
     return [ [ i for i in range(1, line+1) ] for line in range(1, size+1)]
-    
+
+print("--- as print ---")
 print(triarray())
 print(triarray(4))
 print(triarray(10))
+
+print("--- as pretty print ---")
+pprint(triarray())
+pprint(triarray(4))
+pprint(triarray(10))
 
 # ---
