@@ -53,8 +53,46 @@ import random
 
 a1 = [random.randint(1, 99) for _ in range(20)]
 
-a2 = [ e*e for e in a1 if e*e % 10 < 5 ]
+# a2 = [ e*e for e in a1 if e*e % 10 < 5 ]
 
-print(f"{a1=}\n{a2=}")
+# print(f"{a1=}\n{a2=}")
 # a1=[85, 61, 78, 77, 31, 91, 93, 71, 99, 62, 74, 5, 68, 14, 68, 81, 2, 47, 37, 96]
 # a2=[3721, 6084, 961, 8281, 5041, 9801, 3844, 4624, 4624, 6561, 4]
+
+abc = '''
+A Alfa
+B Bravo
+C Charlie
+D Delta
+E Echo
+F Foxtrot
+G Golf
+H Hotel
+I India
+J Juliett
+K Kilo
+L Lima
+M Mike
+N November
+O Oscar
+P Papa
+Q Quebec
+R Romeo
+S Sierra
+T Tango
+U Uniform
+V Victor
+W Whiskey
+X X-ray
+Y Yankee
+Z Zulu
+'''
+
+names = [ e.split()[1].lower() for e in abc.split('\n') if e ]
+print(names)
+
+vowels = 'aeiouy'
+
+vow = [w for w in names if len( [ c for c in w if c in vowels ] ) > len(w) // 2 ]
+print(vow)
+# ['india', 'romeo', 'yankee']
