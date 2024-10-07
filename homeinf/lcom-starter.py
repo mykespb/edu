@@ -4,11 +4,12 @@
 # 2024-10-07 2024-10-07 2.0
 # lcom-starter.py
 
+# import random
+    
 # Играем со списковыми включениями
 
 def signrow():
-    # import random
-    # Получить знакопеременный список натуральных чисел до 10.
+    """Получить знакопеременный список натуральных чисел до 10"""
     # Типа [1, -2, 3, -4, …]
     a = [ (-1)**(i+1) * i for i in range(1, 11)]
     print(a)
@@ -24,6 +25,8 @@ def lorem():
     lst = sorted([w.lower() for w in lorem.replace(',', '').replace('.', '').split()])
     print(f"{lst}")
 
+# lorem()
+
 # ---
 
 def triarray(size=3):
@@ -33,3 +36,6 @@ def triarray(size=3):
     
 print(triarray())
 print(triarray(4))
+print(triarray(10))
+
+# ---
