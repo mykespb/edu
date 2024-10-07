@@ -90,7 +90,9 @@ Z Zulu
 
 names = [ e.split()[1].lower() for e in abc.split('\n') if e ]
 print(names)
+# ['alfa', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett', 'kilo', 'lima', 'mike', 'november', 'oscar', 'papa', 'quebec', 'romeo', 'sierra', 'tango', 'uniform', 'victor', 'whiskey', 'x-ray', 'yankee', 'zulu']
 
+# гласные
 vowels = 'aeiouy'
 
 vow = [w for w in names if len( [ c for c in w if c in vowels ] ) > len(w) // 2 ]
