@@ -45,4 +45,6 @@ pprint(triarray())
 pprint(triarray(4))
 pprint(triarray(10))
 
+# exit(1)
+
 # ---
