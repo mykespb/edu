@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # mat-filler.py
-# 2024-10-09 2024-10-09 1.1
+# 2024-10-09 2024-10-09 1.2
 # fill matrix
 
 import random
