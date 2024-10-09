@@ -99,5 +99,4 @@ vow = [w for w in names if len( [ c for c in w if c in vowels ] ) > len(w) // 2 
 # ~ print(vow)
 # ['india', 'romeo', 'yankee']
 
-vow = [w for w in abc.lower().split() if len(w) > 1 and len( [ c for c in w if c in 'aeiouy' ] ) > len(w) // 2 ]
-print(vow)
+print( [ w for w in abc.lower().split() if len(w) > 1 and len( [ c for c in w if c in 'aeiouy' ] ) > len(w) // 2 ] )
