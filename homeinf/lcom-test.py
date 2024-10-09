@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.10
 
 # Mikhail (myke) Kolodin, 2021
-# 2024-10-07 2024-10-07
+# 2024-10-09 2024-10-09 2.1
 # lcom-test.py
 
 # Играем со списковыми включениями
@@ -89,12 +89,15 @@ Z Zulu
 '''
 
 names = [ e.split()[1].lower() for e in abc.split('\n') if e ]
-print(names)
+# ~ print(names)
 # ['alfa', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india', 'juliett', 'kilo', 'lima', 'mike', 'november', 'oscar', 'papa', 'quebec', 'romeo', 'sierra', 'tango', 'uniform', 'victor', 'whiskey', 'x-ray', 'yankee', 'zulu']
 
 # гласные
 vowels = 'aeiouy'
 
 vow = [w for w in names if len( [ c for c in w if c in vowels ] ) > len(w) // 2 ]
-print(vow)
+# ~ print(vow)
 # ['india', 'romeo', 'yankee']
+
+vow = [w for w in abc.lower().split() if len(w) > 1 and len( [ c for c in w if c in 'aeiouy' ] ) > len(w) // 2 ]
+print(vow)
