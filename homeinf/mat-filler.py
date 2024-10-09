@@ -23,13 +23,14 @@ def fill1(size=3):
     
     return [ [ i+j for j in range(size) ] for i in range(size) ]
 
-# ~ pmat(fill1(5))
+pmat(fill1(5))
 
-# ~ 0 1 2 3 4 
-# ~ 1 2 3 4 5 
-# ~ 2 3 4 5 6 
-# ~ 3 4 5 6 7 
-# ~ 4 5 6 7 8 
+   # ~ 0    1    2    3    4 
+   # ~ 1    2    3    4    5 
+   # ~ 2    3    4    5    6 
+   # ~ 3    4    5    6    7 
+   # ~ 4    5    6    7    8 
+
 
 # 2. fill from center as cross
 
@@ -38,11 +39,12 @@ def fill2(size=3):
     center = size // 2
     return [ [ min( abs(center - i), abs(center - j)) for j in range(size) ] for i in range(size) ]
 
-pmat(fill2(5))
+# ~ pmat(fill2(5))
 
    # ~ 2    1    0    1    2 
    # ~ 1    1    0    1    1 
    # ~ 0    0    0    0    0 
    # ~ 1    1    0    1    1 
    # ~ 2    1    0    1    2 
+
 
