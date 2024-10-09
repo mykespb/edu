@@ -9,12 +9,12 @@ from pprint import pp
 
 # 0. better print
 
-def pmat(m):
+def pmat(m, width=4):
     """print matrix"""
 
     for i in range(len(m)):
         for j in range(len(m[0])):
-            print("%4d" % m[i][j], end = " ")
+            print(f"%{width}d" % m[i][j], end = " ")
         print()
 
 # 1. fill from ul corner
