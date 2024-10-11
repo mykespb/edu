@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # bin-search.py
-# 2024-10-11 2024-10-11 0.1
+# 2024-10-11 2024-10-11 1.0
 # binary search in array
 
 import random
