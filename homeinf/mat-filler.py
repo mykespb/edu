@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # mat-filler.py
-# 2024-10-09 2024-10-09 1.2
+# 2024-10-09 2024-10-11 1.3
 # fill matrix
 
 import random
@@ -46,5 +46,4 @@ def fill2(size=3):
    # ~ 0    0    0    0    0 
    # ~ 1    1    0    1    1 
    # ~ 2    1    0    1    2 
-
 
