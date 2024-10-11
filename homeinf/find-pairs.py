@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # find-pairs.py
-# 2024-10-11 2024-10-11 1.0
+# 2024-10-11 2024-10-11 1.1
 # найти пару одинаковых соседних чисел в матрице
 # (соседство - по горизонтали или вертикали)
 
@@ -12,7 +12,7 @@ def mp(a, width=4):
 
     for i in range(10):
         for j in range(10):
-            print("%4d" % a[i][j], end="")
+            print(f"%{width}d" % a[i][j], end="")
         print()
 
 
