@@ -42,8 +42,11 @@ p1a()
 def p2():
 
     elems = [1, 2, 3, 4, 6, 7, 8, 9, 0]
+
     for _ in range(10):
+
         a = [random.choice(elems) for _ in range(10)]
+
         print( "есть такие элементы," if any([ e % 5 == 0 for e in a ] ) else "нет таких элементов,",
             "чтобы на 5 нацело делились в списке", a)
 
@@ -65,7 +68,9 @@ def p2():
 def p3():
     for _ in range(10):
         a = [ random.randint(1, 99) for _ in range(10) ]
+
         b = [ divmod(e, 2) for e in a ]
+
         print(f"для списка {a} частные и остатки от деления на 2 таковы: \n{b}")
 
 # ~ p3()    
@@ -75,7 +80,9 @@ def p3():
 
 def p4(size = 2):
     a = [[random.randint(1, 9) for j in range(size)] for i in range(size)]
+
     s = sum( [ sum(row) for row in a] )
+
     print(f"для матрицы {a} сумма равна {s}")
 
 # ~ p4(2)
