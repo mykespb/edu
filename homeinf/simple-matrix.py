@@ -39,7 +39,18 @@ def t12(a):
 
 # ~ 2. Матрица заполнена натуральными числами до 10. Сколько каких?
 
+a = [random.randint(0, 9) for _ in range(10)]
 
+def t21(a):
+    print("source:", a)
+    r = [0 for _ in range(len(a))]
+
+    for e in a:
+        r[e] += 1
+    
+    print("result:", r)
+
+t21(a)
 
 # ~ source: [8, 7, 8, 8, 7, 4, 8, 6, 0, 4]
 # ~ result: [1, 0, 0, 0, 2, 0, 1, 2, 4, 0]
