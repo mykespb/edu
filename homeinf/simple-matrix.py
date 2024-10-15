@@ -8,6 +8,14 @@ import random
 from pprint import pp
 import copy
 
+# 0. Печать матрицы
+
+def mprint(a, width=4):
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            print(f"%{width}d" % a[i][j], end="")
+        print()
+
 # ~ 1. Перевернуть список (1-мерный). Операцией [::-1] и функцией reverse не пользоваться.
 
 a = [random.randint(-99, 99) for _ in range(10)]
@@ -62,7 +70,9 @@ a = [[random.randint(-99, 99) for j in range(10)] for i in range(10)]
 
 def trans(a):
     print("source:")
-    pp(a)
+    # ~ pp(a)
+    mprint(a)
+
     r = copy.deepcopy(a)
 
     for i in range(len(r)):
@@ -70,9 +80,10 @@ def trans(a):
             r[i][j], r[j][i] = r[j][i], r[i][j]
 
     print("result:")
-    pp(r)
+    # ~ pp(r)
+    mprint(r)
 
-# ~ trans(a)
+trans(a)
 
 # ~ source:
 # ~ [[-59, 15, -6, -16, 61, -56, 29, -26, -34, 75],
