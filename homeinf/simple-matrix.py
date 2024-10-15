@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-15 0.1
+# 2024-10-15 2024-10-15 3.1
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -114,6 +114,13 @@ def countseq(a):
         elif not e:
             inseq = False
 
-    print("result:", nseq)
+    print("result:", nseq, "sequences")
 
 countseq(a)
+
+# ~ source: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
+# ~ result: 5 sequences
+# ~ source: [0, 0, 1, 1, 1, 0, 0, 1, 0, 1]
+# ~ result: 3 sequences
+# ~ source: [0, 0, 1, 1, 0, 1, 1, 0, 0, 0]
+# ~ result: 2 sequences
