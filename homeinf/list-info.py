@@ -111,20 +111,23 @@ def tp4(size = 2):
 # 4. задача: найти сумму элементов матрицы (2-мерного списка) натуральных чисел.
 # учтите, что sum(m) не определена.
 
-def p5(size = 2):
-    a = [[random.randint(1, 9) for j in range(size)] for i in range(size)]
-    
+def p5(a):
     s = 0
     for i in range(len(a)):
         for j in range(len(a[0])):
             s += a[i][j]
+    return s
+
+def tp5(size = 2):
+    a = [[random.randint(1, 9) for j in range(size)] for i in range(size)]
     
+    s = p5(a)
+   
     print(f"для матрицы {a} сумма равна {s}")
 
-# ~ p5(2)
+# ~ tp5(2)
 
 # ~ для матрицы [[7, 9], [9, 9]] сумма равна 34
 # ~ для матрицы [[6, 1], [5, 4]] сумма равна 16
 # ~ для матрицы [[5, 1], [8, 9]] сумма равна 23
 # ~ для матрицы [[4, 8], [9, 3]] сумма равна 24
-
