@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-16 3.3
+# 2024-10-15 2024-10-16 3.4
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -27,6 +27,7 @@ a = [random.randint(-99, 99) for _ in range(10)]
 def t11(a):
     print("source:", a)
     r = []
+    
     for i in range(len(a)):
         r = [a[i]] + r
     
@@ -45,6 +46,18 @@ def t12(a):
     print("result:", r)
 
 # ~ t12(a)
+
+# 1.3
+def t13(a):
+    print("source:", a)
+    r = []
+
+    while a:
+        r.append(a.pop())
+    
+    print("result:", r)
+
+t13(a)
 
 # ~ 2. Матрица заполнена натуральными числами до 10. Сколько каких?
 # ~ Counter не использовать.
@@ -84,7 +97,7 @@ def trans(a):
     # ~ pp(r)
     mprint(r)
 
-trans(a)
+# ~ trans(a)
 
 # ~ source:
   # ~ 58  76 -92  89  53  14  15  52 -54  88
@@ -129,7 +142,7 @@ def countseq(a):
 
     print("result:", nseq, "sequences")
 
-countseq(a)
+# ~ countseq(a)
 
 # ~ source: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
 # ~ result: 5 sequences
