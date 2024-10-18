@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-16 3.5
+# 2024-10-15 2024-10-18 4.2
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -151,3 +151,37 @@ def countseq(a):
 # ~ result: 3 sequences
 # ~ source: [0, 0, 1, 1, 0, 1, 1, 0, 0, 0]
 # ~ result: 2 sequences
+
+# ~ 5. След матрицы
+
+def make2dim(rows=3, cols=3, bottom=0, top=9):
+    return [ [ random.randint(bottom, top) for c in range(cols) ] for r in range(rows) ]
+    
+def trace1(a):
+    summa = 0
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if i == j:
+                summa += a[i][j]
+    return summa
+
+def trace2(a):
+    summa = 0
+    for i in range(len(a)):
+        summa += a[i][i]
+    return summa
+
+def trace3(a):
+    return sum(a[i][i] for i in range(len(a)))
+
+def test_trace():
+    a = make2dim()
+    mprint(a)
+    print("след матрицы равен", trace1(a), trace2(a), trace3(a))
+
+test_trace()
+
+   # ~ 3   8   7
+   # ~ 0   5   0
+   # ~ 3   2   7
+# ~ след матрицы равен 15 15 15
