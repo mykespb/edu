@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-18 4.2
+# 2024-10-15 2024-10-18 4.3
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -152,6 +152,9 @@ def countseq(a):
 
 # ~ 5. След матрицы
 
+def make1dim(elems=3, bottom=0, top=9):
+    return [ random.randint(bottom, top) for c in range(elems) ] 
+    
 def make2dim(rows=3, cols=3, bottom=0, top=9):
     return [ [ random.randint(bottom, top) for c in range(cols) ] for r in range(rows) ]
     
