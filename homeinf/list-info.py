@@ -1,7 +1,7 @@
 #!usr/bin/env python
 # Mikhail Kolodin, 2024
 # list-info.py
-# 2024-10-09 2024-10-16 2.1
+# 2024-10-09 2024-10-18 3.1
 # получение информации по спискам и прочие спецштучки
 
 import random
@@ -131,3 +131,11 @@ def tp5(size = 2):
 # ~ для матрицы [[6, 1], [5, 4]] сумма равна 16
 # ~ для матрицы [[5, 1], [8, 9]] сумма равна 23
 # ~ для матрицы [[4, 8], [9, 3]] сумма равна 24
+
+# make 2-dim matrix
+
+def make(rows=3, cols=3, bottom=-99, top=99):
+    return [ [ random.randint(bottom, top) for c in range(cols) ] for r in range(rows) ]
+
+print(make())
+
