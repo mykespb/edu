@@ -85,7 +85,6 @@ a = [[random.randint(-99, 99) for j in range(10)] for i in range(10)]
 
 def trans(a):
     print("source:")
-    # ~ pp(a)
     mprint(a)
 
     r = copy.deepcopy(a)
@@ -95,7 +94,6 @@ def trans(a):
             r[i][j], r[j][i] = r[j][i], r[i][j]
 
     print("result:")
-    # ~ pp(r)
     mprint(r)
 
 # ~ trans(a)
