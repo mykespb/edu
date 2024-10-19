@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-18 4.3
+# 2024-10-15 2024-10-19 4.4
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -173,16 +173,20 @@ def trace2(a):
     return summa
 
 def trace3(a):
-    return sum(a[i][i] for i in range(len(a)))
+    return sum( [ a[i][i] for i in range(len(a)) ] )
+
+def trace4(a):
+    return sum( a[i][i] for i in range(len(a)) )
 
 def test_trace():
     a = make2dim()
     mprint(a)
-    print("след матрицы равен", trace1(a), trace2(a), trace3(a))
+    print("след матрицы равен", trace1(a), trace2(a), trace3(a), trace4(a))
 
 test_trace()
 
-   # ~ 3   8   7
-   # ~ 0   5   0
-   # ~ 3   2   7
-# ~ след матрицы равен 15 15 15
+   # ~ 7   4   1
+   # ~ 2   2   6
+   # ~ 5   8   8
+# ~ след матрицы равен 17 17 17 17
+
