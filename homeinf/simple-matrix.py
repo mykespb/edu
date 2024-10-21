@@ -246,6 +246,7 @@ def test_maxabs(times=10):
         mv = maxabs1(a)
         print(a, "=>", maxabs1(a), maxabs2(a))
 
+
 test_maxabs()
 
 # ~ [-42, 44, -52, -48, -55, 23, -43, 9, 50, -86] => -86 -86
