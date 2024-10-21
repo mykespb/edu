@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-21 2.0
+# 2024-10-15 2024-10-21 2.1
 # простые задачи по математике
 
 import random
