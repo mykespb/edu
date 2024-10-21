@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-15 1.1
+# 2024-10-15 2024-10-21 2.0
 # простые задачи по математике
 
 import random
@@ -52,4 +52,32 @@ def gcd_tests():
 # ~ GCD of 1024 and 2048 is 1024
 # ~ GCD of 6 and 4096 is 2
 
-gcd_tests()
+# ~ gcd_tests()
+
+
+# ~ 2. Сколько раз встречается в списке максимальное значение?
+# ~ (функцию max не использовать)
+
+# ~ import random
+spisok = [random.randint(1, 3) for _ in range(10)]
+
+def countmax(a):
+    
+    print("исходный список:", spisok)
+
+    maxnum = spisok[0]
+    maxtimes = 1
+
+    for e in spisok[1:]:
+        if e == maxnum:
+            maxtimes += 1
+        elif e> maxnum:
+            maxnum = e
+            maxtimes = 1
+
+    print("максимум", maxnum, "встречается", maxtimes, "раз(а)")
+
+countmax(spisok)
+# ~ исходный список: [2, 2, 2, 1, 1, 3, 2, 3, 3, 3]
+# ~ максимум 3 встречается 4 раз(а)
+
