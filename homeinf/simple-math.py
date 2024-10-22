@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-21 2.2
+# 2024-10-15 2024-10-22 3.3
 # простые задачи по математике
 
 import random
 from pprint import pp
 import copy
+import math
 
 # 0. Печать матрицы
 
@@ -20,7 +21,7 @@ def mprint(a, width=4):
 
 # ~ 1. Нахождение НОД по Евклиду
 
-def gcd(a, b):
+def gcd1(a, b):
     """find GCD of a and b"""
 
     assert type(a) == int
@@ -36,21 +37,26 @@ def gcd(a, b):
         else:
             return a
 
+def gcd2(a, b):
+    """соптимизированный вариант"""
+    while b:
+        a, b = b, a % b
+    return a
+
 def gcd_tests():
     tests = ((1, 1), (1, 2), (2, 4), (3, 9), (6, 8), (7, 13), (1024, 2048), (6, 4096))
 
     for test in tests:
         a, b = test
-        print(f"GCD of {a} and {b} is {gcd(a,b)}")
+        print(f"GCD of {a} and {b} is {gcd1(a,b)}, {gcd2(a,b)}, {math.gcd(a,b)}")
 
-# ~ GCD of 1 and 1 is 1
-# ~ GCD of 1 and 2 is 1
-# ~ GCD of 2 and 4 is 2
-# ~ GCD of 3 and 9 is 3
-# ~ GCD of 6 and 8 is 2
-# ~ GCD of 7 and 13 is 1
-# ~ GCD of 1024 and 2048 is 1024
-# ~ GCD of 6 and 4096 is 2
+gcd_tests()
 
-# ~ gcd_tests()
-
+# ~ GCD of 1 and 1 is 1, 1, 1
+# ~ GCD of 1 and 2 is 1, 1, 1
+# ~ GCD of 2 and 4 is 2, 2, 2
+# ~ GCD of 3 and 9 is 3, 3, 3
+# ~ GCD of 6 and 8 is 2, 2, 2
+# ~ GCD of 7 and 13 is 1, 1, 1
+# ~ GCD of 1024 and 2048 is 1024, 1024, 1024
+# ~ GCD of 6 and 4096 is 2, 2, 2
