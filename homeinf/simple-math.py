@@ -37,11 +37,14 @@ def gcd1(a, b):
         else:
             return a
 
+
 def gcd2(a, b):
     """соптимизированный вариант"""
+    
     while b:
         a, b = b, a % b
     return a
+
 
 def gcd_tests():
     tests = ((1, 1), (1, 2), (2, 4), (3, 9), (6, 8), (7, 13), (1024, 2048), (6, 4096))
