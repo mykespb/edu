@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-23 6.4
+# 2024-10-15 2024-10-24 6.5
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -273,18 +273,20 @@ def maxabs2(a):
     """ищем значение"""
     
     return sorted(a, key=abs, reverse=True) [0]
-    
 
-def test_maxabs(times=10):
+
+maxabs = maxabs0
+
+def test_maxabs(times=10, maxabs = maxabs2):
     """тестирование"""
 
     for time in range(1, times+1):
         a = make1dim(10, -99, 99)
         mv = maxabs1(a)
-        print(a, "=>", maxabs2(a))
+        print(a, "=>", maxabs(a))
 
 
-test_maxabs()
+test_maxabs(maxabs=maxabs0)
 
 # ~ [-82, 94, -84, -34, 52, 66, 37, -21, 94, 59] => 94
 # ~ [84, -10, -38, 63, -33, 51, 36, 94, 60, 92] => 94
