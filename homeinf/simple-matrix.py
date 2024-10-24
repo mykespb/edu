@@ -275,7 +275,8 @@ def maxabs2(a):
     return sorted(a, key=abs, reverse=True) [0]
 
 
-maxabs = maxabs0
+# ~ maxabs = maxabs0
+# ~ def test_maxabs(times=10):
 
 def test_maxabs(times=10, maxabs = maxabs2):
     """тестирование"""
