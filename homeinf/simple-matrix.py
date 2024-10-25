@@ -316,7 +316,7 @@ def ex01():
     b = sorted(a, key=int)
     print(b)
 
-# ~ ex01()
+ex01()
 
 # ~ [1, 0, '100', -3, '10500', 11]
 # ~ [-3, 0, 1, 11, '100', '10500']
@@ -333,7 +333,14 @@ def manyfunc():
     for i in 0, 30, 45, 60, 90:
         print(i, [ fun(i * pi / 180) for fun in funs] )
 
-# ~ manyfunc()
+# manyfunc()
+
+# function: ['sin', 'cos', 'tan']
+# 0 [0.0, 1.0, 0.0]
+# 30 [0.49999999999999994, 0.8660254037844387, 0.5773502691896257]
+# 45 [0.7071067811865475, 0.7071067811865476, 0.9999999999999999]
+# 60 [0.8660254037844386, 0.5000000000000001, 1.7320508075688767]
+# 90 [1.0, 6.123233995736766e-17, 1.633123935319537e+16]
 
 
 LIMIT = 1e10
@@ -347,8 +354,16 @@ def manyfuns():
         print("%20d" % i, *[ "%15.12f" % fun(i * pi / 180)
             if -LIMIT <= fun(i * pi / 180) <= LIMIT else None for fun in funs ] )
 
-# ~ manyfuns()
+# manyfuns()
 
+
+    #   function:             sin             cos             tan
+    #                0  0.000000000000  1.000000000000  0.000000000000
+    #               30  0.500000000000  0.866025403784  0.577350269190
+    #               45  0.707106781187  0.707106781187  1.000000000000
+    #               60  0.866025403784  0.500000000000  1.732050807569
+    #               90  1.000000000000  0.000000000000 None
+                  
 
 from prettytable import PrettyTable
 # ~ https://pypi.org/project/prettytable/
@@ -368,15 +383,24 @@ def manyfunx():
 
 # manyfunx()
 
+# +-----------+---------------------+-----------------------+-----------------------+
+# | function: |         sin         |          cos          |          tan          |
+# +-----------+---------------------+-----------------------+-----------------------+
+# |     0     |         0.0         |          1.0          |          0.0          |
+# |     30    | 0.49999999999999994 |   0.8660254037844387  |   0.5773502691896257  |
+# |     45    |  0.7071067811865475 |   0.7071067811865476  |   0.9999999999999999  |
+# |     60    |  0.8660254037844386 |   0.5000000000000001  |   1.7320508075688767  |
+# |     90    |         1.0         | 6.123233995736766e-17 | 1.633123935319537e+16 |
+# +-----------+---------------------+-----------------------+-----------------------+
+
+
 # ~ (3) Несколько функций разом
 # https://docs.python.org/3/library/operator.html
 
-# from operator import __add__, __sub__, __mul__, __floordiv__, __truediv__, __mod__
 from operator import add, sub, mul, floordiv, truediv, mod
 
 def arithm(times= 10):
     
-    # funs = __add__, __sub__, __mul__, __floordiv__, __truediv__, __mod__
     funs = add, sub, mul, floordiv, truediv, mod
     ra = random.randint
     
@@ -390,8 +414,19 @@ def arithm(times= 10):
                 "%10.3f" % fun(a, b), end="")
         print()
             
-arithm()   
-    
+# arithm()   
 
+
+        #  9,          2:       add :     11.000       sub :      7.000       mul :     18.000  floordiv :      4.000   truediv :      4.500       mod :      1.000
+        #  9,          7:       add :     16.000       sub :      2.000       mul :     63.000  floordiv :      1.000   truediv :      1.286       mod :      2.000
+        #  2,          7:       add :      9.000       sub :     -5.000       mul :     14.000  floordiv :      0.000   truediv :      0.286       mod :      2.000
+        #  4,          2:       add :      6.000       sub :      2.000       mul :      8.000  floordiv :      2.000   truediv :      2.000       mod :      0.000
+        #  2,          2:       add :      4.000       sub :      0.000       mul :      4.000  floordiv :      1.000   truediv :      1.000       mod :      0.000
+        # 10,          7:       add :     17.000       sub :      3.000       mul :     70.000  floordiv :      1.000   truediv :      1.429       mod :      3.000
+        #  3,         10:       add :     13.000       sub :     -7.000       mul :     30.000  floordiv :      0.000   truediv :      0.300       mod :      3.000
+        #  7,          1:       add :      8.000       sub :      6.000       mul :      7.000  floordiv :      7.000   truediv :      7.000       mod :      0.000
+        #  1,          1:       add :      2.000       sub :      0.000       mul :      1.000  floordiv :      1.000   truediv :      1.000       mod :      0.000
+        #  4,          3:       add :      7.000       sub :      1.000       mul :     12.000  floordiv :      1.000   truediv :      1.333       mod :      1.000
+         
 
 # ============================================================================
