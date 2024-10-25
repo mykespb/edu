@@ -223,12 +223,12 @@ spisok = [random.randint(1, 3) for _ in range(10)]
 
 def countmax(a):
     
-    print("исходный список:", spisok)
+    print("исходный список:", a)
 
-    maxnum = spisok[0]
+    maxnum = a[0]
     maxtimes = 1
 
-    for e in spisok[1:]:
+    for e in a[1:]:
         if e == maxnum:
             maxtimes += 1
         elif e > maxnum:
