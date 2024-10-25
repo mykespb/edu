@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-25 7.1
+# 2024-10-15 2024-10-25 7.2
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -366,8 +366,32 @@ def manyfunx():
 
     print(table)
 
-manyfunx()
+# manyfunx()
 
 # ~ (3) Несколько функций разом
+# https://docs.python.org/3/library/operator.html
+
+# from operator import __add__, __sub__, __mul__, __floordiv__, __truediv__, __mod__
+from operator import add, sub, mul, floordiv, truediv, mod
+
+def arithm(times= 10):
+    
+    # funs = __add__, __sub__, __mul__, __floordiv__, __truediv__, __mod__
+    funs = add, sub, mul, floordiv, truediv, mod
+    ra = random.randint
+    
+    for it in range(times):
+        a, b = ra(1, 10), ra(1, 10)
+        print("%10d, %10d:" % (a, b), end="")
+        for fun in funs:
+            print(
+                "%10s" % fun.__name__,
+                ":", 
+                "%10.3f" % fun(a, b), end="")
+        print()
+            
+arithm()   
+    
+
 
 # ============================================================================
