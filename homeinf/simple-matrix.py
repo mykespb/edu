@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-24 6.5
+# 2024-10-15 2024-10-25 7.1
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -323,8 +323,7 @@ def ex01():
 
 # ~ (2) Несколько функций разом
 
-pip install prettytable
-from math import sin, cos, tan
+from math import pi, sin, cos, tan
 
 def manyfunc():
 
@@ -332,8 +331,43 @@ def manyfunc():
     print("function:", [ fun.__name__ for fun in funs] )
     
     for i in 0, 30, 45, 60, 90:
-        print(i, [ fun(i) for fun in funs] )
+        print(i, [ fun(i * pi / 180) for fun in funs] )
 
-manyfunc()
+# ~ manyfunc()
+
+
+LIMIT = 1e10
+
+def manyfuns():
+
+    funs = sin, cos, tan
+    print("%15s" % "function:", *[ "%15s" % fun.__name__ for fun in funs ] )
+    
+    for i in 0, 30, 45, 60, 90:
+        print("%20d" % i, *[ "%15.12f" % fun(i * pi / 180)
+            if -LIMIT <= fun(i * pi / 180) <= LIMIT else None for fun in funs ] )
+
+# ~ manyfuns()
+
+
+from prettytable import PrettyTable
+# ~ https://pypi.org/project/prettytable/
+
+def manyfunx():
+
+    table = PrettyTable()
+
+    funs = sin, cos, tan
+    
+    table.field_names = ["function:"] + [ fun.__name__ for fun in funs]
+    
+    for i in 0, 30, 45, 60, 90:
+        table.add_row([i, *(fun(i * pi / 180) for fun in funs ) ] )
+
+    print(table)
+
+manyfunx()
+
+# ~ (3) Несколько функций разом
 
 # ============================================================================
