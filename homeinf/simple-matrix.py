@@ -237,7 +237,7 @@ def countmax(a):
 
     print("максимум равен", maxnum, "и встречается", maxtimes, "раз(а)")
 
-countmax(spisok)
+# ~ countmax(spisok)
 # ~ исходный список: [1, 3, 2, 2, 2, 2, 2, 3, 1, 2]
 # ~ максимум равен 3 и встречается 2 раз(а)
 
@@ -320,5 +320,20 @@ def ex01():
 
 # ~ [1, 0, '100', -3, '10500', 11]
 # ~ [-3, 0, 1, 11, '100', '10500']
+
+# ~ (2) Несколько функций разом
+
+pip install prettytable
+from math import sin, cos, tan
+
+def manyfunc():
+
+    funs = sin, cos, tan
+    print("function:", [ fun.__name__ for fun in funs] )
+    
+    for i in 0, 30, 45, 60, 90:
+        print(i, [ fun(i) for fun in funs] )
+
+manyfunc()
 
 # ============================================================================
