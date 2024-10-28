@@ -16,9 +16,18 @@ def test():
         nums = [int(x) for x in nums]
         # ~ nums = list(map(int, nums))
 
-        if not nums or nums[0] == 0: break
+        if not nums or 0 in nums: break
         
-        print("числа:", nums, ", их сумма равна", sum(nums))
+        maxprod = maxi = maxj = 0
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if i == j: continue
+                if (prod := nums[i] * nums[j]) > maxprod:
+                    maxprod, maxi, maxj = prod, i, j
+
+        print("числа:", nums,
+            ", наибольшее произведение равно", maxprod,
+            "для пары", nums[maxi], nums[maxj])
 
     print("Конец работы.")
 
