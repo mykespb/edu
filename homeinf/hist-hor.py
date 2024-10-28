@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-05-14 2022-05-14 1.0
+# myke 2022-05-14 2024-10-28 2.0
 # hist-hor.py
 
 # ~ Есть набор данных.
@@ -24,17 +24,7 @@ def gen_data():
     return [randint(0, 100) for _ in range(SIZE)]
 
 
-def work(times = 1):
-    """организация вычислений
-    """
-
-    for atime in range(times):
-        print("=" * 50, "\n", " набор номер          ", atime+1, "\n", "=" * 50, "\n")
-        data = gen_data()
-        process(data)
-
-
-def process(data):
+def process1(data):
     """обработка данных
     """
 
@@ -44,7 +34,30 @@ def process(data):
     print()
     
 
-work()
+def process2(data):
+    """обработка данных, нормированно до SIZE = 50 позиций
+    """
+
+    WIDTH = 50
+    mv  = max(data)
+
+    for elem in data:
+        print(f"{elem:2}", ":", (elem * WIDTH // mv) * "X")
+
+    print()
+    
+
+def work(times = 1, process = process1):
+    """организация вычислений
+    """
+
+    for atime in range(times):
+        print("=" * 50, "\n", " набор номер          ", atime+1, "\n", "=" * 50, "\n")
+        data = gen_data()
+        process(data)
+
+
+work(times = 5, process = process2)
 
 
 # ~ пример работы
@@ -73,4 +86,29 @@ work()
  # ~ 5 : XXXXX
 # ~ 29 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 # ~ 74 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# ~ ================================================== 
+  # ~ набор номер           1 
+ # ~ ================================================== 
+
+ # ~ 9 : XXXX
+# ~ 94 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 36 : XXXXXXXXXXXXXXXXXXX
+# ~ 14 : XXXXXXX
+# ~ 78 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 90 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 88 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 81 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 44 : XXXXXXXXXXXXXXXXXXXXXXX
+# ~ 46 : XXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 19 : XXXXXXXXXX
+# ~ 10 : XXXXX
+# ~ 87 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 67 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 17 : XXXXXXXXX
+# ~ 91 : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# ~ 23 : XXXXXXXXXXXX
+# ~ 45 : XXXXXXXXXXXXXXXXXXXXXXX
+# ~ 29 : XXXXXXXXXXXXXXX
+ # ~ 5 : XX
 
