@@ -10,10 +10,6 @@
 # ~ год его смерти,
 # ~ ФИО человека;
 # ~ всё это - через пробелы.
-# ~ Распечатать список вида
-# ~ возраст - человек,
-# ~ причём возраст - это продолжительность жизни,
-# ~ и упорядочить строки надо по возрастанию возраста.
 # ~ Найти год(ы), в котором жили макс. число упомянутых людей, и кто именно тогда жил.
 
 homoj = """
@@ -60,22 +56,20 @@ for homo in homoj.strip().split("\n"):
     pipl.append((int(born), int(died), name))
 
 pipl.sort()
-
 pp(pipl)
 
 ymin, ymax = pipl[0][0], pipl[-1][1]
 
 yd = [ [ y, 
-    ( rec := [ p for p in pipl
-        if p[0] <= y <= p[1]
-    ] ),
-    len(rec) ]
+        ( rec := [ p for p in pipl
+            if p[0] <= y <= p[1]
+        ] ),
+        len(rec) ]
     for y in range(ymin, ymax+1) ] 
 
-yd.sort(key=lambda x: x[2])
+yd.sort(key = lambda x: x[2])
 
-yd_max = yd[-1][2]
-print("макс. число живших одновременно:", yd_max)
+print("макс. число живших одновременно:", (yd_max := yd[-1][2]))
 
 yd_best = filter(lambda x: x[2] == yd_max, yd)
 pp(list(yd_best))
