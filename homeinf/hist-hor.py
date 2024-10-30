@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-05-14 2024-10-28 2.1
+# myke 2022-05-14 2024-10-30 2.2
 # hist-hor.py
 
 # ~ Есть набор данных.
@@ -29,7 +29,7 @@ def process1(data):
     """
 
     for elem in data:
-        print(f"{elem:2}", ":", elem*"X")
+        print(f"{elem:2}", ":", elem * "X")
 
     print()
     
