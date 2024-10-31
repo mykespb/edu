@@ -8,10 +8,16 @@
 
 from random import randint
 
+def make_date():
+    ...
+
 def check_date(d):
     ...
 
 def test_check_date(times=10):
+    ...
+
+def make_ipv4():
     ...
 
 def check_ipv4(ip):
@@ -19,3 +25,4 @@ def check_ipv4(ip):
 
 def test_check_ipv4(times=10):
     ...
+
