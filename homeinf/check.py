@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2024-10-31 2024-10-31 1.0
+# myke 2024-10-31 2024-10-31 1.1
 # check.py
 
 # ~ проверка допустимости различных данных.
@@ -22,11 +22,15 @@ import re
 def make_date():
     ...
 
+
 def check_date(d):
     ...
 
+
 def test_check_date(times=10):
     ...
+
+# ~ test_check_date()
 
 # -----------------------------------------
 
@@ -36,6 +40,7 @@ def make_ipv4():
     sig = rc("................,:+")
 
     return f"{i1}{sig}{i2}{sig}{i3}{sig}{i4}"
+
 
 def check_ipv4(ip):
 
@@ -49,6 +54,7 @@ def check_ipv4(ip):
         0 <= i2 <= 255 and
         0 <= i3 <= 255 and
         0 <= i4 <= 255)
+
 
 def test_check_ipv4(times=10):
 
@@ -76,10 +82,14 @@ test_check_ipv4()
 def make_integer():
     ...
 
+
 def check_integer(inum):
     ...
 
+
 def test_check_integer(times=10):
     ...
+
+test_check_integer()
 
 # -----------------------------------------

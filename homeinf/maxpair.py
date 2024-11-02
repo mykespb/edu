@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-05-03 2024-10-28 1.1
+# 2022-05-03 2024-10-31 1.2
 # maxpair.py
 
 # ~ пользователь вводит строку натуральных чисел.
@@ -10,7 +10,6 @@
 
 def test():
     while (s := input("Введите строку натуральных чисел через пробелы или 0 для окончания: ")):
-        if not s: break
 
         nums = s.strip().split()
         nums = [int(x) for x in nums]

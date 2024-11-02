@@ -39,7 +39,6 @@ Python 1991 Гвидо ван Россум
 
 langl = []
 for l in langs.strip().split("\n"):
-    if not l: continue
     ls = l.split(maxsplit=2)
     langl.append((ls[1], ls[0]))
 langl.sort()
