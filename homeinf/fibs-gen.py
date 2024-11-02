@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2021
-# 2024-11-02 2024-11-02 1.0
+# 2024-11-02 2024-11-02 2.1
 # fibs-gen.py
 # ~ числа Фибоначчи, генераторы
 
@@ -35,20 +35,49 @@ def fib(n=10):
 # ~ реализация на генераторах
 # ~ -----------------------------------
 
-def fingen(n=10):
+def fibgen(n=10):
     """выдаём n чисел"""
 
-    f1, f2 = 0, 1
+    yield 1
+    yield 1
+
+    f1, f2 = 1, 1
     
-    for i in range(n):
+    for i in range(n-2):
         f1, f2 = f2, f1 + f2
         yield f2
 
 
-def fingen_test(n):
-    for i in fingen(n):
+def fibgen_test(n):
+    for i in fibgen(n):
         print(i, end=", ")
     print()
 
-fingen_test(5)
+fibgen_test(15)
 
+# ~ -----------------------------------
+# ~ реализация на генераторах - трибоначи
+# ~ -----------------------------------
+
+def tribgen(n=10):
+    """выдаём n чисел"""
+
+    yield 1
+    yield 1
+    yield 1
+
+    t1, t2, t3 = 1, 1, 1
+    
+    for i in range(n-3):
+        t1, t2, t3 = t2, t3, t1 + t2 +t3
+        yield t3
+
+
+def tribgen_test(n=10):
+    for i in tribgen(n):
+        print(i, end=", ")
+    print()
+
+tribgen_test(15)
+
+# ----------------------------------
