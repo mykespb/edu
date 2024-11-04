@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-05-03 2024-10-31 1.2
+# 2022-05-03 2024-11-04 1.3
 # maxpair.py
 
 # ~ пользователь вводит строку натуральных чисел.
@@ -13,7 +13,6 @@ def test():
 
         nums = s.strip().split()
         nums = [int(x) for x in nums]
-        # ~ nums = list(map(int, nums))
 
         if not nums or 0 in nums: break
         
