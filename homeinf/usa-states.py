@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2024-11-06 2024-11-06 1.1
+# 2024-11-06 2024-11-06 1.2
 # usa-states.py
 
 # ~ Даны данные о штатах США.
@@ -29,8 +29,8 @@ def capitals():
     
     states = read_states()
 
-    for num, state in enumerate(states):
-        print(f"{num+1}. штат: {state[0]}, столица: {state[1]}, крупнейший город: {state[2]}")
+    for num, state in enumerate(states, 1):
+        print(f"{num}. штат: {state[0]}, столица: {state[1]}, крупнейший город: {state[2]}")
 
 
 capitals()
