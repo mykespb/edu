@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail Kolodin, 2024
 # simple-matrix.py
-# 2024-10-15 2024-10-29 8.0
+# 2024-10-15 2024-11-08 8.1
 # простые задачи по работе со списками и матрицами
 
 import random
@@ -371,18 +371,18 @@ def manyfuns():
 # ~ from prettytable import PrettyTable
 # ~ https://pypi.org/project/prettytable/
 
-def manyfunx():
+# def manyfunx():
 
-    table = PrettyTable()
+#     table = PrettyTable()
 
-    funs = sin, cos, tan
+#     funs = sin, cos, tan
     
-    table.field_names = ["function:"] + [ fun.__name__ for fun in funs]
+#     table.field_names = ["function:"] + [ fun.__name__ for fun in funs]
     
-    for i in 0, 30, 45, 60, 90:
-        table.add_row([i, *(fun(i * pi / 180) for fun in funs ) ] )
+#     for i in 0, 30, 45, 60, 90:
+#         table.add_row([i, *(fun(i * pi / 180) for fun in funs ) ] )
 
-    print(table)
+#     print(table)
 
 # manyfunx()
 
@@ -441,8 +441,8 @@ def arithm(times= 10):
 # ~ Подчситать количество квадратов 2х2,
 # ~ в которых есть одновременно все эти 4 числа.
 
-size = 4
-cho = 1, 2, 4, 8
+size  = 4
+cho   = 1, 2, 4, 8
 summa = sum(cho)
 
 mat = [[ random.choice(cho) for j in range(size)] for i in range(size)]
