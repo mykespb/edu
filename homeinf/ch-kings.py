@@ -47,7 +47,7 @@ def check1():
 def check2(pos):
     """ проверить, допустима ли расстановка """
 
-    for i in  range(16):
+    for i in range(16):
         for j in range(16):
             if i == j:
                 continue
