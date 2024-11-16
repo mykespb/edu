@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-11-15 2024-11-5 1.1
+# 2024-11-15 2024-11-16 1.2
 # crossword1.py
 
 # Даны 2 слова. Построить кроссворд из этих 2 слов,
 # т.е. вписать их в пересечённом виде на 2-мерной таблице.
+# Буквы перевести в верхний регистр, так виднее.
 
 vocab = 'alfa bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar ' \
     'papa quebec romeo sierra tango uniform victor whiskey xray yankee zulu'
@@ -50,7 +51,7 @@ def draw(w1, w2, p1, p2):
 def main():
     """диспетчер"""
     
-    words = vocab.split()
+    words = vocab.upper().split()
     w1, w2 = choice(words), choice(words)
     res, p1, p2 = isect(w1, w2)
     
@@ -64,18 +65,23 @@ def main():
 main()
 
 
-# s    
-# india
-# e    
-# r    
-# r    
-# a  
+# for w1='VICTOR' and w2='PAPA' result is: no intersection
 
-#    v   
-# juliett
-#    c   
-#    t   
-#    o   
-#    r  
-   
-# for w1='lima' and w2='echo' result is: no intersection
+# for w1='YANKEE' and w2='NOVEMBER' result is: p1=2 and p2=0 => 'N'
+
+# YANKEE
+#   O   
+#   V   
+#   E   
+#   M   
+#   B   
+#   E   
+#   R   
+
+#    F 
+#    O 
+#    X 
+# DELTA
+#    R 
+#    O 
+#    T 
