@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # генератор uuid'ов (uuid4) in hex form
 # Mikhail (myke) Kolodin, 2020

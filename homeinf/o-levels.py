@@ -1,4 +1,4 @@
-#!/python3.10
+#!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2021
 # 2021-11-19 2021-11-22 1.1

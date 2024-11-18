@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+#!/usr/bin/env python
 
 # ~ Домашнее задание - История
 # ~ Дан текст (строка text).

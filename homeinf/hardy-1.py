@@ -1,4 +1,6 @@
-# hardy.py (C) M.Kolodin 2022
+#!/usr/bin/env python
+# 
+# # hardy.py (C) M.Kolodin 2022
 # 2022-06-10 2022-06-10 3.6
 # find 2 pairs for 1729
 

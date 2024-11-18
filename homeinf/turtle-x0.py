@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# 
+
 from turtle import *
 bgcolor("black")
 pensize(2)

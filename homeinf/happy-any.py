@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 # (C) Mikhail Kolodin, 2021
 # 2021-05-25 2021-12-16 1.4
