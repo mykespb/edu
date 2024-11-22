@@ -22,7 +22,7 @@ def read_states():
                 caps.append((info[1], info[-2], info[-1]))
 
     return caps
-        
+
 
 def capitals():
     """select and print needed states"""
