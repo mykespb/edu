@@ -60,7 +60,7 @@ data = """№	Штат	Официальное название	Почтовый 
 50	Юта	State of Utah	UT	4 января 1896	3 271 616	219 887	36 377	Солт-Лейк-Сити	Солт-Лейк-Сити"""
 
 def read_states():
-    """read data from tab file"""
+    """read data from tabbed multistring"""
 
     caps = []
 
