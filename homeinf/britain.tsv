@@ -1,0 +1,12 @@
+name	code	offician	territory	population	capital	languages	world	currency	EU	Shengen	Commonwealth	NATO	power	driveson	wiki
+England	england	England	132932	57106398	London	English	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/England 
+Wales	wales	Wales	21218	3131640	Cardiff	English, Welsh	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/Wales
+Scotland	scotland	Scotland	80231	5439842	Edinburgh	English, Scots, Scortish Gaelic, British Sign	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/Scotland
+Nothern Ireland	n_ireland	Nothern Ireland	14330	1910543	Belfast	English, Irish	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/Northern_Ireland
+Isle of Man	ioman	Isle of Man	574	84069	Douglas	English, Manx	Europe	GBP, Manx pound	no	no	no	no	monarchy	left	https://en.wikipedia.org/wiki/Isle_of_Man
+Jersey	bei_jersey	Bailiwick of Jersey	119,6	103267	St.Helier	English, French, Jerriais	Europe	GBP, Jersey pound	no	no	no	no	monarchy	left	https://en.wikipedia.org/wiki/Jersey
+Guernsey	bei_guernsey	Bailiwick of Guernsey	78	67334	St.Peter Port	English, French, Sercquiais, Auregnais	Europe	GBP, Guernsey pound	no	no	no	no	monarchy	left	https://en.wikipedia.org/wiki/Bailiwick_of_Guernsey
+Ireland	rep_ireland	Ireland	244376	68265209	Dublin	English, Irish	Europe	EUR	yes	yes	yes	yes	republic	left	https://en.wikipedia.org/wiki/Ireland
+Great Britain	britain	Great Britain	209331	65685738	London	English	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/Great_Britain
+United Kingdom	uk	United Kingdom of Great Britain and Northern Ireland	244376	68265209	London	English, Scots, Ulster, Scots, Welsh, Cornish, Scottish, Gaelic, Irish, British Sign Language	Europe	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/United_Kingdom
+Overseas	overseas	British Overseas Territories	1727415	272256	London	English	World	GBP	no	no	no	yes	monarchy	left	https://en.wikipedia.org/wiki/British_Overseas_Territories
