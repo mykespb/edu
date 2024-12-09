@@ -44,9 +44,37 @@ fun(1, 22, 300, 400, 500, name='Sherlock', surname='Holmes')
 # ~ fun, функция с разными параметрами
 # ~ p1=1, p2=22, arg=(300, 400, 500), kvarg={'name': 'Sherlock', 'surname': 'Holmes'},
 
-fun(1, name='Sherlock', surname='Holmes', 22, 300, 400, 500)
+# ~ fun(1, name='Sherlock', surname='Holmes', 22, 300, 400, 500)
 # ~ File "/home/myke/pro/edu/homeinf/params.py", line 46
 # ~ fun(1, name='Sherlock', surname='Holmes', 22, 300, 400, 500)
 # ~ SyntaxError: positional argument follows keyword argument
 
 # Часть 2. Выход TBD
+
+def out0():
+    return
+
+# ~ out0()=None
+
+def out1():
+    return 1
+
+# ~ out1()=1
+
+def out2():
+    return [1, 2, 3]
+
+# ~ out2()=[1, 2, 3]
+    
+def out3():
+    return [1, 2, 3, 'hello', 'mister']
+
+# ~ out3()=[1, 2, 3, 'hello', 'mister']
+
+# что на выходе?
+
+print(f"{out0()=}")
+print(f"{out1()=}")
+print(f"{out2()=}")
+print(f"{out3()=}")
+# ~ print(f"{out4()=}")
