@@ -48,3 +48,5 @@ fun(1, name='Sherlock', surname='Holmes', 22, 300, 400, 500)
 # ~ File "/home/myke/pro/edu/homeinf/params.py", line 46
 # ~ fun(1, name='Sherlock', surname='Holmes', 22, 300, 400, 500)
 # ~ SyntaxError: positional argument follows keyword argument
+
+# Часть 2. Выход TBD
