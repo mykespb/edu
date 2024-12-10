@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-10 2024-12-10 1.1
+# 2024-12-10 2024-12-10 1.2
 # best-pupil.py
 # дан текстовый классный журнал.
 # определить лучшего ученика (или дать список по этому критерию),
@@ -33,7 +33,10 @@ def prepare_data():
         name, *marks = person.split()
         # print(name, marks)
         marks = map(int, marks)
-        line = {'name': name, 'marks': (lst := list(map(int, marks))), 'len': len(lst), 'avg': avg(lst)}
+        line = {'name': name, 
+            'marks': (lst := list(map(int, marks))), 
+            'len': len(lst), 
+            'avg': avg(lst)}
         # print(name, lst, line)
         out.append(line)
     
@@ -45,15 +48,19 @@ def main():
     
     best = prepare_data()
     
-    best.sort(reverse=True, key= lambda x: (x['avg'], x['len'], x['marks'][::-1]))
+    best.sort(reverse=True, 
+        key= lambda x: 
+            (x['avg'], 
+            x['len'], 
+            x['marks'][::-1]))
     
-    print(*best, sep='\n')
+    print( *(enumerate(best, 1)), sep='\n')
     
     
 main()
 
-# {'name': 'Машенька', 'marks': [4, 5, 5, 5, 4, 3, 5, 5, 4, 5, 5], 'len': 11, 'avg': 4.545454545454546}
-# {'name': 'Сыч', 'marks': [4, 5, 4, 5], 'len': 4, 'avg': 4.5}
-# {'name': 'Прохор', 'marks': [5, 4, 5, 4], 'len': 4, 'avg': 4.5}
-# {'name': 'Васёк', 'marks': [5, 4], 'len': 2, 'avg': 4.5}
-# {'name': 'Петруха', 'marks': [3, 3, 5], 'len': 3, 'avg': 3.6666666666666665}
+# (1, {'name': 'Машенька', 'marks': [4, 5, 5, 5, 4, 3, 5, 5, 4, 5, 5], 'len': 11, 'avg': 4.545454545454546})
+# (2, {'name': 'Сыч', 'marks': [4, 5, 4, 5], 'len': 4, 'avg': 4.5})
+# (3, {'name': 'Прохор', 'marks': [5, 4, 5, 4], 'len': 4, 'avg': 4.5})
+# (4, {'name': 'Васёк', 'marks': [5, 4], 'len': 2, 'avg': 4.5})
+# (5, {'name': 'Петруха', 'marks': [3, 3, 5], 'len': 3, 'avg': 3.6666666666666665})
