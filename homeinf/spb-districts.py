@@ -114,7 +114,7 @@ def advice(request):
 
     global data, titles, quests
     
-    print(f"{request=}")
+    # print(f"{request=}")
     
     marks = [ 
             [ sum ( [ request[qnum] * data[prov][qnum+3]   for qnum in range(len(quests)) ] ),

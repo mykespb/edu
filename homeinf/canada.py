@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-10 2024-12-14 1.1
+# 2024-12-10 2024-12-14 1.2
 # canada.py
 # многокритериальные оценки для Канады -- выбор оптимального места для проживания
 
@@ -109,7 +109,7 @@ def advice(request):
 
     global data, titles, quests
     
-    print(f"{request=}")
+    # print(f"{request=}")
     
     marks = [ 
             [ sum ( [ request[qnum] * data[prov][qnum+3]   for qnum in range(len(quests)) ] ),
