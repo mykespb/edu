@@ -92,7 +92,7 @@ def ask_user():
             resp = int(resp)
             if 0 < resp <= 9:
                 result.append(resp)
-                print(f"{resp=}")
+                # print(f"{resp=}")
             else:
                 return False
         else:
