@@ -1,17 +1,15 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-14 2024-12-14 1.0
+# 2024-12-14 2024-12-14 1.1
 # knight-order.py
 # На шахматной доске стоит конь (по умолчанию - на А1 = [0, 0]). Это позиция 0.
 # Отметить числами клетки доски в соответствии с тем, на каком минимальном ходу конь может оказаться на соотв. клетке.
 
-# from pprint import pp
-
 SIZE = 8
 
 
-def pp(width=3):
+def pp():
     """печать доски"""
     
     for i in range(SIZE):
@@ -61,7 +59,6 @@ def main():
     global board, marked, move
     
     board = [ [ -1  for i in range(SIZE)] for j in range(SIZE)]
-    # pp(board)
     
     board[0][0] = 0
     marked = 1
@@ -69,7 +66,7 @@ def main():
 
     markall()
     
-    pp(board)
+    pp()
     
     
 main()
