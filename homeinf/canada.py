@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-10 2024-12-14 1.0
+# 2024-12-10 2024-12-14 1.1
 # canada.py
 # многокритериальные оценки для Канады -- выбор оптимального места для проживания
 
@@ -41,7 +41,7 @@ def prepare_data():
     # обработка исходных численных данных
     
     titles = srcdata.strip().split("\n", 1)[0].split("\t")
-    print(titles)
+    # print(titles)
     
     data = []
     
@@ -56,11 +56,11 @@ def prepare_data():
         for pnum in range(6, len(points)):
             points[pnum] = int(points[pnum])
     
-        print(elem)
+        # print(elem)
         
         data.append(points)
     
-    pp(data)
+    # pp(data)
     
     # обработка вопросов 
     
