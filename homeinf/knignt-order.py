@@ -16,7 +16,6 @@ def pp():
         print()
         for j in range(SIZE):
             print(f"{board[i][j]:3d}", end="")
-        
     print()
     
 
@@ -58,7 +57,7 @@ def main():
     
     global board, marked, move
     
-    board = [ [ -1  for i in range(SIZE)] for j in range(SIZE)]
+    board = [ [ EMPTY  for i in range(SIZE)] for j in range(SIZE)]
     
     board[0][0] = 0
     marked = 1
