@@ -3,9 +3,8 @@ edu
 
 Educational software by myke.
 
-2021-10-05 upgraded to python 3.10, OK
+This directory contains programs for problems been solved in the course of informatics with Python.
 
-2024 - using python 3.13, OK
+Some programs are left intensionally incorrect, as tasks for students.
 
-2021-10-14 chemsch - школьная химия, в процессе
-
+Since 2024 - using python 3.13, OK
