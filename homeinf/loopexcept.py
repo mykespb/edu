@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-04-27 2022-04-27 1.1
+# myke 2022-04-27 2024-12-18 1.2
 # loopexcept.py
 
 # ~ демонстрация выхода из вложенных циклов через исключения
@@ -23,7 +23,7 @@ def testexgood():
 # ~ testexgood()
 
 def testexbad():
-    """проверим исключения в циклах"""
+    """проверим выход из цикла"""
 
     print("begin test")
     for i in range(1, 10):
