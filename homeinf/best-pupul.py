@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-10 2024-12-10 1.2
+# 2024-12-10 2024-12-24 1.3
 # best-pupil.py
 # дан текстовый классный журнал.
 # определить лучшего ученика (или дать список по этому критерию),
@@ -31,13 +31,11 @@ def prepare_data():
     
     for person in data.strip().split("\n"):
         name, *marks = person.split()
-        # print(name, marks)
         marks = map(int, marks)
         line = {'name': name, 
-            'marks': (lst := list(map(int, marks))), 
+            'marks': (lst := list(marks)), 
             'len': len(lst), 
             'avg': avg(lst)}
-        # print(name, lst, line)
         out.append(line)
     
     return out
