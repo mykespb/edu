@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-10 2024-12-24 1.3
+# 2024-12-10 2024-12-24 1.5
 # best-pupil.py
 # дан текстовый классный журнал.
 # определить лучшего ученика (или дать список по этому критерию),
 # если а) сначала считаем средний балл (выше => лучше),
 # б) для равных баллов считаем, у кого больше оценок (больше активность => лучше),
 # в) для равных - у кого последние оценки выше,
-# г) остальное - случайно.
+# г) для равных - по алфавиту,
+# д) остальное - случайно.
+# можно просто показать отсортированный список (любого формата).
 
 data = """
 Прохор 5 4 5 4
@@ -31,30 +33,32 @@ def prepare_data():
     
     for person in data.strip().split("\n"):
         name, *marks = person.split()
-        marks = map(int, marks)
+        marks = list(map(int, marks))
         line = {'name': name, 
-            'marks': (lst := list(marks)), 
-            'len': len(lst), 
-            'avg': avg(lst)}
+            'marks': marks, 
+            'len': len(marks), 
+            'avg': avg(marks)}
         out.append(line)
     
     return out
-   
-    
+
+
 def main():
     """основное вычисление"""
     
     best = prepare_data()
     
-    best.sort(reverse=True, 
-        key= lambda x: 
+    best.sort(reverse = True, 
+        key = lambda x: 
             (x['avg'], 
             x['len'], 
-            x['marks'][::-1]))
+            x['marks'][::-1],
+            x['name']
+            ))
     
     print( *(enumerate(best, 1)), sep='\n')
-    
-    
+
+
 main()
 
 # (1, {'name': 'Машенька', 'marks': [4, 5, 5, 5, 4, 3, 5, 5, 4, 5, 5], 'len': 11, 'avg': 4.545454545454546})
