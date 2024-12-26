@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-26 2024-12-26 2.2
+# 2024-12-26 2024-12-26 2.3
 # best-flat-ext.py
 
 # ~ а. создаётся случайный список квартир
@@ -32,7 +32,7 @@ def generate(limit : int = 100) -> list:
     общим число до limit
     """
 
-    assert 1 <= limit <= 1_000_000
+    assert 1 <= limit <= 1_000_000, "Number of flats should be between 1 and 1_000_000."
     
     table = []
 
@@ -78,7 +78,7 @@ def main() -> None:
     """
 
     flats = generate()
-    # ~ flats = generate(1)
+    # ~ flats = generate(-1)
     # ~ flats = generate(1_000)
     # ~ flats = generate(1_000_000)
     # ~ pp(flats)
