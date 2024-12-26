@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-26 2024-12-26 2.0
+# 2024-12-26 2024-12-26 2.2
 # best-flat-ext.py
 
 # ~ а. создаётся случайный список квартир
+# ~ после этого, только среди продающихся
 # ~ б. надо найти самую случайную :)
 # ~ в. надо найти самую дешевую
 # ~ г. самую большу по площади
@@ -22,6 +23,9 @@ SIZE_TO   = 250
 PRICE_FROM = 1_000
 PRICE_TO   = 30_000
 
+# вероятность того, что квартира продаётся
+SELL_PROB = 75
+
 
 def generate(limit : int = 100) -> list:
     """создать набор квартир,
@@ -37,7 +41,7 @@ def generate(limit : int = 100) -> list:
             number = i,
             size   = randint(SIZE_FROM, SIZE_TO),
             price  = randint(PRICE_FROM, PRICE_TO),
-            listed = randint(0, 100) < 75,
+            listed = randint(0, 100) <= SELL_PROB,
             ))
 
     return table
@@ -45,7 +49,16 @@ def generate(limit : int = 100) -> list:
 
 def find_best(table : list, reason : str) -> list:
     """найти лучшую квартиру по некоторому критерию
+    ("random", "size", "price", "optimal")
     """
+
+    sell = list(filter(lambda x: x['listed'], table))
+    
+    if not sell:
+        return {'error': 'no flats being sold'}
+
+    if len(sell) == 1:
+        return sell[0]
 
     methods = {
         "random":  lambda x: randint(0, 1000),
@@ -54,7 +67,8 @@ def find_best(table : list, reason : str) -> list:
         "optimal": lambda x: x['size'] / x['price'],
         }
 
-    return sorted( filter(lambda x: x['listed'], table),
+    return sorted(
+        sell,
         key = methods[reason],
         reverse = True) [0]
 
@@ -64,6 +78,7 @@ def main() -> None:
     """
 
     flats = generate()
+    # ~ flats = generate(1)
     # ~ flats = generate(1_000)
     # ~ flats = generate(1_000_000)
     # ~ pp(flats)
@@ -75,3 +90,14 @@ def main() -> None:
 
 
 main()
+
+
+# ~ best random flat:  {'number': 99, 'size': 123, 'price': 9956, 'listed': True}
+# ~ best sized flat:   {'number': 14, 'size': 250, 'price': 26331, 'listed': True}
+# ~ best priced flat:  {'number': 7, 'size': 129, 'price': 1804, 'listed': True}
+# ~ best optimal flat: {'number': 93, 'size': 206, 'price': 2789, 'listed': True}
+
+# ~ best random flat:  {'error': 'no flats being sold'}
+# ~ best sized flat:   {'error': 'no flats being sold'}
+# ~ best priced flat:  {'error': 'no flats being sold'}
+# ~ best optimal flat: {'error': 'no flats being sold'}
