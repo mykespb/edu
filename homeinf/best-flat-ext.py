@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-26 2024-12-26 1.0
-# best-flat.py
+# 2024-12-26 2024-12-26 2.0
+# best-flat-ext.py
 
 # ~ а. создаётся случайный список квартир
 # ~ б. надо найти самую случайную :)
@@ -36,7 +36,8 @@ def generate(limit : int = 100) -> list:
         table.append( dict(
             number = i,
             size   = randint(SIZE_FROM, SIZE_TO),
-            price  = randint(PRICE_FROM, PRICE_TO)
+            price  = randint(PRICE_FROM, PRICE_TO),
+            listed = randint(0, 100) < 75,
             ))
 
     return table
@@ -53,7 +54,9 @@ def find_best(table : list, reason : str) -> list:
         "optimal": lambda x: x['size'] / x['price'],
         }
 
-    return sorted(table, key = methods[reason], reverse = True) [0]
+    return sorted( filter(lambda x: x['listed'], table),
+        key = methods[reason],
+        reverse = True) [0]
 
 
 def main() -> None:
