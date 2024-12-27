@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-27 2024-12-27 1.1
+# 2024-12-27 2024-12-27 1.2
 # ryg-colors.py
 
 # ~ Дан текст на русском языке
@@ -35,7 +35,7 @@ def gentext(size : int = 100) -> str:
 
     text = ""
 
-    words = source.strip().split()
+    words = source.strip().lower().split()
 
     for _ in range(size):
         text += choice(words) + " "
