@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-27 2024-12-27 1.0
+# 2024-12-27 2024-12-27 1.1
 # rig-colors.py
 
 # ~ Дан текст на русском языке
@@ -11,6 +11,11 @@
 # ~ возможно, в разных падежах, числах, родах.
 # ~ Определить, есть ли в тексте идущие подряд цвета
 # ~ "красный", "жёлтый", "зелёный".
+# ~ Версия с отладочной печатью.
+
+# ~ Отладочная версия?
+# ~ DEBUG = True
+DEBUG = False
 
 from random import choice
 
@@ -35,7 +40,7 @@ def gentext(size : int = 100) -> str:
     for _ in range(size):
         text += choice(words) + " "
 
-    print("текст:", text)
+    if DEBUG: print("текст:", text)
 
     return text    
 
@@ -53,7 +58,7 @@ def process(text: str) -> bool:
         elif word.startswith("зелён"):
             proc += "G"
 
-    print("вхождения:", proc)
+    if DEBUG: print("вхождения:", proc)
 
     return "RYG" in proc
 
