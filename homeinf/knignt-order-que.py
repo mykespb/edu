@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-27 2024-12-27 2.2
+# 2024-12-27 2024-12-27 2.3
 # knight-order-que.py
 # На шахматной доске стоит конь (по умолчанию - на А1 = [0, 0]). Это позиция 0.
 # Отметить числами клетки доски в соответствии с тем, на каком минимальном ходу конь может оказаться на соотв. клетке.
 # Решить рекурсивно вширь, т.е. с очередью.
 
-SIZE  = 10
+SIZE  = 8
 EMPTY = -1
 
 
@@ -58,7 +58,7 @@ def main():
 
     print(f"\n{SIZE=}")
     
-    board = [ [ EMPTY  for i in range(SIZE)] for j in range(SIZE) ]
+    board = [ [ EMPTY  for i in range(SIZE) ] for j in range(SIZE) ]
     
     queue = []
 
