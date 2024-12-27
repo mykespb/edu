@@ -61,7 +61,7 @@ def process(text: str) -> bool:
 def main() -> None:
     """запуск"""
 
-    print( "цвета по порядку:", "есть" if process(gentext()) else "нет" )
+    print( "цвета по порядку:", "да" if process(gentext()) else "нет" )
 
 
 main()
