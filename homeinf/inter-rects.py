@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-28 2024-12-28 0.1
+# 2024-12-28 2024-12-28 OK 1.0 
 # inter-rects.py
 
 # ~ На бесконечной плоскости размещены квадраты с указанной длиной стороны,
@@ -11,20 +11,32 @@
 # ~ Определить, какие квадраты пересекаются (вывести их координаты).
 
 from random import randint
+from pprint import pprint
 
-SIZE = 10    # размер квадратов
+# ~ DEBUG = True
+DEBUG = False
+
+SCOPE = 20   # на каком расстоянии по х, у от начала координат находятся квадраты
 
 
-def make(, number=20):
+def make(size, number):
     """разместить квадраты на плоскости"""
 
-    global plane    # плоскость
+    global plane, SIZE
+    
+    SIZE = size
+
+    print(f"\nРасставляем квадраты со сторонами {SIZE} \
+на плоскости с удалением от начала координат \
+их левых нижних углов равным {SCOPE}.\n")
+    
     plane = []
 
     for num in range(number):
-        plane.append(( randint(-30, 30), randint(-30, 30)))
+        plane.append(( randint(-SCOPE, SCOPE), randint(-SCOPE, SCOPE)))
 
-    print("получены квадраты:\n", plane)
+    print("Получены квадраты:")
+    pprint(list(enumerate(plane, 1)))
     
 
 def solve():
@@ -35,47 +47,56 @@ def solve():
     inters = []
 
     for one in range(len(plane) - 1):
-        for two in range(one, len(plane)):
+        for two in range(one+1, len(plane)):
             if inter(one, two):
-                print("intersection:", one, two)
+                if DEBUG: print("intersection:", one, two)
+                inters.append((one, two))
 
-    print("все пересечения:", inters)
+    print("\nВсе пересечения:", inters, "\n")
 
 
-def inter(one, two):
+def inter(onep, twop):
     """пересекаются ли"""
 
-    global plane
+    global plane, SIZE
+
+    one = plane[onep]
+    two = plane[twop]
 
     # ~ mnemonics:
-    # ~ o = one, t = two
-    # ~ l = left, r = right
-    # ~ b = bottom, t = top
-    # ~ x = x-coordinate (to right), y = t-coordinate (to up) 
+    # ~ O = one, T = two
+    # ~ L= left, R = right, T = top, B = bottom
 
-    olbx, olby = one
-    oltx, olty = (one[0], one[1]+SIZE-1)
-    orbx, orby = (one[0]+SIZE-1, one[1])
-    ortx, orty = (one[0]+SIZE-1, one[1]+SIZE-1)
+    OL = one[0]
+    OR = one[0] + SIZE - 1
+    OB = one[1]
+    OT = one[1] + SIZE - 1
 
-    tlbx, tlby = two
-    tltx, tlty = (two[0], two[1]+SIZE-1)
-    trbx, trby = (two[0]+SIZE-1, two[1])
-    trtx, trty = (two[0]+SIZE-1, two[1]+SIZE-1)
+    TL = two[0]
+    TR = two[0] + SIZE - 1
+    TB = two[1]
+    TT = two[1] + SIZE - 1
 
     yes = (
-        (olbx ...
+        TL <= OL <= TR and TB <= OB <= TT or
+        TL <= OR <= TR and TB <= OB <= TT or
+        TL <= OL <= TR and TB <= OT <= TT or
+        TL <= OR <= TR and TB <= OT <= TT 
         )
 
+    return yes
 
-def main():
-    """запуск"""
 
-    global plane    # плоскость
+def main(size=5, number=20):
+    """запуск
+    size=10   = размер квадратов
+    number=20 = сколько их поставить
+    """
 
-    make()
+    make(size, number)
     solve()
 
 
 main()
-
+# ~ size=10   = размер квадратов
+# ~ number=20 = сколько их поставить
