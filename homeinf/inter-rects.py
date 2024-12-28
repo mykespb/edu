@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-28 2024-12-28 OK 1.0 
+# 2024-12-28 2024-12-28 OK 2.0 
 # inter-rects.py
 
 # ~ На бесконечной плоскости размещены квадраты с указанной длиной стороны,
@@ -87,6 +87,15 @@ def inter(onep, twop):
     return yes
 
 
+def show():
+    """показать красиво пересечение"""
+
+    global plane, SIZE, inters
+
+    ...
+
+    
+
 def main(size=5, number=20):
     """запуск
     size=10   = размер квадратов
@@ -95,6 +104,7 @@ def main(size=5, number=20):
 
     make(size, number)
     solve()
+    show()
 
 
 main()
