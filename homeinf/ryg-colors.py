@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-27 2024-12-27 1.2
+# 2024-12-27 2024-12-28 1.3
 # ryg-colors.py
 
 # ~ Дан текст на русском языке
@@ -14,8 +14,8 @@
 # ~ Версия с отладочной печатью.
 
 # ~ Отладочная версия?
-# ~ DEBUG = True
-DEBUG = False
+DEBUG = True
+# ~ DEBUG = False
 
 from random import choice
 
