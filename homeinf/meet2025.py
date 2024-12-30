@@ -6,7 +6,7 @@
 
 # ~ Вариации на тему шифра Цезаря
 
-import calendar
+# import calendar
 
 # ~ ins = calendar.TextCalendar(firstweekday=0).pryear(2025)
 # ~ print(ins)
