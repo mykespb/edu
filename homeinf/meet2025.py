@@ -22,7 +22,7 @@ def ceasar(text, shift):
     """shift string forward"""
 
     return "" .join (
-        map( lambda c:  chr( (ord(c) + shift) % 255 ), 
+        map( lambda c:  chr( (ord(c) + shift) % 256 ), 
             list(text)
         ))
 
