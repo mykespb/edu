@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-30 2024-12-30 1.0
+# 2024-12-31 2024-12-31 1.1
 # pass-prompter.py
 
 # ~ Подсказки для создания паролей.
@@ -11,12 +11,12 @@
 # ~ Пусть пароли все будут такими:
 # ~ cvcvdddd либо vcvcdddd
 # ~ где v = volwel, c = consonant, d = digit (не 0),
-# ~ все латинские, регистр произвольный.
+# ~ все латинские, регистр произвольный, но у всех букв одинаковый.
 
 from random import choice, random
 
-vowels     = "aeiouyAEIOUY"
-consonants = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ"
+vowels     = "aeiouy"
+consonants = "bcdfghjklmnpqrstvwxz"
 digits     = "123456789"
 
 def make_pass():
@@ -26,6 +26,9 @@ def make_pass():
         if random() < .5
         else choice(consonants) + choice(vowels) + choice(consonants) + choice(vowels) ) +
         choice(digits) + choice(digits) + choice(digits) + choice(digits) )
+
+    if random() < .5:
+        out = out.upper()
 
     return out
 
