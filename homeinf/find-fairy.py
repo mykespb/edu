@@ -25,11 +25,17 @@
 
 
 def find_em():
+    """всех отыскать..."""
+    
     persons = персонажи.strip().replace("\n", "").split(',')
-    text    = текст.strip().split('.')
+    persons = list(map(str.strip, persons))
+    
+    text = текст.strip().split('.')
+    text = list(map(str.strip, text))
+    text = list(filter(len, text))
 
-    # ~ print(persons)       
-    # ~ print(text)
+    print(persons)       
+    print(text)
 
     for frase in text:
         for pers in persons:
