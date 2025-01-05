@@ -1,20 +1,23 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-05 2025-01-05 2.1
+# 2025-01-05 2025-01-05 3.0
 
-# ~ Сделать список из 10..20 (вкл.) чисел, случайно, каждое от 1 до 100 (вкл.).
+# ~ Сделать список из нескольких (настраивается) чисел, случайно, каждое от 1 до 100 (вкл.).
 # ~ Подсчитать, каких получилось чисел больше, чётных или нечётных.
 
-SIZE = 1000
+LIMIT = 100
+SIZE  = 1_000
 
 from random import randint
-from time import time
+from time import asctime, time
+
+print(f"Начинаем в {time()} = {asctime()}")
 
 def make():
     """make list"""
 
-    out = [ randint(1, SIZE) for _ in range( randint(10, 20) ) ]
-    print("list = ", out)
+    out = [ randint(1, LIMIT) for _ in range(SIZE) ]
+    # ~ print("list = ", out)
 
     return out
 
@@ -213,7 +216,7 @@ def main2(times=1):
 
 main = main2
 
-main(10_000)
+main(1)
 
 
 # ~ list =  [1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2]
