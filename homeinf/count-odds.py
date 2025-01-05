@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-05 2025-01-05 2.0
+# 2025-01-05 2025-01-05 2.1
 
 # ~ Сделать список из 10..20 (вкл.) чисел, случайно, каждое от 1 до 100 (вкл.).
 # ~ Подсчитать, каких получилось чисел больше, чётных или нечётных.
 
-SIZE = 2
+SIZE = 1000
 
 from random import randint
 from time import time
@@ -136,7 +136,21 @@ def comparethem6(numbers):
         print("Нечётных и чётных поровну.")
 
 
-compare = comparethem6
+def comparethem7(numbers):
+    """evens or odds?"""
+
+    num_odds  = len( list( filter( lambda x: x % 2 == 1, numbers)))
+    num_evens = len(numbers) - num_odds
+
+    if num_odds > num_evens:
+        print("Больше нечётных, чем чётных")
+    elif num_odds < num_evens:
+        print("Больше чётных, чем нечётных.")
+    else:
+        print("Нечётных и чётных поровну.")
+
+
+compare = comparethem7
 
 def main1():
     """starter"""
@@ -148,7 +162,7 @@ def main1():
 def main2(times=1):
     """starter with timer"""
 
-    total1 = total2 = total3 = total4 = total5 = total6 = 0
+    total1 = total2 = total3 = total4 = total5 = total6 = total7 = 0
     
     for rept in range(times):
         lst = make()
@@ -183,6 +197,11 @@ def main2(times=1):
         end = time()
         total6 += end - start
 
+        start = time()
+        comparethem7(lst)
+        end = time()
+        total7 += end - start
+
     print(f"Потребовалось в среднем секунд:...")
     print(f"для 1 версии: {total1 / times}")
     print(f"для 2 версии: {total2 / times}")
@@ -190,17 +209,27 @@ def main2(times=1):
     print(f"для 4 версии: {total4 / times}")
     print(f"для 5 версии: {total5 / times}")
     print(f"для 6 версии: {total6 / times}")
+    print(f"для 7 версии: {total7 / times}")
 
 main = main2
 
-main(10)
+main(10_000)
 
 
-# ~ list =  [16, 39, 98, 95, 67, 55, 82, 97, 59, 30, 87, 95, 100, 72, 45, 89]
-# ~ Больше нечётных, чем чётных
-# ~ Больше нечётных, чем чётных
-# ~ Больше нечётных, чем чётных
+# ~ list =  [1, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2]
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
+# ~ Больше чётных, чем нечётных.
 # ~ Потребовалось в среднем секунд:...
-# ~ для 1 версии: 5.4836273193359375e-06
-# ~ для 2 версии: 3.0994415283203125e-06
-# ~ для 3 версии: 6.198883056640625e-06
+# ~ для 1 версии: 2.2411346435546875e-05
+# ~ для 2 версии: 4.76837158203125e-06
+# ~ для 3 версии: 6.67572021484375e-06
+# ~ для 4 версии: 3.5762786865234375e-06
+# ~ для 5 версии: 3.0994415283203125e-06
+# ~ для 6 версии: 3.814697265625e-06
+# ~ для 7 версии: 3.5762786865234375e-06
+
