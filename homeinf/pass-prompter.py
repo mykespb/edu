@@ -40,4 +40,4 @@ def test_make_pass(times=1):
         print(make_pass())
 
 
-test_make_pass(20)
+test_make_pass(10)
