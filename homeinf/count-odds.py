@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-05 2025-01-05 3.0
+# 2025-01-05 2025-01-06 3.1
 
 # ~ Сделать список из нескольких (настраивается) чисел, случайно, каждое от 1 до 100 (вкл.).
 # ~ Подсчитать, каких получилось чисел больше, чётных или нечётных.
 
 LIMIT = 100
-SIZE  = 1_000
+SIZE  = 10
 
 from random import randint
 from time import asctime, time
@@ -16,8 +16,8 @@ print(f"Начинаем в {time()} = {asctime()}")
 def make():
     """make list"""
 
-    out = [ randint(1, LIMIT) for _ in range(SIZE) ]
-    # ~ print("list = ", out)
+    out = [ randint(1, LIMIT) for _ in range(SIZE-5, SIZE+5) ]
+    print("list = ", out)
 
     return out
 
