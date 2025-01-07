@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-07 2025-01-07 1.0
+# 2025-01-07 2025-01-08 1.0
 
 # ~ Дан квадрат 2х2.
 # ~ Верно ли, что в нём числа стоят по возрастанию по часовой стрелке
@@ -39,7 +39,7 @@ test(a)
 
 # теперь много случайных тестов
 
-def many_tests(how_many : int =1) -> None:
+def many_tests(how_many : int = 1) -> None:
     """выполнить много тестов"""
 
     for one in range(how_many):
