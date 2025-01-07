@@ -52,7 +52,7 @@ def linked() -> bool:
         cities.add(cto)
 
     loc = sorted(cities)
-    
+
     # ~ print(f"\n--------------------\n{roads=}\n{cities=}\n{loc=}")
 
     # решение
@@ -73,7 +73,7 @@ def plus(city):
         if place[0] == city and place[1] not in passed
         ] :
         plus(nextone)
-    
+
 
 def test_map() -> None:
     """оформить связность карты-графа"""
@@ -81,7 +81,7 @@ def test_map() -> None:
     print("\n---------------------------\nкарта:\n",
         mapa,
         "\nСвязность:", linked(), "\n" )
-        
+
 
 def main():
     """всё запустить"""
