@@ -21,7 +21,7 @@ order = "ABCDEF"
 def avg(arr):
     """average"""
 
-    return sum(arr) / len(arr) if  arr else 0
+    return sum(arr) / len(arr) if arr else 0
     
 
 def proc():
