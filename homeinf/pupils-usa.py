@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-08 2025-01-08 1.0
+# 2025-01-08 2025-01-08 1.1
 # pulis-usa.py
 
 # ~ Есть класс с оценками по амер. система (от A до F).
@@ -16,7 +16,8 @@ Johan C C C D C C C D C C C D
 Janna E E E E 
 """
 
-order = "ABCDEF"
+# ~ order = " ABCDEF"    # если А=1
+order = "ABCDEF"    # если A=0
 
 def avg(arr):
     """average"""
@@ -40,15 +41,24 @@ def proc():
     # ~ print(*rates, sep="\n")
 
     for pupil in rates:
-        print(pupil[0], ":", round(pupil[1], 2))
+        print(f"{pupil[0]:20} : {round(pupil[1], 2):5.2}")
 
 
 proc()
 
-# ~ Joseff : 1.14
-# ~ Jane : 1.67
-# ~ John : 1.9
-# ~ Johan : 2.25
-# ~ Jill : 2.57
-# ~ Jim : 3.0
-# ~ Janna : 4.0
+
+# ~ Joseff               :   2.1
+# ~ Jane                 :   2.7
+# ~ John                 :   2.9
+# ~ Johan                :   3.2
+# ~ Jill                 :   3.6
+# ~ Jim                  :   4.0
+# ~ Janna                :   5.0
+
+# ~ Joseff               :   1.1
+# ~ Jane                 :   1.7
+# ~ John                 :   1.9
+# ~ Johan                :   2.2
+# ~ Jill                 :   2.6
+# ~ Jim                  :   3.0
+# ~ Janna                :   4.0
