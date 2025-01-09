@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # 2025-01-09 2025-0-1-09 1.0
-# over-sched.py
+# over-sched-2.py
 
 # ~ https://www.culture.ru/poems/105/boltunya
 # ~ Драмкружок, кружок по фото,
@@ -15,6 +15,11 @@
 # ~ и теперь переживает, нет ли там накладок.
 # ~ Помогите ему.
 
+# ~ Предыдущее решение неполное.
+# ~ Оно проверяет ненакладность только соседних строк,
+# ~ а накладки могут быть и в более отдалённых строках.
+# ~ надо всех сравнивать со всеми.
+
 sched1 = """
 0900 0945 математика
 1000 1045 русский язык
@@ -25,6 +30,7 @@ sched1 = """
 1900 2000 кино
 0800 0815 зарядка
 1435 1455 физкультура
+0900 1600 пение
 1205 1225 рисование
 1550 1635 музыка
 1630 1700 математика
@@ -66,13 +72,18 @@ def test(what: str) -> bool:
 
     print("\nпроверяем...")
     errors = 0
-    for num, line in enumerate(sch):
-        tfrom, tto, desc = line
-        if num:
-            if tfrom < wastto:
-                print(f"увы! занятие '{desc}' начинается в {tfrom}, что раньше, чем окончание предыдущего занятия '{wasdesc}' в {wastto}")
+    for line1 in sch:
+        tfrom1, tto1, desc1 = line1
+
+        for line2 in sch:
+            tfrom2, tto2, desc2 = line2
+
+            if line1 == line2:
+                continue    # с собой не сравниваем
+        
+            if tfrom1 < tfrom2 < tto1:
+                print(f"увы! занятие '{desc2}' (с {tfrom2} до {tto2}) пересекается с занятием '{desc1}' (с {tfrom1} до {tto1})")
                 errors += 1
-        wastfrom, wastto, wasdesc = tfrom, tto, desc
 
     if errors:
         print(f"\nитого:\n{errors} - столько было ошибок в расписании")
