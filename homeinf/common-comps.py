@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-05-08 2025-01-08 1.0
+# myke 2022-05-08 2025-01-11 1.1
 # common-comps.py
 
 # ~ Несколько человек работали на разные компании.
@@ -16,7 +16,7 @@ Tanita IBM Olivetti Grooming NeverMore
 """
 
 from collections import defaultdict, Counter
-from pprint import pprint
+# ~ from pprint import pprint
 
 def recompany():
     """
@@ -55,6 +55,7 @@ def main():
     """
 
     comps = recompany()
+    
     print("\nКомпании и их сотрудники:")
     # ~ pprint(dict(comps))
     for key, value in comps.items():
@@ -66,6 +67,7 @@ def main():
         print()
 
     mult_comps = find_mc(comps)
+    
     print("\nКомпании по убыванию участников:")
     for comp, size in mult_comps:
         print(f"{comp:20}: {size:3}")
