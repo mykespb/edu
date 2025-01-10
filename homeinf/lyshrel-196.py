@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-06 2025-01-06 0.1
+# 2025-01-06 2025-01-10 1.1
 # ~ lyshrel-196.py
 # ~ Проблема 196 (см. описание внизу)
 
@@ -14,17 +14,25 @@ def test(num: int) -> int:
     """
 
     print("next:   ", end="")
+    go = 0
 
     for step in range(LIMIT):
-        print(num, end=", ")
+        if go > 0:
+            print(num, end=", ")
+        go = 1
         
-        if palin(num): return step
+        if palin(num):
+            print("ready")
+            return step
 
         rev = int( str(num)[::-1] )
         num += rev
 
     else:
+        print("stop")
         return -1
+
+    print("stop")
 
 
 def palin(num: int) -> bool:
@@ -44,7 +52,7 @@ def tester(upto: int = 1) -> None:
     for i in range(1, upto+1):
         print(f"\n-------------------------------\n\nnumber: {i}")
         res = test(i)
-        print(f"\nsteps: {res if res>=0 else "No palindrome!"}")
+        print(f"steps:  {res if res>0 else "No steps" if res == 0 else "No palindrome!"}")
 
 
 tester(200)
