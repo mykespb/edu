@@ -49,14 +49,14 @@ print( *sorted ( (doctors['Иванов'] & doctors['Петров']),
 
 # альтеративно: циклом
 
-maybe = []
+# ~ maybe = []
 
-for day in listdays:
-    if day in doctors['Иванов'] and day in doctors['Петров']:
-        maybe.append(day)
+# ~ for day in listdays:
+    # ~ if day in doctors['Иванов'] and day in doctors['Петров']:
+        # ~ maybe.append(day)
 
-print("или так:     ", end=" ")
-print(*maybe, sep=", ")
+# ~ print("или так:     ", end=" ")
+# ~ print(*maybe, sep=", ")
 
 # ~ print("2. неприёмные дни:", alldays - (doctors['Иванов'] | doctors['Петров']))
 
@@ -72,14 +72,14 @@ print( *sorted ( (setdays - (doctors['Иванов'] | doctors['Петров']))
 
 # альтеративно: циклом
 
-maybe = listdays[:]
+# ~ maybe = listdays[:]
 
-for day in listdays:
-    if day in doctors['Иванов'] or day in doctors['Петров']:
-        maybe.remove(day)
+# ~ for day in listdays:
+    # ~ if day in doctors['Иванов'] or day in doctors['Петров']:
+        # ~ maybe.remove(day)
 
-print("или так:     ", end=" ")
-print(*maybe, sep=", ")
+# ~ print("или так:     ", end=" ")
+# ~ print(*maybe, sep=", ")
 
 print(80*"-")
 
