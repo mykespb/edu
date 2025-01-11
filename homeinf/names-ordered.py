@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-11 2025-01-11 1.0
+# 2025-01-11 2025-01-11 1.1
 # names-ordered.py
 
 
@@ -32,9 +32,9 @@ def good_order(text):
     проверить порядок
     """
 
-    text = text.strip().split()
-
-    return text == sorted(text)
+    # ~ text = text.strip().split()
+    # ~ return text == sorted(text)
+    return (txt := text.strip().split()) == sorted(txt)
     
 
 def test(text):
