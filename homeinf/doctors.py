@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-10 2025-01-10 1.3
+# 2025-01-10 2025-01-10 1.4
 # doctors.py
 
 # ~ Два врача принимают клиентов по расписанию.
@@ -47,6 +47,10 @@ print( *sorted ( (doctors['Иванов'] & doctors['Петров']),
     key = lambda x: listdays.index(x)
     ), sep=", ")
 
+# TODO: альтеративно: циклом
+
+# TODO: альтеративно: ...
+
 # ~ print("2. неприёмные дни:", alldays - (doctors['Иванов'] | doctors['Петров']))
 
 # ~ print("2. неприёмные дни:", *(alldays - (doctors['Иванов'] | doctors['Петров'])))
@@ -58,6 +62,10 @@ print("2. неприёмные дни:", end=" ")
 print( *sorted ( (setdays - (doctors['Иванов'] | doctors['Петров'])),
     key = lambda x: listdays.index(x)
     ),sep=", ")
+
+# TODO: альтеративно: циклом
+
+# TODO: альтеративно: ...
 
 print(80*"-")
 
