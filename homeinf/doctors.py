@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-10 2025-01-10 1.4
+# 2025-01-10 2025-01-11 1.5
 # doctors.py
 
 # ~ Два врача принимают клиентов по расписанию.
@@ -47,9 +47,16 @@ print( *sorted ( (doctors['Иванов'] & doctors['Петров']),
     key = lambda x: listdays.index(x)
     ), sep=", ")
 
-# TODO: альтеративно: циклом
+# альтеративно: циклом
 
-# TODO: альтеративно: ...
+maybe = []
+
+for day in listdays:
+    if day in doctors['Иванов'] and day in doctors['Петров']:
+        maybe.append(day)
+
+print("или так:     ", end=" ")
+print(*maybe, sep=", ")
 
 # ~ print("2. неприёмные дни:", alldays - (doctors['Иванов'] | doctors['Петров']))
 
@@ -63,9 +70,16 @@ print( *sorted ( (setdays - (doctors['Иванов'] | doctors['Петров']))
     key = lambda x: listdays.index(x)
     ),sep=", ")
 
-# TODO: альтеративно: циклом
+# альтеративно: циклом
 
-# TODO: альтеративно: ...
+maybe = listdays[:]
+
+for day in listdays:
+    if day in doctors['Иванов'] or day in doctors['Петров']:
+        maybe.remove(day)
+
+print("или так:     ", end=" ")
+print(*maybe, sep=", ")
 
 print(80*"-")
 
