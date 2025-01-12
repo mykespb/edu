@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2022-05-08 2025-01-11 1.1
+# Mikhail (myke) Kolodin 2022-05-08 2025-01-12 1.2
 # common-comps.py
 
 # ~ Несколько человек работали на разные компании.
@@ -27,7 +27,7 @@ def recompany():
     comps = defaultdict(list)
 
     for person in persons.strip().splitlines():
-        name, *where = person.split()
+        name, *where = person.strip().split()
 
         for place in where:
             comps[place].append(name)
