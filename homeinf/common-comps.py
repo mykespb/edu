@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2022-05-08 2025-01-12 1.2
+# Mikhail (myke) Kolodin 2022-05-08 2025-01-12 1.3
 # common-comps.py
 
 # ~ Несколько человек работали на разные компании.
@@ -16,8 +16,7 @@ Monica Transdata Integrals Forever Microsoft
 Tanita IBM Olivetti Grooming NeverMore
 """
 
-from collections import defaultdict, Counter
-# ~ from pprint import pprint
+from collections import defaultdict
 
 def recompany():
     """
@@ -58,7 +57,7 @@ def main():
     comps = recompany()
     
     print("\nКомпании и их сотрудники:")
-    # ~ pprint(dict(comps))
+    # ~ print(dict(comps))
     for key, value in comps.items():
         print(f"{key:20}", end="")
         print(*value, sep=", ", end="")

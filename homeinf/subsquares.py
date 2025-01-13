@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-11 2025-01-11 1.0
+# 2025-01-11 2025-01-13 1.1
 # subsquares.py
 
 # ~ Субквадратная матрица 
@@ -20,15 +20,14 @@ def create(size = 10):
     вернуть её же
     """
 
-    return [ [ (random()-0.125)*10 for j in range(size) ] for i in range(size) ]
+    return [ [ (random()-0.2)*10 for j in range(size) ] for i in range(size) ]
 
 
 # ------------------------------------
 # напечатать матрицу
 
 def show(mat):
-    """
-    печатаем как таблицу, аккуратно, с автоокруглением
+    """печатаем как таблицу, аккуратно, с автоокруглением
     """
 
     size = len(mat)
@@ -43,8 +42,7 @@ def show(mat):
 # проверить матрицу
 
 def test(mat):
-    """
-    тестируем матрицу на субквадратность
+    """тестируем матрицу на субквадратность
     """
 
     size = len(mat)
@@ -54,24 +52,23 @@ def test(mat):
             if (minus := mat[i][j] + mat[i][j+1] + mat[i+1][j] + mat[i+1][j+1]) <= 0:
                 return False, minus
 
-    return True,
+    return True
     
 
 # ------------------------------------
 # всё протестировать
 
 def main():
-    """
-    всё запускаем и смотрим
+    """всё запускаем и смотрим
     """
 
     mat = create()
     show(mat)
 
     match test(mat):
-        case (True,):
+        case True:
             print("OK, матрица субквадратная")
-        case (False, minus):
+        case False, minus:
             print(f"Не OK, матрица не субквадратная, с  минусом {minus}")
         
 

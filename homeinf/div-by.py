@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-03 2025-01-03 1.1
+# 2025-01-03 2025-01-13 1.2
 # div-by.py
 
 # ~ Какое из произведений натуральных чисел до 100 больше -
@@ -17,7 +17,8 @@ def divby(limit = 10, num = 1):
     """сделать ряд для обработки:
     натуральные числа до limit включительно, которые делятся на num"""
 
-    return [ i for i in range(1, limit+1) if i % num == 0]
+    # ~ return [ i for i in range(1, limit+1) if i % num == 0]
+    return [ i for i in range(1, limit+1, num) ]
 
 
 def prod(seq):
@@ -29,7 +30,7 @@ def prod(seq):
     return res
 
 
-def main(till=10):
+def main(till = 10):
     """посчитать до  till"""
 
     row3 = divby(till, 3)
@@ -51,3 +52,8 @@ def main(till=10):
 
 
 main(10)
+
+
+# ~ row3=[1, 4, 7, 10], row4=[1, 5, 9]
+# ~ prod3=280, prod4=45
+# ~ произведение для 3 больше
