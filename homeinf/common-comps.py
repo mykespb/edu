@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2022-05-08 2025-01-12 1.3
+# Mikhail (myke) Kolodin 2022-05-08 2025-01-14 1.5
 # common-comps.py
 
 # ~ Несколько человек работали на разные компании.
@@ -13,7 +13,7 @@ John Apple Olivetti IBM
 Lisa Apple Microsoft
 Mikko CASIO Nokia Olivetti
 Monica Transdata Integrals Forever Microsoft
-Tanita IBM Olivetti Grooming NeverMore
+Tanita IBM Olivetti Grooming NeverMore Apple
 """
 
 from collections import defaultdict
@@ -49,6 +49,24 @@ def find_mc(loc):
     return comps
 
 
+def find_max(loc):
+    """
+    найти ведущую группу насыщенных сотрудниками компаний
+    """
+
+    size = -1
+    comps = []
+
+    for name, workers in loc.items():
+        if (ll := len(workers)) > size:
+            size = ll
+            comps = [name]
+        elif ll == size:
+            comps.append(name)
+
+    return size, comps
+
+
 def main():
     """
     запустить и посмотреть всё
@@ -57,13 +75,9 @@ def main():
     comps = recompany()
     
     print("\nКомпании и их сотрудники:")
-    # ~ print(dict(comps))
     for key, value in comps.items():
         print(f"{key:20}", end="")
         print(*value, sep=", ", end="")
-        # ~ print(f"{key:20}", *value, end="")
-        # ~ for it in value:
-            # ~ print(it, end=", ")
         print()
 
     mult_comps = find_mc(comps)
@@ -71,14 +85,23 @@ def main():
     print("\nКомпании по убыванию участников:")
     for comp, size in mult_comps:
         print(f"{comp:20}: {size:3}")
-    # ~ print(mult_comps, sep="\n", end="\n\n")
+
+    size, comps = find_max(comps)
+    
+    print(f"\nКомпании с максимальным количеством участников: {size}\nтакие:", end=" ")
+    
+    for comp in comps:
+        print(comp, end=", ")
+    print("\n")
 
 
 main()
 
+# ------------------------------
+# результат:
 
 # ~ Компании и их сотрудники:
-# ~ Apple               John, Lisa
+# ~ Apple               John, Lisa, Tanita
 # ~ Olivetti            John, Mikko, Tanita
 # ~ IBM                 John, Tanita
 # ~ Microsoft           Lisa, Monica
@@ -91,8 +114,8 @@ main()
 # ~ NeverMore           Tanita
 
 # ~ Компании по убыванию участников:
+# ~ Apple               :   3
 # ~ Olivetti            :   3
-# ~ Apple               :   2
 # ~ IBM                 :   2
 # ~ Microsoft           :   2
 # ~ CASIO               :   1
@@ -102,3 +125,6 @@ main()
 # ~ Forever             :   1
 # ~ Grooming            :   1
 # ~ NeverMore           :   1
+
+# ~ Компании с максимальным количеством участников: 3
+# ~ такие: Apple, Olivetti, 
