@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-15 2025-01-15 1.0
+# Mikhail (myke) Kolodin 2025-01-15 2025-01-15 1.1
 # planes-suit.py
 
 # ~ Посадка самолёта
@@ -61,7 +61,7 @@ def testall():
             for field in drome[2:]:
                 if (lof := int(field)) >= down and lof > up:
                     print(f"\t\tможно приземлиться и взлететь с полосы {lof} м")
-                    break
+                    #break
             else:
                 print("\t\tнет подходящих полос для взлёта и посадки")
     print()
