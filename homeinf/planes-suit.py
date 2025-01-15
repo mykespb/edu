@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-15 2025-01-15 1.1
+# Mikhail (myke) Kolodin 2025-01-15 2025-01-15 1.2
 # planes-suit.py
 
 # ~ Посадка самолёта
@@ -58,11 +58,12 @@ def testall():
             if mtom > int(drome[1]):
                 print(f"\t\tнельзя: mtom {mtom} велика")
                 continue
+            anyway  = False
             for field in drome[2:]:
                 if (lof := int(field)) >= down and lof > up:
                     print(f"\t\tможно приземлиться и взлететь с полосы {lof} м")
-                    #break
-            else:
+                    anyway = True
+            if not anyway:
                 print("\t\tнет подходящих полос для взлёта и посадки")
     print()
 
@@ -88,6 +89,7 @@ testall()
 		# ~ нельзя: mtom 1900 велика
 	# ~ проверяем аэродром large: макс. масса 6000 кг, полосы: ['750', '800', '130', '2000']
 		# ~ можно приземлиться и взлететь с полосы 750 м
+		# ~ можно приземлиться и взлететь с полосы 800 м
+		# ~ можно приземлиться и взлететь с полосы 2000 м
 
 # ----------------------------------
-#
