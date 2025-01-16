@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-05-14 2022-05-14 3.0
+# myke 2022-05-14 2025-01-16 3.1
 # square1248.py
 
 # ~ Есть квадрат (напр., 10х10), заполненный числами 1, 2, 4, 8.
@@ -25,7 +25,8 @@ def calc(k):
     shown = 0
     for i in range(SIZE-1):
         for j in range(SIZE-1):
-            if sum([k[i][j], k[i][j+1], k[i+1][j], k[i+1][j+1] ]) == SUMMA:
+            # ~ if sum([k[i][j], k[i][j+1], k[i+1][j], k[i+1][j+1] ]) == SUMMA:
+            if k[i][j] + k[i][j+1] + k[i+1][j] + k[i+1][j+1] == SUMMA:
                 num += 1
                 if shown < MAXSHOW:
                     shown += 1
