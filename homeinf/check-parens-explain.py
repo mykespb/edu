@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# check-parens-explain.py 2025-01-16 2025-01-16 2.1
+# check-parens-explain.py 2025-01-16 2025-01-16 2.2
 
 # ~ Проверка правильности вложенности скобок.
 
 # --------------------------
 # проверялка
 
-def good_parens(par):
+def good_parens(parens):
     """сама проверка"""
     
     cnt = 0
 
     plus = {'(': 1, ')': -1}
 
-    for e in par:
+    for paren in parens:
 
-        cnt += plus[e]
+        cnt += plus[paren]
 
         if cnt < 0:
             return False, "ведущая закрывающая скобка"
