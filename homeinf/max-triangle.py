@@ -29,7 +29,7 @@ from math import sqrt
 from pprint import pp
 from random import random as rr
 
-SCALE = 10.
+SCALE = 10.      # разбор данных (расстояние от нуля)
 
 # ----------------------------------------------
 # make random triangles
