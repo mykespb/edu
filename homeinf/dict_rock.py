@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2022-05-06 2025-01-06 2.1
+# Mikhail (myke) Kolodin 2022-05-06 2025-01-06 2.1
 # dict-rock.py
 
 # ~ Есть некоторые сведения о русском роке.
