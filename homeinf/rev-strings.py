@@ -12,7 +12,7 @@ def revstr(s : str) -> str:
     return " " .join ( word[::-1] for word in s.strip().split() )
 
 
-def test(s) -> None:
+def test(s : str) -> None:
     """test reverser"""
 
     print(f"\nстрока '{s}' \nпревращается в строку '{revstr(s)}'")

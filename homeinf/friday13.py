@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-17 2025-01-17 1.0
+# 2025-01-17 2025-01-17 1.1
 # friday13.py
 
 # ~ Пятница 13ое
@@ -67,7 +67,7 @@ def future():
         if wd13 == 4:
             print(f"{d13} будет пятницей")
             prolfut = d13.toordinal()
-            print(f"до него осталось дней: {prolfut - proleptic}")
+            print(f"до неё осталось дней: {prolfut - proleptic}")
             found = True
 
     # если не нашли, то ищем во всех последующих годах до 9999 искл.
@@ -82,7 +82,7 @@ def future():
                 if wd13 == 4:
                     print(f"{d13} будет пятницей")
                     prolfut = d13.toordinal()
-                    print(f"до него осталось дней: {prolfut - proleptic}")
+                    print(f"до неё осталось дней: {prolfut - proleptic}")
                     found = True
                     break
             if found:
