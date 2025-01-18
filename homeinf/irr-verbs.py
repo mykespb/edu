@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-18 2025-01-18 1.2
+# 2025-01-18 2025-01-19 1.2
 # irr-verbs.py
 
 # ~ Неправильные глаголы
