@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-16 2025-01-19 2.1
+# Mikhail (myke) Kolodin 2025-01-16 2025-01-19 3.1
 # rev-strings.py
 
 # ~ Перевернуть все слова внутри строки,
@@ -31,16 +31,13 @@ def revstr2(s : str, words : bool = False) -> str:
     return " " .join ([word[::-1] for word in s.strip().split()])
 
 
-def revstr2(s : str, words : bool = False) -> str:
+def revstr3(s : str, words : bool = False) -> str:
     """reverse string"""
 
-    if words:
-        return s[::-1]
-
-    return " " .join ([word[::-1] for word in s.strip().split()])
+    return s[::-1] if words else " " .join ([word[::-1] for word in s.strip().split()])
 
 
-revstr = revstr2
+revstr = revstr3
 
 # -------------------------------------------
 
