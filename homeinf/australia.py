@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-19 2025-01-19 0.1
+# 2025-01-19 2025-01-19 1.0
 # australia.py
 
 # ~ Есть информация об Австралии.
 # ~ Узнать, где больше территория, где население,
 # ~ сколько там чего (штатов, территорий).
 
-# ~ Учебное: отрабатываем именованные кортежи
+# ~ Учебное: отрабатываем именованные кортежи.
 
 # -------------------------------------------------
 # тексты
@@ -44,12 +44,13 @@ def prepare():
 
     for num, line in enumerate(data.strip().splitlines('\t')):
         if num == 0:
-            head = line.strip().split()
+            head = Portion( *( line.strip().split('\t') ))
         else:
             # ~ portion = Portion(*('number name type capital population territory' .split()))
             portion = Portion( *( line.strip().split('\t') ))
             info.append(portion)
 
+    print(f"{head=}")
     print(f"{info=}")
     
 
@@ -67,6 +68,7 @@ def discover():
             regions.add(line.type)
 
     print(f"{regions=}")
+
 
 def main():
     """всё узнать и напечатать"""
