@@ -1,21 +1,29 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-16 2025-01-16 1.0
+# Mikhail (myke) Kolodin 2025-01-16 2025-01-19 2.0
 # rev-strings.py
 
 # ~ Перевернуть все слова внутри строки,
 # ~ не используя функцию reverse
+# ~ и м.б. и все слова тоже поставить в обратном порядке
 
-def revstr(s : str) -> str:
+def revstr(s : str, words : bool = False) -> str:
     """reverse string"""
 
-    return " " .join ( word[::-1] for word in s.strip().split() )
+    pre = [word[::-1] for word in s.strip().split()]
+
+    if words:
+        out = " " .join (pre[::-1])
+    else:
+        out = " " .join (pre)
+    
+    return out
 
 
-def test(s : str) -> None:
+def test(s : str, words : bool = False) -> None:
     """test reverser"""
 
-    print(f"\nстрока '{s}' \nпревращается в строку '{revstr(s)}'")
+    print(f"\nстрока '{s}' \nпревращается в строку '{revstr(s, words)}'")
 
 
 test("по городу ходила большая крокодила")
@@ -25,6 +33,8 @@ test("Мы сами знаем, что эта задача не имеет ре�
 test("Cogito ergo sum")
 test("1234567890 это десятичные цифры 0987654321")
 test("1234567890987654321")
+
+test("Cogito ergo sum", words=True)
 
 
 # ~ строка 'по городу ходила большая крокодила' 
