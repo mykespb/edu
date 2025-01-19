@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-19 2025-01-19 1.1
+# 2025-01-19 2025-01-20 1.3
 # australia.py
 
 # ~ Есть информация об Австралии.
@@ -46,7 +46,6 @@ def prepare():
         if num == 0:
             head = Portion( *( line.strip().split('\t') ))
         else:
-            # ~ portion = Portion(*('number name type capital population territory' .split()))
             portion = Portion( *( line.strip().split('\t') ))
             info.append(portion)
 
@@ -78,8 +77,7 @@ def discover():
 
     print(f"\nДанные: {max_terr=}\nназвание области: {max_terr.name}")
 
-
-    # 2. у кого самое большое население?
+    # 3. у кого самое большое население?
 
     max_pop = list( filter(
         lambda x: x.population ==
@@ -87,6 +85,13 @@ def discover():
         info))[0]
 
     print(f"\nДанные: {max_terr=}\nназвание области: {max_pop.name}")
+
+    # 4. у кого самая большая плотность населения?
+
+    max_density = max(info[:-1],
+        key = lambda line: int(line.population) / int(line.territory))
+
+    print(f"\nДанные: {max_density=}\nназвание области: {max_density.name}")
 
     print()
 
@@ -113,12 +118,15 @@ main()
 # ~ 8	Южная Австралия	штат	Аделаида	1781516	984321
 # ~ 0	Всего	нет	нет	25422788	7688220
 
-# ~ regions={'штат', 'территория'}
+# ~ regions={'территория', 'штат'}
 
 # ~ Данные: max_terr=Portion(number='8', name='Южная Австралия', type='штат', capital='Аделаида', population='1781516', territory='984321')
 # ~ название области: Южная Австралия
 
 # ~ Данные: max_terr=Portion(number='8', name='Южная Австралия', type='штат', capital='Аделаида', population='1781516', territory='984321')
 # ~ название области: Новый Южный Уэльс
+
+# ~ Данные: max_density=Portion(number='1', name='Австралийская столичная территория', type='территория', capital='Канберра', population='454499', territory='2358')
+# ~ название области: Австралийская столичная территория
 
 # -------------------------------------------------
