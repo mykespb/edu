@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-18 2025-01-20 1.1
+# 2025-01-18 2025-01-20 1.2
 # my-sqrt.py
 
 # ~ Корень
 
 # ~ Найти квадратный корень методом половинного деления.
 
-EPS = 1e-8
+EPS = 1e-9
 TIMES = 1_000
 
-from math import isqrt, sqrt
+from math import sqrt
 
 # ------------------------------------
 # мой квадратный корень
