@@ -52,7 +52,7 @@ def prepare():
 
     # ~ print(f"{head=}")
     # ~ print(f"{info=}")
-    
+
 
 def discover():
     """совершить открытия"""
