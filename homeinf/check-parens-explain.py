@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# check-parens-explain.py 2025-01-16 2025-01-16 2.2
+# check-parens-explain.py 2025-01-16 2025-01-21 2.3
 
 # ~ Проверка правильности вложенности скобок.
 
@@ -26,6 +26,9 @@ def good_parens(parens):
         return False, "открывающих скобок больше"
 
     return True
+
+    # ~ return True, "всё в порядке"
+
 
 # --------------------------
 # тесты
