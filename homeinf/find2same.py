@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # myke find2same.py
 # 2022-08-26 2022-08-29 2.0
 
