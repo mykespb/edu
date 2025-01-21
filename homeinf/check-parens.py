@@ -1,14 +1,29 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# check-parens.py 2025-01-16 2025-01-16 1.0
+# check-parens.py 2025-01-16 2025-01-21 1.1
 
 # ~ Проверка правильности вложенности скобок.
 
 # --------------------------
-# проверялка
+# проверялка 2
 
-def good_parens(par : str) -> bool:
+def good_parens_2(par : str) -> bool:
+    """сама проверка"""
+    
+    cnt = 0
+
+    for e in par:
+        cnt += 1 if e == '(' else -1
+        if cnt < 0:
+            return False
+
+    return cnt == 0
+    
+# --------------------------
+# проверялка 3
+
+def good_parens_3(par : str) -> bool:
     """сама проверка"""
     
     cnt = 0
@@ -24,6 +39,8 @@ def good_parens(par : str) -> bool:
 
 # --------------------------
 # тесты
+
+good_parens = good_parens_1
 
 def test(t : str) -> None:
     """запуск 1 теста"""
