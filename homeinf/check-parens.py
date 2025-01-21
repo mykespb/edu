@@ -6,6 +6,27 @@
 # ~ Проверка правильности вложенности скобок.
 
 # --------------------------
+# проверялка 1
+
+def good_parens_1(par : str) -> bool:
+    """сама проверка"""
+    
+    cnt = 0
+
+    for e in par:
+        if e == '(':
+            cnt += 1
+        else:
+            cnt -= 1
+            if cnt < 0:
+                return False
+
+    if cnt == 0:
+        return True
+    else:
+        return False
+    
+# --------------------------
 # проверялка 2
 
 def good_parens_2(par : str) -> bool:
