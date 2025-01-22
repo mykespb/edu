@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-19 2025-01-21 1.6
+# 2025-01-19 2025-01-22 1.7
 # australia.py
 
 # ~ Есть информация об Австралии.
@@ -47,12 +47,12 @@ def prepare():
 
     Portion = namedtuple('Portion', 'number name type capital population territory')
 
-    for num, line in enumerate(data.strip().splitlines('\t')):
-        if num == 0:
-            head = Portion( *( line.strip().split('\t') ))
-        else:
+    for num, line in enumerate(data.strip().splitlines()):
+        if num:
             portion = Portion( *( line.strip().split('\t') ))
             info.append(portion)
+        else:
+            head = Portion( *( line.strip().split('\t') ))
 
     # ~ print(f"{head=}")
     # ~ print(f"{info=}")
