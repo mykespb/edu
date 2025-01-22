@@ -26,7 +26,6 @@ def good_parens(parens):
         return False, "открывающих скобок больше"
 
     return True
-
     # ~ return True, "всё в порядке"
 
 
