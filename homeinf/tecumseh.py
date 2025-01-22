@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-19 2025-01-22 2.1
+# 2025-01-19 2025-01-22 2.3
 # tecumseh.py
 
 # ---------------------------------------------
@@ -26,7 +26,7 @@ info = """
 # ---------------------------------------------
 # импорты и установки
 
-from pprint import pprint
+# ~ from pprint import pprint
 
 # ---------------------------------------------
 # программа
@@ -37,18 +37,29 @@ def prepare():
     """подготовка"""
 
     global data
+    # ~ global data, headers
+
     data = []
 
     for num, line in enumerate(info.strip().splitlines()):
-        if num == 0:
-            headers = line.strip().split('\t')
-        else:
+        if num:
             data.append(line.strip().split('\t'))
 
+    # ~ for num, line in enumerate(info.strip().splitlines()):
+        # ~ if num == 0:
+            # ~ headers = line.strip().split('\t')
+        # ~ else:
+            # ~ data.append(line.strip().split('\t'))
+
+    # ~ for line in (info.strip().splitlines():
+        # ~ data.append(line.strip().split('\t'))
+    # ~ data = data[1:]
+
+            
 # ---------------------------------------------
 # ~ 1. разобрать даты инаугураций по векам
 
-def say_years():
+def say_when():
     """показать, в какие годы в какие века происходили инаугурации.
     00е годы относим к след. веку, поскольку инаугурация и срок идёт с января.
     """
@@ -69,7 +80,7 @@ def say_years():
 # ~ 2. показать результаты и причины смертей
 
 def say_why():
-    """показать, почему умер или не умер
+    """показать, почему умер или выжил
     """
 
     print("\nЧто случилось?\n")
@@ -87,7 +98,7 @@ def say_why():
 # тестирование
 
 prepare()
-say_years()
+say_when()
 say_why()
 
 # ---------------------------------------------
