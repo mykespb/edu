@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-23 2025-01-23 1.1
+# 2025-01-23 2025-01-23 2.1
 # ~ long-signs.py
 
 # --------------------------------
@@ -11,6 +11,7 @@
 # ~ --------------------------------
 
 # ~ Даны последовательности (в 1+ строках) вида
+# ~ (знаки разделены пробелами))
 
 # ~ ===
 # ~ +++++++ ---------------    ***** ** ----- ++
@@ -40,7 +41,53 @@ def solve1():
     return len(result[0]), result[0][0]
 
 
-# method 2 - finite automata - TBD
+# method 2 - finite automata
+
+def solve2():
+    """method 2"""
+
+    state = False
+    cnt = bestcnt = 0
+    bestchar = waschar = ""
+
+    for char in data:
+
+        if char not in " \t\n":
+
+            if state:
+                cnt += 1
+
+            else:
+                waschar = char
+                cnt = 1
+
+            state = True
+
+        else:
+
+            if state:
+
+                if cnt > bestcnt:
+                    bestcnt = cnt
+                    bestchar = waschar
+
+            state = False
+
+    if state:
+
+        if cnt > bestcnt:
+            bestcnt = cnt
+            bestchar = waschar
+
+    return bestcnt, bestchar
+
+
+# method 3 - finite automata
+
+def solve2():
+    """method 2"""
+
+
 
 # --------------------------------
 # start
@@ -50,6 +97,10 @@ def main():
 
     length, char = solve1()
     print(f"самая длинная последовательность состоит из знаков '{char}' и имеет длину {length} символов")
+
+    length, char = solve2()
+    print(f"самая длинная последовательность состоит из знаков '{char}' и имеет длину {length} символов")
+
 
 main()
 
