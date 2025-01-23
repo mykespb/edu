@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-23 2025-01-23 2.1
+# 2025-01-23 2025-01-23 3.0
 # ~ long-signs.py
 
 # --------------------------------
@@ -37,9 +37,10 @@ def solve1():
     """method 1"""
     
     result = sorted(data.strip().split(), key=len, reverse=True)
-    # ~ print(result)
+    print(result)
     return len(result[0]), result[0][0]
 
+# --------------------------------
 
 # method 2 - finite automata
 
@@ -81,12 +82,67 @@ def solve2():
 
     return bestcnt, bestchar
 
+# --------------------------------
 
 # method 3 - finite automata
 
-def solve2():
-    """method 2"""
+def solve3():
+    """method 3"""
 
+    # ~ states : out in end 
+    # ~ inchar : space char
+
+    state = 'out'
+
+    cnt = bestcnt = 0
+    bestchar = waschar = ""
+
+    def start_word():
+        nonlocal cnt, bestcnt, char, bestchar, waschar
+        waschar = char
+        cnt = 1
+
+    def cont_word():
+        nonlocal cnt, bestcnt, char, bestchar, waschar
+        cnt += 1
+
+    def end_word():
+        nonlocal cnt, bestcnt, char, bestchar, waschar
+        if cnt > bestcnt:
+            bestcnt = cnt
+            bestchar = waschar
+            
+    def no_action():
+        pass
+
+    tabacts = {
+        ('out', 'space')  : no_action,
+        ('out', 'char')   : start_word,
+        ('in',  'space')  : end_word,
+        ('in',  'char')   : cont_word,
+        ('end', 'space')  : no_action,
+        ('end', 'char')   : no_action,
+    }
+
+    tabstates = {
+        ('out', 'space')  : 'out',
+        ('out', 'char')   : 'in',
+        ('in',  'space')  : 'out',
+        ('in',  'char')   : 'in',
+    }
+
+    for char in data:
+
+        chartype = 'char' if char not in " \t\n" else 'space'
+
+        tabacts [state, chartype] ()
+        state = tabstates [state, chartype]
+
+        # ~ if state == 'end': break
+
+    tabacts [state, chartype] ()
+
+    return bestcnt, bestchar
 
 
 # --------------------------------
@@ -101,6 +157,9 @@ def main():
     length, char = solve2()
     print(f"самая длинная последовательность состоит из знаков '{char}' и имеет длину {length} символов")
 
+    length, char = solve3()
+    print(f"самая длинная последовательность состоит из знаков '{char}' и имеет длину {length} символов")
+
 
 main()
 
@@ -108,6 +167,8 @@ main()
 # results
 
 # ~ ['---------------', '???????????', '+++++++', '*****', '-----', '!!!!!', '**', '++']
+# ~ самая длинная последовательность состоит из знаков '-' и имеет длину 15 символов
+# ~ самая длинная последовательность состоит из знаков '-' и имеет длину 15 символов
 # ~ самая длинная последовательность состоит из знаков '-' и имеет длину 15 символов
 
 # --------------------------------
