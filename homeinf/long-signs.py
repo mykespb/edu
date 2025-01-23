@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-23 2025-01-23 3.0
+# 2025-01-23 2025-01-23 3.1
 # ~ long-signs.py
 
 # --------------------------------
@@ -89,13 +89,16 @@ def solve2():
 def solve3():
     """method 3"""
 
-    # ~ states : out in end 
-    # ~ inchar : space char
+    # ~ states      : out in end 
+    # ~ input chars : space char
+
+    # --- init ---
 
     state = 'out'
-
     cnt = bestcnt = 0
     bestchar = waschar = ""
+
+    # --- actions ---
 
     def start_word():
         nonlocal cnt, bestcnt, char, bestchar, waschar
@@ -115,13 +118,13 @@ def solve3():
     def no_action():
         pass
 
+    # --- tables ---
+
     tabacts = {
         ('out', 'space')  : no_action,
         ('out', 'char')   : start_word,
         ('in',  'space')  : end_word,
         ('in',  'char')   : cont_word,
-        ('end', 'space')  : no_action,
-        ('end', 'char')   : no_action,
     }
 
     tabstates = {
@@ -131,16 +134,22 @@ def solve3():
         ('in',  'char')   : 'in',
     }
 
+    # --- loop ---
+
     for char in data:
 
-        chartype = 'char' if char not in " \t\n" else 'space'
+        chartype = 'space' if char in " \t\n" else 'char'
 
         tabacts [state, chartype] ()
         state = tabstates [state, chartype]
 
         # ~ if state == 'end': break
 
+    # --- after loop action ---
+
     tabacts [state, chartype] ()
+
+    # --- return result ---
 
     return bestcnt, bestchar
 
