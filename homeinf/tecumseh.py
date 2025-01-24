@@ -34,7 +34,8 @@ info = """
 # ~ 0. подготовка данных
 
 def prepare():
-    """подготовка"""
+    """подготовка
+    """
 
     global data
     # ~ global data, headers
