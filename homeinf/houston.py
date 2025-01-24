@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-19 2025-01-19 1.0
+# 2025-01-19 2025-01-24 1.1
 # ~ houston.py
 
 # ~ Во время полёта космического корабля "Аполлон 13" (США) экипаж сообщил
@@ -43,8 +43,9 @@ def main():
 
     try:
         for moment, message in events:
+            lc_message = message.lower()
             for bw in bwords:
-                if bw in message:
+                if bw in lc_message:
                     print(f"в момент '{moment}' термин '{bw}' был в сообщении '{message}'")
                     raise ex
     except:
