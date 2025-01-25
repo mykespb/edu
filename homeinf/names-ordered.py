@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-11 2025-01-11 1.1
+# 2025-01-11 2025-01-25 1.2
 # names-ordered.py
 
 
@@ -14,7 +14,7 @@
 # исходные данные
 
 names1 = """
-Акулина Амбруазий Аникей Бажена Вилена Виссарион Галактион Иннокентий Лукерья
+Акулина Амбруазий Аникей Бажена Вилена Виссарион Галактион Ёлка Иннокентий Лукерья
 Мэлс Нектарий Пафнутий Савва Севериан Терентий Феодор Филарет Флюра Шурик Эльбрус
 """
 
@@ -27,6 +27,9 @@ names2 = """
 # --------------------------------
 # программы
 
+myorder = "0123456789abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+
+
 def good_order(text):
     """
     проверить порядок
@@ -34,7 +37,12 @@ def good_order(text):
 
     # ~ text = text.strip().split()
     # ~ return text == sorted(text)
-    return (txt := text.strip().split()) == sorted(txt)
+
+    # ~ return (txt := text.strip().split()) == sorted(txt)
+
+    return (txt := text.strip().split()) == sorted(txt,
+        key = lambda x: [ myorder.find(y.lower()) for y in x ] 
+        )
     
 
 def test(text):
