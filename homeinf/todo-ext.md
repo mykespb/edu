@@ -364,6 +364,25 @@ Fuzzy fitting
 Известны координаты 2 точек (широта, долгота) на земной поверхности.
 Определить расстояние между ними.
 
+import geopy
+import geopy.distance
+pt1 = geopy.Point(48.853, 2.349)
+pt2 = geopy.Point(52.516, 13.378)
+dist = geopy.distance.distance(pt1, pt2).km
+# 878.25
+afterwards you can query your lists of points:
+[pt for pt in points if geopy.distance.distance(orig, pt).km < 5.]
+
+https://geopy.readthedocs.io/en/stable/
+
+https://stackoverflow.com/questions/19412462/getting-distance-between-two-points-based-on-latitude-longitude
+
+https://towardsdatascience.com/calculating-distance-between-two-geolocations-in-python-26ad3afe287b
+
+https://www.askpython.com/python/examples/find-distance-between-two-geo-locations
+
+https://medium.com/@rahulmallah785671/geopy-library-in-python-how-to-calculate-distance-between-two-locations-with-precision-f29e95175f28
+
 
 Популярные песни и исполнители
 -------------------------------------
