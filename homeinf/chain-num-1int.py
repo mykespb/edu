@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# chain-num-1int.py 2025-01-262025-01-26 1.0
+# chain-num-1int.py 2025-01-262025-01-27 1.1
 
 from itertools import pairwise
 
-# ~ Цепочки чисел - 1
+# ~ Цепочки чисел - 2
 # ~ -----------------------------------------------
 
 # ~ Даны несколько чисел (это список именно целых чисел).
@@ -53,10 +53,10 @@ def main(many = 1):
     """решаем все примеры"""
     
     for inum in range(many):
-        sample = make()
+        sample = make(many)
         print(sample, "=>", solve(sample))
 
-main()
+main(10)
 
 # ---------------------------------------------------
 # результат:
