@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# Mikhail (myke) Kolodin 2025-01-16 2025-01-16 1.1
+# Mikhail (myke) Kolodin
+# 2025-01-16 2025-01-16 1.1
 # max-sum-digits.py
 
 # ~ Найти число с макс. суммой цифр (натуральное, из случано заданного набора)

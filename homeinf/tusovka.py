@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-17 2025-01-17 1.1
+# Mikhail (myke) Kolodin
+# 2025-01-17 2025-01-17 1.1
 # tusovka.py
 
 # ~ Где тусуемся?

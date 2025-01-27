@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# chain-num-1int.py 2025-01-262025-01-27 1.1
+# chain-num-1int.py 2025-01-26 2025-01-27 1.1
 
 from itertools import pairwise
 
