@@ -79,7 +79,7 @@ while rept:
 
             if kune[iset] & kune[jset]:
                 kune[iset] |= kune[jset]
-                kune[jset] = {}
+                kune[jset] = set()
                 rept = True
               
 out = sorted([ sorted(x, key=str.lower) for x in kune if x ])
