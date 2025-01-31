@@ -64,12 +64,10 @@ print("""
 """)
 
 kune = []
-
 for line in info:
     kune.append(set(line))
 
 rept = True
-
 while rept:
     rept = False
     
