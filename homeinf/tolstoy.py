@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-27 2025-01-27 1.0
+# 2025-01-27 2025-01-31 1.1
 # tolstoy.py
 
 # ~ Лев Толстой очень любил детей
@@ -24,18 +24,18 @@
 def main():
     """all checks"""
 
-    limit = 40
+    LIMIT = 40
     summa = 0
 
     print("\nЛев Толстой очень любил детей, и все ему было мало.\nПриведет полную комнату, шагу ступить негде, а он все кричит: 'Еще! Еще детей!'\n")
 
-    for portion in range(1, limit+1, 2):
-        if summa + portion > limit:
+    for portion in range(1, LIMIT+1, 2):
+        if summa + portion > LIMIT:
             break
         summa += portion
         print(f"Добавили детей: {portion}. Уже есть детей: {summa}! Ещё" + "!"*portion)
 
-    print(f"\nКомнату на {limit} детей заполнили на {summa} детей.\n")
+    print(f"\nКомнату на {LIMIT} детей заполнили на {summa} детей.\n")
         
 main()
 
