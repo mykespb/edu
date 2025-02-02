@@ -3,7 +3,7 @@
 
 Mikhail (myke) Kolodin
 
-2025-02-01
+2025-02-02
 
 Правильная дата
 -----------------------------------------
@@ -376,7 +376,7 @@ B = A
 Язык математики
 -----------------------------------------------
 
-Есть простой язык прграммирования с командами вида
+Есть простой язык программирования с командами вида
 A = 1
 или
 B = A
@@ -469,24 +469,4 @@ B = A
 каждые 4 дня весь день не ходит транспорт.
 Пусть нынче идеальный день без осадков и происшествий.
 Когда нам снова будет так же хорошо?
-
-
-Города Финляндии с двойными буквами
------------------------------------------------
-
-Дан список городов,
-вывести те, укоторых есть 1 только пара двойных букв,
-ровно 2 пары, ровно 3 пары...
-Отметить, гласные это парные буквы или согласные.
-
-Akaa Alavus Alajärvi Vaasa Valkeakoski Vantaa Varkaus Viitasaari Virrat Huittinen Iisalmi Ikaalinen Imatra Joensuu Jyväskylä
-Jämsä Kaarina Kalajoki Kangasala Kankaanpää Kannus Karkkila Kaskinen Kauniainen Kauhava Kauhajoki Kajaani Kemi Kemijärvi Kerava
-Keuruu Kitee Kiuruvesi Kokemäki Kokkola Kotka Kouvola Kristiinankaupunki Kuopio Kurikka Kuusamo Kuhmo Laitila Lappeenranta 
-Lapua Lahti Lieksa Loviisa Loimaa Lohja Maarianhamina Mikkeli Mänttä-Vilppula Naantali Närpiö Nivala Nokia Nurmes Orivesi
-Orimattila Oulainen Oulu Outokumpu Paimio Parainen Parkano Pieksämäki Pietarsaari Porvoo Pori Pudasjärvi Pyhäjärvi Raahe 
-Raisio Raasepori Rauma Riihimäki Rovaniemi Saarijärvi Savonlinna Salo Sastamala Seinäjoki Somero Suonenjoki Tampere Tornio
-Turku Ulvila Uusikaarlepyy Uusikaupunki Forssa Haapavesi Haapajärvi Hamina Hanko Harjavalta Heinola Helsinki Hyvinkää Hämeenlinna
-Espoo Ähtäri Äänekoski Ylöjärvi Ylivieska Järvenpää 
-
-https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D0%B0_%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D0%B8
 
