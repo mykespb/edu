@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-01-27 2025-01-27 2.2
+# 2025-01-27 2025-02-03 2.3
 # mousquetaires.py
 
 # ~ Три мушкетёра
@@ -31,8 +31,9 @@ nl = "\n"
 texts = persons.strip().splitlines()
 info = [portion.split(';') for portion in texts]
 
-head = info[0]
-info = info[1:]
+# ~ head = info[0]
+# ~ info = info[1:]
+head, *info = info
 
 SHORTNAME = 0
 FULLNAME  = 1
@@ -97,7 +98,7 @@ print( *( sorted( [ name[SHORTNAME] for name in info ],
 
 print(nl, "Кто знатнее, Атос или Портос?")
 
-titles = "шевалье барон граф маркиз герцог король".split()
+titles = "шевалье барон виконт граф маркиз герцог король".split()
 
 posATOS  = posPORTOS  = -1
 nameATOS = namePORTOS = "?"
