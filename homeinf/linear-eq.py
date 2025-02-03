@@ -29,11 +29,12 @@ def tester(a :float, b :float) -> None:
 # тесты
 
 tester(1., 0.)
-#tester(0., 0.)
-#tester(0., -1.)
 tester(1., 2.)
 tester(2., 1.)
 tester(-1., -2.)
+
+#tester(0., 0.)
+#tester(0., -1.)
 
 # -------------------------------------------
 # результаты
