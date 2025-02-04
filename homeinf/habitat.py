@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin 2025-01-13 2025-01-13 1.0
+# Mikhail (myke) Kolodin 
+# 2025-01-13 2025-01-13 1.0
 # habitat.py
 
 # ~ Среда обитания
