@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
+# array-fibonacci.py
 # myke's test for Fibonacci numbers again
-# 2021-05-20 1.0
+# 2021-05-20 2025-02-04 2.0
 
 def fib1(n=10):
     """ 1st version: dynamic list """
