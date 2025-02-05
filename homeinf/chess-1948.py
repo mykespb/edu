@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-23 2025-01-23 1.0
+# 2025-01-23 2025-02-05 1.1
 # chess-1948.py
 
 # ~ Дана турнирная таблица, 
@@ -24,11 +24,11 @@ def main():
     """запуск"""
 
     table = []
-    values = { 'В': 2, 'Н': 1, 'П': 0 }
+    values = { 'В': 1, 'Н': 0.5, 'П': 0 }
 
     for person in turnir.strip().splitlines():
         name, games = person.strip().split()
-        # ~ print(f"игрок {name} играл так: {games}")
+        print(f"игрок {name:10} играл так: {games}")
 
         table.append( (name,
             sum (map(
@@ -39,7 +39,8 @@ def main():
     table.sort(key = lambda x: x[1], reverse = True)
 
     print("все участники:", *table)
-    print("победитель:", table[0][0], "с", table[0][1], "очками.")
+    print("победитель:", table[0][0], "с", round(table[0][1], 1), "очками.")
+    # ~ print("победитель:", table[0][0], "с", round(table[0][1] / 2, 1), "очками.")
 
 
 main()
