@@ -2,6 +2,7 @@
 # Mikhail (myke) Kolodin, 2021
 # 2021-12-18 2021-12-18 1.0
 # mk-turtle-01.py
+# turtle graphics
 
 import random, turtle
 

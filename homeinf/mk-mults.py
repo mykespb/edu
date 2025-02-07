@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# 2024-11-18
+
 # таблица умножения
 
 def tabmult2():
