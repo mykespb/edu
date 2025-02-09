@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # primes1.py (c) Mikhail Kolodin
 # 2022-02-12 2022-02-12 1.0
+# Расчёт простых чисел.
 
 import math
 

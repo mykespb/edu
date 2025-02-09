@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# 2022-11-22
 # периметр треугольника
 
 def peri (a, b, c):
