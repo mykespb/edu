@@ -3,6 +3,7 @@
 # Mikhail (myke) Kolodin, 2022
 # 2022-04-08 2022-05-01 2.0
 # rev-array.py
+# переворот списка
 
 from random import randint as ri
 a = [ri(-100, 100) for _ in range(10)]
