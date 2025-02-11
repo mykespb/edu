@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 # Михаил Колодин
-# 2015-03-23 2015-06-16 1.1
+# 2015-03-23 2025-02-11 1.2
 # генератор расстановок случайных шахмат Фишера (960)
 
 import random
 
+
 f1 = {}   # поле = 1 горизонталь
 fp = [1, 2, 3, 4, 5, 6, 7, 8]  # свободные поля
+
 
 def make():
     """ генератор 1 расстановки = 1 горизонтали"""
@@ -50,8 +52,11 @@ def make():
     to = fp.pop()
     f1[to-1] = "K"
 
+
 def printall():
     """ печать всей доски по полученной 1 горизонтали"""
+    
+    print()
     for i in range(8): print (f1[i].lower(), end=" ")
     print()
     for i in range(8): print ("p", end=" ")
@@ -62,11 +67,15 @@ def printall():
     for i in range(8): print ("P", end=" ")
     print()
     for i in range(8): print (f1[i], end=" ")
+    print()
+    print()
+
 
 def main():
     """ диспетчер """
     make()
     printall()
+
 
 main()
 
