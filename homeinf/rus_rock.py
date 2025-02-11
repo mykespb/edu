@@ -2,6 +2,8 @@
 # myke 2022-05-07 2022-05-10 1.1
 # rus_rock.py
 
+#Русский рок - история групп
+
 from rus_rock_data import *
 from pprint import pp
 import datetime
