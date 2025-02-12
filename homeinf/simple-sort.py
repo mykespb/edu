@@ -3,6 +3,7 @@
 # simple sorter
 # Mikhail (myke) Kolodin, 2024
 # 2024-10-02 2024-10-02 1.1
+# простая программа сортировки
 
 import random
 

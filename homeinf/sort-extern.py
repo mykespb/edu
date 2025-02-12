@@ -3,7 +3,8 @@
 # sort-extern.py
 # external sorting
 # Mikhail (myke) Kolodin, 2024
-# 2024-10-02 2024-10-02 1.1
+# 2024-10-02 2024-10-02 0.1
+# внешняя сортировка (пока заготовка для урока)
 
 import random
 
