@@ -19,7 +19,6 @@ def make():
     to = random.choice((1, 3, 5, 7))
     f1[to-1] = "B"
     fp.remove(to)
-
     # ставим 2 слона
     to = random.choice((2, 4, 6, 8))
     f1[to-1] = "B"
