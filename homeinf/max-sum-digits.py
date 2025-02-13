@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-01-16 2025-01-16 1.1
+# 2025-01-16 2025-02-13 2.0
 # max-sum-digits.py
 
 # ~ Найти число с макс. суммой цифр (натуральное, из случайно заданного набора)
@@ -39,8 +39,7 @@ def max_sum(lst : list[int]) -> int:
 def test() -> None:
     """протестировать"""
 
-    seq = make()
-    res, su = max_sum(seq)
+    res, su = max_sum(seq := make())
 
     print(f"для последовательности {seq}\nчисло с макс. суммой цифр это {res} с суммой {su}")
 
