@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-# 
+# 2024-11-18 
+# turtle-x0.py
+
+#рисование черепашкой "red", "magenta", "blue","cyan","green","yellow","white"]
 
 from turtle import *
 bgcolor("black")
