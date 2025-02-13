@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # finnish-doubles-simple.py
-# 2025-02-12 2025-02-12 2.2
+# 2025-02-12 2025-02-13 2.3
 
 # ~ Города Финляндии с двойными буквами
 # ~ -----------------------------------------------
@@ -59,6 +59,10 @@ main()
 
 # ---------------------------------------------------
 # results
+
+# ~ Cities with double characters in names:
+
+# ~ Akaa, Espoo, Forssa, Haapavesi, Haapajärvi, Hyvinkää, Hämeenlinna, Huittinen, Ikaalinen, Joensuu, Järvenpää, Kaarina, Kankaanpää, Kannus, Karkkila, Kajaani, Keuruu, Kitee, Kokkola, Kristiinankaupunki, Kurikka, Kuusamo, Lappeenranta, Loviisa, Loimaa, Maarianhamina, Mikkeli, Mänttä-Vilppula, Naantali, Orimattila, Pietarsaari, Porvoo, Raahe, Raasepori, Riihimäki, Saarijärvi, Savonlinna, Uusikaarlepyy, Vaasa, Vantaa, Viitasaari, Virrat, 
 
 # ---------------------------------------------------
 # the end.
