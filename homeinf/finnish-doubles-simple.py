@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # finnish-doubles-simple.py
-# 2025-02-12 2025-02-13 2.3
+# 2025-02-12 2025-02-14 2.4
 
 # ~ Города Финляндии с двойными буквами
 # ~ -----------------------------------------------
@@ -10,6 +10,7 @@
 # ~ Дан список городов,
 # ~ распечатать имена тех, у которых есть хотя бы одна пара двойных букв
 # ~ (подряд идущих одинаковых).
+# ~ Посчитать, сколько получилось.
 
 # ~ https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D0%B0_%D0%A4%D0%B8%D0%BD%D0%BB%D1%8F%D0%BD%D0%B4%D0%B8%D0%B8
 
@@ -46,13 +47,15 @@ def main():
     print("\nCities with double characters in names:\n")
     cities = data.strip().split()
 
+    num = 0
     for city in cities:
         for i in range(len(city)-1):
             if city[i] == city[i+1]:
                 print(city, end=", ")
+                num += 1
                 break
 
-    print("\n")
+    print("\n\nThere are", num, "such cities.\n")
 
 
 main()
@@ -63,6 +66,8 @@ main()
 # ~ Cities with double characters in names:
 
 # ~ Akaa, Espoo, Forssa, Haapavesi, Haapajärvi, Hyvinkää, Hämeenlinna, Huittinen, Ikaalinen, Joensuu, Järvenpää, Kaarina, Kankaanpää, Kannus, Karkkila, Kajaani, Keuruu, Kitee, Kokkola, Kristiinankaupunki, Kurikka, Kuusamo, Lappeenranta, Loviisa, Loimaa, Maarianhamina, Mikkeli, Mänttä-Vilppula, Naantali, Orimattila, Pietarsaari, Porvoo, Raahe, Raasepori, Riihimäki, Saarijärvi, Savonlinna, Uusikaarlepyy, Vaasa, Vantaa, Viitasaari, Virrat, 
+
+# ~ There are 42 such cities.
 
 # ---------------------------------------------------
 # the end.
