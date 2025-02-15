@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-14 2025-02-14 1.0
+# 2025-02-15 2025-02-15 1.1
 # periodic-weather.py
 
 # ~ Периодическая погода 
@@ -41,7 +41,7 @@ def test(size):
 
 
 def main1():
-    """организовать перебор порядков"""
+    """организовать перебор дней"""
 
     size = 10
     result, days = test(size)
