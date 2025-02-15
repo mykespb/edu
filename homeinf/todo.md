@@ -572,4 +572,4 @@ B = A
 франц - nous troix quatre cinq treize toujours
 рус - один два три четыре пять девяносто октября октябрь
 серб - еден тринадесет петнадесет деветдесет нимам несте октобар
-
+фин - kiitos keskusta uksi kaksi kelmi miliono
