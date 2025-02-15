@@ -21,8 +21,10 @@ LIMIT = 1_000_000
 def test(size):
     """проверить на отрезке времени длиной size дней"""
 
+    # календарь
     days = [ 0 for _ in range(size) ]
 
+    # отмечаем напасти
     for i in range(2, size, 3): days[i] += 1
     for i in range(12, size, 13): days[i] += 1
     for i in range(28, size, 29): days[i] += 1
@@ -31,10 +33,11 @@ def test(size):
     for i in range(4, size, 5): days[i] += 1
     for i in range(10, size, 11): days[i] += 1
 
+    # ищем удачный день
     for i in range(1, size):
         if days[i] == 0:
             return True, days
-    return False, days
+    return False
 
 
 def main1():
@@ -59,6 +62,13 @@ def main2():
         return 
 
     print(f"дни: {days}")
-    
+
 main = main2
 main()
+
+# -------------------------------------------
+# ~ проверяем 7 дней: False
+# ~ проверяем 14 дней: False
+# ~ проверяем 28 дней: True
+# ~ дни: [0, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1, 2, 2, 1, 0, 2, 0, 2, 2, 2, 0, 2, 1, 2, 1, 2]
+# -------------------------------------------
