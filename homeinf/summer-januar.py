@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-17 2025-02-17 1.0
+# 2025-02-17 2025-02-17 1.1
 # summer-januar.py
 
 # ~ Летний январь
@@ -28,7 +28,7 @@ cities = """
 55 N 13 E,Kopenhagen,DK
 34 N 15 E,Valetta,MT
 35 S 149 E,Canberra,AU
-41 S 175 E,Wellinhton,NZ
+41 S 175 E,Wellington,NZ
 17 N 62 W,Basseterre,SKN
 14 N 61 W,Castries,SL
 15 S 48 W,Brasilia,BR
@@ -46,4 +46,4 @@ for city in cities.strip().splitlines():
 
 # результат:
 # ~ city: Canberra
-# ~ city: Wellinhton
+# ~ city: Wellington
