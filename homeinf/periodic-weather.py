@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-15 2025-02-15 1.1
+# 2025-02-15 2025-02-17 2.1
 # periodic-weather.py
 
 # ~ Периодическая погода 
@@ -36,16 +36,16 @@ def test(size):
     # ищем удачный день
     for i in range(1, size):
         if days[i] == 0:
-            return True, days
-    return False
+            return True, i, days
+    return False, 0, 0
 
 
 def main1():
     """организовать перебор дней"""
 
     size = 10
-    result, days = test(size)
-    print(f"проверяем {size} дней: {result}\n{days}")
+    result, day, days = test(size)
+    print(f"проверяем {size} дней {day if result else '?'} : {result}\n{days}")
 
     
 def main2():
@@ -53,9 +53,11 @@ def main2():
 
     size = 7            # берём вначале 1 неделю...
     while size <= LIMIT:
-        result, days = test(size)
+        result, day, days = test(size)
         print(f"проверяем {size} дней: {result}")
-        if result: break
+        if result:
+            print(f'счастливый день: {day}')
+            break
         size *= 2       # если не повезло, то удваиваем период проверки
     else:
         print("не смогли найти хороших дней")
@@ -64,6 +66,7 @@ def main2():
     print(f"дни: {days}")
 
 main = main2
+
 main()
 
 # -------------------------------------------
