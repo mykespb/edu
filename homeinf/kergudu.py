@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-15 2025-02-16 1.2
+# 2025-02-15 2025-02-16 1.3
 # kergudu.py
 
 # ~ Бамбарбия кергуду
@@ -29,11 +29,11 @@ def test(slova):
     for slovo in slova.strip().lower().split():
         if slovo[-1] not in vowels:
             return False
-        vc = 0
+        vowcount = 0
         for c in slovo:
             if c in vowels:
-                vc += 1
-        if vc % 2 == 0 and slovo[-2] not in vowels:
+                vowcount += 1
+        if vowcount % 2 == 0 and slovo[-2] not in vowels:
             return False
 
     return True
