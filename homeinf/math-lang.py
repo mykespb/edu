@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-02-20 1.3
+# 2025-02-20 2025-02-21 1.4
 # math-lang.py
 
 # ~ Язык математики
@@ -53,7 +53,7 @@ def calc():
         else:
             dex[left] = right
 
-    print("результат:")
+    print("\nрезультат:")
 
     width = max( [ len(x) for x in dex] )
 
