@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-23 2025-02-23 0.1
+# 2025-02-23 2025-02-23 1.0
 # expr-simple.py
 
 # ~ Упрощение выражения и общее приведение подобных
@@ -36,7 +36,7 @@ def oneExpr(ex: str) -> str:
 
     print(f"{subs=}")
 
-    terms = defaultdict(list)
+    terms = defaultdict(int)
 
     for isub, sub in enumerate(subs):
         print(f"{isub=}, {sub=}")
@@ -46,9 +46,12 @@ def oneExpr(ex: str) -> str:
             sub = sub[0] + '1' + sub[1]
             terms[sub[-1]] += int(sub[:-1])
         else:
-            terms[sub[-1]] == int(sub[:-1])
+            terms[sub[-1]] += int(sub[:-1])
 
-    print(f"{list(terms)=}")
+    print(f"{dict(terms)=}")
+
+    for elem in sorted(terms):
+        print(f"{terms[elem]:+}{elem}", end="")
 
 
 def allExprs(exs: str) -> None:
