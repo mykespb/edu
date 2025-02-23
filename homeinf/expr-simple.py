@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-23 2025-02-23 1.0
+# 2025-02-23 2025-02-23 1.1
 # expr-simple.py
 
 # ~ Упрощение выражения и общее приведение подобных
@@ -50,6 +50,7 @@ def oneExpr(ex: str) -> str:
 
     print(f"{dict(terms)=}")
 
+    print("\nрезультат:", end="")
     for elem in sorted(terms):
         print(f"{terms[elem]:+}{elem}", end="")
 
@@ -58,7 +59,7 @@ def allExprs(exs: str) -> None:
     """все выражения"""
 
     for iexpr, expr in enumerate(exprs.strip().splitlines(), 1):
-        print(f"\nвыражение {iexpr}: '{expr}'")
+        print(f"\n\nвыражение {iexpr}: '{expr}'\n")
         oneExpr(expr)
 
 
@@ -67,6 +68,6 @@ def main() -> None:
 
     print("\nВыполняем упрощение выражений с переменными.")
     allExprs(exprs)
-    print("\nВсё выполнено.\n")
+    print("\n\nВсё выполнено.\n")
 
 main()
