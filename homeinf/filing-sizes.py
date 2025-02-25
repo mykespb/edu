@@ -36,3 +36,9 @@ get_files()
 
 # ~ showing all files, transacts.pickle, arithm-seq.txt, intext.txt, eisenhower.pickle, outtext.txt
 # ~ big file: transacts.pickle has size of 7068 bytes
+
+# ~ showing all files, transacts.pickle, arithm-seq.txt, intext.txt, eisenhower.pickle, outtext.txt
+
+# ~ big file: 'transacts.pickle' has size of 7068 bytes
+
+# ~ 1 - big files found
