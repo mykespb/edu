@@ -18,7 +18,7 @@ conn = sql.connect(db)
 cur = conn.cursor()
 
 # get current date
-cur.execute("SELECT date() as getdate")
+cur.execute("SELECT date()")
 today = cur.fetchall()[0][0]
 print(f"{today=}")
 
