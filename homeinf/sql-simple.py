@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-28 2025-02-28 1.0
+# 2025-02-28 2025-02-28 1.1
 # sql-simple.py
 
 # ~ Simple work with sqlite3 database in memory.
 
-import os
+# ~ import os
 import sqlite3 as sql
 
 #db = '/tmp/one.db'
@@ -16,6 +16,11 @@ print("Hello! Let's play with database.")
 # make connection
 conn = sql.connect(db)
 cur = conn.cursor()
+
+# get current date
+cur.execute("SELECT date() as getdate")
+today = cur.fetchall()[0][0]
+print(f"{today=}")
 
 # create 1 table
 cmd = "CREATE TABLE IF NOT EXISTS people (first TEXT, last TEXT, bd TEXT)"
