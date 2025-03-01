@@ -2563,14 +2563,12 @@ sqeq.py
 Решение квадратных уравнений.
 a, b, c -> x / x1, x2 / {}
 
-
 sql-simple.py
 ---------------------------
 
 2025-02-28 2025-02-28 1.0
 
 Simple work with sqlite3 database in memory.
-
 
 square1248.py
 ---------------------------
