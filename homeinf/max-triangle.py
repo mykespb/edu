@@ -31,6 +31,7 @@ from random import random as rr
 
 SCALE = 10.      # разбор данных (расстояние от нуля)
 
+
 # ----------------------------------------------
 # make random triangles
 
@@ -78,6 +79,7 @@ def run_tests(tri):
     for el in tri[0][:-1]:
         print( "%.2f" % el , end=", " )
     print()
+
 
 def calc_size(tri):
     """
