@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-28 2025-02-28 1.1
+# 2025-02-28 2025-03-05 1.2
 # sql-simple.py
 
 # ~ Simple work with sqlite3 database in memory.
@@ -46,7 +46,7 @@ print('\nAll data:')
 for row in data:
     print(row)
     
-# read delected data    
+# read selected data    
 
 data = cur.execute("SELECT bd, last FROM people WHERE bd > '2009' ORDER BY bd DESC ")
 
@@ -61,7 +61,10 @@ conn.close()
 print("\nDB is closed. No reading or writing is possible now.\nGood-bye!")
 
 
+# --- results: ---
+
 # ~ Hello! Let's play with database.
+# ~ today='2025-03-05'
 
 # ~ All data:
 # ~ ('John', 'Done', '2010-01-21')
