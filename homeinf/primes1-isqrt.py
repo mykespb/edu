@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# primes1isqrt.py (c) Mikhail Kolodin
+# primes1-isqrt.py (c) Mikhail Kolodin
 # 2022-02-12 2025-02-11 1.1
 # Расчёт простых чисел.
 
