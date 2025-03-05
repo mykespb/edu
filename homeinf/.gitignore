@@ -1,4 +1,3 @@
-__pycache__
-*.png
-venv/
+tmp/
+.gitignore
 homeinf.geany
