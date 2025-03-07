@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-17 2025-02-17 1.1
+# 2025-02-17 2025-03-07 1.2
 # summer-januar.py
 
 # ~ Летний январь
 
 # https://www.youtube.com/watch?v=J3YOyygsJqk
 # ~ "Мэри Поппинс, до свиданья"
+# ~ http://www.maps-world.ru/polit_karta_mira.jpg
 
 # ~ В детской песенке из фильма поётся:
 # ~ "Это было прошлым летом
@@ -37,8 +38,11 @@ cities = """
 15 S 48 W,Brasilia,BR
 """
 
-kingdoms = "NZ AU SE GB NO DK CA SL SKN".strip().split()
+kingdoms = "NZ AU SE GB NO DK CA SL SKN"
 
+# -----------------------------------------
+
+kingdoms = kingdoms.split()
 
 for city in cities.strip().splitlines():
     where, name, country = city.strip().split(',')
@@ -47,6 +51,8 @@ for city in cities.strip().splitlines():
         print(f"city: {name}")
 
 
+# -----------------------------------------
 # результат:
 # ~ city: Canberra
 # ~ city: Wellington
+# -----------------------------------------
