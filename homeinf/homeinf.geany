@@ -27,11 +27,11 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=20
+current_page=3
 FILE_NAME_0=1863;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles-simple.py;0;4
 FILE_NAME_1=1762;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles.py;0;4
 FILE_NAME_2=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fmax-sum-digits.py;0;4
-FILE_NAME_3=0;None;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ftoc.txt;0;4
+FILE_NAME_3=4278;None;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ftoc.txt;0;4
 FILE_NAME_4=22989;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ftodo.md;0;4
 FILE_NAME_5=63663;Markdown;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ftodo-ext.md;0;4
 FILE_NAME_6=1169;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fpytests%2Fetc%2Ffiling-sizes.py;0;4
@@ -48,7 +48,7 @@ FILE_NAME_16=706;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fpo
 FILE_NAME_17=1098;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fspy-leningrad.py;0;4
 FILE_NAME_18=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fword-odds.py;0;4
 FILE_NAME_19=1436;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fcats-n-mice.py;0;4
-FILE_NAME_20=1425;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fsummer-januar.py;0;4
+FILE_NAME_20=94;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fsummer-januar.py;0;4
 FILE_NAME_21=2774;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fother-science-ext.py;0;4
 FILE_NAME_22=96;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fsave-even.py;0;4
 FILE_NAME_23=63;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Faround-figures.py;0;4
@@ -72,6 +72,7 @@ FILE_NAME_40=655;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fpa
 FILE_NAME_41=2424;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Feisenhower.py;0;4
 FILE_NAME_42=412;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fprimes1-isqrt.py;0;4
 FILE_NAME_43=1109;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fprimes2-erato.py;0;4
+FILE_NAME_44=429;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Farrays-tests.py;0;4
 
 [VTE]
 last_dir=/home/myke/pro/edu/homeinf
