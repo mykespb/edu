@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-03 2025-03-03 1.0
+# 2025-03-03 2025-03-05 1.1
 # best-worker.py
 
 # ~ Лучшие сотрудники
@@ -31,11 +31,11 @@ def maker():
 
     MANY = 100
 
-    names1 = "Alice Bob Kate Don Ann Franz Halle Ida Lana Mike Nil Oleg Petra Sarah Tina Uma Vika Will Yan Zara".split()
+    namesf = "Alice Bob Kate Don Ann Franz Halle Ida Lana Mike Nil Oleg Petra Sarah Tina Uma Vika Will Yan Zara".split()
     namesl = "Arrow Boogie Chanes Dodge Eleph Gang Hora Innes Judas Kannie Lounas Medock Narrow Oswald Popov Quadrant Raven Statue Taran Ufolog Warrior Yankey Zulu".split()
     profs  = "Director Accountant Designer Philosopher Writer Assistant Washer Carrier Team_Leader Project_Leader Copyrighter".split()
     
-    staff = [ ( choice(namesl), choice(names1), choice(profs), randint(20, 50), random() )
+    staff = [ ( choice(namesl), choice(namesf), choice(profs), randint(20, 50), random() )
         for i in range(MANY) ]
 
     # ~ print(hr)
@@ -73,6 +73,8 @@ def main():
 
 main()
 
+# ---------------------------------------------------------------------------
+
 # ~ Accountant          , Oswald, Lana, Accountant, 33, 0.9909591298477523
 # ~ Assistant           , Lounas, Will, Assistant, 30, 0.9958816919894039
 # ~ Carrier             , Medock, Nil, Carrier, 27, 0.9938714912572284
@@ -84,3 +86,6 @@ main()
 # ~ Team_Leader         , Judas, Oleg, Team_Leader, 35, 0.9468500506942112
 # ~ Washer              , Taran, Alice, Washer, 26, 0.7931019662804607
 # ~ Writer              , Warrior, Oleg, Writer, 25, 0.9442344331602278
+
+# ---------------------------------------------------------------------------
+
