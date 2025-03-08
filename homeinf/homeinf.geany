@@ -27,7 +27,7 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=3
+current_page=44
 FILE_NAME_0=1863;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles-simple.py;0;4
 FILE_NAME_1=1762;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles.py;0;4
 FILE_NAME_2=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fmax-sum-digits.py;0;4
@@ -72,7 +72,7 @@ FILE_NAME_40=655;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fpa
 FILE_NAME_41=2424;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Feisenhower.py;0;4
 FILE_NAME_42=412;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fprimes1-isqrt.py;0;4
 FILE_NAME_43=1109;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fprimes2-erato.py;0;4
-FILE_NAME_44=429;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Farrays-tests.py;0;4
+FILE_NAME_44=3052;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Farrays-tests.py;0;4
 
 [VTE]
-last_dir=/home/myke/pro/edu/homeinf
+last_dir=/home/myke

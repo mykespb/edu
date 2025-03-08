@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-07 2025-03-07 1.0
+# 2025-03-07 2025-03-08 1.1
 # arrays-tests.py
 
 # ~ Изучение типа данных array, сравнение скорости работы и занимаемой памяти с list.
@@ -89,3 +89,18 @@ print(f"это заняло для list {t2-t1} секунд")
 
 # ~ https://pythonworld.ru/moduli/modul-array-massivy-v-python.html
 
+
+# ~ for https://interview.cups.online/live-coding/
+# ~ adder = 10_000 is changed to adder = 1_000
+# ~ otherwise we have not enough time
+
+# ~ arrays: типы элементов: bBuhHiIlLqQfd
+# ~ создание: l=[], a=array('i')
+# ~ размер пустого: 80, 56
+# ~ размер единичного: 96, 88
+# ~ добавили 1000 элементов к array. заняло 0.00021600723266601562 секунд. размер стал 4_200 байт
+# ~ добавили 1000 элементов к list. заняло 0.00014257431030273438 секунд. размер стал 8_856 байт
+# ~ сделаем shuffle
+# ~ теперь отсортируем
+# ~ это заняло для array 0.2448577880859375 секунд
+# ~ это заняло для list 0.14834260940551758 секунд
