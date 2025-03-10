@@ -27,7 +27,7 @@ long_line_behaviour=1
 long_line_column=80
 
 [files]
-current_page=7
+current_page=17
 FILE_NAME_0=1863;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles-simple.py;0;4
 FILE_NAME_1=1762;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffinnish-doubles.py;0;4
 FILE_NAME_2=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fmax-sum-digits.py;0;4
@@ -45,7 +45,7 @@ FILE_NAME_13=74;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fper
 FILE_NAME_14=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fkergudu.py;0;4
 FILE_NAME_15=1185;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Finstitutes.py;0;4
 FILE_NAME_16=706;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fpo-slogam.py;0;4
-FILE_NAME_17=1098;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fspy-leningrad.py;0;4
+FILE_NAME_17=2124;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fspy-leningrad.py;0;4
 FILE_NAME_18=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fword-odds.py;0;4
 FILE_NAME_19=1436;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fcats-n-mice.py;0;4
 FILE_NAME_20=94;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fsummer-januar.py;0;4
@@ -55,7 +55,7 @@ FILE_NAME_23=63;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Faro
 FILE_NAME_24=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ffriend-all.py;0;4
 FILE_NAME_25=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Ftravel-london.py;0;4
 FILE_NAME_26=0;LaTeX;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fjobs%2Ftexing%2Fsqrt%2Fsqequ.tex;0;4
-FILE_NAME_27=736;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fmath-lang.py;0;4
+FILE_NAME_27=412;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fmath-lang.py;0;4
 FILE_NAME_28=868;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fpytests%2Fetc%2Feisenhower.py;0;4
 FILE_NAME_29=74;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fheavy-train.py;0;4
 FILE_NAME_30=0;Python;0;EUTF-8;0;1;1;%2Fhome%2Fmyke%2Fpro%2Fedu%2Fhomeinf%2Fexpr-simple.py;0;4
