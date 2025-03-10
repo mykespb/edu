@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # queens-test.py
-# 2025-02-14 2025-03-10 1.2
+# 2025-02-14 2025-03-10 1.3
 
 # ~ Дан список расположения ферзей на доске, повертикально, с 0 по 7 - их горизонтали (тоже 0..9).
 # ~ Проверить, хорошее ли их расположение (т.е. верно ли, что ни один не бьёт другого).
@@ -51,8 +51,8 @@ def print_board(boa: list[int]) -> None:
                 print(" ", end = " ")
         print()
     print("    ", end="")
-    for i in range(1, 9):
-        print("ABCDEFGH"[i-1], end=' ')
+    for i in range(8):
+        print("ABCDEFGH"[i], end=' ')
     print()
 
 
