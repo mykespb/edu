@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # spy-leningrad.py
-# 2025-02-16 2025-02-16 1.0
+# 2025-02-16 2025-03-14 1.1
 
 # ~ Поимка шпиона в Ленинграде
 # ~ ----------------------------------
@@ -43,7 +43,7 @@ adresa = """
 def onlydig(text):
     """оставить только цифры и пробелы"""
 
-    return "".join( c if c in "0123456789 " else "" for c in list(text) ) 
+    return "".join( c if c in "0123456789 " else "" for c in text ) 
 
 
 def test(adr):
