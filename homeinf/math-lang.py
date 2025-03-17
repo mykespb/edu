@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-03-10 1.5
+# 2025-02-20 2025-03-17 1.6
 # math-lang.py
 
 # ~ Язык математики
@@ -46,7 +46,7 @@ def calc():
         
         expr = expr.replace(' ', '')
 
-        left, right = expr.strip().split('=')
+        left, right = expr.split('=')
         
         if right in dex:
             dex[left] = dex[right]
