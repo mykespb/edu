@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-28 2025-03-17 1.4
+# 2025-02-28 2025-03-18 1.5
 # sql-simple.py
 
 # ~ Simple work with sqlite3 database in memory.
@@ -18,6 +18,10 @@ conn = sql.connect(db)
 cur = conn.cursor()
 
 # get current date
+cur.execute("SELECT date()")
+today = cur.fetchone()[0]
+print(f"{today=}")
+
 cur.execute("SELECT date()")
 today = cur.fetchall()[0][0]
 print(f"{today=}")
