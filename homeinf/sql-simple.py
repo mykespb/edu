@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-28 2025-03-18 1.5
+# 2025-02-28 2025-03-19 1.6
 # sql-simple.py
 
 # ~ Simple work with sqlite3 database in memory.
@@ -38,6 +38,7 @@ print('\nPopulate')
 persons = [
     ("John", "Done", "2010-01-21"),
     ("Mike", "Soft", "2012-02-11"),
+    ("Mike", "Hard", "2015-03-01"),
     ("Dennis", "Sooner", "2008-05-31"),
     ]
 
