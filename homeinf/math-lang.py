@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-03-17 1.6
+# 2025-02-20 2025-03-23 1.8
 # math-lang.py
 
 # ~ Язык математики
@@ -20,7 +20,7 @@
 
 # ----------------- data
 
-exprs = """
+prog1 = """
 A=1
 B = A
 B =23
@@ -32,6 +32,24 @@ NOOB =   FAN
 VAR = B
 """
 
+prog2 = """
+A=1
+Q =R
+B = A
+B =23
+C= 1
+D=B
+FAN =    56
+ANSWER  =   42
+NOOB =   FAN
+VAR = B
+P=Q
+Z=P
+The Best Variable = 0
+"""
+
+prog = prog1
+
 # ----------------- calc
 
 def calc():
@@ -39,7 +57,7 @@ def calc():
 
     dex = {}
 
-    for iexpr, expr in enumerate(exprs.strip().splitlines(), 1):
+    for iexpr, expr in enumerate(prog.strip().splitlines(), 1):
         print(f"#{iexpr:3}: {expr}")
 
         assert '=' in expr
@@ -64,7 +82,7 @@ def calc():
 calc()
 
 
-# ----------------- resuilt
+# ----------------- result
 
 # ~ #  1: A=1
 # ~ #  2: B = A
