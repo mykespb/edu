@@ -39,7 +39,7 @@ print("Prepare coder.")
 with open(file_raven, 'rt') as fin:
     text = fin.read()
 
-for linum, txt in enumerate(text.strip().split('\n'), 1):
+for linum, txt in enumerate(text.lower().strip().split('\n'), 1):
     for pos, ch in enumerate(txt, 1):
         chlow = ch.lower()
         abc[chlow].append((linum, pos))
@@ -54,11 +54,18 @@ print("Encoding started.")
 
 with open(file_mess_coded, "wt") as fout:
 
-    for ch in message:
-        if ch not in abc:
-            ch = '?'
+    for ch in message.strip():
 
-        loca = choice(abc[ch])
+        if ch == '\n' or ch == '\r':
+            outta = f"0 0 "
+            fout.write(outta)
+            continue
+        
+        chlow = ch.lower()
+        if chlow not in abc:
+            chlow = '?'
+
+        loca = choice(abc[chlow])
         outta = f"{loca[0]} {loca[1]} "
 
         fout.write(outta)
