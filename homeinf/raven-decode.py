@@ -3,6 +3,8 @@
 # 2025-03-27 2025-03-27 1.2
 # raven-decode.py
 
+# ~ Раскодировать секретное послание по "Ворону"
+
 # file with text of verse
 file_raven = "tmp/raven-betaki.txt"
 
