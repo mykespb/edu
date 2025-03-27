@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
 # institutes.py
-# 2025-02-15 2025-02-15 1.1
+# 2025-02-15 2025-03-27 1.2
 
 # ~ Институты
 # ~ Известно, что названия институтов часто начинаются на первые буквы соответствующих городов.
@@ -12,14 +12,16 @@ cities = "Ленинград Москва Новосибирск"
 
 institutes = "ЛГУ МГУ НГУ ЛИАП ЛЭТИ ЛИТМО МПИ ЛИК ЛМИ1 ЛПИ МПИ МИСиС НЭТИ ЛИСИ ЛИВТ"
 
-cabr = {}
-
-for city in (cl := cities.strip().split()):
-    cabr[city[0]] = city
+citylist = sorted(cities.strip().split())
 
 insts = sorted(institutes.strip().split())
 
-for city in sorted(cl):
+cabr = {}
+
+for city in citylist:
+    cabr[city[0]] = city
+
+for city in citylist:
     first = city[0]
     print(cabr[first], end=" : ")
     for iname in insts:

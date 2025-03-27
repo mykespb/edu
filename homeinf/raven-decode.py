@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-27 2025-03-27 1.1
+# 2025-03-27 2025-03-27 1.2
 # raven-decode.py
 
 # file with text of verse
@@ -51,10 +51,6 @@ for i in range(len(arr) // 2):
 
     if (p1, p2) in abc:
         got += abc[(p1, p2)]
-        # ~ print(".", end="")
-    else:
-        # ~ print("?", end="")
-        ...
        
 
 print(got)        

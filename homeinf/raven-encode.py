@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-27 2025-03-27 1.0
+# 2025-03-27 2025-03-27 1.1
 # raven-encode.py
 
 # file with text of verse
@@ -25,7 +25,7 @@ message = """
 Он вам даст батон с взрывчаткой — принесете мне батон.
 """
 
-# imports and setup
+# imports
 
 from collections import defaultdict
 from random import choice
@@ -39,7 +39,7 @@ print("Prepare coder.")
 with open(file_raven, 'rt') as fin:
     text = fin.read()
 
-for linum, txt in enumerate(text.lower().strip().split('\n'), 1):
+for linum, txt in enumerate(text.strip().lower().split('\n'), 1):
     for pos, ch in enumerate(txt, 1):
         chlow = ch.lower()
         abc[chlow].append((linum, pos))
@@ -52,20 +52,22 @@ print("Encoding started.")
 
 with open(file_mess_coded, "wt") as fout:
 
-    for ch in message.strip():
+    for ch in message.strip().lower():
 
         if ch == '\n' or ch == '\r':
-            outta = f"0 0 "
+            outta = "0 0 "
             fout.write(outta)
             continue
         
-        chlow = ch.lower()
-        if chlow not in abc:
-            chlow = '?'
+        if ch not in abc:
+            ch = '?'
 
-        loca = choice(abc[chlow])
+        loca = choice(abc[ch])
         outta = f"{loca[0]} {loca[1]} "
 
         fout.write(outta)
 
 print("Encoding finished.")
+
+
+# ~ 80 45 92 15 89 9 86 14 123 1 46 36 94 26 94 60 61 24 22 19 11 30 95 ...
