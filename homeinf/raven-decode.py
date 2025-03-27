@@ -9,22 +9,6 @@ file_raven = "tmp/raven-betaki.txt"
 # file to get encoded message from
 file_mess_coded = "tmp/text-coded.txt"
 
-# secret message
-# ~ message = """
-# ~ Вот и первое заданье.
-# ~ В три пятнадцать возле бани
-# ~ (Может, раньше, а может — позже) остановится такси.
-# ~ Надо сесть, связать шофера,
-# ~ Разыграть простого вора,
-# ~ А потом про этот случай раструбят по BBC.
-# ~ И еще. Оденьтесь свеже,
-# ~ И на выставке в Манеже
-# ~ К вам приблизится мужчина с чемоданом — скажет он:
-# ~ "Не хотите ли черешни?"
-# ~ Вы ответите: "Конечно!"
-# ~ Он вам даст батон с взрывчаткой — принесете мне батон.
-# ~ """
-
 # imports and setup
 
 from collections import defaultdict
@@ -62,8 +46,6 @@ arr = list(map(int, coded.strip().split()))
 for i in range(len(arr) // 2):
 
     p1, p2 = arr[i*2], arr[i*2+1]
-
-    # ~ print(p1, p2)
 
     if p1 == p2 == 0:
         got += '\n'
