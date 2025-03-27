@@ -44,8 +44,6 @@ for linum, txt in enumerate(text.lower().strip().split('\n'), 1):
         chlow = ch.lower()
         abc[chlow].append((linum, pos))
 
-#print(abc)
-
 print("Coder prepared.")
 
 # program - encode message

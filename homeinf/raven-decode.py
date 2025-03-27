@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-27 2025-03-27 1.0
+# 2025-03-27 2025-03-27 1.1
 # raven-decode.py
 
 # file with text of verse
@@ -16,7 +16,7 @@ from random import choice
 
 # program - prepare coder
 
-abc = defaultdict(str)
+abc = {}
 
 print("Prepare coder.")
 
@@ -27,8 +27,6 @@ for linum, txt in enumerate(text.lower().strip().split('\n'), 1):
     for pos, ch in enumerate(txt, 1):
         chlow = ch.lower()
         abc[(linum, pos)] = ch
-
-# ~ print(abc)
 
 print("Coder prepared.")
 
