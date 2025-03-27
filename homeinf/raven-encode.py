@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-27 2025-03-27 0.1
+# 2025-03-27 2025-03-27 1.0
 # raven-encode.py
 
 # file with text of verse
