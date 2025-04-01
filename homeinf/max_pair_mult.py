@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
 # max_pair_mult.py
-# 2025-04-01 2025-04-01 1.0
+# 2025-04-01 2025-04-01 2.1
 
 # ~ Есть несколько наборов натуральных чисел, записанных построчно.
 # ~ Определить пару чисел (внутри одного из наборов), дающих максимальное произведение.
@@ -14,7 +14,27 @@ data = """
 998 665 221
 """
 
+import random
+
+num_of_groups = random.randint(3, 9)
+nums_in_a_group = random.randint(3, 9)
+max_val = 99
+
 # ~ data = ""
+
+def make_data():
+    """подготовить наборы"""
+
+    data = []
+
+    for row in range(random.randint(2, num_of_groups)):
+        data.append( ' ' .join( [ str(random.randint(1, max_val))
+            for _ in range(random.randint(1, nums_in_a_group)) ] ) )
+
+    data = '\n' .join(data)
+
+    return data
+    
 
 def solve():
     """решить всё"""
@@ -40,4 +60,6 @@ def solve():
 
     print(f"максимальное произведение равно {mval} для чисел {left} и {right}")
 
+
+# ~ data = make_data()
 solve()
