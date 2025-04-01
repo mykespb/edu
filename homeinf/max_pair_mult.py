@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
 # max_pair_mult.py
-# 2025-04-01 2025-04-01 3.0
+# 2025-04-01 2025-04-01 3.2
 
 # ~ Есть несколько наборов натуральных чисел, записанных построчно.
 # ~ Определить пару чисел (внутри одного из наборов), дающих максимальное произведение.
@@ -40,7 +40,11 @@ def solve():
     """решить всё"""
 
     groups = data.strip().splitlines()
-    print(f"{groups=}")
+
+    # ~ print(f"{groups=}")
+    print("Группы:")
+    for i, group in enumerate(groups, 1):
+        print(i, ":", group)
 
     assert len(groups), "Должны быть указаны наборы чисел!"
 
@@ -58,7 +62,7 @@ def solve():
                 left = nums[i]
                 right = nums[i+1]
 
-    print(f"максимальное произведение равно {mval} для чисел {left} и {right}")
+    print(f"Максимальное произведение равно {mval} для чисел {left} и {right}")
 
 
 # ~ data = make_data()
