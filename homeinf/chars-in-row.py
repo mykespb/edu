@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-03 1.0
+# 2025-04-03 2025-04-03 1.1
 # chars-in-rows.py
 
 # ~ Даётся массив из строк, необходимо вернуть те строки из массива, которые могут быть набраны лишь при использовании знаков из одного ряда клавиатуры.
@@ -33,7 +33,7 @@ def good(word):
 
     skbd = list(map(set, kbd))
 
-    return any( set(word.upper()) <= row for row in skbd )
+    return any( [set(word.upper()) <= row for row in skbd] )
     
 
 check(words1)
