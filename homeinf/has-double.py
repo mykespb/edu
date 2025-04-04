@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-04 1.1
+# 2025-04-03 2025-04-04 1.2
 # has-double.py
 
 # ~ Проверить, есть ли в данном списке дубли (одинаковые натуральные числа).
@@ -26,14 +26,13 @@ def runner(times = 1, leng = 15, diap = 99):
 
     for test in range(1, times+1):
         arr = make(leng, diap)
-        print(f"test {test}: array is {arr}, check is {check(arr)}")
-
+        print(f"test {test}: array is {arr}, check is { 'negative positive' .split() [ check(arr) ] }")
 
 runner(5)
 
 
-# ~ test 1: array is [33, -74, 66, 62, 78, -72, -64, -72, 30, -70, 36, -86, -12, 64, 2], check is True
-# ~ test 2: array is [17, -13, -38, 17, 56, 77, -45, 60, -17, -83, -35, 47, 54, -40, -93], check is True
-# ~ test 3: array is [84, -73, -65, -34, -3, -68, 0, -82, -61, -7, -39, 71, 45, -15, 53], check is False
-# ~ test 4: array is [-11, 22, 83, -16, 43, 81, -3, -5, -6, -95, 7, 75, -99, 11, -54], check is False
-# ~ test 5: array is [-45, -85, -58, 36, 70, 99, 41, 39, 72, -56, 35, -35, -50, 92, -33], check is False
+# ~ test 1: array is [47, -87, -46, 4, 48, -46, -70, -26, 44, -58, 60, -86, 82, -88, 73], check is positive
+# ~ test 2: array is [75, -83, 54, 65, 67, 54, 82, -83, -10, -59, 9, -39, 70, 32, -67], check is positive
+# ~ test 3: array is [-32, -55, 55, 14, -27, 55, -46, -26, -6, 64, -41, 10, 66, -3, 94], check is positive
+# ~ test 4: array is [-28, -92, -2, 81, 98, 97, 42, 29, -36, -78, -47, -13, 24, 18, 63], check is negative
+# ~ test 5: array is [28, 82, -35, -50, 50, 32, 44, -97, 86, 62, -96, -30, 15, 68, 3], check is negative
