@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-04 1.4
+# 2025-04-03 2025-04-04 1.5
 # hill-top.py
 
 # ~ Верно ли, что в данном массиве натуральных чисел
@@ -43,7 +43,7 @@ def test_hill(hill):
 
 hill = make_hill() 
 # ~ print(f"{hill} => { test_hill(hill) }")        
-print(f"{hill} => { "нет да" .split() [ test_hill(hill) ] }")        
+print(f"{hill} => { 'нет да' .split() [ test_hill(hill) ] }")        
 
 
 # ~ [6, 32, 47, 49, 60, 36, 96, 94, 92, 88, 82, 77, 60, 43, 36, 98, 34, 13, 6, 5] => нет
