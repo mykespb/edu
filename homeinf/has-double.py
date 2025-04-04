@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-03 1.0
+# 2025-04-03 2025-04-04 1.1
 # has-double.py
 
 # ~ Проверить, есть ли в данном списке дубли (одинаковые натуральные числа).
+# ~ да = есть
 
 from random import randint
 
@@ -17,7 +18,7 @@ def make(leng = 15, diap = 99):
 def check(arr):
     """check array"""
 
-    return len(arr) == len(set(arr))
+    return len(arr) != len(set(arr))
 
 
 def runner(times = 1, leng = 15, diap = 99):
@@ -31,8 +32,8 @@ def runner(times = 1, leng = 15, diap = 99):
 runner(5)
 
 
-# ~ test 1: array is [88, 90, 98, -85, 92, 32, -38, -59, -6, -98, 92, 92, 38, -80, -8], check is False
-# ~ test 2: array is [-8, -56, -23, -32, -78, -85, -51, 70, 70, -19, -8, 23, 6, -16, -48], check is False
-# ~ test 3: array is [26, -50, -47, 23, -72, 59, 7, 39, -1, 75, -41, 54, -12, 13, -89], check is True
-# ~ test 4: array is [-35, 89, 2, -49, 32, 27, -74, -99, 73, -48, 48, -85, -9, -12, -64], check is True
-# ~ test 5: array is [-97, -32, -56, 66, -74, -50, -4, 3, -69, -21, 0, 70, -34, -4, -43], check is False
+# ~ test 1: array is [33, -74, 66, 62, 78, -72, -64, -72, 30, -70, 36, -86, -12, 64, 2], check is True
+# ~ test 2: array is [17, -13, -38, 17, 56, 77, -45, 60, -17, -83, -35, 47, 54, -40, -93], check is True
+# ~ test 3: array is [84, -73, -65, -34, -3, -68, 0, -82, -61, -7, -39, 71, 45, -15, 53], check is False
+# ~ test 4: array is [-11, 22, 83, -16, 43, 81, -3, -5, -6, -95, 7, 75, -99, 11, -54], check is False
+# ~ test 5: array is [-45, -85, -58, 36, 70, 99, 41, 39, 72, -56, 35, -35, -50, 92, -33], check is False
