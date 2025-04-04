@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-04 1.2
+# 2025-04-03 2025-04-04 1.3
 # has-double.py
 
-# ~ Проверить, есть ли в данном списке дубли (одинаковые натуральные числа).
+# ~ Проверить, есть ли в данном списке дубли (одинаковые целые числа).
 # ~ да = есть
 
 from random import randint
@@ -22,7 +22,7 @@ def check(arr):
 
 
 def runner(times = 1, leng = 15, diap = 99):
-    """run maky tests"""
+    """run make tests"""
 
     for test in range(1, times+1):
         arr = make(leng, diap)
