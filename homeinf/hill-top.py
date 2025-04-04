@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-03 2025-04-04 1.5
+# 2025-04-03 2025-04-04 1.6
 # hill-top.py
 
 # ~ Верно ли, что в данном массиве натуральных чисел
@@ -27,7 +27,7 @@ def make_hill(leng=20, top=99):
     return hill
 
 
-def test_hill(hill):
+def test_hill1(hill):
     """test if hill is OK"""
 
     up = True
@@ -41,9 +41,25 @@ def test_hill(hill):
     return True
 
 
+def test_hill2(hill):
+    """test if hill is OK"""
+
+    was_top = False
+    
+    for pos in range(1, len(hill)-1):
+        if hill[pos-1] < hill[pos] > hill[pos+1]:
+            if was_top:
+                return False
+            else:
+                was_top = True
+
+    return True
+
+
 hill = make_hill() 
 # ~ print(f"{hill} => { test_hill(hill) }")        
-print(f"{hill} => { 'нет да' .split() [ test_hill(hill) ] }")        
+print(f"{hill} => { 'нет да' .split() [ test_hill1(hill) ] }")        
+print(f"{hill} => { 'нет да' .split() [ test_hill2(hill) ] }")        
 
 
 # ~ [6, 32, 47, 49, 60, 36, 96, 94, 92, 88, 82, 77, 60, 43, 36, 98, 34, 13, 6, 5] => нет
