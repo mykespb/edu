@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2025-01-06 2025-04-10 1.2
+# 2025-01-06 2025-04-10 1.3
 # ~ lyshrel-196.py
 # ~ Проблема 196 (см. описание внизу)
 
@@ -52,7 +52,7 @@ def tester(upto: int = 1, begin : int = 1) -> None:
     for i in range(begin, upto+1):
         print(f"\n-------------------------------\n\nnumber: {i}")
         res = test(i)
-        print(f"steps:  {res if res>0 else "No steps" if res == 0 else "No palindrome!"}")
+        print(f"steps:  {res if res>0 else 'No steps' if res == 0 else 'No palindrome!'}")
 
 
 tester(200, 1)
@@ -62,3 +62,7 @@ tester(200, 1)
 # ~ Число Лишрел (англ. Lychrel number) — это натуральное число, которое не может стать палиндромом с помощью итеративного процесса «перевернуть и сложить» в десятичной системе счисления. Этот процесс называется 196-алгоритмом. Название «Lychrel», придуманное Уэйдом ВанЛэндингемом (англ. Wade VanLandingham), — неточная анаграмма имени его подруги, Шерил (англ. Cheryl). Строго доказанных чисел Лишрел не существует (для десятичной системы счисления; для некоторых других систем счисления доказанные числа Лишрел существуют), но многие числа предполагаются таковыми, причём наименьшее из них — число 196.
 # ~ https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0_196#:~:text=%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0%20%D1%87%D0%B8%D1%81%D0%BB%D0%B0%20196%20%E2%80%94%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%BD%D0%BE%D0%B5%20%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5,%D0%A7%D0%B8%D1%81%D0%BB%D0%BE%20%D0%9B%D0%B8%D1%88%D1%80%D0%B5%D0%BB%20(%D0%B0%D0%BD%D0%B3%D0%BB.
 # ~ https://en.wikipedia.org/wiki/Lychrel_number
+
+# ~ number: 47
+# ~ next:   121, ready
+# ~ steps:  1
