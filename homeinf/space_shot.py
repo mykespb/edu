@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2025
-# 2025-04-11 2025-04-11 1.0
+# 2025-04-11 2025-04-11 1.1
 # space_shot.py
 
 # ~ Считаем объекты на космоснимке
@@ -14,6 +14,10 @@
 ROWS = 20
 COLS = 30
 
+from math import isqrt
+
+SPARSE = isqrt(ROWS * COLS)
+
 from pprint import pp
 from random import randint, choice, shuffle
 from string import ascii_letters, digits
@@ -22,44 +26,35 @@ good_chars = list(ascii_letters + digits)
 shuffle(good_chars)
 bad_chars  = "`~!@#$%^&*()_+-={}[];:'<>?,./"
 
-
 def show(mapa):
-    rows = len(mapa)
-    cols = len(mapa[0])
-    for i in range(rows):
-        for j in range(cols):
+    for i in range(ROWS):
+        for j in range(COLS):
             print(mapa[i][j], end=" ")
         print()
-
 
 def make():
     my_good_chars = good_chars[:]
     mapa = [ [ choice(bad_chars) for j in range(COLS) ] for i in range(ROWS) ]
-    num_rects = randint(1, ROWS * COLS // 15)
+    num_rects = randint(1, ROWS * COLS // SPARSE)
     print("\nArea:\n")
     for rect in range(num_rects):
-        from_i = randint(0, ROWS-2)
-        from_j = randint(0, COLS-2)
-        to_i   = randint(from_i+1, ROWS-1)
-        to_j   = randint(from_j+1, COLS)
-        filler = my_good_chars[0]
-        my_good_chars = my_good_chars[1:]
+        from_i = randint(0, ROWS-1)
+        from_j = randint(0, COLS-1)
+        to_i = randint(from_i + 1, from_i + ROWS // 2 + 1)
+        to_j = randint(from_j + 1, from_j + COLS // 2 + 1)
+        filler = my_good_chars.pop()
         for i in range(from_i, to_i):
             for j in range(from_j, to_j):
-                mapa[i][j] = filler
+                mapa[i % ROWS][j % COLS] = filler
     return mapa
-
 
 def count(mapa):
     cs = set()
-    rows = len(mapa)
-    cols = len(mapa[0])
-    for i in range(rows):
-        for j in range(cols):
+    for i in range(ROWS):
+        for j in range(COLS):
             if (c:=mapa[i][j]) in good_chars:
                 cs |= {c}
-    print(f"\nTotal number of figures: {len(cs)}\n(with letters: { " " . join ( sorted(list(cs)) ) })\n")
-        
+    print(f"\nTotal number of figures: {len(cs)}\n(with letters: { ", " . join ( sorted(list(cs)) ) if cs else "None"})\n")
 
 mapa = make()
 show(mapa)
@@ -67,26 +62,26 @@ count(mapa)
 
 # ~ Area:
 
-# ~ + ` ' % & } ^ . f f f f f f f f f f f f f f f f f % = ` + # 
-# ~ ? I I I I I I I f f f f f f f f f f f f f f f f f v v v C C 
-# ~ ~ I I I I I I I f f f f f f f f f f f f f f f f f v v v C C 
-# ~ ] I I I I I I I f f f f f f f f f f f f f f f f f v v v C C 
-# ~ ! I I I I I I I f f f f f f f f f f f f f f f f f v v v y y 
-# ~ $ I I I I I I I f f f f f f f f f f f f f f f f f v v v y y 
-# ~ + I I I I I I I f f f f f f f f f f f f f f f f f v v v y y 
-# ~ { I I U U U U U U U U U U U U U U U U U U U U U U v v v y y 
-# ~ ! I I U U U U U U U U U U U U U U U U U U U U U U z z z z y 
-# ~ ~ I I U U U U U U U U U U U U U U U U U U U U U U z z z z y 
-# ~ ` I I U U U U U U U U U U U U U U U U U U U U U U o o o z y 
-# ~ ] I I U U U U U U U U U U U U U U U U U U U U U U o o o z y 
-# ~ ! I I U U U U U U U U U U U U U U U U U U U U U U o o o z y 
-# ~ > I I U U U U U U U U U U U U U U U U U U U U U U o o o $ _ 
-# ~ ! I I U U U U U U U U U U U U U U U U U U U U U U o o o < ? 
-# ~ < ` > U U U U U U U U U U U U U U U U U U U U U U o o o . / 
-# ~ < + ' U U U U U U U U U U U U U U U U U U U U U U o o o ] ` 
-# ~ & ( & 9 a a a V V V V V V V V 5 V V V V > , = $ - o o o * ' 
-# ~ / ~ , 9 a a a V V V V V V V V 5 V V V V 4 4 4 4 4 o o o 4 ( 
-# ~ > * ' ^ } : > * , $ - - ( ! : - = , ` ] ' : + { ! _ ` } ) [ 
+# ~ ~ & * $ , - 2 2 2 2 2 2 2 2 2 2 ; ` ; # + ! ~ & ] ! - { ? ( 
+# ~ - [ : * < ( 2 2 2 2 2 2 2 2 2 2 ~ @ : & ) + @ ? ? * ; - = ; 
+# ~ _ - $ % & ] 2 2 2 2 2 2 2 2 2 2 ! , [ _ } * ? ! [ ! ) + : . 
+# ~ < ) % ^ _ ] 2 2 2 2 2 2 2 2 2 2 ; - _ [ & < ~ % ? # ' + ; [ 
+# ~ v v v v v v 2 2 1 1 1 1 1 1 1 1 1 L L L L L L L L L ) { # ^ 
+# ~ v v v v v v 2 2 1 1 1 1 1 1 1 1 1 L L L L L L L L L ! . ' ] 
+# ~ v v v v v v 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y ? - ' ' 
+# ~ v v v v v v 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y : ~ * > 
+# ~ v v v v v v 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y [ . ' [ 
+# ~ v v v v v v 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y ~ , , ; 
+# ~ v v v l l l 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y [ + ) - 
+# ~ v v v v v v 2 2 Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y ^ / { ) 
+# ~ v v v v v v v i Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y % : , ) 
+# ~ v v v v v v v i i i i i > = ; > ` ) ~ % + { ' * = ' ) & # . 
+# ~ v v v v v v v i i i i i } * - & : ! + $ @ ? - ^ # _ ; ` * # 
+# ~ v v v v v v v i i i i i % * & < ! > } ~ + % = . [ % . % . . 
+# ~ v v v v v v v i i i i i ^ & & + [ ! - } ] @ ' } . = > ^ & [ 
+# ~ & _ @ [ ( + + i i i i i { ( ] % ( ( + @ ] & - ] ^ ` - + > } 
+# ~ ( { ] - ` , : # ] > : & + > * . ( . ` > ) ` % ; + , _ ~ # > 
+# ~ ( < @ - = ! $ $ ^ - - - < > { , # > / + @ - ` * . > ? / = < 
 
-# ~ Total number of figures: 13
-# ~ (with letters: 4 5 9 C I U V a f o v y z)
+# ~ Total number of figures: 7
+# ~ (with letters: 1, 2, L, Y, i, l, v)
