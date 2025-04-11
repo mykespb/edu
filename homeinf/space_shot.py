@@ -57,7 +57,7 @@ def count(mapa):
     for i in range(rows):
         for j in range(cols):
             if (c:=mapa[i][j]) in good_chars:
-                    cs |= {c}
+                cs |= {c}
     print(f"\nTotal number of figures: {len(cs)}\n(with letters: { " " . join ( sorted(list(cs)) ) })\n")
         
 
