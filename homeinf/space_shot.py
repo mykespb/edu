@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2025
-# 2025-04-11 2025-04-11 1.1
+# 2025-04-11 2025-04-14 2.2
 # space_shot.py
 
 # ~ Считаем объекты на космоснимке
@@ -48,13 +48,22 @@ def make():
                 mapa[i % ROWS][j % COLS] = filler
     return mapa
 
-def count(mapa):
+def count1(mapa):
     cs = set()
     for i in range(ROWS):
         for j in range(COLS):
             if (c:=mapa[i][j]) in good_chars:
                 cs |= {c}
     print(f"\nTotal number of figures: {len(cs)}\n(with letters: { ", " . join ( sorted(list(cs)) ) if cs else "None"})\n")
+
+def count(mapa):
+    cs = []
+    for row in mapa:
+        for col in row:
+            if col in good_chars and col not in cs:
+                cs.append(col)
+    print(f"\nTotal number of figures: {len(cs)}\n(with letters: { ", " . join ( sorted(cs) ) if cs else "None"})\n")
+
 
 mapa = make()
 show(mapa)
