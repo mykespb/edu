@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2025
-# 2025-04-11 2025-04-14 2.2
+# 2025-04-11 2025-04-14 3.0
 # space_shot.py
 
 # ~ Считаем объекты на космоснимке
@@ -9,7 +9,7 @@
 # ~ На нём буквами (a..z, A..Z) и цифрами (0..9) отмечены разные прямоугольные объекты (каждый своей буквой);
 # ~ объекты могут касаться друг друга произвольным образом, накладываться, пересекаться и т.п.
 # ~ Подсчитать количество объектов.
-# ~ (Пустые места - любые не алфавитно-цифровые знаки).
+# ~ (Пустые места - не алфавитно-цифровые знаки).
 
 ROWS = 20
 COLS = 30
@@ -56,7 +56,7 @@ def count1(mapa):
                 cs |= {c}
     print(f"\nTotal number of figures: {len(cs)}\n(with letters: { ", " . join ( sorted(list(cs)) ) if cs else "None"})\n")
 
-def count(mapa):
+def count2(mapa):
     cs = []
     for row in mapa:
         for col in row:
@@ -65,6 +65,7 @@ def count(mapa):
     print(f"\nTotal number of figures: {len(cs)}\n(with letters: { ", " . join ( sorted(cs) ) if cs else "None"})\n")
 
 
+count = count2
 mapa = make()
 show(mapa)
 count(mapa)
