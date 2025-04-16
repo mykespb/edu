@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 2.2
-# math-lang-2.py
+# 2025-02-20 2025-04-16 3.1
+# math-lang-3.py
 
 # ~ Язык математики
 
@@ -18,6 +18,8 @@
 
 # ~ Учесть, что значения переменных - целые числа.
 
+# ~ Разрешить в правой части выражения с вычислением суммы целых чисел.
+
 # ~ Распечатать значения всех переменных после выполнения программы.
 
 # ----------------- data
@@ -28,9 +30,10 @@ B = A
 B =23
 C= A
 D=C
+E = 1+2   +3  +4
 FAN =    56
 ANSWER  =   42
-NOOB =   FAN
+NOOB = 5 + 15 + 20 + 10
 VAR = B
 """
 
@@ -56,7 +59,9 @@ def calc(prog):
         if right in dex:
             dex[left] = dex[right]
         else:
-            dex[left] = int(right)
+            rint = right.split('+')
+            right = sum( map(int, rint) )
+            dex[left] = right
 
     print("\nрезультат:")
 
@@ -71,31 +76,6 @@ def calc(prog):
 
 calc(prog1)
 
+# ----------------- result
 
-# ~ #  1: A=1
-# ~ #  2: B = A
-# ~ #  3: B =23
-# ~ #  4: C= A
-# ~ #  5: D=C
-# ~ #  6: FAN =    56
-# ~ #  7: ANSWER  =   42
-# ~ #  8: NOOB =   FAN
-# ~ #  9: VAR = B
-
-# ~ результат:
-# ~ A : 1
-# ~ ANSWER : 42
-# ~ B : 23
-# ~ C : 1
-# ~ D : 1
-# ~ FAN : 56
-# ~ NOOB : 56
-# ~ VAR : 23
-# ~ A      : 1
-# ~ ANSWER : 42
-# ~ B      : 23
-# ~ C      : 1
-# ~ D      : 1
-# ~ FAN    : 56
-# ~ NOOB   : 56
-# ~ VAR    : 23
+# ----------------- the end.
