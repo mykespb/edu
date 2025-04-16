@@ -60,9 +60,6 @@ def calc(prog):
 
     print("\nрезультат:")
 
-    for k in sorted(dex):
-        print(f"{k} : {dex[k]}")
-        
     width = max( [ len(x) for x in dex] )
 
     for k in sorted(dex):

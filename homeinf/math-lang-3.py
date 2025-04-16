@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 3.1
+# 2025-02-20 2025-04-16 3.2
 # math-lang-3.py
 
 # ~ Язык математики
@@ -17,8 +17,8 @@
 # ~ устанавливая зависимости между переменными.
 
 # ~ Учесть, что значения переменных - целые числа.
-
 # ~ Разрешить в правой части выражения с вычислением суммы целых чисел.
+# ~ Разрешить смешанные выражения: переменные и чсила.
 
 # ~ Распечатать значения всех переменных после выполнения программы.
 
@@ -28,13 +28,13 @@ prog1 = """
 A=1
 B = A
 B =23
-C= A
-D=C
+C= A + 5 + 11
+D=C+C
 E = 1+2   +3  +4
-FAN =    56
+FAN =    56+A
 ANSWER  =   42
 NOOB = 5 + 15 + 20 + 10
-VAR = B
+VAR = B+NOOB
 """
 
 # ----------------- calc
@@ -59,15 +59,15 @@ def calc(prog):
         if right in dex:
             dex[left] = dex[right]
         else:
-            rint = right.split('+')
-            right = sum( map(int, rint) )
+            rp = right.split('+')
+            right = sum( map(
+                lambda x:
+                    dex[x] if x in dex else int(x),
+                rp) )
             dex[left] = right
 
     print("\nрезультат:")
 
-    for k in sorted(dex):
-        print(f"{k} : {dex[k]}")
-        
     width = max( [ len(x) for x in dex] )
 
     for k in sorted(dex):
@@ -76,6 +76,13 @@ def calc(prog):
 
 calc(prog1)
 
-# ----------------- result
-
-# ----------------- the end.
+# ~ результат:
+# ~ A      : 1
+# ~ ANSWER : 42
+# ~ B      : 23
+# ~ C      : 17
+# ~ D      : 34
+# ~ E      : 10
+# ~ FAN    : 57
+# ~ NOOB   : 50
+# ~ VAR    : 73
