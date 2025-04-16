@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 4.1
+# 2025-02-20 2025-04-16 4.2
 # math-lang-4.py
 
 # ~ Язык математики
@@ -27,14 +27,18 @@
 prog1 = """
 A=1
 B = A
+Z=B
 B =23
 C= A + 5 + 11
 D=C+C
 E = 1+2   +3  +4
 FAN =    56+A
 ANSWER  =   42
+nova = ANSWER - 24
 NOOB = 5 + 15 + 20 + 10
 VAR = B+NOOB
+Y=-3
+Z=Y-5-1
 """
 
 # ----------------- calc
@@ -55,16 +59,41 @@ def calc(prog):
 
         assert left
         assert right
-        
-        if right in dex:
-            dex[left] = dex[right]
-        else:
-            rp = right.split('+')
-            right = sum( map(
+
+        right = right.replace('+', ' +').replace('-', ' -')
+
+        rpart = right.split()
+
+        # ~ print('\n', rpart)
+
+        rsigned = list(
+            map(
                 lambda x:
-                    dex[x] if x in dex else int(x),
-                rp) )
-            dex[left] = right
+                    ('+', x[1:]) if x.startswith('+')
+                    else ('-', x[1:]) if x.startswith('-')
+                    else ('+', x)
+            ,rpart)
+            )
+        
+        # ~ print(rsigned)
+
+        rsub = list(
+            map(
+                lambda x:
+                    (1 if x[0] == '+' else -1) * 
+                    (dex[x[1]] if x[1] in dex
+                    else int(x[1])
+                    )
+            , rsigned)
+            )
+
+        # ~ print(rsub)
+
+        right = sum(rsub)
+        
+        dex[left] = right
+
+        # ~ print(f"{dex=}")
 
     print("\nрезультат:")
 
@@ -76,6 +105,7 @@ def calc(prog):
 
 calc(prog1)
 
+
 # ~ результат:
 # ~ A      : 1
 # ~ ANSWER : 42
@@ -86,3 +116,7 @@ calc(prog1)
 # ~ FAN    : 57
 # ~ NOOB   : 50
 # ~ VAR    : 73
+# ~ Y      : -3
+# ~ Z      : -9
+# ~ nova   : 18
+
