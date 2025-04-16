@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-03-23 1.8
+# 2025-02-20 2025-04-16 1.9
 # math-lang.py
 
 # ~ Язык математики
@@ -48,11 +48,11 @@ Z=P
 The Best Variable = 0
 """
 
-prog = prog1
+# ~ prog = prog1
 
 # ----------------- calc
 
-def calc():
+def calc(prog):
     """посчитать всё и распечатать словарь значений"""
 
     dex = {}
@@ -79,7 +79,8 @@ def calc():
         print(f"{k:{width}} : {dex[k]}")
 
 
-calc()
+calc(prog1)
+# ~ calc(prog2)
 
 
 # ----------------- result
@@ -93,6 +94,7 @@ calc()
 # ~ #  7: ANSWER  =   42
 # ~ #  8: NOOB =   FAN
 # ~ #  9: VAR = B
+
 # ~ результат:
 # ~ A      : 1
 # ~ ANSWER : 42
@@ -102,5 +104,33 @@ calc()
 # ~ FAN    : 56
 # ~ NOOB   : 56
 # ~ VAR    : 23
+
+#  1: A=1
+#  2: Q =R
+#  3: B = A
+#  4: B =23
+#  5: C= 1
+#  6: D=B
+#  7: FAN =    56
+#  8: ANSWER  =   42
+#  9: NOOB =   FAN
+# 10: VAR = B
+# 11: P=Q
+# 12: Z=P
+# 13: The Best Variable = 0
+
+# ~ результат:
+# ~ A               : 1
+# ~ ANSWER          : 42
+# ~ B               : 23
+# ~ C               : 1
+# ~ D               : 23
+# ~ FAN             : 56
+# ~ NOOB            : 56
+# ~ P               : R
+# ~ Q               : R
+# ~ TheBestVariable : 0
+# ~ VAR             : 23
+# ~ Z               : R
 
 # ----------------- the end.
