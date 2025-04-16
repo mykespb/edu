@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 3.2
-# math-lang-3.py
+# 2025-02-20 2025-04-16 4.1
+# math-lang-4.py
 
 # ~ Язык математики
 
@@ -17,8 +17,7 @@
 # ~ устанавливая зависимости между переменными.
 
 # ~ Учесть, что значения переменных - целые числа.
-# ~ Разрешить в правой части выражения с вычислением суммы целых чисел.
-# ~ Двух или более.
+# ~ Разрешить в правой части выражения с вычислением суммы или разности целых чисел.
 # ~ Разрешить смешанные выражения: переменные и числа.
 
 # ~ Распечатать значения всех переменных после выполнения программы.
@@ -57,12 +56,15 @@ def calc(prog):
         assert left
         assert right
         
-        rp = right.split('+')
-        right = sum( map(
-            lambda x:
-                dex[x] if x in dex else int(x),
-            rp) )
-        dex[left] = right
+        if right in dex:
+            dex[left] = dex[right]
+        else:
+            rp = right.split('+')
+            right = sum( map(
+                lambda x:
+                    dex[x] if x in dex else int(x),
+                rp) )
+            dex[left] = right
 
     print("\nрезультат:")
 
