@@ -24,8 +24,8 @@ prog1 = """
 A=1
 B = A
 B =23
-C= 1
-D=B
+C= A
+D=C
 FAN =    56
 ANSWER  =   42
 NOOB =   FAN
@@ -60,14 +60,14 @@ def calc(prog):
     for iexpr, expr in enumerate(prog.strip().splitlines(), 1):
         print(f"#{iexpr:3}: {expr}")
 
-        # ~ assert '=' in expr
+        assert '=' in expr
         
         expr = expr.replace(' ', '')
 
         left, right = expr.split('=')
 
-        # ~ assert left
-        # ~ assert right
+        assert left
+        assert right
         
         if right in dex:
             dex[left] = dex[right]
@@ -79,11 +79,10 @@ def calc(prog):
     for k in sorted(dex):
         print(f"{k} : {dex[k]}")
         
-    # ~ width = max( [ len(x) for x in dex] )
+    width = max( [ len(x) for x in dex] )
 
-    # ~ for k in sorted(dex):
-        # ~ print(f"{k:{width}} : {dex[k]}")
-
+    for k in sorted(dex):
+        print(f"{k:{width}} : {dex[k]}")
 
 
 calc(prog1)
