@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin, 2025
-# 2025-04-14 2025-04-16 1.1
+# 2025-04-14 2025-04-16 2.2
 # loop-ints.py
 
 # ~ Цепочка чисел
@@ -21,9 +21,11 @@ def make(long = 10):
     return arr
 
 def test(arr):
+    # ~ arr[0] = 999
     long = len(arr)
     print(arr, end = ' -> ')
     arr = list(map(abs, arr))
+    # ~ print(arr, end = ' -> ')
     
     old = arr[0] % 10
     for i in range(1, long):
@@ -36,7 +38,7 @@ def test(arr):
             return
         old = last
     print("has chain")
-
+    # ~ arr[0] = 777
 
 arr = make()
 test(arr)
