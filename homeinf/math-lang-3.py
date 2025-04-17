@@ -36,6 +36,8 @@ FAN =    56+A
 ANSWER  =   42
 NOOB = 5 + 15 + 20 + 10
 VAR = B+NOOB
+K=57
+K=K+1
 """
 
 # ----------------- calc

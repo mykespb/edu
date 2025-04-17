@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 4.2
+# 2025-02-20 2025-04-16 4.3
 # math-lang-4.py
 
 # ~ Язык математики
@@ -39,6 +39,8 @@ NOOB = 5 + 15 + 20 + 10
 VAR = B+NOOB
 Y=-3
 Z=Y-5-1
+K=57
+K=K+1
 """
 
 # ----------------- calc
@@ -86,6 +88,7 @@ def calc(prog):
                     )
             , rsigned)
             )
+            # [0, -1][x[0]=='-']
 
         # ~ print(rsub)
 
@@ -100,23 +103,23 @@ def calc(prog):
     width = max( [ len(x) for x in dex] )
 
     for k in sorted(dex):
-        print(f"{k:{width}} : {dex[k]}")
+        print(f"{k:{width}} : {dex[k]:5}")
 
 
 calc(prog1)
 
 
 # ~ результат:
-# ~ A      : 1
-# ~ ANSWER : 42
-# ~ B      : 23
-# ~ C      : 17
-# ~ D      : 34
-# ~ E      : 10
-# ~ FAN    : 57
-# ~ NOOB   : 50
-# ~ VAR    : 73
-# ~ Y      : -3
-# ~ Z      : -9
-# ~ nova   : 18
-
+# ~ A      :     1
+# ~ ANSWER :    42
+# ~ B      :    23
+# ~ C      :    17
+# ~ D      :    34
+# ~ E      :    10
+# ~ FAN    :    57
+# ~ K      :    58
+# ~ NOOB   :    50
+# ~ VAR    :    73
+# ~ Y      :    -3
+# ~ Z      :    -9
+# ~ nova   :    18
