@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 4.3
+# 2025-02-20 2025-04-17 4.4
 # math-lang-4.py
 
 # ~ Язык математики
@@ -65,7 +65,6 @@ def calc(prog):
         right = right.replace('+', ' +').replace('-', ' -')
 
         rpart = right.split()
-
         # ~ print('\n', rpart)
 
         rsigned = list(
@@ -76,7 +75,6 @@ def calc(prog):
                     else ('+', x)
             ,rpart)
             )
-        
         # ~ print(rsigned)
 
         rsub = list(
@@ -88,19 +86,16 @@ def calc(prog):
                     )
             , rsigned)
             )
-            # [0, -1][x[0]=='-']
-
         # ~ print(rsub)
 
         right = sum(rsub)
         
         dex[left] = right
-
         # ~ print(f"{dex=}")
 
     print("\nрезультат:")
 
-    width = max( [ len(x) for x in dex] )
+    width = max( [ len(x) for x in dex ] )
 
     for k in sorted(dex):
         print(f"{k:{width}} : {dex[k]:5}")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 1.10
+# 2025-02-20 2025-04-17 1.11
 # math-lang-1.py
 
 # ~ Язык математики
@@ -76,10 +76,10 @@ def calc(prog):
 
     print("\nрезультат:")
 
-    for k in sorted(dex):
-        print(f"{k} : {dex[k]}")
+    # ~ for k in sorted(dex):
+        # ~ print(f"{k} : {dex[k]}")
         
-    width = max( [ len(x) for x in dex] )
+    width = max( [ len(x) for x in dex ] )
 
     for k in sorted(dex):
         print(f"{k:{width}} : {dex[k]}")
