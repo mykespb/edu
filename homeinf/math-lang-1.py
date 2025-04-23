@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-17 1.11
+# 2025-02-20 2025-04-23 1.12
 # math-lang-1.py
 
 # ~ Язык математики
@@ -60,14 +60,14 @@ def calc(prog):
     for iexpr, expr in enumerate(prog.strip().splitlines(), 1):
         print(f"#{iexpr:3}: {expr}")
 
-        assert '=' in expr
-        
+        assert '=' in expr, "В команде должен быть знак присваивания!"
+                
         expr = expr.replace(' ', '')
 
         left, right = expr.split('=')
 
-        assert left
-        assert right
+        assert left, "А чему присваиваем-то?"
+        assert len(right) > 0, "А что присвоить-то, а?︎"
         
         if right in dex:
             dex[left] = dex[right]

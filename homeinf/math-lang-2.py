@@ -34,9 +34,9 @@ NOOB =   FAN
 VAR = B
 """
 
-# ----------------- calc
+# ----------------- calc1
 
-def calc(prog):
+def calc1(prog):
     """посчитать всё и распечатать словарь значений"""
 
     dex = {}
@@ -66,8 +66,31 @@ def calc(prog):
         print(f"{k:{width}} : {dex[k]}")
 
 
-calc(prog1)
+# ----------------- calc2
 
+def calc2(prog):
+    """посчитать всё и распечатать результаты"""
+
+    dex = {}
+
+    for iexpr, expr in enumerate(prog.strip().splitlines(), 1):
+        print(f"#{iexpr:3}: {expr}")
+
+        left, right = expr.replace(' ', '').split('=')
+
+        dex[left] = dex[right] if right in dex else int(right)
+
+    print("\nрезультат:")
+
+    width = max( [ len(x) for x in dex ] )
+
+    for k in sorted(dex):
+        print(f"{k:{width}} : {dex[k]}")
+
+
+calc2(prog1)
+
+# -----------------  result:
 
 # ~ #  1: A=1
 # ~ #  2: B = A
