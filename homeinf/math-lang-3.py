@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-16 3.2
+# 2025-02-20 2025-04-25 3.3
 # math-lang-3.py
 
 # ~ Язык математики
@@ -29,11 +29,26 @@ prog1 = """
 A=1
 B = A
 B =23
+C= 5 + 11
+D=C+C
+E = A+2
+FAN =    56+A
+ANSWER  =   42
+NOOB = 5 + 15
+VAR = B+NOOB
+K=57
+K=K+1
+"""
+
+prog2 = """
+A=1
+B = A
+B =23
 C= A + 5 + 11
 D=C+C
 E = 1+2   +3  +4
 FAN =    56+A
-ANSWER  =   42
+ANSWER  =   42 + A + B + C + D -1 -  11
 NOOB = 5 + 15 + 20 + 10
 VAR = B+NOOB
 K=57
