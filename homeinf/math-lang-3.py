@@ -74,12 +74,14 @@ def calc(prog):
         assert left
         assert right
         
-        rp = right.split('+')
-        right = sum( map(
-            lambda x:
-                dex[x] if x in dex else int(x),
-            rp) )
-        dex[left] = right
+        # ~ rp = right.split('+')
+        # ~ right = sum( map(
+            # ~ lambda x:
+                # ~ dex[x] if x in dex else int(x),
+            # ~ rp) )
+        # ~ dex[left] = right
+
+        dex[left] = right = sum( map( lambda x: dex[x] if x in dex else int(x), right.split('+')) )
 
     print("\nрезультат:")
 
