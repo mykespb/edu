@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-15 2025-04-15 0.1
+# 2025-04-15 2025-04-15 1.0
 # study-means.py
 
 # ~ Проверить практически на примерах, что среднее квадратическое
@@ -12,7 +12,7 @@ from random import random
 def make(leng=10, val=100.):
     """создать последовательность"""
 
-    return [ random() * val for _ in range(leng)]
+    return [ random() * val for _ in range(leng) ]
 
 
 def s_arithm(seq):
@@ -37,13 +37,14 @@ def test():
     sa  = s_arithm(seq)
     sk  = s_sqaure(seq)
 
-    print(f"{seq=} : {sa=}, {sk=} => { 'yes :)' if sa <= sk else 'no :('}")
+    print(f"{seq=} =>\n{sa=}, {sk=} => { 'yes :)' if sa <= sk else 'no :('}")
 
 
 def tests(num=1):
     """выполнить много тестов (1)"""
 
     for i in range(num):
+        print(f"test #{i+1}")
         test()
 
 tests(10)
