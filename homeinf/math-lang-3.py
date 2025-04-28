@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-20 2025-04-25 3.3
+# 2025-02-20 2025-04-28 3.4
 # math-lang-3.py
 
 # ~ Язык математики
@@ -81,7 +81,7 @@ def calc(prog):
             # ~ rp) )
         # ~ dex[left] = right
 
-        dex[left] = right = sum( map( lambda x: dex[x] if x in dex else int(x), right.split('+')) )
+        dex[left] = sum( map( lambda x: dex[x] if x in dex else int(x), right.split('+')) )
 
     print("\nрезультат:")
 
@@ -91,7 +91,7 @@ def calc(prog):
         print(f"{k:{width}} : {dex[k]}")
 
 
-calc(prog1)
+calc(prog2)
 
 # ~ результат:
 # ~ A      : 1
