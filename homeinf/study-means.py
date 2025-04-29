@@ -22,7 +22,7 @@ def s_arithm(seq):
 
 
 def s_square(seq):
-    """вычисляем среднее арифметическое"""
+    """вычисляем среднее квадратическое"""
 
     summa = 0.
     for i in range(len(seq)):
