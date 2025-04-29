@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-15 2025-04-15 1.0
+# 2025-04-15 2025-04-29 1.1
 # study-means.py
 
 # ~ Проверить практически на примерах, что среднее квадратическое
@@ -21,7 +21,7 @@ def s_arithm(seq):
     return sum(seq) / len(seq)
 
 
-def s_sqaure(seq):
+def s_square(seq):
     """вычисляем среднее арифметическое"""
 
     summa = 0.
@@ -35,7 +35,7 @@ def test():
 
     seq = make()
     sa  = s_arithm(seq)
-    sk  = s_sqaure(seq)
+    sk  = s_square(seq)
 
     print(f"{seq=} =>\n{sa=}, {sk=} => { 'yes :)' if sa <= sk else 'no :('}")
 
