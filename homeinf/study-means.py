@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-04-15 2025-04-29 1.1
+# 2025-04-15 2025-04-29 1.2
 # study-means.py
 
 # ~ Проверить практически на примерах, что среднее квадратическое
@@ -26,8 +26,10 @@ def s_square(seq):
 
     summa = 0.
     for i in range(len(seq)):
-        summa += seq[i] ** 2 / len(seq)
-    return sqrt(summa)
+        summa += seq[i] ** 2 
+    return sqrt(summa / len(seq))
+
+    # return sqrt( sum( [ s*s for s in seq ] ) / len(seq) )
 
 
 def test():
@@ -44,7 +46,7 @@ def tests(num=1):
     """выполнить много тестов (1)"""
 
     for i in range(num):
-        print(f"test #{i+1}")
+        print(f"\ntest #{i+1}")
         test()
 
-tests(10)
+tests(3)
