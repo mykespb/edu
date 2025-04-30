@@ -15,12 +15,6 @@ def primes1(limit=100):
         else:
             print(test, end=", ")
 
-# вызов функции
-primes1()
-# должно напечатать простые до 100
-# ~ primes(2500)
-# должно напечатать простые до 2500
-
 def primes2list(limit=100):
     """печать простых до limit"""
     ps = []
@@ -56,11 +50,13 @@ def primes2set(limit=100):
 
 # вызов функции 1
 
-# ~ primes1()
-# ~ print()
+print("\nisqrt 100:")
+primes1()
+print()
 
-# ~ primes1(1000)
-# ~ print()
+print("\nisqrt 1000:")
+primes1(1000)
+print()
 
 # вызов функции 2
 
