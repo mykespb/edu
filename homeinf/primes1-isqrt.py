@@ -9,17 +9,21 @@ import math
 def primes1(limit=100):
     """печать простых до limit"""
     for test in range(2, limit+1):
-        for tester in range(2, math.isqrt(test)+1):
+        for tester in range(2, test):
             if test % tester == 0:
                 break
         else:
             print(test, end=", ")
 
-# вызов функции
-primes1()
-# должно напечатать простые до 100
-# ~ primes(2500)
-# должно напечатать простые до 2500
+# определение функции
+def primes2(limit=100):
+    """печать простых до limit"""
+    for test in range(2, limit+1):
+        for tester in range(2, math.isqrt(test)+1):
+            if test % tester == 0:
+                break
+        else:
+            print(test, end=", ")
 
 # вызов функции 1
 
@@ -27,6 +31,14 @@ primes1()
 print()
 
 primes1(1000)
+print()
+
+# вызов функции 2
+
+primes2()
+print()
+
+primes2(1000)
 print()
 
 
