@@ -1,9 +1,10 @@
 #!/usr/bin/env python
-# primes2-erato.py (c) Mikhail Kolodin
+# primes2-erato-opt.py (c) Mikhail Kolodin
 # 2025-03-05 2025-04-30 2.2
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+# ~ Оптимизированная версия.
 
 import math
 
@@ -13,14 +14,17 @@ def primes(limit=100):
 
     seive = [1 for _ in range(limit)]
     seive[0] = seive[1] = 0
+    print(2, end=", ")
 
-    for elem in range(2, limit-1):
+    for elem in range(3, limit-1, 2):
         if seive[elem]:
             print(elem, end=", ")
             for mult in range(2, limit // elem):
                 seive[elem * mult] = 0
 
     print()
+    return seive
+
 
 # вызов функции
 primes()
