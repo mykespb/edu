@@ -86,5 +86,3 @@ print()
 # ~ fun primes2((10000,), {}) took 0.0047 seconds.
 
 # ~ fun primes2((100000,), {}) took 0.0917 seconds.
-
-
