@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # primes2-erato-2lists.py (c) Mikhail Kolodin
-# 2025-03-05 2025-05-06 2.3
+# 2025-03-05 2025-05-07 2.4
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -13,7 +13,7 @@ def primes(limit=100):
     """печать простых до limit"""
 
     ready = [2]
-    todo = [ x for x in range(3, limit) ]
+    todo  = [ x for x in range(3, limit, 2) ]
 
     # ~ print(f"{ready=}")
     # ~ print(f"{todo=}")
