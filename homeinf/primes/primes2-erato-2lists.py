@@ -9,22 +9,22 @@
 import math
 
 # определение функции
-def primes(limit=100):
+def primes(limit=20):
     """печать простых до limit"""
 
     ready = [2]
     todo  = [ x for x in range(3, limit, 2) ]
 
-    # ~ print(f"{ready=}")
-    # ~ print(f"{todo=}")
+    print(f"{ready=}")
+    print(f"{todo=}")
 
     while todo:
         elem = todo.pop(0)
         ready.append(elem)
         todo = [ x for x in todo if x % elem ]
 
-        # ~ print(f"{ready=}")
-        # ~ print(f"{todo=}")
+        print(f"{ready=}")
+        print(f"{todo=}")
 
     return ready
 

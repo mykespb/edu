@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # primes2-erato.py (c) Mikhail Kolodin
-# 2025-03-05 2025-04-30 2.2
+# 2025-03-05 2025-05-07 2.3
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-import math
+# ~ import math
 
 # определение функции
 def primes(limit=100):
     """печать простых до limit"""
 
     seive = [1 for _ in range(limit)]
-    seive[0] = seive[1] = 0
+    seive[0] = seive[1] = 0 
 
     for elem in range(2, limit-1):
         if seive[elem]:
@@ -25,7 +25,7 @@ def primes(limit=100):
 # вызов функции
 primes()
 # должно напечатать простые до 100
-primes(1000)
+# ~ primes(1000)
 # должно напечатать простые до 1000
 
 # ~ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 
