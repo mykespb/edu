@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # timer-decor.py (c) Mikhail Kolodin
-# 2025-03-05 2025-05-06 3.5
+# 2025-03-05 2025-05-07 4.1
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -32,7 +32,7 @@ def timer(limit):
     start = time()
     primes(limit)
     finish = time()
-    print(f"для {limit:10} чисел нужно: { finish - start : 10f} секунд.")
+    print(f"для {limit:8} чисел нужно { finish - start : 10f} секунд.")
 
 
 def test(order=5):
@@ -40,3 +40,11 @@ def test(order=5):
         timer(10**i)
 
 test()
+
+# ~ test(6)
+# ~ для       10 чисел нужно   0.000004 секунд.
+# ~ для      100 чисел нужно   0.000033 секунд.
+# ~ для     1000 чисел нужно   0.000510 секунд.
+# ~ для    10000 чисел нужно   0.026871 секунд.
+# ~ для   100000 чисел нужно   1.639403 секунд.
+# ~ для  1000000 чисел нужно 133.756445 секунд.
