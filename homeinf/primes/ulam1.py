@@ -1,0 +1,111 @@
+#!/usr/bin/env python
+# timer-decor.py (c) Mikhail Kolodin
+# 2025-05-07 2025-05-07 1.0
+# Расчёт простых чисел.
+# ~ Решето Эратосфена = Sieve of Eratosthenes
+# ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+# ~ Версия с 2 списками.
+# ~ Скатерть Улама
+# ~ https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D1%82%D1%8C_%D0%A3%D0%BB%D0%B0%D0%BC%D0%B0
+
+from math import isqrt
+from pprint import pprint
+
+# 1. собственно простые числа
+
+# определение функции
+def primes(limit=100):
+    """печать простых до limit"""
+
+    ready = []
+    todo  = [ x for x in range(2, limit) ]
+
+    while todo:
+        elem = todo.pop(0)
+        ready.append(elem)
+        todo = [ x for x in todo if x % elem ]
+
+    return ready
+
+# 2. отрисовываем скатерть Улама
+
+def printnum(out):
+    """распечатка красивая"""
+
+    print()
+    size = len(out)
+    for row in out[::-1]:
+        for cell in row:
+            print(f"{cell:5}", end="")
+        print()
+    print()
+
+
+def printout(out):
+    """распечатка красивая"""
+
+    print()
+    size = len(out)
+    for row in out[::-1]:
+        for cell in row:
+            print( '*' if cell > 0 else '.' , end="")
+        print()
+    print()
+
+
+def ulam(limit=25):
+    """рисуем до limit"""
+
+    size = isqrt(limit)
+    if size % 2 == 0: size += 1
+    limit = size ** 2
+    primlist = primes(limit)
+
+    print(f"{size=}, {limit=}")
+
+    out = [ [ 0 for _ in range(size) ] for _ in range(size) ]
+    # ~ pprint(out)
+    # ~ printout(out)
+
+    i = j = size // 2
+    out[i][j] = -1
+    plus = 1
+    n = 1
+
+    while n <= limit:
+        
+        # right
+        for p in range(plus):
+            n += 1
+            if n > limit: break
+            j += 1
+            out[i][j] = n * ( 1 if n in primlist else -1 )
+        # up
+        for p in range(plus):
+            n += 1
+            if n > limit: break
+            i += 1
+            out[i][j] = n * ( 1 if n in primlist else -1 )
+        plus += 1
+        # left
+        for p in range(plus):
+            n += 1
+            if n > limit: break
+            j -= 1
+            out[i][j] = n * ( 1 if n in primlist else -1 )
+        # down
+        for p in range(plus):
+            n += 1
+            if n > limit: break
+            i -= 1
+            out[i][j] = n * ( 1 if n in primlist else -1 )
+        plus += 1
+
+    # ~ pprint(out)
+    # ~ printnum(out)
+    printout(out)
+
+
+# ~ ulam(100)
+ulam(1000)
+# ~ ulam(10000)
