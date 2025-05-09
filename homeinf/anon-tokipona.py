@@ -3,7 +3,7 @@
 # 2025-03-28 2025-03-28 1.0
 # anon-tokipona.py
 
-# ~ Выполнить анонимизацю текста на языке токипона.
+# ~ Выполнить анонимизацию текста на языке токипона.
 
 text = """
 tawa anpa nasa.
@@ -32,13 +32,13 @@ def prepare(txt):
     """приготовить текст"""
 
     for sep in ".,!@&%$()-_+={}[]|;:":
-        txt = txt.replace(sep, ' '+sep)
+        txt = txt.replace(sep, ' ' + sep)
 
     ltxt = txt.strip().split()
-    
+
     # ~ print(ltxt)
     return ltxt
-    
+
 
 def anon(txt):
     """анонимизировать!"""
@@ -61,7 +61,7 @@ def anon(txt):
             atxt.append(w)
             if w == "jan":
                 state = 1
-                
+
     # ~ print(anol)
     # ~ print(atxt)
     return atxt
@@ -73,10 +73,10 @@ def postproc(txt):
     otxt = " " .join(txt)
     
     for sep in ".,!@&%$()-_+={}[]|;:":
-        otxt = otxt.replace(' '+sep, sep)
+        otxt = otxt.replace(' ' + sep, sep)
 
     otxt = otxt.replace('. ', '.\n')
-    
+
     return otxt
 
 
@@ -89,5 +89,6 @@ def main():
     # ~ print(etxt)
     otxt = postproc(etxt)
     print(otxt)
+
 
 main()
