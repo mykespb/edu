@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# timer-decor.py (c) Mikhail Kolodin
-# 2025-03-05 2025-05-07 4.1
+# timer-table-func.py (c) Mikhail Kolodin
+# 2025-03-05 2025-05-12 5.1
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -35,12 +35,28 @@ def timer(limit):
     print(f"для {limit:8_} чисел нужно {finish - start : 10f} секунд.")
 
 
+def functimer(func, limit):
+    """простой таймер"""
+
+    start = time()
+    func(limit)
+    finish = time()
+    print(f"functimer: для {limit:8_} чисел нужно {finish - start : 10f} секунд.")
+
+
+functimer(primes, 10)
+
 def test(order=4):
     for i in range(1, order+1):
         timer(10**i)
 
 test()
 
+def functest(func, order=4):
+    for i in range(1, order+1):
+        functimer(func, 10**i)
+
+functest(primes, 4)
 
 # ~ test(6)
 # ~ для         10 чисел нужно   0.000004 секунд.
