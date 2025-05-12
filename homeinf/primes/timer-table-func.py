@@ -35,7 +35,7 @@ def timer(limit):
     print(f"для {limit:8_} чисел нужно {finish - start : 10f} секунд.")
 
 
-def functimer(func, limit):
+def functimer(func, limit=100):
     """простой таймер"""
 
     start = time()
