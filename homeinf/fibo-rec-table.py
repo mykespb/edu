@@ -7,7 +7,7 @@
 from functools import wraps
 from time import time
 
-LIMIT = 35
+LIMIT = 36
 
 # -------------------------------------------------
 
@@ -33,11 +33,12 @@ def test1(n: int) -> None:
 
         table[i][0] = finish - start
 
-# ~ test1(LIMIT)
+test1(LIMIT)
 
-from functools import lru_cache
+from functools import lru_cache, cache
 
-@lru_cache
+# ~ @lru_cache
+@cache
 def fib2(n: int) -> int:
     """вычислить n-ое число Фибоначчи"""
 
@@ -58,7 +59,7 @@ def test2(n: int) -> None:
 
         table[i][1] = finish - start
 
-# ~ test2(LIMIT)
+test2(LIMIT)
 
 
 def show():
@@ -66,12 +67,13 @@ def show():
     for i in range(len(table)):
         print(f"{i:6} {table[i][0]:10f} {table[i][1]:10f}")
 
-# ~ show()
+show()
 
 # -------------------------------------------------
 
-from functools import cache
+# ~ from functools import cache
 
+# ~ @lru_cache
 @cache
 def fib3(n: int) -> int:
     """вычислить n-ое число Фибоначчи"""

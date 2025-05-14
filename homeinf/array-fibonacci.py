@@ -45,17 +45,17 @@ def fib2(n=10):
 
 
 # choose your function
-fib = fib1
-# ~ fib = fib2
+# ~ fib = fib1
+fib = fib2
 
 # make tests
-print(fib(0))
-print(fib(1))
-print(fib(2))
-print(fib(3))
-print(fib(10))
+# ~ print(fib(0))
+# ~ print(fib(1))
+# ~ print(fib(2))
+# ~ print(fib(3))
+# ~ print(fib(10))
 
-print(fib())
+print(fib(36))
 
 #print(fib(100))
 

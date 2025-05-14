@@ -1,28 +1,15 @@
 #!/usr/bin/env python
 # fibo-rec.py (c) Mikhail Kolodin
-# 2025-05-12 2025-05-12 1.0
+# 2025-05-12 2025-05-14 1.1
 # Числа Фибоначчи рекурсивно -- просто и с декоратором
 
 from functools import wraps
 from time import time
 
-LIMIT = 20
+LIMIT = 36
 
 print("\n=================================== Recursion ==============================\n")
 
-def timing(fun):
-    @wraps(fun)
-    def wrapper(*args, **kwargs):
-        print(f"выполняем для параметров: {args=}, {kwargs=}")
-        start = time()
-        res = fun(*args, **kwargs)
-        finish = time()
-        print(f"время: { finish - start } секунд.")
-        return res
-    return wrapper
-    
-
-#@timing
 def fib(n: int) -> int:
     """вычислить n-ое число Фибоначчи"""
 
@@ -48,9 +35,10 @@ test(LIMIT)
 print("\n=================================== LRU decorator ==============================\n")
 
 #Using least recently used cache function in Python to limit the no. of items in cache
-from functools import lru_cache
+from functools import lru_cache, cache
 
-@lru_cache
+@cache
+# ~ @lru_cache
 def fib(n: int) -> int:
     """вычислить n-ое число Фибоначчи"""
 
