@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2021
-# 2025-05-17 2025-05-17 1.0
+# 2025-05-17 2025-05-18 1.1
 # interpol.py
 # ~ Интерполяция
 # ~ Дан список с данными (м.б. давление или температура),
@@ -9,22 +9,21 @@
 # ~ Некоторые значения испорчены, там нули или отрицательные числа.
 # ~ Иногда это одно число, иногда несколько подряд.
 # ~ Заполнить пропуски равномерно.
-# ~ Если можно, показать красиво.
 
-import random, math
+import math, random
 
 def make(size = 10):
     """make list"""
 
-    lof = [ random.random() * 99 + 1e-6 for _ in range(size)]
+    # ~ lof = [ random.random() * 99 + 1e-6 for _ in range(size)]
 
-    for bad in range(random.randint(0, int(math.isqrt(size)))):
-        start = random.randint(1, int(math.isqrt(size)))
-        finish = random.randint(start+1, min(size, start+1+random.randint(1,5)))
-        for i in range(start, finish):
-            lof[i] = - random.random() * 100
+    # ~ for bad in range(random.randint(0, int(math.isqrt(size)))):
+        # ~ start = random.randint(1, int(math.isqrt(size)))
+        # ~ finish = random.randint(start+1, min(size, start+1+random.randint(1,5)))
+        # ~ for i in range(start, finish):
+            # ~ lof[i] = - random.random() * 100
 
-    # ~ lof = [1, 2, 0, 4, 0, 0, 7]
+    lof = [1., 2., 0., 4., 0., 0., 7., 0., 0., 0., 3.]
 
     doprint("old", lof)
     return lof
@@ -68,3 +67,7 @@ def doprint(title, lof):
     print()
 
 test()
+
+
+# ~ old: 1.00, 2.00, 0.00, 4.00, 0.00, 0.00, 7.00, 0.00, 0.00, 0.00, 3.00, 
+# ~ new: 1.00, 2.00, 3.00, 4.00, 5.00, 6.00, 7.00, 6.00, 5.00, 4.00, 3.00, 
