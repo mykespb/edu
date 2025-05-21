@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-03-28 2025-05-09 1.1
+# 2025-03-28 2025-05-21 1.2
 # anon-tokipona.py
 
 # ~ Выполнить анонимизацию текста на языке токипона.
@@ -70,8 +70,8 @@ def anon(txt):
 def postproc(txt):
     """приготовить к печати"""
 
-    otxt = " " .join(txt)
-    
+    otxt = " ".join(txt)
+
     for sep in ".,!@&%$()-_+={}[]|;:":
         otxt = otxt.replace(' ' + sep, sep)
 
@@ -92,3 +92,4 @@ def main():
 
 
 main()
+
