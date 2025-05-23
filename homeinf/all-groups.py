@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2021
-# 2025-05-23 2025-05-23 1.0
+# 2025-05-23 2025-05-23 1.2
 
 # ~ Во всех кружках
 
@@ -17,18 +17,23 @@ pups = {
     'Nick': 'drawing running' . split(),
     'Pete': 'dancing math chemistry swimming drawing running' . split(),
     'John': 'dancing math chemistry' . split(),
+    'Mary': 'dancing math chemistry swimming drawing running' . split(),
+    # ~ 'Joker': 'go went gone' . split(),
     }
 
 # ~ pprint(pups)
 
-kru = set()
-for v in pups.values():
-    kru |= set(v)
+# ~ kru = set()
+# ~ for v in pups.values():
+    # ~ kru |= set(v)
 
-krulen = len(kru)
+krulen = len( kru := set() . union (*map(set, pups.values() ) ) )
+
+# ~ kru = set() . union (*map(set, pups.values() ) )
+# ~ krulen = len(kru)
 # ~ print(krulen, kru)   
 
 print("most busy pups:", 
-    *[k for k in pups if len(pups[k]) == krulen]
+    ", " .join ( [k for k in pups if len(pups[k]) == krulen] )
     or "No such pup"
     )
