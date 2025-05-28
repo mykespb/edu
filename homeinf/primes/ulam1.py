@@ -15,7 +15,7 @@ from pprint import pprint
 
 # определение функции
 def primes(limit=100):
-    """печать простых до limit"""
+    """простые числа до limit"""
 
     ready = []
     todo  = [ x for x in range(2, limit) ]
