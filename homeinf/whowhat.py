@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-05-30 2025-05-30 1.0
+# 2025-05-30 2025-05-30 2.0
 # ~ whowhat.py 
 # ~ Кто что купил?
 # ~ Есть список сделок, причём указаны как покупатели, так и покупки, вещи, деньги.
 # ~ Показать, кто кому что продал.
+# ~ Причём продающий = получивший деньги - платит налог, и суммы не совпадают.
 
 from pprint import pprint
 from random import shuffle, choice, randint
@@ -23,7 +24,8 @@ def gen(size=10):
         pers_to   = choice(names)
         thing     = choice(things)
         price     = randint(100, 100_000)
-        lot.append( (pers_from, pers_to, thing, price) )
+        tax       = randint(1, price // 5)
+        lot.append( (pers_from, pers_to, thing, tax) )
         lot.append( (pers_to, pers_from, thing, -price) )
 
     shuffle(lot)
@@ -37,11 +39,11 @@ def solve(lot):
 
     for first in lot:
         if first[3] > 0:
-            pers_from, pers_to, thing, price = first
+            pers_from, pers_to, thing, tax = first
             for second in lot:
-                if second == (pers_to, pers_from, thing, -price):
-                    # ~ print(f"{first=} {second=}")
-                    print(f"{pers_from} sold {thing} to {pers_to} for ${price:_}")
+                if second[:3] == (pers_to, pers_from, thing):
+                    price = -second[-1]
+                    print(f"{pers_from} sold {thing} to {pers_to} for ${price:_} with tax ${tax:_}")
 
     
 
@@ -55,13 +57,13 @@ def main():
 main()
 
 # ~ result:
-# ~ Laura sold baloon to Jane for $10_764
-# ~ Alla sold cake to Jane for $3_071
-# ~ Callum sold boat to Milana for $41_349
-# ~ Victoria sold yacht to Anna for $74_859
-# ~ David sold baloon to Mason for $17_633
-# ~ Harry sold computer to David for $21_586
-# ~ Jake sold voyage to Victoria for $40_637
-# ~ Lucy sold cake to Mila for $89_989
-# ~ Isla sold car to Heather for $48_207
-# ~ Uma sold computer to Michael for $82_748
+# ~ Zoe sold chair to Isla for $24_480 with tax $4_346
+# ~ Rachel sold car to Mila for $6_302 with tax $170
+# ~ Uma sold dog to Jake for $80_560 with tax $2_678
+# ~ Michael sold chair to Alla for $92_838 with tax $3_553
+# ~ Boris sold boat to Laura for $56_735 with tax $5_182
+# ~ Isla sold goat to Lily for $95_572 with tax $14_024
+# ~ Reece sold phone to Helen for $58_276 with tax $1_898
+# ~ Charlie sold jewel to Jacob for $24_015 with tax $1_697
+# ~ Helen sold voyage to Jake for $87_846 with tax $14_020
+# ~ Heather sold lamp to Lily for $68_473 with tax $1_847
