@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin, 2021
+# Mikhail (myke) Kolodin, 2025
 # 2025-05-17 2025-05-18 1.1
 # interpol.py
 # ~ Интерполяция

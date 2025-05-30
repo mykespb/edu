@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # timer-decor.py (c) Mikhail Kolodin
-# 2025-05-07 2025-05-07 1.1
+# 2025-05-07 2025-05-30 1.2
 # Расчёт простых чисел.
 # ~ Решето Эратосфена = Sieve of Eratosthenes
 # ~ https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
@@ -45,7 +45,7 @@ def printout(out):
     """распечатка красивая"""
 
     print()
-    size = len(out)
+    # ~ size = len(out)
     for row in out[::-1]:
         for cell in row:
             print( '*' if cell > 0 else '.' , end="")
