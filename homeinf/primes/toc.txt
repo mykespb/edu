@@ -1,7 +1,7 @@
 Table of contents
 ============================
 
-2025-05-13
+2025-06-01
 
 primes1-isqrt.py 
 ---------------------------
@@ -60,3 +60,11 @@ primes-super.py
 Суперпросты́е чи́сла (также известны как простые числа высшего порядка) — подмножество простых чисел, стоящих в списке простых чисел на позициях, являющихся простыми числами (то есть это 2-е, 3-е, 5-е, 7-е, 11-е, 13-е, 17-е и т.д. по счёту простые числа).
 Первые члены последовательности суперпростых чисел:
 3, 5, 11, 17, 31, 41, 59, 67, 83, 109, 127, 157, … (последовательность A006450 в OEIS).
+
+prime-factors.py
+------------------------
+
+2025-06-01 2025-06-01
+
+Write a program in python which takes a positive integer as an argument and returns the number of prime factors of this integer. 
+You can write and use otyer subroutines (eg checking if number is prime) to help you with the miain task.
