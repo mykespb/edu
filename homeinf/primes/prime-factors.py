@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # prime factors
 # Mikhail Kolodin
-# 2025-06-01
+# 2025-06-01 2025-06-02
 
 # ~ Write a program in python which takes a positive integer as an argument and returns the number of prime factors of this integer. You can write and use otyer subroutines (eg checking if number is prime) to help you with the miain task.
 
@@ -110,7 +110,7 @@ def num_pf(num: int) -> int:
 
 
 def num_pf_verbose(num: int) -> int:
-    """calculate number of prime factors for given number"""
+    """calculate number of prime factors for given number and show the full list"""
 
     print(f"We got {num} to study:")
 
@@ -141,22 +141,23 @@ def num_pf_verbose(num: int) -> int:
     return cpf
 
 
-def test(limit) -> None:
+def test(limit: int) -> None:
     """Make tests"""
 
     for num in range(1, limit+1):
         print(f"For number {num} we have {num_pf(num)} prime factor(s).")
 
 
-def test_verbose(limit) -> None:
-    """Make tests"""
+def test_verbose(limit: int) -> None:
+    """Make tests verbousely"""
 
     for num in range(1, limit+1):
         print(f"For number {num} we have {num_pf_verbose(num)} prime factor(s).")
 
 
 test(50)
-# ~ test_verbose(20)
+
+test_verbose(20)
 
 
 # ~ For number 1 we have 0 prime factor(s).
