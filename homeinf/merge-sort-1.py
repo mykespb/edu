@@ -24,7 +24,7 @@ def mysorter(a, b):
 
 # ideal sorter
 def ideal(a, b):
-    """iedeal sorter fro comparison"""
+    """ideal sorter for comparison"""
     c = a + b
     c.sort()
     print(f"ideal sort:  {c=}")
@@ -32,6 +32,7 @@ def ideal(a, b):
 
 # make experiment
 def test():
+    """tester"""
     a, b = prep_data()
     print(f"{a=}")
     print(f"{b=}")

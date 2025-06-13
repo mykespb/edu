@@ -1,6 +1,6 @@
 #!usr/bin/env python
 # Mikhail Kolodin, 2024
-# 2024-10-05 2024-10-05 1.0
+# 2024-10-05 2025-06-09 1.1
 # list bubble sorter 
 
 import random
@@ -9,7 +9,7 @@ arr = [random.randint(-99, 99) for _ in range(10)]
 print("old:", arr)
 
 def sorter(arr):
-    if not arr: return []
+    if not arr: return arr
 
     need = True
     while need:
