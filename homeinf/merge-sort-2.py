@@ -9,8 +9,8 @@ from random import randint as ri
 
 def prep_data():
     """prepare data"""
-    a = [ri(-100, 100) for _ in range(10)]
-    b = [ri(-100, 100) for _ in range(10)]
+    a = [ri(-100, 100) for _ in range(5)]
+    b = [ri(-100, 100) for _ in range(7)]
     a.sort()
     b.sort()
     return a, b
@@ -62,6 +62,5 @@ def test():
     else:
         print("no, it is wrong")
     print(f"{result=}")
-    return result
 
 test()
