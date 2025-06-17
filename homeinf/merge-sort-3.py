@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# 2 arrays merge sort 2022-06-07 2022-06-09 3.2
+# 2 arrays merge sort 2022-06-07 2025-06-17 3.3
 # merge-sort-3.py (C) M.Kolodin 2022
 
 # ~ good sorter and autotester
@@ -19,8 +19,8 @@ def prep_data():
 def mysorter(a, b):
     """my own sorter"""
 
-    if not a: return b
-    if not b: return a
+    if not a: return b[:]
+    if not b: return a[:]
 
     c = []
     ai = bi = 0
