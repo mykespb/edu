@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# 2025-06-25 2025-06-25 1.0
+# 2025-06-25 2025-06-27 1.1
 # pairs-naturals.py (C) M.Kolodin 2025
 
 # ~ Парочки натуралов
@@ -35,7 +35,10 @@ def same(x, y):
     # ~ return sorted(str(x)) == sorted(str(y))
 
     # версия 3
-    return x == y or str(x) == str(y)[::-1]
+    # ~ return x == y or str(x) == str(y)[::-1]
+    
+    # версия 4
+    return str(x) == str(y)[::-1]
     
 
 doit()
