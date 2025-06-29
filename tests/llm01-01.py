@@ -1,5 +1,7 @@
+import random
+
 def create_test_data():
-    test_list = [5, 2, 8, 1, 9]
+    test_list = [random.randint(-1000, 1000) for _ in range(10)]
     return test_list
 
 def quicksort(arr):
