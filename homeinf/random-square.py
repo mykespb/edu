@@ -8,7 +8,7 @@
 
 from random import randint, shuffle
 
-N = 20       # размер стороны квадрата
+N = 10       # размер стороны квадрата
 
 def make1(n):
     """1 решение"""
@@ -16,13 +16,12 @@ def make1(n):
     a = [ i for i in range(1, N*N+1) ]
     shuffle(a)
 
-    s = [ [a.pop() for j in range(N)]  for i in range(N)]
+    s = [ [a.pop() for j in range(N)]  for i in range(N) ]
     return s
-
 
 make = make1
 
-def test():
+def test1():
     """запуск"""
 
     print(f"\nслучайный квадрат со стороной {N}\n")
@@ -36,4 +35,27 @@ def test():
 
     print()
 
-test()
+# ~ test1()
+
+def make2(n):
+    """1 решение"""
+    
+    a = [ i for i in range(1, N*N+1) ]
+    shuffle(a)
+    return a
+
+def test2():
+    """запуск"""
+
+    print(f"\nслучайный квадрат со стороной {N}\n")
+
+    s = make2(N)
+
+    for i, e in enumerate(s):
+        print(f"{e:4}", end="")
+        if i % N == N-1:
+            print()
+
+    print()
+
+test2()
