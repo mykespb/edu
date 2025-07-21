@@ -17,6 +17,7 @@ lex = (
     (1, (2, (3, (4, 5, 6), 7), 8), 9)
 )
 
+# решалка
 def find(lst, num):
     """найти num в lst"""
 
@@ -29,7 +30,7 @@ def find(lst, num):
 
     return False
     
-
+# запуски
 print(find(lex, 1))
 print(find(lex, 4))
 print(find(lex, 0))
