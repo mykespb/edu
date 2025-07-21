@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-05-30 2025-07-21 1.1
-# powers-2vs3.py
+# 2025-05-30 2025-07-21 2.1
+# powers-2vs3both.py
 
 # ~ Квадраты и кубы
 
 # ~ Список нечётной длины заполнен исключительно квадратами и кубами натуральных чисел,
 # ~ причём в нём нет чисел больше 1_000_000. А чего больше, квадратов или кубов?
+# ~ Проверяем и кубы, и квадраты.
 
 from random import randint
 
@@ -26,15 +27,21 @@ def solve(lon):
     llon = len(lon)
 
     cubes = [ i*i*i for i in range(1, 101) ]
-
     only_cubes = list( filter(lambda x: x in cubes, lon) )
-    # ~ print(only_cubes)
-    loc = len(only_cubes)
+    print(only_cubes)
+    lo_cubes = len(only_cubes)
 
-    if loc <= llon // 2:
-        print(f"больше квадратов ({llon - loc} из {llon})")
+    kvads = [ i*i for i in range(1, 1001) ]
+    only_kvads = list( filter(lambda x: x in kvads, lon) )
+    print(only_kvads)
+    lo_kvads = len(only_kvads)
+
+    if lo_kvads > lo_cubes:
+        print(f"больше {lo_kvads} квадратов против {lo_cubes} кубов из {llon}")
+    elif lo_kvads < lo_cubes:
+        print(f"больше {lo_cubes} кубов против {lo_kvads} квадратов из {llon}")
     else:
-        print(f"больше кубов ({loc} из {llon})")
+        print(f"поровну кубов {lo_cubes} и квадратов {lo_kvads} из {llon}")
        
 
 def main():
