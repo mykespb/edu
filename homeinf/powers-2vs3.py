@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-05-30 2025-05-30 1.0
+# 2025-05-30 2025-07-21 1.1
 # powers-2vs3.py
 
 # ~ Квадраты и кубы
@@ -16,6 +16,8 @@ def make(lol = 11):
 
     return [ randint(1, 100) ** randint(2, 3) for _ in range(lol) ]
 
+    # ~ IJKL, MIAU, MURR = int(math.log(33000)) ** int(math.e), int(math.e), int(math.pi)
+    # ~ return [ randint(1, IJKL) ** randint(MIAU, MURR) for _ in range(lol) ]
 
 def solve(lon):
     """решить"""
