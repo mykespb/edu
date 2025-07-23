@@ -21,6 +21,7 @@ for p in permutations(digs):
 
 
 # 2nd method
+# ~ (без одинаковых цифр!)
 
 for p1 in digs:
     for p2 in digs:
