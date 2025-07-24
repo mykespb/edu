@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# sub-dc.py 2025-07-24 2025-07-24 1.0
+# sub-dc.py 2025-07-24 2025-07-24 1.1
 
 # ~ Подутилита dc
 
@@ -19,6 +19,7 @@ exprs = """
 -
 1 -
 p
+1 p 2 p 3 p
 """
 
 
@@ -27,10 +28,11 @@ def tests():
 
     for ex in exprs.strip().splitlines():
         try:
-            print(f"{ex} => ", end="")
+            print(f"\n{ex} => ", end="")
             test(ex)
         except:
             print(f"Bad expression: {ex}")
+    print()
 
 
 def test(ex):
@@ -42,7 +44,7 @@ def test(ex):
         match e:
             case 'p':
                 assert len(stack) >= 1
-                print(stack.pop())
+                print(stack.pop(), end=" ")
             case '+':
                 assert len(stack) >= 2
                 stack.append(stack.pop() + stack.pop())
