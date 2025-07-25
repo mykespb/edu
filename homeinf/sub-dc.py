@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# sub-dc.py 2025-07-24 2025-07-24 1.1
+# sub-dc.py 2025-07-24 2025-07-25 1.2
 
 # ~ Подутилита dc
 
@@ -56,3 +56,14 @@ def test(ex):
 
 
 tests()
+
+
+# ~ 1 p => 1 
+# ~ 1 2 + p => 3 
+# ~ 1 1 - p => 0 
+# ~ 1 2 + 3 - p => 0 
+# ~ 1 2 3 + + 4 - 2 + p => 4 
+# ~ - => Bad expression: -
+# ~ 1 - => Bad expression: 1 -
+# ~ p => Bad expression: p
+# ~ 1 p 2 p 3 p => 1 2 3 
