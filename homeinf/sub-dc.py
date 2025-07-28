@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# sub-dc.py 2025-07-24 2025-07-25 1.2
+# sub-dc.py 2025-07-24 2025-07-28 1.3
 
 # ~ Подутилита dc
 
@@ -20,6 +20,9 @@ exprs = """
 1 -
 p
 1 p 2 p 3 p
+2 -1 + p
+21 20 - p
+100500 -100499 + p
 """
 
 
@@ -66,4 +69,6 @@ tests()
 # ~ - => Bad expression: -
 # ~ 1 - => Bad expression: 1 -
 # ~ p => Bad expression: p
-# ~ 1 p 2 p 3 p => 1 2 3 
+# ~ 1 p 2 p 3 p => 1 2 3
+# ~ 2 -1 + p => 1 
+
