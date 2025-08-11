@@ -12,7 +12,7 @@ print(lst)
 
 def main():
 
-    good = [ n for n in lst if n % 3 == 0 and len(str(n)) % 2 == 1 ]
+    good = [ n for n in lst if n % 3 == 0 and len(str(n)) % 2 ]
     print("ответ:", max(good) if good else "нет таких чисел")
 
 main()
