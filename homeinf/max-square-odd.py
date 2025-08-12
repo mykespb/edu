@@ -7,7 +7,7 @@
 
 import random
 
-lst = [ random.randint(-100, 100) for _ in range(10)]
+lst = [ random.randint(-100, 100) for _ in range(10) ]
 print(lst)
 
 def main():
