@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# max-square-odd.py 2025-08-11 2025-08-13 1.1
+# max-square-odd.py 2025-08-11 2025-08-15 1.2
 
 # ~ По случайному списку целых чисел напечатать максимальный квадрат числа из тех, что стоят в этом списке на нечётных позициях (с 0).
 
@@ -13,6 +13,7 @@ print(lst)
 def main():
 
     print( max( [ x*x for x in [ lst[n] for n in range(len(lst)) if n % 2 ] ] ) )
+    print( max( [ x*x for x in lst[1::2] ] ) )
 
 main()
 
