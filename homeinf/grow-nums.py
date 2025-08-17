@@ -23,7 +23,7 @@
 import random
 
 lst = [ random.randint(1, 1000) for _ in range(10) ]
-print("source ist:", lst)
+print("source list:", lst)
 
 
 def is_grow(x):
