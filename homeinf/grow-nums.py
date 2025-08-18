@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-08-16 2025-08-17 1.1
+# 2025-08-16 2025-08-18 1.2
 
 # ~ grow-nums.py
 
@@ -19,7 +19,7 @@
 # ~ ответ:  123, 235
 
 # ~ grow-nums.py
-
+  
 import random
 
 lst = [ random.randint(1, 1000) for _ in range(10) ]
@@ -41,7 +41,7 @@ def is_grow(x):
 def sum_dig(x):
     """calculate sum of digits"""
 
-    return sum( map(int, (str(x)) ))
+    return sum (map (int, (str(x)) ))
     
 
 def main():
