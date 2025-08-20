@@ -22,7 +22,7 @@ def main():
 
     if not lst:
         print("no data, alas. quitting...")
-        return_event
+        return
 
     max_start = this_start = 0
     max_len = this_len = 1
