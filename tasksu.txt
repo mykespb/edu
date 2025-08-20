@@ -743,7 +743,6 @@ MOON + MEN + CAN = REACH
 
 - [T] На 3 набора
 Задача от Facebook
-Ответ пишем в комменты
 Given a list of strictly positive integers, partition the list into 3 contiguous partitions which each sum up to the same value. If not possible, return null.
 For example, given the following list:
 [3, 5, 8, 0, 8]
