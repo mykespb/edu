@@ -26,7 +26,9 @@ UP 100
 RIGHT 200
 DOWN 100
 LEFT 200
-JUMP 0
+
+#JUMP 0
+#PRINT x, y
 """
 
 
@@ -41,13 +43,19 @@ def main():
     print(f"start at {x=}, {y=}")
 
     for step in way.strip().splitlines():
-        assert step
+
+        if not step or step.startswith('#'):
+            continue
+
         where, long = step.strip().split()[:2]
-        assert where in "UP DOWN LEFT RIGHT".split()
-        assert long > 0
+        assert where in "UP DOWN LEFT RIGHT".split(), 'direction is NOT in "UP DOWN LEFT RIGHT"'
+
         long = int(long)
+        assert long > 0, 'length must be positive'
+
         x += xplus[where] * long
         y += yplus[where] * long
+
         print(f"{where=}, {long=} => {x=}, {y=}")
 
     print(f"end at {x=}, {y=}")

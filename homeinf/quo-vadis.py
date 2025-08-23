@@ -40,12 +40,13 @@ def main():
     print(f"start at {x=}, {y=}")
 
     for step in way.strip().splitlines():
-        assert step
+
         where, long = step.strip().split()[:2]
-        assert where in "UP DOWN LEFT RIGHT".split()
         long = int(long)
+
         x += xplus[where] * long
         y += yplus[where] * long
+
         print(f"{where=}, {long=} => {x=}, {y=}")
 
     print(f"end at {x=}, {y=}")
