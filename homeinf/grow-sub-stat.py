@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-08-16 2025-08-17 1.1
+# 2025-08-16 2025-08-27 1.2
 
-# ~ grow-stat.py
+# ~ grow-sub-stat.py
 
 # ~ Статистика растущих чисел
 
