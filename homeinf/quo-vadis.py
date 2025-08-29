@@ -31,8 +31,6 @@ LEFT 200
 
 def main():
 
-    assert way
-
     xplus = {'UP': 0, 'DOWN': 0, 'LEFT': -1, 'RIGHT': 1}
     yplus = {'UP': 1, 'DOWN': -1, 'LEFT': 0, 'RIGHT': 0}
 
