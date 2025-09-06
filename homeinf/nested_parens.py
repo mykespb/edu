@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-05-30 2025-09-05 1.2
+# 2025-05-30 2025-09-06 1.3
 
 # ~ nested_parens.py
 
@@ -63,14 +63,14 @@ def test(t):
 
 # запуск теста
 
-def do_tests():
+def main():
     """все тесты"""
 
     for t in tests.strip().split('\n'):
         print(f"{t} -> {test(t)}")
     
 
-do_tests()
+main()
 
 
 # результаты:
