@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-05-30 2025-09-11 1.4
+# 2025-05-30 2025-09-13 1.5
 
 # ~ nested_parens.py
 
@@ -44,9 +44,9 @@ Apple][+
 def test(t):
     """проверка 1 строки"""
 
-    what = []
+    what  = []
     count = []
-    para = {')': '(', ']': '[', '}': '{', '>': '<'}
+    para  = {')': '(', ']': '[', '}': '{', '>': '<'}
 
     for c in t:
         
@@ -77,7 +77,10 @@ def main():
     """все тесты"""
 
     for t in tests.strip().split('\n'):
-        print(f"{t} -> {test(t)}")
+        if t.strip():
+            print(f"{t} -> {test(t)}")
+        else:
+            print("пустая строка")
     
 
 main()
