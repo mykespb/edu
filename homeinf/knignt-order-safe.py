@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2024-12-14 2025-09-11 1.3
-# knight-order.py
+# 2024-12-14 2025-09-13 1.4
+# knight-order-safe.py
 # На шахматной доске стоит конь (по умолчанию - на А1 = [0, 0]). Это позиция 0.
 # (Можно изменить и посчитать для другого начального поля.)
 # Отметить числами клетки доски в соответствии с тем, на каком минимальном ходу конь может оказаться на соотв. клетке.
@@ -26,20 +26,22 @@ def pp():
 def mark(i, j):
     """отметить ход"""
     
-    global board, marked, move
+    global board, marked, move, done
     
     if 0 <= i < SIZE and 0 <= j < SIZE and board[i][j] == EMPTY:
         board[i][j] = move + 1
         marked += 1
+        done = True
         
 
 def markall():
     """разметить доску"""
 
-    global board, marked, move
+    global board, marked, move, done
     
     while marked < SIZE*SIZE:
-        
+
+        done = False
         for i in range(SIZE):
             for j in range(SIZE):
                 
@@ -54,6 +56,11 @@ def markall():
                     mark(i+1, j+2)
                     
         move += 1
+
+        if not done:
+            print("Failed...")
+            break
+        
                     
                 
 def main():
