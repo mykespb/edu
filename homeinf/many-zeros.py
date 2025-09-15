@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-08-19 2025-08-19 1.1
+# 2025-08-19 2025-09-15 1.2
 # many-zeros.py
 
 # ~ Больше нулей
@@ -17,7 +17,15 @@
 
 import random
 
+# нормальный тест
 lst = [ random.randint(1, 1_000_000) for _ in range(10) ]
+
+# пустой тест: нет данных
+#lst = []
+
+# тест с данными, но без нулей
+#lst = [1, 2, 4, 8]
+
 print("числа:", lst)
 
 
@@ -29,6 +37,10 @@ def count_zeros(e):
 
 def main():
 
+    if not lst:
+        print("no data")
+        return
+        
     reorder = sorted(map(count_zeros, lst), reverse=True)
     how_many = reorder[0][0]
 
@@ -36,6 +48,9 @@ def main():
         print("максимум нулей:", how_many)
         print("одно:", reorder[0][1])
         print("все:", *[e[1] for e in reorder if e[0]==how_many], sep=", ")
+
+    else:
+        print("no zeros")
 
 
 main()
