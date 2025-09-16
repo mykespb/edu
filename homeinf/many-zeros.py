@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-08-19 2025-09-15 1.2
+# 2025-08-19 2025-09-16 1.3
 # many-zeros.py
 
 # ~ Больше нулей
@@ -11,7 +11,7 @@
 
 # ~ Если их несколько, то
 # ~ (а) показать одно любое,
-# ~ (б) показать все, списком, в любом порядке.
+# ~ (б) показать все, списком, в порядке возрастания.
 # ~ Если их нет, явно об этом сказать.
 
 
@@ -47,7 +47,7 @@ def main():
     if how_many:
         print("максимум нулей:", how_many)
         print("одно:", reorder[0][1])
-        print("все:", *[e[1] for e in reorder if e[0]==how_many], sep=", ")
+        print("все:", *(sorted([e[1] for e in reorder if e[0]==how_many])), sep=", ")
 
     else:
         print("no zeros")
