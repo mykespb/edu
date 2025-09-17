@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # paint-area-rec.py
-# 2025-09-17 2025-09-17 1.0
+# 2025-09-17 2025-09-17 1.1
 
 # ~ Закрашивание области карты
 # ~ --------------------------------------
@@ -40,6 +40,21 @@ map2 = """
 ************************************************************
 """
 
+map3 = """
+****   *****************************************************
+*                *                                         *
+*         ***************                                  *
+*         *             *                                  *
+*         *     * ****************                         *
+*         ***  **                *                         *
+*               ******************                         *
+*                 *                                        *
+*                 *                                        *
+*                 *                                        *
+************************************************************
+"""
+
+
 def paint(mapa, x, y, color):
     """paint one area"""
 
@@ -56,6 +71,7 @@ def paint(mapa, x, y, color):
     paint(mapa, x-1, y, color)
     paint(mapa, x-1, y+1, color)
     paint(mapa, x, y-1, color)
+    paint(mapa, x, y+1, color)
     paint(mapa, x-1, y+1, color)
     paint(mapa, x+1, y-1, color)
     paint(mapa, x+1, y, color)
@@ -86,8 +102,9 @@ def main():
     """start all"""
     
     dopaint(map1, 3, 3, '#')
-    dopaint(map2, 3, 10, '#')
-    dopaint(map2, 3, 40, '#')
+    dopaint(map2, 3, 10, '~')
+    dopaint(map2, 3, 40, '%')
+    dopaint(map3, 5, 26, '.')
 
 
 main()
