@@ -82,6 +82,7 @@ def paint(mapa, x, y, color):
 def dopaint(mapa, x, y, color):
     """paint area"""
 
+    # print and  convert data to list
     print(mapa)
 
     lapa = []
@@ -89,8 +90,10 @@ def dopaint(mapa, x, y, color):
         aline = list(line)
         lapa.append(aline)
 
+    # make work
     paint(lapa, x, y, color)
 
+    # convert data to strings and print them
     tapa = ""
     for line in lapa:
         aline = "" .join(line)

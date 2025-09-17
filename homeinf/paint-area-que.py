@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2025
 # paint-area-que.py
-# 2025-09-17 2025-09-17 0.1
+# 2025-09-17 2025-09-17 1.0
 
 # ~ Закрашивание области карты
 # ~ --------------------------------------
@@ -56,32 +56,38 @@ map3 = """
 """
 
 
-def paint(mapa, x, y, color):
-    """paint one area"""
+def onepaint():
+    
+    global queue, lapa, color
+
+    x, y = queue.pop(0)
 
     if x < 0: return
     if y < 0: return
-    if x >= len(mapa): return
-    if x >= len(mapa[0]): return
+    if x >= len(lapa): return
+    if x >= len(lapa[0]): return
 
-    if mapa[x][y] != " ": return
+    if lapa[x][y] != " ": return
 
-    mapa[x][y] = color
+    lapa[x][y] = color
 
-    paint(mapa, x-1, y-1, color)
-    paint(mapa, x-1, y, color)
-    paint(mapa, x-1, y+1, color)
-    paint(mapa, x, y-1, color)
-    paint(mapa, x, y+1, color)
-    paint(mapa, x-1, y+1, color)
-    paint(mapa, x+1, y-1, color)
-    paint(mapa, x+1, y, color)
-    paint(mapa, x+1, y+1, color)
+    queue.append( (x-1, y-1) )
+    queue.append( (x-1, y) )
+    queue.append( (x-1, y+1) )
+    queue.append( (x, y-1) )
+    queue.append( (x, y+1) )
+    queue.append( (x+1, y-1) )
+    queue.append( (x+1, y) )
+    queue.append( (x+1, y+1) )
     
 
-def dopaint(mapa, x, y, color):
+def dopaint(mapa, x, y, acolor):
     """paint area"""
 
+    global queue, lapa, color
+    color = acolor
+
+    # print and  convert data to list
     print(mapa)
 
     lapa = []
@@ -89,8 +95,15 @@ def dopaint(mapa, x, y, color):
         aline = list(line)
         lapa.append(aline)
 
-    paint(lapa, x, y, color)
+    # start work
+    queue = []
+    queue.append( (x, y) )
 
+    # make loop
+    while queue:
+        onepaint()
+
+    # convert data to strings and print them
     tapa = ""
     for line in lapa:
         aline = "" .join(line)
