@@ -66,7 +66,7 @@ def calc(expr):
                             y = snums.pop()
                             x = snums.pop()
                             if y == 0:
-                                print(f"error(zdiv)")
+                                print("error(zdiv)")
                                 snums.append(0)
                             else:
                                 snums.append( x // y )
