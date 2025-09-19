@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-19 1.0
+# 2025-09-19 2025-09-19 1.1
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -35,10 +35,7 @@ def convert(nin: str, b1: int, b2:int) -> str:
         num //= b2
         nout = digits[dig] + nout 
 
-    if nout == "":
-        nout = "0"
-
-    return nout
+    return nout or "0"
     
 
 def say_convert(nin: str, b1: int, b2:int) -> str:
@@ -46,6 +43,10 @@ def say_convert(nin: str, b1: int, b2:int) -> str:
 
     print(f"convertion: {nin}({b1}) -> {convert(nin, b1, b2)}({b2})")
     
+
+say_convert("0", 10, 10)
+say_convert("0", 2, 10)
+say_convert("0", 10, 16)
 
 say_convert("1", 2, 10)
 say_convert("10", 2, 10)
