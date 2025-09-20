@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-19 1.0
+# 2025-09-19 2025-09-20 1.1
 # pascal-be.py
 
 # ~ Дана программа на языке Pascal.
@@ -37,7 +37,7 @@ var a: integer;
     g1, g2: group;
 begin
     print("start: ");
-    for i:=1 to 100 do
+    for i := 1 to 100 do
         begin
             if i < 10
             then
