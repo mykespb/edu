@@ -38,6 +38,7 @@ Yes, ’n’ how many times must the cannonballs fly
 Before they’re forever banned?
 The answer, my friend, is blowin’ in the wind
 The answer is blowin’ in the wind
+(Bob Dylan, 1962)
 """
 
 print(re.search(r'how', txt))
@@ -52,7 +53,7 @@ example 3
 ------------------------------------------""")
 
 txt = "The rain in Spain"
-x = re.search("\s", txt)
+x = re.search(r"\s", txt)
 
 print("The first white-space character is located in position:", x.start()) 
 
@@ -63,5 +64,31 @@ example 4
 #Split the string at every white-space character:
 
 txt = "The rain in Spain"
-x = re.split("\s", txt)
+x = re.split(r"\s", txt)
 print(x)
+
+print("""------------------------------------------
+example 5
+------------------------------------------""")
+
+m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
+print(m.group(0))
+print(m.group(1))
+print(m.group(2))
+print(m.group(1,2))
+
+print("""------------------------------------------
+example 6
+------------------------------------------""")
+
+m = re.match(r"(\d+)\.(\d+)", "24.1632")
+print(m.groups())
+
+m = re.match(r"(\d+)\.(\d+)\.(\d+)", "20.03.1968")
+print(m.groups())
+day, month, year = map(int, m.groups())
+print(f"{year=}, {month=}, {day=}")
+
+print("""------------------------------------------
+the end.
+------------------------------------------""")
