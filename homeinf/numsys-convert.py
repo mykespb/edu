@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-19 1.1
+# 2025-09-19 2025-09-25 1.2
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -20,23 +20,29 @@ def convert(nin: str, b1: int, b2:int) -> str:
     # read nin
     num = 0
     nin = nin.lower()
+
+    try:
     
-    for c in nin:
-        if c not in digits:
-            raise ValueError
-            
-        num = num * b1 + digits.index(c)
+        for c in nin:
+            if c not in digits[:b1]:
+                raise ValueError
+                
+            num = num * b1 + digits.index(c)
 
-    # write nout
-    nout = ""
+        # write nout
+        nout = ""
 
-    while num:
-        dig = num % b2
-        num //= b2
-        nout = digits[dig] + nout 
+        while num:
+            dig = num % b2
+            num //= b2
+            nout = digits[dig] + nout 
 
-    return nout or "0"
-    
+        return nout or "0"
+
+    except ValueError as e:
+        print("Error: bad base", e, end=":: ")
+        return None
+        
 
 def say_convert(nin: str, b1: int, b2:int) -> str:
     """demo convertion"""
@@ -73,3 +79,6 @@ say_convert("world", 36, 10)
 
 say_convert("29234652", 10, 36)
 say_convert("54903217", 10, 36)
+
+say_convert("89", 8, 10)
+say_convert("90", 8, 10)
