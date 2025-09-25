@@ -10,9 +10,9 @@
 def convert(nin: str, b1: int, b2:int) -> str:
     """convert"""
 
-    assert type(nin) == str and len(nin) > 0
-    assert type(b1) == int and 2 <= b1 <= 36
-    assert type(b2) == int and 2 <= b2 <= 36
+    assert type(nin) == str and len(nin) > 0, "String for number must be non-empty"
+    assert type(b1) == int and 2 <= b1 <= 36, "Base must be between 2 and 36 incl."
+    assert type(b2) == int and 2 <= b2 <= 36, "Base must be between 2 and 36 incl."
 
     # pattern for all digits
     digits = "0123456789abcdefghijklmnopqrstuvwxyz"
@@ -21,8 +21,7 @@ def convert(nin: str, b1: int, b2:int) -> str:
     num = 0
     nin = nin.lower()
 
-    try:
-    
+    try:    
         for c in nin:
             if c not in digits[:b1]:
                 raise ValueError
