@@ -7,6 +7,7 @@
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
 # ~ 2 <= b_i <= 36.
 
+
 def convert(nin: str, b1: int, b2:int) -> str:
     """convert"""
 
@@ -49,6 +50,7 @@ def say_convert(nin: str, b1: int, b2:int) -> str:
     print(f"convertion: {nin}({b1}) -> {convert(nin, b1, b2)}({b2})")
     
 
+# normal
 say_convert("0", 10, 10)
 say_convert("0", 2, 10)
 say_convert("0", 10, 16)
@@ -79,5 +81,6 @@ say_convert("world", 36, 10)
 say_convert("29234652", 10, 36)
 say_convert("54903217", 10, 36)
 
+# errors
 say_convert("89", 8, 10)
 say_convert("90", 8, 10)
