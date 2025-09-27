@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-25 1.2
+# 2025-09-19 2025-09-27 1.3
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -18,11 +18,11 @@ def convert(nin: str, b1: int, b2:int) -> str:
     # pattern for all digits
     digits = "0123456789abcdefghijklmnopqrstuvwxyz"
 
-    # read nin
-    num = 0
-    nin = nin.lower()
-
     try:    
+        # read nin
+        num = 0
+        nin = nin.lower()
+
         for c in nin:
             if c not in digits[:b1]:
                 raise ValueError
