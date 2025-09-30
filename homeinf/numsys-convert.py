@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-27 1.3
+# 2025-09-19 2025-09-30 1.5
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -12,8 +12,8 @@ def convert(nin: str, b1: int, b2:int) -> str:
     """convert"""
 
     assert type(nin) == str and len(nin) > 0, "String for number must be non-empty"
-    assert type(b1) == int and 2 <= b1 <= 36, "Base must be between 2 and 36 incl."
-    assert type(b2) == int and 2 <= b2 <= 36, "Base must be between 2 and 36 incl."
+    assert type(b1) == int and 2 <= b1 <= 36, "Base b1 must be between 2 and 36 incl."
+    assert type(b2) == int and 2 <= b2 <= 36, "Base b2 must be between 2 and 36 incl."
 
     # pattern for all digits
     digits = "0123456789abcdefghijklmnopqrstuvwxyz"
@@ -23,11 +23,26 @@ def convert(nin: str, b1: int, b2:int) -> str:
         num = 0
         nin = nin.lower()
 
+# 1st variant, -->
+
         for c in nin:
             if c not in digits[:b1]:
                 raise ValueError
                 
-            num = num * b1 + digits.index(c)
+            num = num * b1 + digits.find(c)
+
+# 2nd variant,  <--
+
+# 2a
+#    for power, dig in enumerate(nin[::-1]):
+#        num += int(dig, b1) * b1 ** power
+
+# 2b
+#    num = int(nin, b1)
+
+# 3rd variant
+        
+    # ~ return int(nin, b1)
 
         # write nout
         nout = ""
