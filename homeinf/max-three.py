@@ -18,6 +18,7 @@ max_val = 100
 
 def make(size = 3):
     """create integer cube"""
+    assert size > 2
     return [[[ randint(min_val, max_val) for _ in range(size) ] for _ in range(size) ] for _ in range(size) ]
 
 
@@ -46,11 +47,10 @@ def find2(arr):
     return lst[:3]
     
 
-# ~ find = find2
-
 cube = make()
 pp(cube)
 
+# ~ find = find2
 vals1 = find1(cube)
 vals2 = find2(cube)
 print(f"max values: {vals1=}, {vals2=}")
