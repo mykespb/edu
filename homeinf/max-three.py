@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2025-10-01 2025-10-01 0ю1
+# 2025-10-01 2025-10-01 1.1
 # max-three.py
 
 # ~ Есть 3-мерный массив (куб) целых чисел.
@@ -41,14 +41,22 @@ def find1(arr):
 def find2(arr):
     """find 3 max numbers, ver.2"""
 
-    size = len(arr)
-    mv = []
+    lst = [ x for xss in arr for xs in xss for x in xs ]
+    lst.sort(reverse=True)
+    return lst[:3]
     
 
-find = find1
+# ~ find = find2
 
 cube = make()
 pp(cube)
 
-vals = find(cube)
-print(f"max values= {vals}")
+vals1 = find1(cube)
+vals2 = find2(cube)
+print(f"max values: {vals1=}, {vals2=}")
+
+
+# ~ [[[39, 66, -83], [-76, 31, 33], [64, 12, -92]],
+ # ~ [[-90, -49, -23], [-83, -53, -53], [-1, 37, -55]],
+ # ~ [[80, -49, -58], [-39, 28, 47], [-75, 51, 18]]]
+# ~ max values= vals1=[80, 66, 64], vals2=[80, 66, 64]
