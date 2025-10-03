@@ -102,6 +102,9 @@ def demo():
     say_convert("90", 8, 10)
 
 
+# ~ demo()
+
+
 if __name__ == '__main__':
     demo()
 
