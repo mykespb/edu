@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-09-30 1.5
+# 2025-09-19 2025-10-03 1.6
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -65,37 +65,43 @@ def say_convert(nin: str, b1: int, b2:int) -> str:
     print(f"convertion: {nin}({b1}) -> {convert(nin, b1, b2)}({b2})")
     
 
-# normal
-say_convert("0", 10, 10)
-say_convert("0", 2, 10)
-say_convert("0", 10, 16)
+def demo():
+# ~ normal
+    say_convert("0", 10, 10)
+    say_convert("0", 2, 10)
+    say_convert("0", 10, 16)
 
-say_convert("1", 2, 10)
-say_convert("10", 2, 10)
-say_convert("11", 2, 10)
+    say_convert("1", 2, 10)
+    say_convert("10", 2, 10)
+    say_convert("11", 2, 10)
 
-say_convert("1", 10, 2)
-say_convert("10", 10, 2)
-say_convert("11", 10, 2)
+    say_convert("1", 10, 2)
+    say_convert("10", 10, 2)
+    say_convert("11", 10, 2)
 
-say_convert("1", 8, 2)
-say_convert("10", 8, 2)
-say_convert("11", 8, 2)
+    say_convert("1", 8, 2)
+    say_convert("10", 8, 2)
+    say_convert("11", 8, 2)
 
-say_convert("1", 8, 10)
-say_convert("10", 8, 10)
-say_convert("11", 8, 10)
+    say_convert("1", 8, 10)
+    say_convert("10", 8, 10)
+    say_convert("11", 8, 10)
 
-say_convert("10", 16, 2)
-say_convert("10", 16, 8)
-say_convert("10", 16, 10)
+    say_convert("10", 16, 2)
+    say_convert("10", 16, 8)
+    say_convert("10", 16, 10)
 
-say_convert("hello", 36, 10)
-say_convert("world", 36, 10)
+    say_convert("hello", 36, 10)
+    say_convert("world", 36, 10)
 
-say_convert("29234652", 10, 36)
-say_convert("54903217", 10, 36)
+    say_convert("29234652", 10, 36)
+    say_convert("54903217", 10, 36)
 
-# errors
-say_convert("89", 8, 10)
-say_convert("90", 8, 10)
+    # ~ errors
+    say_convert("89", 8, 10)
+    say_convert("90", 8, 10)
+
+
+if __name__ == '__main__':
+    demo()
+
