@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-01 2025-10-01 1.0
+# 2025-10-01 2025-10-07 1.1
 # max-inside.py
 
 # ~ Сколько раз по максимуму
@@ -34,13 +34,14 @@ data = """
 info = []
 for line in data.strip().splitlines():
     portion = line.strip().split()
+    assert len(portion) == 2
     portion[1] = float(portion[1])
     info.append(portion)
 
 info.sort(key = lambda x: x[1])
 print(info)
 
-print(f"{info[-1][1] / info[0][1]:.2f} раз, '{info[1][0]}' в '{info[-1][0]}'")
+print(f"{info[-1][1] / info[0][1]:.2f} раз '{info[0][0]}' содержится в '{info[-1][0]}'")
 
 # ~ [['Ватикан', 0.44], ['Маврикий', 2040.0], ['Эсватини', 17364.0], ['Канада', 9984670.0], ['Россия', 17098246.0]]
-# ~ 38859650.00 раз, 'Маврикий' в 'Россия'
+# ~ 38859650.00 раз 'Ватикан' содержится в 'Россия'
