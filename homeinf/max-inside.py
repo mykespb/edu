@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-01 2025-10-07 1.1
+# 2025-10-01 2025-10-07 1.2
 # max-inside.py
 
 # ~ Сколько раз по максимуму
