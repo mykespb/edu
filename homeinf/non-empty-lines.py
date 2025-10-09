@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-08 2025-10-08 1.0
+# 2025-10-08 2025-10-08 1.1
 # non-empty-lines.py
 
 # ~ Получен набор строковых данных.
@@ -23,5 +23,5 @@ def howmany(s):
     return sum( [bool(e) for e in s.splitlines()] )
 
 
-print(howmany(lines1))
-print(howmany(lines2))
+print("непустых строк:", howmany(lines1))
+print("непустых строк:", howmany(lines2))
