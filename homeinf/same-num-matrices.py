@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-17 2025-10-17 1.0
+# 2025-10-17 2025-10-17 1.1
 # same-num-matrices.py
 
 # ~ Даны 2 матрицы целых чисел.
@@ -10,7 +10,7 @@
 
 
 from random import random, randint, shuffle
-from pprint import pp, pprint
+# ~ from pprint import pp, pprint
 
 # размеры, но это неизвестно
 L1, C1, L2, C2 = 2, 6, 3, 4
@@ -18,6 +18,17 @@ L1, C1, L2, C2 = 2, 6, 3, 4
 PROB = 0.3
 # верхнее число
 LIMIT = 100
+
+
+def pp(m, width=4):
+    """print matrix"""
+
+    for i in range(len(m)):
+        for j in range(len(m[0])):
+            print(f"{m[i][j]:{width}}", end="")
+        print()
+    print()
+        
 
 def make():
     """make 2 matrices"""
@@ -59,11 +70,13 @@ def compare(m1, m2):
 def main():
     """run it"""
 
+    print("\nСравниваем матрицы\n")
+    
     m1, m2 = make()
     pp(m1)
     pp(m2)
 
-    print("матрицы", "одинаковые" if compare(m1, m2) else "разные")
+    print("матрицы", "одинаковые" if compare(m1, m2) else "разные", "\n")
 
 
 main()
