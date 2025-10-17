@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-08 2025-10-08 1.1
+# 2025-10-08 2025-10-10 1.1
 # non-empty-lines.py
 
 # ~ Получен набор строковых данных.
