@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-19 2025-10-19 1.0
+# 2025-10-19 2025-10-19 2.0
 # super-seven.py
 
 # ~ Есть список чисел.
@@ -27,12 +27,15 @@ def main():
     # ~ m = [1]   # spec bad test
     print("list:", m)
 
+    # version 1
     sub7 = [n for n in m if "7" in str(n)]
     if sub7:
         print("best:", max(sub7))
     else:
         print("alas, no 7s")
 
+    # version 2
+    print("лучшее: " + str(max(семёрки)) if (семёрки := [n for n in m if "7" in str(n)]) else "увы, без семёрок")
 
 main()
 
