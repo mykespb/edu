@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-22 2025-10-22 1.0
+# 2025-10-22 2025-10-22 1.2
 # digit-2025th.py
 
 # ~ 2025ая цифра
@@ -14,26 +14,47 @@ def what(number=2025):
     """find the digit"""
 
     out = ""
+    pout = ""
     lout = 0
+    commas = 0
 
     for n in range(1, number+1):
         sn = str(n)
         lsn = len(sn)
 
         out += sn
+        pout += sn + ","
+        commas += 1
         lout += lsn
 
         # ~ if lout == number:
             # ~ return out[-1]
         if lout >= number:
-            return out[ - (lout - number) -1 ], out[-10:number]
+            return out[ - (lout - number) -1 ], pout[-20:number+commas-1]
 
 
 def main(number=2025):
-    dig, out = what(number)
-    print(f"{number=} => digit: {dig}, final: ...{out}")
+    dig, pout = what(number)
+    print(f"{number=} => digit: {dig}, final: ...{pout}")
     # ~ print(f"{number=} => digit: {dig} ({out=})")
 
 
-for n in 1, 2, 3, 4, 9, 10, 11, 12, 13, 20, 100, 1000, 2025:
+# see results:
+for n in 1, 2, 3, 4, 9, 10, 11, 12, 13, 20, 100, 1000, 2025, 2026:
     main(n)
+
+
+# ~ number=1 => digit: 1, final: ...1
+# ~ number=2 => digit: 2, final: ...1,2
+# ~ number=3 => digit: 3, final: ...1,2,3
+# ~ number=4 => digit: 4, final: ...1,2,3,4
+# ~ number=9 => digit: 9, final: ...1,2,3,4,5,6,7,8,9
+# ~ number=10 => digit: 1, final: ...,2,3,4,5,6,7,8,9,1
+# ~ number=11 => digit: 0, final: ...,2,3,4,5,6,7,8,9,10
+# ~ number=12 => digit: 1, final: ...3,4,5,6,7,8,9,10,1
+# ~ number=13 => digit: 1, final: ...3,4,5,6,7,8,9,10,11
+# ~ number=20 => digit: 1, final: ...9,10,11,12,13,14,1
+# ~ number=100 => digit: 5, final: ...9,50,51,52,53,54,5
+# ~ number=1000 => digit: 3, final: ...366,367,368,369,3
+# ~ number=2025 => digit: 1, final: ...707,708,709,710,711
+# ~ number=2026 => digit: 7, final: ...708,709,710,711,7
