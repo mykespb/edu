@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # array-odd-even.py
 # (C) Mikhail Kolodin, 2025
-# 2025-10-24 2025-10-24 2.0
+# 2025-10-24 2025-10-24 3.0
 
 # ~ Дан список.
 # ~ Посчитать суммы чётных (по порядку) элементов, нечётных, найти положительную разность.
@@ -14,11 +14,27 @@ def make(size=10):
     return [ randint(0, 99) for _ in range(size) ]
 
 
-def solve(arr):
+def solve1(arr):
     """solve the task and return 3 integer numbers"""
 
     evens = sum( arr[i] for i in range(len(arr)) if i%2 == 0)
     odds  = sum( arr[i] for i in range(len(arr)) if i%2 == 1)
+    diff = abs(evens - odds)
+
+    return evens, odds, diff
+
+
+def solve2(arr):
+    """solve the task and return 3 integer numbers"""
+
+    evens = odds = 0
+
+    for i, v in enumerate(arr):
+        if i % 2:
+            odds += v
+        else:
+            evens += v
+
     diff = abs(evens - odds)
 
     return evens, odds, diff
@@ -29,7 +45,7 @@ def main(size=10):
 
     arr = make()
     print("array:", arr)
-    print("evens, odds, diff are", *solve(arr), sep=", ")
+    print("evens, odds, diff are", solve1(arr), solve2(arr))
 
 
 main()
