@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # maze-maker1.py
 # (C) Mikhail Kolodin, 2025
-# 2025-10-24 2025-10-24 2.0
+# 2025-10-24 2025-10-24 2.2
 
 # Сгенерировать проходимый лабиринт заданного размера.
 # Идём с (0, 0) до (край, край) сверху-слева вниз-вправо.
@@ -30,7 +30,11 @@ def maker(size : int = 6) -> list[list[int]]:
 
     # make empty start and finish cells
     a[0][0] = 0
+    a[1][1] = 0
     a[len(a)-1][len(a[0])-1] = 0
+    a[len(a)-2][len(a[0])-2] = 0
+    a[1][len(a[0])-2] = 0
+    a[len(a)-2][1] = 0
 
     # answer:
     return a
