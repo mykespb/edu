@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-20 2025-10-20 1.0
+# 2025-10-20 2025-11-03 2.0
 # cube-4d.py
 
 # ~ Дан 4-мерный куб со стороной 4 из натуральных чисел.
@@ -12,13 +12,14 @@ from random import randint
 from pprint import pp, pprint
 
 def make():
-    return [[[[ randint(10, 99) for _ in range(4)]
+    return [[[[ randint(10, 99)
         for _ in range(4)]
             for _ in range(4)]
                 for _ in range(4)]
+                    for _ in range(4)]
     
 
-def main():
+def main1():
     k = make()
     pp(k)
 
@@ -28,7 +29,22 @@ def main():
 
     print(f"кратны 4: {div4} из {4*4*4*4}")
 
-main()
+
+def main2():
+    k = make()
+    pp(k)
+
+    div4 = 0
+    for i1 in range(4):
+        for i2 in range(4):
+            for i3 in range(4):
+                for i4 in range(4):
+                    div4 += (k[i1][i2][i3][i4]% 4 == 0)
+
+    print(f"кратны 4: {div4} из {4*4*4*4}")
+
+
+main2()
 
 
 # ~ [[[[88, 19, 85, 47], [43, 78, 69, 48], [95, 86, 83, 81], [33, 92, 88, 15]],

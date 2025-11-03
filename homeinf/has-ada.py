@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-17 2025-10-31 2.0
+# 2025-10-17 2025-11-03 2.1
 # has-ada.py
 
 # ~ Есть список слов, разделённых пробелами.
@@ -17,7 +17,9 @@ words = """
 def with_word(what: str, words: str) -> list:
     """find 'em"""
 
-    return [word for word in words.strip().split() if what.lower() in word.lower()]
+    wl = what.lower()
+
+    return [word for word in words.strip().split() if wl in word.lower()]
 
 
 def main():
