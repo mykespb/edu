@@ -39,7 +39,7 @@ def main2():
         for i2 in range(4):
             for i3 in range(4):
                 for i4 in range(4):
-                    div4 += (k[i1][i2][i3][i4]% 4 == 0)
+                    div4 += (k[i1][i2][i3][i4] % 4 == 0)
 
     print(f"кратны 4: {div4} из {4*4*4*4}")
 
