@@ -30,8 +30,8 @@ pp(sg)
 def fn(g, n):
     """найти число n в графе g"""
 
-    assert type(g) == list and len(g) == 3
-    assert type(n) == int
+    # ~ assert type(g) == list and len(g) == 3
+    # ~ assert type(n) == int
 
     if g[0] == n:
         return True
