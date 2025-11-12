@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-11-13 2025-11-13 2.0
+# 2025-11-13 2025-11-13 3.0
 # place-996.py
 
 # ~ Место числа 996
@@ -14,6 +14,7 @@
 
 NUMBER = 996
 
+# ----------------------------------------------
 # ver.1
 
 from collections import defaultdict
@@ -41,25 +42,30 @@ for k in sorted(nums.keys()):
     else:
         places += len(nums[k])
         
-# ~ число 996 находится на 990 месте -- правильно
 
+# ----------------------------------------------
 # ver.2
 
 nums = list(range(1, 1001))
 nums.sort(key = lambda x: (summa(x), x))
-#nums = sorted( list(range(1, 1001)) , key = lambda x: ( sum( map(int, str(x) )) , x))
 # ~ print(nums)
 print(f"число {NUMBER} находится на {nums.index(NUMBER) + 1} месте")
 
+
+# ----------------------------------------------
 # ver.3
 
-#nums = list(range(1, 1001))
-#nums.sort(key = lambda x: (summa(x), x))
-# ~ nums = sorted( list(range(1, 1001)) , key = lambda x: ( sum( map(int, str(x) )) , x))
-# ~ print(nums)
 print(f"число {NUMBER} находится на { sorted( list(range(1, 1001)) , key = lambda x: ( sum( map(int, str(x) )) , x)) .index(NUMBER) + 1} месте")
 
 
+# ----------------------------------------------
+
+число 996 находится на 990 месте
+число 996 находится на 990 месте
+число 996 находится на 990 месте
+
+
+# ----------------------------------------------
 # ~ Из группы ТГ "Ёжик в матане"
 
 # ~ Дорогие коллеги!
@@ -94,3 +100,4 @@ print(f"число {NUMBER} находится на { sorted( list(range(1, 1001
 
 # ~ #ёжик_пишет
 # ~ #компьютерные_системы
+# ----------------------------------------------
