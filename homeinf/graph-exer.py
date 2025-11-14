@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-11-21 2025-11-11 1.0
+# 2025-11-21 2025-11-14 1.1
 # graph-exer.py
 
 # неориентированный граф
@@ -69,6 +69,9 @@ for e in g:
             cnt[v] += 1
 
         maxvalue = max(cnt[v], maxvalue)
+
+        # ~ if cnt[v] > maxvalue:
+            # ~ maxvalue = cnt[v]
 
 #print("счётчики соседей:")
 #print(cnt)
