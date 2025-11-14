@@ -47,6 +47,7 @@ print("всего узлов:", len(nodes), ", это", sorted(nodes))
 # 2) set
 
 nodes = set()
+
 for left, right in g:
     nodes.add(left)
     nodes.add(right)
@@ -77,7 +78,7 @@ for e in g:
 #print(cnt)
 
 print("максимум соседей:")
-for k, v in cnt.items():
+for k, v in sorted(cnt.items()):
     if v == maxvalue:
         print(f"у узла {k} есть {v} соседей")
 
