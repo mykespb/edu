@@ -971,6 +971,11 @@ graph-exer.py
 
 Опыты с неориентированным графом.
 
+https://graphviz.org/
+https://en.wikipedia.org/wiki/DOT_(graph_description_language)
+https://ru.wikipedia.org/wiki/DOT_(%D1%8F%D0%B7%D1%8B%D0%BA)
+https://ru.wikipedia.org/wiki/Graphviz
+
 graph-map.py
 ------------------------------------
 
@@ -978,6 +983,11 @@ graph-map.py
 
 Рекурсивный обход графа с циклами, поиск пути.
 Не требуется нахождение оптимального (в любом смысле) пути.
+
+https://graphviz.org/
+https://en.wikipedia.org/wiki/DOT_(graph_description_language)
+https://ru.wikipedia.org/wiki/DOT_(%D1%8F%D0%B7%D1%8B%D0%BA)
+https://ru.wikipedia.org/wiki/Graphviz
 
 graph-que.py
 ------------------------------------
