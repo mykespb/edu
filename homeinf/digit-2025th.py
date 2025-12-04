@@ -30,7 +30,7 @@ def what(number=2025):
         # ~ if lout == number:
             # ~ return out[-1]
         if lout >= number:
-            return out[ - (lout - number) -1 ], pout[-20:number+commas-1]
+            return out[ - (lout - number) -1 ], pout[-20 : number+commas-1]
 
 
 def main(number=2025):
