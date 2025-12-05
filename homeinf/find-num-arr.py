@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # (C) Mikhail Kolodin, 2025
 # find-num-arr.py
-# 2025-11-18 2025-11-18 1.0
+# 2025-11-18 2025-12-05 1.1
 
 # ~ Дан упорядоченный список натуральных чисел.
 # ~ Определить, есть ли в нём заданное число.
@@ -12,19 +12,21 @@ from random import randint
 def make(size=32) -> list:
     """make a list"""
 
-    arr = [randint(1, size) for _ in range(size)]
+    arr = [randint(1, 2*size) for _ in range(size)]
     arr.sort()
     return arr
 
 
 def check(arr: list, num: int) -> bool:
+    """check array for num"""
+    
     left = 0
     size = len(arr)
     right = size - 1
 
     were = (left, right)
 
-    while right > left:
+    while left < right:
         # ~ print(f"{left=}, {right=}")
         middle = left + (right - left) // 2
         if arr[middle] == num:
