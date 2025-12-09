@@ -9,7 +9,7 @@
 
 from random import randint
 
-def make(size=32) -> list:
+def make(size=24) -> list:
     """make a list"""
 
     arr = [randint(1, 2*size) for _ in range(size)]

@@ -62,7 +62,8 @@ def fn(g, n):
     return False
 
 
-STAR = "***"
+STAR = "*"
+# ~ STAR = ""
 print( STAR, 1,   fn(sg, 1) )
 print( STAR, 2,   fn(sg, 2) )
 print( STAR, 41,  fn(sg, 41) )
