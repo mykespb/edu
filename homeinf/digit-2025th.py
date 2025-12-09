@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-10-22 2025-10-22 1.2
+# 2025-10-22 2025-12-05 2.1
 # digit-2025th.py
 
 # ~ 2025ая цифра
@@ -30,10 +30,12 @@ def what(number=2025):
         # ~ if lout == number:
             # ~ return out[-1]
         if lout >= number:
-            return out[ - (lout - number) -1 ], pout[-20 : number+commas-1]
+            return out[ - (lout - number) - 1 ], pout[-20 : number + commas - 1]
 
 
 def main(number=2025):
+    """organize it"""
+    
     dig, pout = what(number)
     print(f"{number=} => digit: {dig}, final: ...{pout}")
     # ~ print(f"{number=} => digit: {dig} ({out=})")
@@ -42,6 +44,15 @@ def main(number=2025):
 # see results:
 for n in 1, 2, 3, 4, 9, 10, 11, 12, 13, 20, 100, 1000, 2025, 2026:
     main(n)
+
+# ~ def etc(number):
+    # ~ alles = ""
+    # ~ for n in range(1, number+1):
+        # ~ alles += str(n)
+    # ~ print(alles[number-1])
+
+# ~ for nn in 1, 2, 5, 10, 20, 1000, 2025:
+    # ~ etc(nn)
 
 
 # ~ number=1 => digit: 1, final: ...1

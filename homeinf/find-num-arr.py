@@ -29,8 +29,10 @@ def check(arr: list, num: int) -> bool:
     while left < right:
         # ~ print(f"{left=}, {right=}")
         middle = left + (right - left) // 2
+        
         if arr[middle] == num:
             return True
+
         if arr[middle] > num:
             right = middle
         else:
