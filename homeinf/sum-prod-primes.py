@@ -5,7 +5,7 @@
 
 # ~ Найти сумму и произведение простых чисел до 100.
 
-def psp(limit : int = 100) -> None:
+def psp(limit : int = 100) -> tuple:
     """print sum and product of primes tilll limit"""
 
     psum = 0
