@@ -1,28 +1,34 @@
 #!/usr/bin/env python3
-# sum-prod-primes.py
+# sum-prod-primes-gen.py
 # (C) Mikhail Kolodin, 2025
-# 2025-12-19 2025-12-25 1.1
+# 2025-12-19 2025-12-25 2.0
 
 # Найти сумму и произведение простых чисел до 100.
-# Используем простой цикл, совмещаем вычисление простых чисел и сложение-умножение.
+# Используем генератор.
+
+def give_primes(limit : int = 100) -> int:
+    """generate primes"""
+    
+    primes = []
+    for n in range(2, limit+1):
+        for test in primes:
+            if n % test == 0:
+                break
+        else:
+            primes.append(n)
+            yield n
+            
 
 def psp(limit : int = 100) -> tuple:
     """print sum and product of primes till limit"""
 
     psum = 0
     pprod = 1
-    primes = []
 
-    for n in range(2, limit):
-        for d in primes:
-            if n % d == 0:
-                break
-        else:
-            psum  += n
-            pprod *= n
-            primes.append(n)
+    for n in give_primes(100):
+        psum  += n
+        pprod *= n
 
-    # ~ print(primes)
     return psum, pprod
 
 
@@ -35,7 +41,6 @@ def main(limit : int = 100) -> None:
 
 
 main()
-
 
 # results
 

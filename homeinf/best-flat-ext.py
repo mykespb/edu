@@ -12,70 +12,68 @@
 # ~ д. оптимальную (по отношению площадь / цена, т.е. стоимость кв. метра)
 # ~ (если вообще есть из чего выбирать :) )
 
-from pprint import pp
-from random import choice, randint
+# from pprint import pp
+from random import randint
 
 # площадь квартиры, м^2
 SIZE_FROM = 25
-SIZE_TO   = 250
+SIZE_TO = 250
 
 # цена квартиры, тыс. руб.
 PRICE_FROM = 1_000
-PRICE_TO   = 30_000
+PRICE_TO = 30_000
 
 # вероятность того, что квартира продаётся
 SELL_PROB = 75
 
 
-def generate(limit : int = 100) -> list:
+def generate(limit: int = 100) -> list:
     """создать набор квартир,
     общим число до limit
     """
 
     assert 1 <= limit <= 1_000_000, "Number of flats should be between 1 and 1_000_000."
-    
+
     table = []
 
-    for i in range(1, limit+1):
-        table.append( dict(
-            number = i,
-            size   = randint(SIZE_FROM, SIZE_TO),
-            price  = randint(PRICE_FROM, PRICE_TO),
-            listed = randint(0, 100) <= SELL_PROB,
-            ))
+    for i in range(1, limit + 1):
+        table.append(
+            dict(
+                number=i,
+                size=randint(SIZE_FROM, SIZE_TO),
+                price=randint(PRICE_FROM, PRICE_TO),
+                listed=randint(0, 100) <= SELL_PROB,
+            )
+        )
 
     return table
 
 
-def find_best(table : list, reason : str) -> list:
+def find_best(table: list, reason: str) -> list | dict:
     """найти лучшую квартиру по некоторому критерию
     ("random", "size", "price", "optimal")
     """
 
-    sell = list(filter(lambda x: x['listed'], table))
-    
+    sell = list(filter(lambda x: x["listed"], table))
+
     if not sell:
-        return {'error': 'no flats being sold'}
+        return {"error": "no flats being sold"}
 
     if len(sell) == 1:
         return sell[0]
 
     methods = {
-        "random":  lambda x: randint(0, 1000),
-        "size":    lambda x: x['size'],
-        "price":   lambda x: -x['price'],
-        "optimal": lambda x: x['size'] / x['price'],
-        }
+        "random": lambda x: randint(0, 1000),
+        "size": lambda x: x["size"],
+        "price": lambda x: -x["price"],
+        "optimal": lambda x: x["size"] / x["price"],
+    }
 
-    return sorted(
-        sell,
-        key = methods[reason],
-        reverse = True) [0]
+    return sorted(sell, key=methods[reason], reverse=True)[0]
 
 
 def main() -> None:
-    """диспетчер
-    """
+    """диспетчер"""
 
     flats = generate()
     # ~ flats = generate(-1)
