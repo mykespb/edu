@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # sum-prod-primes-gen.py
 # (C) Mikhail Kolodin, 2025
-# 2025-12-19 2025-12-25 2.0
+# 2025-12-19 2025-12-25 2.1
 
 # Найти сумму и произведение простых чисел до 100.
 # Используем генератор.
@@ -26,9 +26,11 @@ def psp(limit : int = 100) -> tuple:
     pprod = 1
 
     for n in give_primes(100):
+        # print(n, end=", ")
         psum  += n
         pprod *= n
 
+    # print()
     return psum, pprod
 
 
