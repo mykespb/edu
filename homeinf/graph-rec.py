@@ -8,7 +8,7 @@
 
 from pprint import pp
 
-sg = [1,
+bt = [1,
         [2,
             [3, 0, 0],
             [4,
@@ -23,7 +23,7 @@ sg = [1,
         ]
     ]
 
-pp(sg)
+pp(bt)
 
 # найти заданное число в дереве
 
@@ -47,12 +47,12 @@ def fn(g, n):
 
 # ~ STAR = "***"
 STAR = "*"
-print( STAR, 1,   fn(sg, 1) )
-print( STAR, 2,   fn(sg, 2) )
-print( STAR, 41,  fn(sg, 41) )
-print( STAR, 111, fn(sg, 111) )
-print( STAR, 133, fn(sg, 133) )
-print( STAR, 134, fn(sg, 134) )
+print( STAR, 1,   fn(bt, 1) )
+print( STAR, 2,   fn(bt, 2) )
+print( STAR, 41,  fn(bt, 41) )
+print( STAR, 111, fn(bt, 111) )
+print( STAR, 133, fn(bt, 133) )
+print( STAR, 134, fn(bt, 134) )
 
 
 # ~ [1, [2, [3, 0, 0], [4, [41, 0, 0], 0]], [11, [12, 0, 0], [13, 0, [133, 0, 0]]]]
