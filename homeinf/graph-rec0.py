@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-11-21 2026-01-06 1.1
+# 2025-11-21 2026-01-06 1.2
 # graph-rec0.py
 
 # рекурсивный обход графа, бинарное дерево, обход в глубину
@@ -31,7 +31,7 @@ pp(bt)
 def fn(g, n):
     """найти число n в графе g"""
 
-    return n and type(g) == list and (g[0] == n or fn(g[1], n) or fn(g[2], n))
+    return bool(g) and (g[0] == n or fn(g[1], n) or fn(g[2], n))
 
 
 # тесты
