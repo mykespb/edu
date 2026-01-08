@@ -37,9 +37,9 @@ def fn(g, n):
 # тесты
 # ~ STAR = "***"
 STAR = "*"
-print( STAR, 1,   fn(bt, 1) )
-print( STAR, 2,   fn(bt, 2) )
-print( STAR, 41,  fn(bt, 41) )
+print( STAR,   1, fn(bt,   1) )
+print( STAR,   2, fn(bt,   2) )
+print( STAR,  41, fn(bt,  41) )
 print( STAR, 111, fn(bt, 111) )
 print( STAR, 133, fn(bt, 133) )
 print( STAR, 134, fn(bt, 134) )
