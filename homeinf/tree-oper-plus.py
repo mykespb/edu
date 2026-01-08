@@ -86,13 +86,13 @@ def ext(t, e):
         return
 
     if t[0] > e:
-        if t[1] == None:
+        if t[1] is None:
             t[1] = [e, None, None]
         else:
             ext(t[1], e)
 
     else:
-        if t[2] == None:
+        if t[2] is None:
             t[2] = [e, None, None]
         else:
             ext(t[2], e)
