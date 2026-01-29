@@ -1,0 +1,91 @@
+#!/usr/bin/env python
+
+# Mikhail (myke) Kolodin, 2025
+# 2026-01-29 2026-01-29 1.0
+# find-vars.py
+
+# ~ В данном тексте программы найти (напечатать) все питоновские идентификаторы (имена).
+# ~ Ключевые (зарезервированные) слова не включать.
+# ~ Буквы - только латинские.
+# ~ Внутри комментариев тоже смотрим.
+
+text = """
+from pprint import pp
+
+bt = [1,
+        [2,
+            [3, 0, 0],
+            [4,
+                [41, 0, 0],
+                0]
+        ],
+        [11,
+            [12, 0, 0],
+            [13, 0,
+                [133, 0, 0]
+            ]
+        ]
+    ]
+
+pp(bt, width=25, indent=4, compact=False)
+
+
+def fn(t, n):
+    # найти число n в бинарном дереве t
+    
+    if t[0] == n:
+        return True
+    
+    ...
+    
+
+# тесты
+print(1,   "=>", fn(bt, 1))
+print(12,  "=>", fn(bt, 12))
+print(100, "=>", fn(bt, 100))
+"""
+
+import keyword, string
+
+# ~ print(keyword.kwlist, keyword.softkwlist)
+# ~ print("def", keyword.iskeyword("def"))
+# ~ print("do", keyword.iskeyword("do"))
+# ~ print("match", keyword.issoftkeyword("match"))
+# ~ print("_", keyword.issoftkeyword("_"))
+
+kw = keyword.kwlist + keyword.softkwlist
+# ~ print(f"{kw=}")
+
+letters = string.ascii_letters + string.digits
+# ~ print(f"{letters=}")
+
+def words(txt):
+
+    state = 0
+    var = ""
+
+    for ch in txt:
+        if ch in letters:
+            if state:
+                var += ch
+            else:
+                if ch not in string.digits:
+                    var = ch
+                    state = 1
+        else:
+            if state:
+                yield var
+                state = 0
+                var = ""
+    
+
+def fv(txt):
+
+    for w in words(txt):
+        if w not in kw:
+            print(w, end=", ")
+
+    print()
+
+
+fv(text)
