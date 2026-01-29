@@ -12,6 +12,8 @@
 text = """
 from pprint import pp
 
+a1 = a2 = a3 = q1234567890_() = f(x) = _a = _1 = 7
+
 bt = [1,
         [2,
             [3, 0, 0],
@@ -56,12 +58,13 @@ import keyword, string
 kw = keyword.kwlist + keyword.softkwlist
 # ~ print(f"{kw=}")
 
-letters = string.ascii_letters + string.digits
+letters = string.ascii_letters + string.digits + '_'
 # ~ print(f"{letters=}")
+
 
 def words(txt):
 
-    state = 0
+    state = False
     var = ""
 
     for ch in txt:
@@ -71,11 +74,11 @@ def words(txt):
             else:
                 if ch not in string.digits:
                     var = ch
-                    state = 1
+                    state = True
         else:
             if state:
                 yield var
-                state = 0
+                state = False
                 var = ""
     
 
