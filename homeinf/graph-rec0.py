@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-11-21 2026-01-06 1.2
+# 2025-11-21 2026-01-30 1.3
 # graph-rec0.py
 
 # рекурсивный обход графа, бинарное дерево, обход в глубину
@@ -36,7 +36,7 @@ def fn(g, n):
 
 # тесты
 # ~ STAR = "***"
-STAR = "*"
+STAR = ""
 print( STAR,   1, fn(bt,   1) )
 print( STAR,   2, fn(bt,   2) )
 print( STAR,  41, fn(bt,  41) )

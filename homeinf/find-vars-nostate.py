@@ -46,6 +46,7 @@ def fn(t, n):
 print(1,   "=>", fn(bt, 1))
 print(12,  "=>", fn(bt, 12))
 print(100, "=>", fn(bt, 100))
+z
 """
 
 import keyword, string
@@ -75,10 +76,9 @@ def fv(txt):
                 if ch not in string.digits:
                     var = ch
         else:
-            if var:
-                if var not in kw:
-                    print(var, end=", ")
-                var = ""
+            if var and var not in kw:
+                print(var, end=", ")
+            var = ""
 
     print()
 
