@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin, 2025
-# 2025-09-19 2025-10-03 1.6
+# Mikhail (myke) Kolodin, 2025-2026
+# 2025-09-19 202601-30 12.1
 # numsys-convert.py
 
 # ~ Перевести число n из одной позиционной системы счисления b1 в другую b2,
@@ -108,3 +108,18 @@ def demo():
 if __name__ == '__main__':
     demo()
 
+
+
+# ~ Прочее:
+
+# ~ 1. https://www.youtube.com/shorts/Kkv3UIAuPzg
+# ~ Простой перевод в любую систему счисления
+
+# ~ 2. https://www.youtube.com/watch?v=juhMGb5KJFU
+# ~ Перевод из двоичной в восьмеричную систему счисления
+
+# ~ 3. https://www.youtube.com/watch?v=FQiDzqtjkjU
+# ~ Перевод из восьмеричной в двоичную систему счисления
+
+# ~ 4. https://www.youtube.com/watch?v=pdXQ9r1NqBQ
+# ~ Перевод из 16 в 8 систему счисления
