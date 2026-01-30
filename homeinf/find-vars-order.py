@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-01-29 2026-01-29 3.0
+# 2026-01-29 2026-01-30 3.1
 # find-vars-order.py
 
 # ~ В данном тексте программы найти (напечатать) все питоновские идентификаторы (имена).
@@ -86,6 +86,12 @@ def words(txt):
 def fv(txt):
 
     print("\n*** all words:")
+
+    # ~ ws = []
+    # ~ for w in words(txt):
+        # ~ if w not in kw:
+            # ~ ws.append(w)
+    
     ws = [w for w in words(txt) if w not in kw]
     print(*ws, sep=", ")
 
