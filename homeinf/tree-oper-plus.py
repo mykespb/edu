@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-01-06 2026-01-08 2.0
+# 2026-01-06 2026-02-02 2.2
 # tree-oper-plus.py
 
 # ~ Операции над бинарными деревьями:
@@ -29,22 +29,24 @@ pp(bt)
 
 def print_up(tree):
 
-    if tree[1]:
+    if not tree:
+        return
+
+    if tree[1] is not None:
         print_up(tree[1])
 
     print(tree[0], end=", ")
 
-    if tree[2]:
+    if tree[2] is not None:
         print_up(tree[2])
     
-
-print("печать по возрастанию:")
-print_up(bt)
-print()
 
 # печать по убыванию
 
 def print_down(tree):
+
+    if tree is None:
+        return
 
     if tree[2]:
         print_down(tree[2])
@@ -72,10 +74,10 @@ print()
 # построение дерева по последовательности
 # -----------------------------------------------
 
-def ext(t, e):
-    """add element e to tree t"""
+def plus(t, e):
+    """add new element e to tree t, or skip"""
 
-    if type(t) != list:
+    if type(t) != list or type(e) != int:
         raise ValueError
 
     if t == []:
@@ -89,22 +91,25 @@ def ext(t, e):
         if t[1] is None:
             t[1] = [e, None, None]
         else:
-            ext(t[1], e)
+            plus(t[1], e)
 
     else:
         if t[2] is None:
             t[2] = [e, None, None]
         else:
-            ext(t[2], e)
+            plus(t[2], e)
 
+# 1st try
 
+# ~ plus = ext
 d = []
 plus(d, 3)
 plus(d, 1)
 plus(d, 5)
 
 pp(d)
-    
+
+# 2nd try
 
 seq = 5, 3, 7, 1, 8, 2, 4, 9, 6
 print("sequence=", seq)
