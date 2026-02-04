@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-11-21 2025-11-12 2.0
+# 2025-11-21 2026-02-04 2.1
 # graph-que.py
 
 # обход графа, бинарное дерево, обход в ширину
@@ -45,19 +45,10 @@ def fn(g, n):
         nn = que.pop(0)
         if (DEBUG): print(f"{nn=}")
 
-        if nn == []:
-            continue
-
-        if type(nn) == int:
-            if nn == n:
+        if type(nn) == list:
+            if nn[0] == n:
                 return True
-            else:
-                continue
-
-        elif nn[0] == n:
-            return True
-
-        que.extend(nn[1:])
+            que.extend(nn[1:])
 
     return False
 
