@@ -8,8 +8,8 @@
 
 from pprint import pp
 
-# ~ DEBUG = 0
-DEBUG = 1
+DEBUG = 0
+# ~ DEBUG = 1
 
 sg = [1,
         [2,
