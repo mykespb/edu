@@ -53,8 +53,8 @@ class Teacher(Person):
     def set_salary(self, value):
         if Teacher.MIN_SALARY <= value <= Teacher.MAX_SALARY:
             self.salary = value
-        # ~ else:
-            # ~ raise ValueError
+        else:
+            raise ValueError
 
     def __str__(self):
         return f"Teacher(name='{self.name}', bd='{self.bd}', sex='{self.sex}', groups={self.groups}, salary={self.salary})"
@@ -93,8 +93,11 @@ def main():
     prep1.set_salary(100)
     print(prep1)
 
-    prep1.set_salary(10000)
-    print(prep1)
+    try:
+        prep1.set_salary(10000)
+        print(prep1)
+    except:
+        print("Была ошибка с зарплатой в 10000 монет, но мы справились!")
 
     prep1.del_group(123)
     print(prep1)
