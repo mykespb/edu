@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# maze-maker1.py
+# maze-maker2.py
 # (C) Mikhail Kolodin, 2025
-# 2025-10-24 2025-10-24 2.2
+# 2025-10-24 2026-03-09 2.3
 
 # Сгенерировать проходимый лабиринт заданного размера.
 # Идём с (0, 0) до (край, край) сверху-слева вниз-вправо.
@@ -14,7 +14,6 @@
 # ~ Это (почти, практически) заведомо проходимо.
 
 from random import randint
-from itertools import product
 
 
 def maker(size : int = 6) -> list[list[int]]:
