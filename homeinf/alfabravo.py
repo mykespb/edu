@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2022
-# 2022-02-25 2022-02-25 1.0
+# 2022-02-25 2026-03-09 1.1
 # alfabravo.py
 
 # ~ вот фонетический алфавит
@@ -43,3 +43,6 @@ for word in abc.split():
 
 # ~ Alfa, Bravo, Charlie, Delta, India, Lima,
 # ~ Oscar, Papa, Sierra, Tango, X-ray, Yankee, 
+
+#"Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee Zulu"
+
