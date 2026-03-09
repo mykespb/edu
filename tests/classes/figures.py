@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
-# classes / main - testing classes
-# 2026-03-09 2026-03-09 1.0
+# classes / figures.py - testing classes
+# 2026-03-09 2026-03-09 1.1
 
 # classes with geo-figures, step 1
 
@@ -19,9 +19,9 @@ class Figure:
     def area(self):
         return 0.0
 
-    @property
-    def peri(self):
-        return 0.0
+    # ~ @property
+    # ~ def peri(self):
+        # ~ return 0.0
 
     def __str__(self):
         return f"Figure({self.name}, {self.cx:.2f}, {self.cy:.2f})"

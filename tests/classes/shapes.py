@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / shapes.py - testing classes
-# 2026-03-09 2026-03-09 1.0
+# 2026-03-09 2026-03-09 1.1
 
 # classes with geo-figures, step 2
+
 
 from datetime import date
 from random import choice, random
 from math import sqrt
+
 
 class Figure:
     def __init__(self, name = "Noname", cx = 0.0, cy = 0.0):
@@ -23,9 +25,9 @@ class Figure:
     def length(self):
         return 0.0
 
-    @property
-    def peri(self):
-        return 0.0
+    # ~ @property
+    # ~ def peri(self):
+        # ~ return 0.0
 
     def __str__(self):
         return f"Figure('{self.name}', {self.cx:.2f}, {self.cy:.2f})"
@@ -35,12 +37,13 @@ class Figure:
 
 
 class Point(Figure):
-    def __init__(self, name = "Point " + "Noname", cx = 0.0, cy = 0.0):
+    def __init__(self, name = "Noname", cx = 0.0, cy = 0.0):
         super().__init__()
         self.name = "Tochka " + name
 
+
 class Line(Figure):
-    def __init__(self, name = "Line " + "Noname", cx = 0.0, cy = 0.0, ex = 0.0, ey = 0.0):
+    def __init__(self, name = "Noname", cx = 0.0, cy = 0.0, ex = 0.0, ey = 0.0):
         super().__init__()
         self.ex = ex
         self.ey = ey
@@ -62,6 +65,7 @@ names = "Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lim
 vowels = "aeiouy"
 
 types = "Figure Point Line".split()
+
 
 def main():
 
@@ -89,6 +93,9 @@ def main():
 
     best = [fig for fig in lof if fig[0].name.lower().split()[1].startswith(tuple(vowels))]
     print(f"{best=}")
+
+    max_sized = sorted(lof, key = lambda x: x[1], reverse=True)[0]
+    print(f"{max_sized=}")
     
 
 if __name__ == "__main__":
