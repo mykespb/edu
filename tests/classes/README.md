@@ -7,4 +7,3 @@ simple creation of geo figures, without shapes
 
 shapes.py
 same, with several shapes
-

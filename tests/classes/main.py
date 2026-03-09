@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
-# classes / main - testing classes
+# classes / main.py - testing classes
 # 2026-03-09 2026-03-09 1.0
 
 from datetime import date
