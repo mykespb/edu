@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
-# classes / mainer.py - testing classes
-# 2026-03-09 2026-03-10 1.2
+# classes / mainer-mult.py - testing classes
+# 2026-03-09 2026-03-10 1.3
 
 from datetime import date
 
@@ -73,7 +73,28 @@ class Teacher(Person):
 
     def __str__(self):
         return f"Teacher(name='{self.name}', bd='{self.bd}', sex='{self.sex}', groups={self.groups}, salary={self.salary})"
-            
+
+
+class Aspirant(Student, Teacher):
+    def __init__(self,
+        name = "Noname", bd = date.today(), sex = True,
+        group = None, grade = 1,
+        groups = None, salary = 0):
+
+        self.name = name
+        self.sex = sex
+        self.bd = bd
+        self.group = group
+        self.grade = grade
+        if groups is None:
+            self.groups = []
+        else:
+            self.groups = groups
+        self.salary = salary
+
+    def __str__(self):
+        return f"Aspirant(name='{self.name}', bd='{self.bd}', sex='{self.sex}', groups={self.groups}, salary={self.salary}, group={self.group}, grade={self.grade})"
+        
 
 def main():
     print("Hello from classes!")
@@ -98,13 +119,16 @@ def main():
         print("Гость из будущего 2030 не принят.")
         noman = Person('Новак', date(1999, 3, 5))
 
+    print("Noman 1:", noman)
+    print("Noman's birth:", noman.birth)
+
     try:
         noman.birth = date(2010, 11, 11)
         print("Reset noman:", noman)
     except:
         print("Гость из будущего 2010 не принят.")
 
-    print("Noman:", noman)
+    print("Noman 2:", noman)
     print("Noman's birth:", noman.birth)
 
     # Student ------------------------------------------------
@@ -144,6 +168,18 @@ def main():
     prep1.del_group(123)
     print(prep1)
 
+    # Aspirant ------------------------------------------------
+
+    asp1 = Aspirant(name = 'Сверховный', bd = date(1968, 3, 20))
+    print("аспирант 1:", asp1)
+    print("его возраст", asp1.age)
+
+    asp2 = Aspirant(name = 'Кромешная', bd = date(2001, 6, 10), sex = False,
+        group=1103,
+        groups=[123, 234, 56], salary=120)
+    print("аспирант 2:", asp2)
+    print("его возраст", asp2.age)
+    
 
 if __name__ == "__main__":
     main()

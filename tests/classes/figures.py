@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / figures.py - testing classes
-# 2026-03-09 2026-03-09 1.1
+# 2026-03-09 2026-03-10 1.2
 
 # classes with geo-figures, step 1
 
@@ -14,6 +14,7 @@ class Figure:
         self.cx = cx
         self.cy = cy
         self.name = name
+        self.random = random()
 
     @property
     def area(self):
@@ -24,10 +25,10 @@ class Figure:
         # ~ return 0.0
 
     def __str__(self):
-        return f"Figure({self.name}, {self.cx:.2f}, {self.cy:.2f})"
+        return f"Figure({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
 
     def __repr__(self):
-        return f"Figure({self.name}, {self.cx:.2f}, {self.cy:.2f})"
+        return f"Figure({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
 
 
 names = "Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee Zulu".split()
