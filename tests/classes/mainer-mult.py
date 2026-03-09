@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / mainer-mult.py - testing classes
-# 2026-03-09 2026-03-10 1.3
+# 2026-03-09 2026-03-10 1.4
 
 from datetime import date
 
@@ -179,6 +179,10 @@ def main():
         groups=[123, 234, 56], salary=120)
     print("аспирант 2:", asp2)
     print("его возраст", asp2.age)
+
+    print("---MRO: method resolution order---")
+    print(Aspirant.__mro__)
+    print(Aspirant.mro())
     
 
 if __name__ == "__main__":
