@@ -116,5 +116,43 @@ def fun4b():
 # ~ fun4b()
 
 # -------------------------------------------------------
+part("Mutables")
+
+subpart("Default mutables as parameters")
+
+
+def fun5a(value, arr=[]):
+    arr.append(value)
+    return arr
+
+def fun5b(value, arr=None):
+    if arr is None:
+        arr = []
+    arr.append(value)
+    return arr
+
+def fun50():
+    print("fun50")
+    l1 = fun5a(0)
+    print(l1)
+    l2 = fun5a(1)
+    print(l2)
+    l3 = fun5a(2)
+    print(l3)
+
+fun50()
+
+def fun51():
+    print("fun51")
+    l1 = fun5b(0)
+    print(l1)
+    l2 = fun5b(1)
+    print(l2)
+    l3 = fun5b(2)
+    print(l3)
+
+fun51()
+
+# -------------------------------------------------------
 part("The End.")
 # -------------------------------------------------------
