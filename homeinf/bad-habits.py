@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2026-03-12 2026-03-12 1.0
+# 2026-03-12 2026-03-12 1.1
 # bad-habits.py
 # Плохие идеи для питона
 
@@ -56,6 +56,23 @@ def fun3():
 
 # ~ fun3()
 
+subpart("Logical expressions")
+
+def fun6a(value):
+    if bool(value):
+        print("it is good variant")
+    else:
+        print("it is bad variant")
+    
+def fun6b(value):
+    if value:
+        print("it is good variant")
+    else:
+        print("it is bad variant")
+
+fun6a(1)
+fun6b(1)
+
 # -------------------------------------------------------
 part("Branching")
 
@@ -81,7 +98,7 @@ def fun1c():
 # ~ fun1a()
 # ~ fun1b()
 # ~ fun1c()
-    
+
 # -------------------------------------------------------
 part("Print")
 
@@ -120,7 +137,6 @@ part("Mutables")
 
 subpart("Default mutables as parameters")
 
-
 def fun5a(value, arr=[]):
     arr.append(value)
     return arr
@@ -140,8 +156,6 @@ def fun50():
     l3 = fun5a(2)
     print(l3)
 
-fun50()
-
 def fun51():
     print("fun51")
     l1 = fun5b(0)
@@ -151,7 +165,8 @@ def fun51():
     l3 = fun5b(2)
     print(l3)
 
-fun51()
+# ~ fun50()
+# ~ fun51()
 
 # -------------------------------------------------------
 part("The End.")
