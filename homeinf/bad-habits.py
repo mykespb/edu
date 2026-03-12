@@ -93,8 +93,27 @@ def fun2a():
 def fun2b():
     print(f"The answer for 2*2 is {2*2} and for 3*3 is {3*3}")
 
-fun2a()
-fun2b()
+# ~ fun2a()
+# ~ fun2b()
+
+# -------------------------------------------------------
+part("Files")
+
+subpart("Manual / auto file open / close")
+
+fname = "nytree.py"
+
+def fun4a():
+    f = open(fname)
+    print(f.read())
+    f.close()
+
+def fun4b():
+    with open(fname) as f:
+        print(f.read())
+
+# ~ fun4a()
+# ~ fun4b()
 
 # -------------------------------------------------------
 part("The End.")
