@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-03-15 2026-03-15 1.0
+# 2026-03-15 2026-03-15 2.0
 # my-bisect.py
 
 # ~ Проба бинарного поиска в отсортированном массиве. Разными способами.
@@ -28,14 +28,37 @@ def allrun(number : int = 10) -> None:
             elems = arr[0], arr[1], 1, 2, arr[size // 4 + 1], arr[size // 2], arr[size // 2 + 1], 99, 100, 500
             for elem in elems:
                 ok = find(arr, elem)
-                print(f"look for {elem} => {ok}")
+                wow = elem in arr
+                print(f"look for {elem} => {ok} (really: {wow}, so: {"YES!" if ok == wow else "NEE!"} )")
                 
 
 def find1(arr : list[int], elem : int) -> bool:
     """find the element in the array: simple builtin operation `in`"""
     return elem in arr
 
+def find2(arr : list[int], elem : int) -> bool:
+    """find the element in the array: bisect"""
 
-find = find1
+    left = 0
+    right = len(arr) - 1
+    wasmed = -1
+
+    while left <= right:
+        med = left + (right - left) // 2
+        if med == wasmed:
+            break
+        curr = arr[med]
+        if curr == elem:
+            return True
+        elif curr < elem:
+            left = med
+        else:
+            right = med
+        wasmed = med
+
+    return False
+
+
+find = find2
 
 allrun()
