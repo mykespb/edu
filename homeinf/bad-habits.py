@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2026-03-12 2026-03-12 1.1
+# 2026-03-12 2026-03-17 1.2
 # bad-habits.py
 # Плохие идеи для питона
 
 from datetime import date, time
+from random import randint
 
 # -------------------------------------------------------
 sepa = 80 * "="
@@ -18,15 +19,29 @@ def subpart(name):
     print(f"{subsepa}\n{name}\n{subsepa}")
 
 # -------------------------------------------------------
+part("Unnecessary steps")
+
+subpart("String conversion")
+
+# ~ value = str(input())
+# ~ print("string is:", value)
+
+# -------------------------------------------------------
 part("Bools")
 
 subpart("Assignment")
 
-# bad
-
 year = date.today().year
 
 def fun3():
+
+    # very bad
+
+    if year == 2026:
+        go = True
+    print(go)
+
+    # bad
 
     if year == 2026:
         go = True
@@ -46,6 +61,13 @@ def fun3():
     # bad
 
     if go == True:
+        print("True")
+    else:
+        print("False")
+
+    # better
+
+    if go:
         print("True")
     else:
         print("False")
@@ -70,8 +92,10 @@ def fun6b(value):
     else:
         print("it is bad variant")
 
-fun6a(1)
-fun6b(1)
+# ~ fun6a(1)
+# ~ fun6b(1)
+# ~ fun6a(0.0)
+# ~ fun6b(0.0)
 
 # -------------------------------------------------------
 part("Branching")
@@ -100,6 +124,36 @@ def fun1c():
 # ~ fun1c()
 
 # -------------------------------------------------------
+part("Loops")
+
+subpart("Explicit index")
+
+data = [1, 2, 3, 11, 22, 33]
+
+def fun7a(lst):
+
+    for i in range(len(lst)):
+        print(lst[i], end=", ")
+    print()
+
+def fun7b(lst):
+
+    for elem in lst:
+        print(elem, end=", ")
+    print()
+
+def fun7c(lst):
+
+    for index, elem in enumerate(lst):
+        print(f"{index=} => {elem=}")
+    print()
+
+# ~ fun7a(data)
+# ~ fun7b(data)
+# ~ fun7c(data)
+
+# -------------------------------------------------------
+
 part("Print")
 
 subpart("Manual / auto formatting")
@@ -121,27 +175,41 @@ subpart("Manual / auto file open / close")
 fname = "nytree.py"
 
 def fun4a():
+    print("Start files")
     f = open(fname)
     print(f.read())
     f.close()
+    print("End files")
 
 def fun4b():
+    print("Start files")
     with open(fname) as f:
         print(f.read())
+    print("End files")
+
+def fun4c():
+    print("Start files")
+    try:
+        with open(fname) as f:
+            print(f.read())
+    except:
+        print("No file or other error, alas...")
+    print("End files")
 
 # ~ fun4a()
 # ~ fun4b()
+# ~ fun4c()
 
 # -------------------------------------------------------
 part("Mutables")
 
-subpart("Default mutables as parameters")
+subpart("Default mutables as parameters, ver.1")
 
-def fun5a(value, arr=[]):
+def fun5a(value=5, arr=[]):
     arr.append(value)
     return arr
 
-def fun5b(value, arr=None):
+def fun5b(value=6, arr=None):
     if arr is None:
         arr = []
     arr.append(value)
@@ -167,6 +235,39 @@ def fun51():
 
 # ~ fun50()
 # ~ fun51()
+
+subpart("Default mutables as parameters, ver.2")
+
+def fun6a(arr=[]):
+    arr.append(randint(1, 9))
+    return arr
+
+def fun6b(arr=None):
+    if arr is None:
+        arr = []
+    arr.append(randint(1, 9))
+    return arr
+
+def fun60():
+    print("fun60")
+    l1 = fun6a()
+    print(l1)
+    l2 = fun6a()
+    print(l2)
+    l3 = fun6a()
+    print(l3)
+
+def fun61():
+    print("fun61")
+    l1 = fun6b()
+    print(l1)
+    l2 = fun6b()
+    print(l2)
+    l3 = fun6b()
+    print(l3)
+
+# ~ fun60()
+# ~ fun61()
 
 # -------------------------------------------------------
 part("The End.")
