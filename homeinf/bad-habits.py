@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2024
-# 2026-03-12 2026-03-17 1.2
+# 2026-03-12 2026-03-18 1.3
 # bad-habits.py
 # Плохие идеи для питона
 
@@ -55,6 +55,9 @@ def fun3():
     print(go)
 
     print(year == 2026)
+
+    YEAR = 2026
+    print(go == YEAR)
 
     subpart("Comparison")
 
@@ -159,10 +162,10 @@ part("Print")
 subpart("Manual / auto formatting")
 
 def fun2a():
-    print("The answer for 2*2 is", 2*2, "and for 3*3 is", 3*3)
+    print("The answer for 2*2 is", 2*2, "and for 3*3 is", 3*3, "and year is", year)
 
 def fun2b():
-    print(f"The answer for 2*2 is {2*2} and for 3*3 is {3*3}")
+    print(f"The answer for 2*2 is {2*2} and for 3*3 is {3*3} and year is {year}")
 
 # ~ fun2a()
 # ~ fun2b()
@@ -173,25 +176,26 @@ part("Files")
 subpart("Manual / auto file open / close")
 
 fname = "nytree.py"
+text  = "The new text"
 
 def fun4a():
     print("Start files")
-    f = open(fname)
-    print(f.read())
+    f = open(fname, 'a')
+    f.write(text)
     f.close()
     print("End files")
 
 def fun4b():
     print("Start files")
-    with open(fname) as f:
-        print(f.read())
+    with open(fname, 'a') as f:
+        f.write(text)
     print("End files")
 
 def fun4c():
     print("Start files")
     try:
-        with open(fname) as f:
-            print(f.read())
+        with open(fname, 'a') as f:
+            f.write(text)
     except:
         print("No file or other error, alas...")
     print("End files")
