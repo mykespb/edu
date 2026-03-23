@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / simple-4.py - testing classes
-# 2026-03-09 2026-03-24 2.2
+# 2026-03-09 2026-03-24 2.3
 
 from datetime import date
 from random import choice, random, randint
@@ -34,14 +34,14 @@ def main():
     for istud in range(10):
         stud = Person(
             name=choice(names),
-            bd=date(randint(1900, 2000), randint(1, 12), randint(1,28)),
+            bd=date(randint(1990, 2020), randint(1, 12), randint(1,28)),
             sex=choice([True, False])
             )
         myClass.append(stud)
 
     print("\nMy class is:", *myClass, sep="\n")
 
-    oldest = sorted(myClass, key = lambda x: x.age)[0]
+    oldest = sorted(myClass, key = lambda x: x.age)[-1]
     print("\nThe oldest is:", oldest, "\n")
 
 if __name__ == "__main__":
