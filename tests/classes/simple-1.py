@@ -9,9 +9,6 @@ class Person:
         self.bd = bd
         self.sex = sex
 
-    # ~ def __str__(self):
-        # ~ return f"Person(name='{self.name}', bd='{self.bd}', sex={self.sex})"
-
 
 def main():
     print("Hello from classes!")
