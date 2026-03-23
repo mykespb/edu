@@ -21,6 +21,7 @@ def main():
 
     boy = Person("Вася", '2000-03-04')
     print(boy)
+    
     boy.name = "Юра"
     print(boy)
 
