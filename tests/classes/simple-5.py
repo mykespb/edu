@@ -4,7 +4,7 @@
 # 2026-03-09 2026-03-24 2.3
 
 from datetime import date
-from random import choice, random, randint
+from random import choice, random, randint, shuffle
 from pprint import pprint
 
 
@@ -29,11 +29,12 @@ def main():
     print("Hello from classes!")
 
     names = "Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee Zulu".split()
+    shuffle(names)
 
     myClass = []
     for istud in range(10):
         stud = Person(
-            name=choice(names),
+            name=names[istud],
             bd=date(randint(1990, 2020), randint(1, 12), randint(1,28)),
             sex=choice([True, False])
             )
@@ -43,6 +44,7 @@ def main():
 
     oldest = sorted(myClass, key = lambda x: x.age)[-1]
     print("\nThe oldest is:", oldest, "\n")
+
 
 if __name__ == "__main__":
     main()
