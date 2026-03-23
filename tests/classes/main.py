@@ -1,40 +1,53 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / main.py - testing classes
-# 2026-03-09 2026-03-09 1.0
+# 2026-03-09 2026-03-23 1.1
 
 from datetime import date
 
+FEMALE = False
+MALE   = True
+# ~ FEMALE = 0   # False
+# ~ MALE   = 1   # True
+
+# ~ https://docs.python.org/3/library/enum.html
+# ~ from enum import Enum
+# ~ class Sex(Enum):
+    # ~ FEMALE = 0
+    # ~ MALE = 1
+    
 
 class Person:
-    def __init__(self, name="Noname", bd=date.today(), sex=True):
+    def __init__(self, name="Noname", bd=date.today(), sex=MALE):
         self.name = name
         self.bd = bd
         self.sex = sex
+
+    # ~ def __init__(self, name="Noname", bd=date.today(), sex=Sex.MALE):
 
     @property
     def age(self):
         return date.today().year - self.bd.year
 
     def __str__(self):
-        return f"Person(name='{self.name}', bd='{self.bd}', sex='{self.sex}')"
+        return f"Person(name='{self.name}', bd='{self.bd}', sex={self.sex})"
 
 
 class Student(Person):
-    def __init__(self, name="Noname", bd=date.today(), sex=True, group=None, grade=1):
+    def __init__(self, name="Noname", bd=date.today(), sex=MALE, group=None, grade=1):
         super().__init__(name, bd, sex)
         self.group = group
         self.grade = grade
 
     def __str__(self):
-        return f"Student(name='{self.name}', bd='{self.bd}', sex='{self.sex}', group={self.group}, grade={self.grade})"
+        return f"Student(name='{self.name}', bd='{self.bd}', sex={self.sex}, group={self.group}, grade={self.grade})"
 
 
 class Teacher(Person):
     MIN_SALARY: int = 100
     MAX_SALARY: int = 1000
 
-    def __init__(self, name="Noname", bd=date.today(), sex=True, groups=None, salary=0):
+    def __init__(self, name="Noname", bd=date.today(), sex=MALE, groups=None, salary=0):
         super().__init__(name, bd, sex)
         if groups is None:
             self.groups = []
@@ -57,7 +70,7 @@ class Teacher(Person):
             raise ValueError
 
     def __str__(self):
-        return f"Teacher(name='{self.name}', bd='{self.bd}', sex='{self.sex}', groups={self.groups}, salary={self.salary})"
+        return f"Teacher(name='{self.name}', bd='{self.bd}', sex={self.sex}, groups={self.groups}, salary={self.salary})"
 
 
 def main():
@@ -69,13 +82,13 @@ def main():
     print(boy)
     print("age of boy:", boy.age)
 
-    girl = Person(name="Алиса", sex=False)
+    girl = Person(name="Алиса", sex=FEMALE)
     print(girl)
 
-    stud1 = Student(name="Вася", group=4505)
+    stud1 = Student(name="Вася", group=4505, sex=MALE)
     print(stud1)
 
-    stud2 = Student(name="Катя", group=4705, grade=3)
+    stud2 = Student(name="Катя", group=4705, grade=3, sex=FEMALE)
     print(stud2)
 
     prep1 = Teacher(name="Иван Петрович", bd=date(1970, 1, 1))
