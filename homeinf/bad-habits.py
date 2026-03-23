@@ -237,8 +237,8 @@ def fun51():
     l3 = fun5b(2)
     print(l3)
 
-# ~ fun50()
-# ~ fun51()
+fun50()
+fun51()
 
 subpart("Default mutables as parameters, ver.2")
 
