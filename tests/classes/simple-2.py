@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / simple-2.py - testing classes
-# 2026-03-09 2026-03-24 2.2
+# 2026-03-09 2026-03-24 2.3
 
 from datetime import date
 
@@ -27,6 +27,9 @@ def main():
 
     girl = Person(name="Алиса", sex=False, bd='2000-01-13')
     print(girl)
+
+    someBody = Person()
+    print(someBody)
 
 
 if __name__ == "__main__":
