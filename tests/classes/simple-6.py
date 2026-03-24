@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / simple-6.py - testing classes
-# 2026-03-09 2026-03-24 2.3
+# 2026-03-09 2026-03-25 2.4
 
 from datetime import date, datetime
 from random import choice, random, randint, shuffle
@@ -20,20 +20,16 @@ class Person:
         Person.quantity += 1
         self.number = Person.quantity
 
-
     @staticmethod
     def howmany():
         return Person.quantity
-
 
     @property
     def age(self):
         return date.today().year - self.bd.year
 
-
     def __str__(self):
         return f"Person(name='{self.name}', bd='{self.bd}', sex={self.sex}, number={self.number})"
-
 
     def __repr__(self):
         return f"Person(name='{self.name}', bd='{self.bd}', sex={self.sex}, number={self.number})"

@@ -30,7 +30,7 @@ class Figure:
         # ~ return 0.0
 
     def __str__(self):
-        return f"Figure('{self.name}', {self.cx:.2f}, {self.cy:.2f})"
+        return f"Фигура('{self.name}', {self.cx:.2f}, {self.cy:.2f})"
 
     def __repr__(self):
         return f"Figure('{self.name}', {self.cx:.2f}, {self.cy:.2f})"

@@ -19,13 +19,13 @@ class Person:
 def main():
     print("Hello from classes!")
 
-    boy = Person("Вася", '2000-03-04')
+    boy = Person("Вася", date(2000, 3, 4))
     print(boy)
     
     boy.name = "Юра"
     print(boy)
 
-    girl = Person(name="Алиса", sex=False, bd='2000-01-13')
+    girl = Person(name="Алиса", sex=False, bd=date(2000, 1, 13))
     print(girl)
 
     someBody = Person()
