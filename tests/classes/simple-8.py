@@ -1,8 +1,8 @@
-from datetime import date
+from datetime import date, datetime
 from random import random
 
+
 class Person:
-    
     def __init__(self, name="Noname", bd=date.today(), sex=True):
         self.name = name
         self.bd = bd
@@ -19,8 +19,7 @@ class Person:
 
 
 class Point:
-    
-    def __init__(self, x=0., y=0.):
+    def __init__(self, x=0.0, y=0.0):
         self.x = x
         self.y = y
 
@@ -31,27 +30,39 @@ class Point:
 def main():
     print("Hello from classes!")
 
+    # Dates  -----------------------------------------------
+
+    print()
+    today = datetime.today()
+
+    print("simple:", today)
+    print("str:", str(today))
+    print("repr:", repr(today))
+
     # Persons -----------------------------------------------
 
+    print()
     boy = Person("Вася", date(2000, 3, 4))
     print(boy)
-    
+
     boy.name = "Юра"
     print(boy)
 
     print("str: ", boy.__str__())
     print("repr:", boy.__repr__())
-    
+
     print("str: ", str(boy))
     print("repr:", repr(boy))
-    
+
     print("boy's age this year is", boy.age())
 
     girl = Person(name="Алиса", sex=False, bd=date(2000, 1, 13))
     print(girl)
 
     # Points -----------------------------------------------
-    
+
+    print()
+
     p1 = Point()
     print(p1)
     print(p1.x, p1.y)
