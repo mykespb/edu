@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / simple-5.py - testing classes
-# 2026-03-09 2026-03-25 2.5
+# 2026-03-09 2026-03-30 2.6
 
 from datetime import date
 from random import choice, random, randint, shuffle
@@ -22,7 +22,10 @@ class Person:
         return date.today().year - self.bd.year
 
     def __str__(self):
-        return f"Человек: имя='{self.name}', ДР='{self.bd}', пол={"М" if self.sex else "Ж"}; "
+        return f"Человек {self.name} {self.age()} лет от роду"
+        
+    # ~ def __str__(self):
+        # ~ return f"Человек: имя='{self.name}', ДР='{self.bd}', пол={"М" if self.sex else "Ж"}; "
 
     def __repr__(self):
         return f"Person(name='{self.name}', bd=date({self.bd}), sex={self.sex})"

@@ -12,6 +12,7 @@ from math import sqrt
 
 
 class Figure:
+    
     def __init__(self, name = "Noname", cx = 0.0, cy = 0.0):
         self.cx = cx
         self.cy = cy
@@ -37,12 +38,14 @@ class Figure:
 
 
 class Point(Figure):
+    
     def __init__(self, name = "Noname", cx = 0.0, cy = 0.0):
         super().__init__()
         self.name = "Tochka " + name
 
 
 class Line(Figure):
+    
     def __init__(self, name = "Noname", cx = 0.0, cy = 0.0, ex = 0.0, ey = 0.0):
         super().__init__()
         self.ex = ex

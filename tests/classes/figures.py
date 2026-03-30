@@ -16,11 +16,11 @@ class Point:
         self.name = name
         self.random = random()
 
-    # ~ def __str__(self):
-        # ~ return f"ThePoint({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
+    def __str__(self):
+        return f"ThePoint({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
 
-    # ~ def __repr__(self):
-        # ~ return f"Point({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
+    def __repr__(self):
+        return f"Point({self.name}, {self.cx:.2f}, {self.cy:.2f}, {self.random:.2f})"
 
 
 names = "Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra Tango Uniform Victor Whiskey X-ray Yankee Zulu".split()

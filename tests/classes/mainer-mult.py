@@ -7,6 +7,7 @@ from datetime import date
 
 
 class Person:
+    
     def __init__(self, name = "Noname", bd = date.today(), sex = True):
         self.name = name
         self.sex = sex
@@ -35,6 +36,7 @@ class Person:
 
 
 class Student(Person):
+    
     def __init__(self, name = "Noname", bd = date.today(), sex = True, group = None, grade = 1):
         super().__init__(name, bd, sex)
         self.group = group
@@ -76,6 +78,7 @@ class Teacher(Person):
 
 
 class Aspirant(Student, Teacher):
+    
     def __init__(self,
         name = "Noname", bd = date.today(), sex = True,
         group = None, grade = 1,

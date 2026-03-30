@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / simple-1.py - testing classes
-# 2026-03-09 2026-03-24 2.2
+# 2026-03-09 2026-03-30 2.3
 
 class Person:
+    
     def __init__(self, name, bd, sex):
         self.name = name
         self.bd = bd
@@ -37,3 +38,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ~ from datetime import date, datetime
+# ~ d = datetime.strptime('2026-03-30' , '%Y-%m-%d')
+# ~ print(d.date())
