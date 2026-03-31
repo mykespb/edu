@@ -8,4 +8,4 @@ This directory contains programs for problems been solved in the course of infor
 Some programs are left intensionally incorrect, as tasks for students.
 
 Since 2024 - using python 3.13, OK
-Since 2023 - using python 3.14, OK
+Since 2025 - using python 3.14, OK
