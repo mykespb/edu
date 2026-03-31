@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / smart_home_prn.py
-# 2026-03-31 2026-03-31 2.0
+# 2026-03-31 2026-04-01 2.1
 # Работа с умным загородным домом
+# в который на выходные приехал его хозяин
+
+onoff = "OFF", "ON"
 
 class SmartHome: 
 
@@ -31,7 +34,7 @@ class SmartHome:
             print(f"living day {day+1}")
 
     def __str__(self):
-        return f"{self.name} is {self.state}"
+        return f"{self.name} is {onoff[self.state]}"
 
 class ELamp:
 
@@ -51,7 +54,7 @@ class ELamp:
         self.state = False
 
     def __str__(self):
-        return f"{self.name} is {self.state}"
+        return f"{self.name} is {onoff[self.state]}"
 
     def ensureSmallCurrent(self):
         return True
@@ -76,7 +79,7 @@ class Boiler:
         self.ensureNoWater()
 
     def __str__(self):
-        return f"{self.name} is {self.state}"
+        return f"{self.name} is {onoff[self.state]}"
 
     def ensureWater(self):
         return True
@@ -103,7 +106,7 @@ class WarmFloor:
         self.ensureNoBigCurrent()
 
     def __str__(self):
-        return f"{self.name} is {self.state}"
+        return f"{self.name} is {onoff[self.state]}"
 
     def ensureBigCurrent(self):
         return True
@@ -112,6 +115,8 @@ class WarmFloor:
         return True
 
 # my home setup
+
+print("\n********** Creating my Smart Home **********\n")
 
 myHome = SmartHome()
 print(myHome)
@@ -187,3 +192,61 @@ print("\n********** Smart Home done. Good-bye! **********\n")
 
 
 # all done.
+
+
+# ~ ********** Creating my Smart Home **********
+
+# ~ Smart Home #1 is OFF
+# ~ ELamp #1 is OFF
+# ~ ELamp #3 is OFF
+# ~ ELamp #2 is OFF
+# ~ ELamp #4 is OFF
+# ~ Boiler #1 of 10L is OFF
+# ~ Boiler #2 of 100L is OFF
+# ~ Warm Floor #1 is OFF
+# ~ Warm Floor #2 is OFF
+# ~ Warm Floor #3 is OFF
+# ~ Smart Home #1 is OFF
+# ~ ELamp #1 is OFF
+# ~ ELamp #3 is OFF
+# ~ ELamp #2 is OFF
+# ~ ELamp #4 is OFF
+# ~ Boiler #1 of 10L is OFF
+# ~ Boiler #2 of 100L is OFF
+# ~ Warm Floor #1 is OFF
+# ~ Warm Floor #2 is OFF
+# ~ Warm Floor #3 is OFF
+
+# ~ ********** Starting my Smart Home **********
+
+# ~ Smart Home #1 is ON
+# ~ ELamp #1 is ON
+# ~ ELamp #3 is OFF
+# ~ ELamp #2 is OFF
+# ~ ELamp #4 is ON
+# ~ Boiler #1 of 10L is ON
+# ~ Boiler #2 of 100L is OFF
+# ~ Warm Floor #1 is ON
+# ~ Warm Floor #2 is OFF
+# ~ Warm Floor #3 is OFF
+
+# ~ ********** Living in my Smart Home **********
+
+# ~ living day 1
+# ~ living day 2
+# ~ living day 3
+
+# ~ ********** Closing my Smart Home **********
+
+# ~ Smart Home #1 is OFF
+# ~ ELamp #1 is OFF
+# ~ ELamp #3 is OFF
+# ~ ELamp #2 is OFF
+# ~ ELamp #4 is OFF
+# ~ Boiler #1 of 10L is OFF
+# ~ Boiler #2 of 100L is OFF
+# ~ Warm Floor #1 is OFF
+# ~ Warm Floor #2 is OFF
+# ~ Warm Floor #3 is OFF
+
+# ~ ********** Smart Home done. Good-bye! **********
