@@ -8,19 +8,19 @@ class SmartHome:
 
     def __init__(self):
         self.starter = []
-        self.all_tools = []
+        self.all_apls = []
 
     def on(self): 
         for tool in self.starter:
             tool.on()
 
     def off(self):
-        for tool in self.all_tools:
+        for tool in self.all_apls:
             tool.off()
 
     def live(self, period=1):
-        for i in range(period):
-            print(f"living day {i+1}")
+        for day in range(period):
+            print(f"living day {day+1}")
 
 class ELamp:
 
@@ -86,7 +86,7 @@ cabinetFloor = WarmFloor()
 
 myHome.starter = [ lampEnter, lampCorridor, smallBoiler, corridorFloor ]
 
-myHome.alltools = ( myHome.starter[:] +
+myHome.all_apls = ( myHome.starter[:] +
     [ roomFloor, lampRoom, cabinetFloor, bigBoiler, lampCabinet ] )
 
 # my home usage
