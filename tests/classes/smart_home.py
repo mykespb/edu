@@ -18,7 +18,9 @@ class SmartHome:
         for tool in self.all_tools:
             tool.off()
 
-    def live(self, period): ...
+    def live(self, period=1):
+        for i in range(period):
+            print(f"living day {i+1}")
 
 class ELamp:
 
@@ -66,6 +68,8 @@ class WarmFloor:
     def ensureBigCurrent(self): ...
     def ensureNoBigCurrent(self): ...
 
+# my home setup
+
 myHome = SmartHome()
 
 lampEnter = ELamp()
@@ -85,10 +89,14 @@ myHome.starter = [ lampEnter, lampCorridor, smallBoiler, corridorFloor ]
 myHome.alltools = ( myHome.starter[:] +
     [ roomFloor, lampRoom, cabinetFloor, bigBoiler, lampCabinet ] )
 
+# my home usage
+
 print("Starting my Smart Home")
 myHome.on()
 print("Living in my Smart Home")
-myHome.live(2)
+myHome.live(3)
 print("Closing my Smart Home")
 myHome.off()
 print("Smart Home done. Good-bye!")
+
+# all done.
