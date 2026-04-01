@@ -22,7 +22,7 @@ class Person:
         return date.today().year - self.bd.year
 
     def __str__(self):
-        return f"Человек {self.name} {self.age()} лет от роду"
+        return f"Человек {self.name} {self.age} лет от роду"
         
     # ~ def __str__(self):
         # ~ return f"Человек: имя='{self.name}', ДР='{self.bd}', пол={"М" if self.sex else "Ж"}; "
