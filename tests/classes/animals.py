@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / smart-home.py
-# 2026-04-06 2026-04-06 1.2
+# 2026-04-06 2026-04-06 1.4
 # Как разговаривают животные
 
 class Animal:
@@ -44,3 +44,14 @@ somepres.say()
 
 trump = President("Наивеликий Супертрампище")
 trump.say()
+
+beast = fido
+beast.say()
+
+beast = pussy
+beast.say()
+
+from random import choice
+
+beast = choice((am, fido, pussy, човек, somepres, trump))
+beast.say()
