@@ -1,7 +1,7 @@
 Testing python classes
 ==========================
 
-2026-04-01
+2026-04-06
 
 main.py
 simple creation of geo figures, without shapes
@@ -26,6 +26,9 @@ step-by-step improvement about Persons
 
 smart-home-*.py
 managing smart home as object
+
+animals.py
+как разговаривают животные
 
 README.md
 this file
