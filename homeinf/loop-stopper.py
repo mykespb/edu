@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-04-05 2026-04-05 3.0
+# myke 2026-04-05 2026-04-06 3.1
 # loop-stopper.py
 
 seq1 = 1, 4, 7, 10
@@ -20,7 +20,7 @@ def sl2():
             for i3 in seq3:
                 print(i1, i2, i3, "=>", i1+i2+i3)
                 if (i1+i2+i3) % 7 == 0:
-                    print("BREAK!")
+                    print("break!")
                     break
 
 def sl3():
