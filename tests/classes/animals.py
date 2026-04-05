@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / smart-home.py
-# 2026-04-06 2026-04-06 1.1
+# 2026-04-06 2026-04-06 1.2
 # Как разговаривают животные
 
 class Animal:
@@ -33,8 +33,14 @@ class Human:
 човек.say()
 
 class President(Human):
+    def __init__(self, name="просто президент"):
+        self.name = name
+        
     def say(self):
-        print("Здравствуйте! Я наивеликий СуперТрампище!")
+        print(f"Здравствуйте! Я {self.name}!")
 
-trump = President()
+somepres = President()
+somepres.say()
+
+trump = President("Наивеликий Супертрампище")
 trump.say()
