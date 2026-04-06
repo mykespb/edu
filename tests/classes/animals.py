@@ -11,21 +11,21 @@ class Animal:
 am = Animal()
 am.say()
 
-class Dog():
+class Dog(Animal):
     def say(self):
         print("Гав!")
 
 fido = Dog()
 fido.say()
 
-class Cat:
+class Cat(Animal):
     def say(self):
         print("Мяу!")
     
 pussy = Cat()
 pussy.say()
 
-class Human:
+class Human(Animal):
     def say(self):
         print("Привет!")
 
