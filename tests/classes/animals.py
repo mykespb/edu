@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / smart-home.py
-# 2026-04-06 2026-04-06 1.4
+# 2026-04-06 2026-04-06 1.5
 # Как разговаривают животные
 
 class Animal:
@@ -53,5 +53,12 @@ beast.say()
 
 from random import choice
 
-beast = choice((am, fido, pussy, човек, somepres, trump))
+we = am, fido, pussy, човек, somepres, trump
+
+print("choice:")
+beast = choice(we)
 beast.say()
+
+print("all:")
+for ani in we:
+    ani.say()
