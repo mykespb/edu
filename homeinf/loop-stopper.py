@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-# myke 2026-04-05 2026-04-06 3.1
+# myke 2026-04-05 2026-04-08 3.2
 # loop-stopper.py
 
 seq1 = 1, 4, 7, 10
 seq2 = 2, 4, 6, 8
 seq3 = 0, 10, 100, 1000
+
 
 def sl1():
     for i1 in seq1:
@@ -12,7 +13,6 @@ def sl1():
             for i3 in seq3:
                 print(i1, i2, i3, "=>", i1+i2+i3)
 
-# ~ sl1()
 
 def sl2():
     for i1 in seq1:
@@ -22,6 +22,7 @@ def sl2():
                 if (i1+i2+i3) % 7 == 0:
                     print("break!")
                     break
+
 
 def sl3():
     stop = False
@@ -40,6 +41,7 @@ def sl3():
                     stop = True
                     break
 
+
 class StopIt(Exception): pass
 
 def sl4():
@@ -53,6 +55,7 @@ def sl4():
                         raise StopIt
     except StopIt:
         pass
+
 
 from itertools import product
 
