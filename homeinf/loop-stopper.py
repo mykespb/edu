@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-04-05 2026-04-08 3.3
+# myke 2026-04-05 2026-04-13 3.2
 # loop-stopper.py
 
 # ~ Даны (пока) 3 последовательности чисел.
@@ -23,6 +23,7 @@ seq3 = 0, 10, 100, 1000
 
 
 def sl1():
+    print("\n*** SL1 ***\n")
     for i1 in seq1:
         for i2 in seq2:
             for i3 in seq3:
@@ -30,6 +31,7 @@ def sl1():
 
 
 def sl2():
+    print("\n*** SL2 ***\n")
     for i1 in seq1:
         for i2 in seq2:
             for i3 in seq3:
@@ -40,6 +42,7 @@ def sl2():
 
 
 def sl3():
+    print("\n*** SL3 ***\n")
     stop = False
     for i1 in seq1:
         if stop:
@@ -60,6 +63,7 @@ def sl3():
 class StopIt(Exception): pass
 
 def sl4():
+    print("\n*** SL4 ***\n")
     try:
         for i1 in seq1:
             for i2 in seq2:
@@ -69,12 +73,14 @@ def sl4():
                         print("BREAK!")
                         raise StopIt
     except StopIt:
-        pass
+        print("поймали исключение")
+        # ~ pass
 
 
 from itertools import product
 
 def sl5():
+    print("\n*** SL5 ***\n")
     for it in product(seq1, seq2, seq3):
         print(*it, "=>", sit := sum(it))
         if sit % 7 == 0:
@@ -82,8 +88,8 @@ def sl5():
             break
 
 
-sl1()
-sl2()
-sl3()
+# ~ sl1()
+# ~ sl2()
+# ~ sl3()
 sl4()
 sl5()
