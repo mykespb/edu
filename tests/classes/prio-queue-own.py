@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / prio-queue-own.py
-# 2026-04-15 2026-04-15 3.3
+# 2026-04-15 2026-04-15 3.5
+
 # Очередь с приоритетами
 # ~ Приоритет берётся
-# ~ а) если явно указан,
+# ~ а) из инициализатора, если явно указан,
 # ~ б) из свойств добавляемого объекта,
 # ~ в) если и такового нет, то 0.
 
@@ -20,6 +21,7 @@
 # ~ ===================================================
 
 from collections import defaultdict
+from pprint import pprint
 
 class PQ:
     def __init__(self):
@@ -52,12 +54,11 @@ class PQ:
     def __str__(self):
         out = f"<PrioQueue (len={self.cnt}): "
         keys = sorted(self.data.keys(), reverse=True)
-        for key in keys:
+        for i, key in enumerate(keys):
             out += f"({key}: "
-            for val in self.data[key]:
-                out += f"{val}, "
-            out += "), "
-        out += "> "
+            out += ", " .join( str(x) for x in self.data[key] )
+            out += "), " if i+1 < len(keys) else ")"
+        out += "> " 
         return out
 
     def __repr__(self):
@@ -74,10 +75,16 @@ print(q)
 
 class Common:
     def __str__(self):
-        if 'prio' in dir(self):
+        # ~ if 'prio' in dir(self):
+        # ~ if getattr(self, 'prio', 0):
+        if hasattr(self, 'prio'):
             return f"{self.name} ({self.prio})"
         else:
             return f"{self.name}"
+
+    def __repr__(self):
+        return self.__str__()
+        # ~ return str(self)
 
 class Car(Common):
     def __init__(self, name="Car", prio=0):
@@ -97,11 +104,11 @@ class Other(Common):
 
 print("\n---------- The cars are: ----------\n")
 
-ambulance = Car("Ambulance", 9)
+ambulance    = Car("Ambulance", 9)
 fire_command = Car("Fire Command", 7)
-boss_tachka = Car("Super Boss", 5)
-my_car = Car("My Small Car", 3)
-lorry = Car("Lorry", 1)
+boss_tachka  = Car("Super Boss", 5)
+my_car       = Car("My Small Car", 3)
+lorry        = Car("Lorry", 1)
 
 print(ambulance)
 print(fire_command)
@@ -130,6 +137,7 @@ print(repr(q))
 print("\n----------Let them drive: ----------\n")
 while q:
     print(q.pop())
+    # ~ pprint(q.pop())
 
 # ~ ===================================================
 
@@ -144,13 +152,13 @@ print(other2)
 
 print("\n---------- The animals are: ----------\n")
 
-grizzley = Animal("Grizzley", 4)
+grizzley   = Animal("Grizzley", 4)
 brown_bear = Animal("Brown Bear", 4)
-wolf = Animal("Grey Wolf", 3)
-pesec = Animal("Arctic Fox", 3)
-fox = Animal("Fox", 2)
 hare_white = Animal("Hare of White", 1)
-hare_grey = Animal("Hare of Grey", 1)
+fox        = Animal("Fox", 2)
+hare_grey  = Animal("Hare of Grey", 1)
+wolf       = Animal("Grey Wolf", 3)
+pesec      = Animal("Arctic Fox", 3)
 
 q.push(grizzley)
 print(q)
@@ -177,7 +185,8 @@ print(q)
 
 print("\n---------- Let them run: ----------\n")
 while q:
-    print(q.pop())
+    pprint(q.pop())
+    # ~ pprint(q.pop())
 
 # ~ ===================================================
 
