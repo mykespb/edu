@@ -34,5 +34,5 @@ print(klyauza(names_eng, story_eng))
 print(klyauza(names_rus, story_rus))
 
 
-# ~ Bob did bad thing.
+# ~ Bob did bad thing. Ann didn't.
 # ~ Бориска говорит, что бяку делает Верка и не надо так. А Верка не делает, это Данька делает. Вовсе не Данька а Анька таую бяку делает, а Бориска буку делает, вот так!
