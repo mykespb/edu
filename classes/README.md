@@ -1,7 +1,7 @@
 Testing python classes
 ==========================
 
-2026-04-06
+2026-04-15
 
 main.py
 simple creation of geo figures, without shapes
@@ -32,3 +32,6 @@ animals.py
 
 README.md
 this file
+
+prio-queue*.py
+очереди с приоритетами
