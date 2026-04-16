@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
-# classes / vectors.py
+# classes / vectors1.py
 # 2026-04-16 2026-04-16 1.0
 # работа с векторами
 
