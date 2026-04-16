@@ -1,7 +1,7 @@
 Testing python classes
 ==========================
 
-2026-04-15
+2026-04-16
 
 main.py
 simple creation of geo figures, without shapes
@@ -35,3 +35,6 @@ this file
 
 prio-queue*.py
 очереди с приоритетами
+
+vectors.py
+работа с векторами
