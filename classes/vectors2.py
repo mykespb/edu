@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / vectors2.py
-# 2026-04-16 2026-04-17 2.1
+# 2026-04-16 2026-04-17 2.2
 # работа с векторами
 
 import math
@@ -15,6 +15,8 @@ class Vector2:
             self.x = x1
             self.y = y1
 
+    # свойства
+    
     @property
     def length(self):
         return math.sqrt( self.x**2 + self.y**2 )
@@ -24,17 +26,23 @@ class Vector2:
         return self.x, self.y
 
     # сравнения
+    
     def __eq__(self, other):
         return self.norma == other.norma
 
-    # сложение - вычитание и т.п.
+    # операции: сложение - вычитание и т.п.
+    
     def __add__(self, other):
         return Vector2(0, 0, self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
         return Vector2(0, 0, self.x - other.x, self.y - other.y)
 
+    def __mul__(self, other :int):
+        return Vector2(0, 0, self.x * other, self.y * other)
+
     # печать
+    
     def __str__(self):
         return f"Vector({self.x}, {self.y})"
         
@@ -99,10 +107,16 @@ print(f"{v1011=}")
 print(f"{v1012=}")
 print(f"{v1112=}")
 
+v3 = v1 * 3
+print(v3)
+print(f"длина вектора v3 равна {v3.length}")
 
+
+# справки-доки:
 # ~ https://rszalski.github.io/magicmethods/
 # ~ https://www.geeksforgeeks.org/python/dunder-magic-methods-python/
 
+# результаты:
 # ~ Vector(0.0, 0.0)
 # ~ Vector(0.0, 0.0)
 # ~ <Vector(0.0, 0.0, 0.0, 0.0)>
