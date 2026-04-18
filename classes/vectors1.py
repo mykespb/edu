@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # classes / vectors1.py
-# 2026-04-16 2026-04-16 1.0
+# 2026-04-16 2026-04-18 1.2
 # работа с векторами
 
 import math
 
 class Vector1:
+
+    EPS = 1e-6
+    
     def __init__(self, x1=0., y1=0., x2=0., y2=0.):
         self.x1 = x1
         self.x2 = x2
@@ -22,7 +25,12 @@ class Vector1:
         return self.x2 - self.x1, self.y2 - self.y1
 
     def __eq__(self, v):
-        return self.norma == v.norma
+        return self.norma == other.norma
+
+        # ~ norm1, norm2 = self.norma, v.norma
+        # ~ dx = abs(norm1[0] - norm2[0])
+        # ~ dy = abs(norm1[1] - norm2[1])
+        # ~ return dx <= Vector1.EPS and dy <= Vector1.EPS
 
     def __str__(self):
         x, y = self.norma

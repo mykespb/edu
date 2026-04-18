@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 # myke 2019-01-22 2026-03-25 1.2
 
 from pprint import pprint
