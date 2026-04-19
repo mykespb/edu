@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-0-419 2026-04-19 1.0
+# 2026-0-419 2026-04-19 1.2
 # magic3.py
 
 # ~ построить магический квадрат со стороной 3.
@@ -15,17 +15,21 @@ from itertools import permutations
 
 def solve():
     sols = 0
-    for b in permutations( (1, 2, 3, 4, 5, 6, 7, 8, 9), r=9):
-        if ( b[0] + b[1] + b[2] ==
-             b[3] + b[4] + b[5] ==
-             b[6] + b[7] + b[8] ==
-             b[0] + b[3] + b[6] ==
-             b[1] + b[4] + b[7] ==
-             b[2] + b[5] + b[8] ==
-             b[0] + b[4] + b[8] ==
-             b[2] + b[4] + b[6] ):
-                 sols += 1
-                 printout(sols, b)
+    seq = 1, 2, 3, 4, 5, 6, 7, 8, 9
+    partsum = sum(seq) // 3
+    
+    for b in permutations(seq, r=9):
+        if ( partsum ==
+            b[0] + b[1] + b[2] ==
+            b[3] + b[4] + b[5] ==
+            b[6] + b[7] + b[8] ==
+            b[0] + b[3] + b[6] ==
+            b[1] + b[4] + b[7] ==
+            b[2] + b[5] + b[8] ==
+            b[0] + b[4] + b[8] ==
+            b[2] + b[4] + b[6] ):
+                sols += 1
+                printout(sols, b)
              
 
 def printout(sols, b):
