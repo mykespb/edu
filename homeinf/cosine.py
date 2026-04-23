@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-23 2026-04-23 1.1
+# 2026-04-23 2026-04-24 1.2
 # cosine.py
 
 # ~ Найти число, равное своему косинусу.
@@ -25,7 +25,7 @@ from math import cos
 EPS     = 1e-8
 nDottie = 0.739085133215160641655312087673
 
-print(f"  {nDottie=}")
+print(f"\n  {nDottie=}")
 
 
 def calc():

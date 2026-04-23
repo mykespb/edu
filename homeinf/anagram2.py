@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-23 2026-04-23 1.3
+# 2026-04-23 2026-04-24 1.3
 # anagram2.py
 
 # ~ Есть две строки, в них тексты на английском из слов, разделённых пробелами, где также возможны знаки препинания.
@@ -12,6 +12,10 @@
 # ~ Регистром букв при проверке пренебречь.
 # ~ Одинаковые слова не считаются, нужны только с перестановками.
 
+
+# text1 =   "God know all."
+# text2 =   "No dog here."
+# answer:   "God <-> dog"
 
 text1 = "Listen to me in the night, no evil, only care of heart."
 text2 = "Silent wood is live. No race, one thing is our Earth!"
