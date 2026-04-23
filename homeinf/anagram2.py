@@ -14,7 +14,7 @@
 
 
 text1 = "Listen to me in the night, no evil, only care of heart."
-text2 = "Silent wood is live. No race, one thing is out Earth!"
+text2 = "Silent wood is live. No race, one thing is our Earth!"
 
 
 import string
@@ -40,6 +40,11 @@ def ana(t1 : str, t2 : str) -> list[str]:
 
 
 def main():
+
+    print()
+    print(text1)
+    print(text2)
+
     anas = ana(text1, text2)
     if anas:
         print(f"\nWe found {len(anas)} anagram pairs.\n")
