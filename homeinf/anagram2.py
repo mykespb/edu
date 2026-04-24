@@ -13,8 +13,8 @@
 # ~ Одинаковые слова не считаются, нужны только с перестановками.
 
 
-# text1 =   "God know all."
-# text2 =   "No dog here."
+# text1 =   "God knows all?"
+# text2 =   "No dog here!"
 # answer:   "God <-> dog"
 
 text1 = "Listen to me in the night, no evil, only care of heart."
