@@ -1,11 +1,13 @@
-edu
-===
+README.md
+=======================
 
-Educational software by myke.
+2026-04-23
 
-This directory contains programs for problems been solved in the course of informatics with Python.
+Restart of Bardafisha project.
 
-Some programs are left intensionally incorrect, as tasks for students.
+main.py
+-----------------------
 
-Since 2024 - using python 3.13, OK
-Since 2025 - using python 3.14, OK
+Test of run under `uv` and `unicorn`.
+OK.
+Use `run.sh`.
