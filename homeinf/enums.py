@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-04-27 2026-04-27 1.4
+# 2026-04-27 2026-04-27 1.5
 # enums.py
 
 # ~ Пробы перечислений.
@@ -9,14 +9,16 @@
 from dataclasses import dataclass
 from enum import Enum
 
+print("""
 # ~ -------------------------------------
 # ~ test 0
 # ~ -------------------------------------
+""")
 
 # ~ Constants:
 
-ONE   = 1
-TWO   = 2
+ONE = 1
+TWO = 2
 THREE = 3
 
 print(ONE, TWO, THREE)
@@ -32,14 +34,18 @@ print(ONE + TWO == THREE)
 # ~ => True
 
 
+print("""
 # ~ -------------------------------------
 # ~ test 1
 # ~ -------------------------------------
+""")
+
 
 class Role(Enum):
-    BOSS    = 'The main boss'
-    MANAGER = 'Middle manager'
-    PROGER  = 'Software engineer'
+    BOSS = "The main boss"
+    MANAGER = "Middle manager"
+    PROGER = "Software engineer"
+
 
 person1 = Role.BOSS
 print(person1)
@@ -58,29 +64,31 @@ print("The staff", end=": ")
 
 for person in staff:
     print(person, end=", ")
-    
-print("\n")
 
 # ~ Role.BOSS
 # ~ Role.MANAGER
 # ~ Role.PROGER
 # ~ Role.PROGER
-# ~ The staff: Role.BOSS, Role.MANAGER, Role.PROGER, Role.PROGER, 
+# ~ The staff: Role.BOSS, Role.MANAGER, Role.PROGER, Role.PROGER,
+print()
 
-
+print("""
 # ~ -------------------------------------
 # ~ test 2
 # ~ -------------------------------------
+""")
+
 
 @dataclass
 class Employer:
     name: str
     role: Role
 
-emp1 = Employer("Jim",    Role.BOSS)
-emp2 = Employer("Jame",   Role.MANAGER)
+
+emp1 = Employer("Jim", Role.BOSS)
+emp2 = Employer("Jame", Role.MANAGER)
 emp3 = Employer("Judith", Role.PROGER)
-emp4 = Employer("Jack",   Role.PROGER)
+emp4 = Employer("Jack", Role.PROGER)
 
 company = emp1, emp2, emp3, emp4
 
@@ -90,7 +98,7 @@ for emp in company:
     print(emp)
 
 for emp in company:
-    print(f'{emp.name} is {emp.role}')
+    print(f"{emp.name} is {emp.role}")
 
 
 # ~ The company: Employer(name='Jim', role=<Role.BOSS: 'The main boss'>)
@@ -102,7 +110,8 @@ for emp in company:
 # ~ Judith is Role.PROGER
 # ~ Jack is Role.PROGER
 
-
+print("""
 # ~ -------------------------------------
 # ~ The end.
 # ~ -------------------------------------
+""")
