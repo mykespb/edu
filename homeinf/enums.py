@@ -1,13 +1,66 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-04-27 2026-04-27 1.6
+# 2026-04-27 2026-04-27 1.7
 # enums.py
 
 # ~ Пробы перечислений.
 
 from dataclasses import dataclass
 from enum import Enum, unique, auto
+
+print("""
+# ~ -------------------------------------
+# ~ test -1
+# ~ -------------------------------------
+""")
+
+# ~ Constants:
+
+# ~ ver. 1
+
+total = 50
+good  = 25
+
+gp = 25 / 50
+
+print(f"{good=} of {total=} is {gp=}")
+
+# ~ ver. 2
+
+total = 100
+good  = 25
+
+gp = 25 * 100 / 100
+
+print(f"{good=} of {total=} is {gp=}%")
+
+# м.б. убрать это:   * 100 / 100  ???
+
+gp = 25
+
+# всегда???
+
+# ~ ver. 3
+
+total = 120
+good  = 25
+
+gp = 25 * 100 / 120
+
+print(f"{good=} of {total=} is {gp=:.2f}")
+
+# ~ ver. 4
+
+total = 120
+good  = 25
+
+PERCENT = 100
+
+gp = 25 * PERCENT / 120
+
+print(f"{good=} of {total=} is {gp=:.2f}")
+
 
 print("""
 # ~ -------------------------------------
