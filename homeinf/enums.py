@@ -1,13 +1,36 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-04-27 2026-04-27 1.3
+# 2026-04-27 2026-04-27 1.4
 # enums.py
 
 # ~ Пробы перечислений.
 
 from dataclasses import dataclass
 from enum import Enum
+
+# ~ -------------------------------------
+# ~ test 0
+# ~ -------------------------------------
+
+# ~ Constants:
+
+ONE   = 1
+TWO   = 2
+THREE = 3
+
+print(ONE, TWO, THREE)
+
+# ~ => 1 2 3
+
+print(f"{ONE=}, {TWO=}, {THREE=}")
+
+# ~ => ONE=1, TWO=2, THREE=3
+
+print(ONE + TWO == THREE)
+
+# ~ => True
+
 
 # ~ -------------------------------------
 # ~ test 1
