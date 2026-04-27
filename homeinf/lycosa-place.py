@@ -86,8 +86,10 @@ def prepare(path):
     
 
 def run(path):
-    global finish, nabor
-    
+    global finish, nabor, way
+
+    print("\n-------------------------------------")
+
     nabor = prepare(path)
     print("\ntask:", nabor)
 
@@ -96,38 +98,36 @@ def run(path):
 
     way = [start]
 
-    for line in [ls for ls in nabor if ls[0] == start]:
-        res = find(line, way)
-
-    if len(res) > 1:
-        print("found way")
-    else:
-        print("no way")
+    find()
 
 
-def find(line, way):
-    global finish, nabor
+def find():
+    global finish, nabor, way
 
-    goto = line[1]
+    outof = way[-1]
 
-    if goto in way:
-        return way
+    for line in [ls for ls in nabor if ls[0] == outof]:
         
-    way.append(goto)
+        goto = line[1]
+        if goto in way:
+            return        
+        
+        way.append(goto)
 
-    if goto == finish:
-        print("\npath:", way)
-        return way
+        if goto == finish:
+            print("\npath:", way)
+            way.pop()
+            return
 
-    for test in [ls for ls in nabor if ls[0] == goto]:
-        way = find(test, way)
+        find()
 
-    return way
+        way.pop()
 
 
 def main():
+
     run(path1)
     run(path2)
-
+    print("\n-------------------------------------\n")
     
 main()
