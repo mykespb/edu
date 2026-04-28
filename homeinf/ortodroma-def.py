@@ -34,14 +34,14 @@ def deg2rad(a):
 
 points = [
     # ~ city, latitude, langitude
-    ('spb', deg2rad(dms2d(59, 57)), deg2rad(dms2d(30, 15)) ),
-    ('msk', deg2rad(dms2d(55, 45, 2)), deg2rad(dms2d(37, 37, 3)) ),
-    ('nsk', deg2rad(dms2d(55, 1)), deg2rad(dms2d(82,55)) ),
-    ('che', deg2rad(dms2d(55, 9)), deg2rad(dms2d(61, 24)) ),
-    ('wash',  deg2rad(38.898), deg2rad(-77.037) ),
-    ('paris', deg2rad(48.858), deg2rad(2.294) ),
-    ('cc', deg2rad(dms2d(-43, 31, 48)), deg2rad(dms2d(172, 37, 13)) ),
-    ('well', deg2rad(dms2d(-41, 17, 20)), deg2rad(dms2d(174, 46, 38)) ),
+    ('spb',   deg2rad(dms2d(59, 57)),      deg2rad(dms2d(30, 15)) ),
+    ('msk',   deg2rad(dms2d(55, 45, 2)),   deg2rad(dms2d(37, 37, 3)) ),
+    ('nsk',   deg2rad(dms2d(55, 1)),       deg2rad(dms2d(82,55)) ),
+    ('che',   deg2rad(dms2d(55, 9)),       deg2rad(dms2d(61, 24)) ),
+    ('wash',  deg2rad(38.898),             deg2rad(-77.037) ),
+    ('paris', deg2rad(48.858),             deg2rad(2.294) ),
+    ('cc',    deg2rad(dms2d(-43, 31, 48)), deg2rad(dms2d(172, 37, 13)) ),
+    ('well',  deg2rad(dms2d(-41, 17, 20)), deg2rad(dms2d(174, 46, 38)) ),
     ]
 
 # ~ wash = Washington, DC, USA
