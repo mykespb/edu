@@ -2,7 +2,9 @@
 
 # Mikhail (myke) Kolodin, 2025
 # 2025-09-24 2025-09-24 1.1
-# re-test.py
+# re-test-words.py
+
+# ~ Regular expressions: words
 
 import re
 
@@ -16,7 +18,7 @@ print("""------------------------------------------
 example 1
 ------------------------------------------""")
 
-# ~ fid simple text
+# ~ find simple text
 
 txt = """
 How many roads must a man walk down
