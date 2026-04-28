@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-28 2026-04-28 1.1
+# 2026-04-28 2026-04-29 1.2
 # re-test-dates.py
 
 # ~ Regular expressions: dates
@@ -14,7 +14,8 @@ import re
 # ~ https://www.geeksforgeeks.org/python/python-regex-re-search-vs-re-findall/
 
 
-print("""------------------------------------------
+print("""
+------------------------------------------
 example 1. find dates.
 ------------------------------------------""")
 
@@ -24,32 +25,36 @@ Charles was created Prince of Wales and Earl of Chester on 26 July 1958.
 Diana died following a car crash in Paris on 31 August 1997.
 Charles acceded to the British throne on his mother's death on 8 September 2022.
 28.04.2026 is the date of creation of this text.
-It is also known as 2026-04-28, as you may know.
+It is also known as 2026-04-28, as you may know from 1 Month 2026.
 """
 
 months = "January February March April May June July August September October November December" . split()
 # ~ print(months)
 
 def finder(txt):
-    fs = re.findall(r"\d{1,2}\s+\w+\s+[12]\d{3}", txt)
+    fs = re.findall(r"\d{1,2}\s+\w+\s+[12][90]\d{2}", txt)
     print(fs)
 
 finder(txt)
 
-print("""------------------------------------------
+print("""
+------------------------------------------
 example 2. find dates and change all of them to standard format.
 ------------------------------------------""")
 
 def sub_months(m):
     for mp in months:
-        m = re.sub(mp, "%02d" % (months.index(mp)+1), m)
+        try:
+            m = re.sub(mp, "%02d" % (months.index(mp)+1), m)
+        except:
+            pass
     return m
 
 def stander(txt):
-    fs = re.sub(r"(\d{2})\s+(\w+)\s+([12]\d{3})",
+    fs = re.sub(r"(\d{2})\s+(\w+)\s+([12][90]\d{2})",
         r"\3-\2-\1",
         txt)
-    fs = re.sub(r"(\d{1})\s+(\w+)\s+([12]\d{3})",
+    fs = re.sub(r"(\d{1})\s+(\w+)\s+([12][90]\d{2})",
         r"\3-\2-0\1",
         fs)
     fs = re.sub(r"(\d{2})\.(\d{2}).(\d{4})",
