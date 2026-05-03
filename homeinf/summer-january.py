@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Mikhail (myke) Kolodin
-# 2025-02-17 2025-03-07 1.2
-# summer-januar.py
+# 2025-02-17 2026-05-03 1.3
+# summer-january.py
 
 # ~ Летний январь
 
