@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-06-03 2026-06-03 1.0
+# 2026-06-03 2026-06-03 1.1
 # semerysh.py
 
 # ~ Сделать список из 10 случайных 3-значных чисел.
@@ -14,34 +14,39 @@ from itertools import permutations
 
 
 def make():
-    return [ randint(100, 999) for _ in range(10) ]
+    return sorted([ randint(100, 999) for _ in range(10) ])
 
 
 def solve(arr):
-    return [ x for x in arr if is_sem(x) ]
+    return sorted([ x for x in arr if is_sem(x) ])
 
 
 def is_sem(x):
-    # ~ global d
+    global divs
     sx = list(str(x))
-    for sn in permutations(sx, 3):
+    for sn in permutations(sx):
         if sn[0] == '0':
             continue
         n = int("".join(sn))
         if n % 7 == 0:
-            # ~ print(n)
-            # ~ d.append(n)
+            divs[x] = (n, n/7)
             return True
     return False
         
 
 def main():
-    # ~ global d
-    # ~ d = []
+    global divs
+    divs = {}
     arr = make()
     sol = solve(arr)
-    print(arr, "=>",  sol)
-    # ~ print(d)
+    print("problem: ", arr, "=>",  sol)
+    print("divisors:", divs)
 
 
 main()
+
+
+# ~ problem:  [226, 231, 347, 407, 502, 796, 838, 896, 899, 971] => [231, 796, 896, 971]
+# ~ divisors: {231: (231, 33.0), 796: (679, 97.0), 896: (896, 128.0), 971: (917, 131.0)}
+
+# ~ https://docs.python.org/3/library/itertools.html#itertools.permutations
