@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-05-05 2026-05-05 1.0
+# 2026-05-05 2026-06-05 1.2
 # vasya-amigos.py
 
 # ~ Васёк пришёл в новую школу и ищет себе друзей.
@@ -16,12 +16,16 @@ klass = "Ябедка Ёксель Добро Шлямза Годно Апчко
 
 
 def amigos(who, they):
-    who = who.lower()
+    
+    who  = who.lower()
     they = they.lower().split()
 
-    good = [guy.capitalize() for guy in they if any( [bukva in guy for bukva in who] )]
-
-    return good
+    return [guy.capitalize() for guy in they if any( [bukva in guy for bukva in who] )]
 
 
 print(amigos(man, klass))
+
+
+# ~ wklass = klass.split()
+# ~ wklass = { v.lower(): v for v in klass.split() }
+# ~ print(wklass)
