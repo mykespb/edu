@@ -23,7 +23,7 @@ def amigos(who, they):
     return [guy.capitalize() for guy in they if any( [bukva in guy for bukva in who] )]
 
 
-print(amigos(man, klass))
+print(*amigos(man, klass), sep=", ")
 
 
 # ~ wklass = klass.split()
