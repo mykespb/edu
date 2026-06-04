@@ -1,10 +1,14 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-24 2025-09-24 1.1
+# 2025-09-24 2026-06-05 1.2
 # re-test-words.py
 
 # ~ Regular expressions: words
+
+# ~ https://docs.python.org/3/library/re.html
+# ~ https://www.w3schools.com/python/python_regex.asp
+# ~ https://www.geeksforgeeks.org/python/re-search-in-python/
 
 import re
 
@@ -32,10 +36,14 @@ The answer is blowin’ in the wind
 (Bob Dylan, 1962)
 """
 
-print(re.search(r'how', txt))
+print("search 1:", re.search(r'how', txt), "=>", re.search(r'how', txt)[0])
+print("search 2:", re.search(r'how', txt, flags = re.IGNORECASE), "=>",
+    re.search(r'how', txt, flags = re.IGNORECASE)[0])
 
-print(re.findall(r'how', txt))
+print("findall 1:", re.findall(r'how', txt))
+print("findall 2:", re.findall(r'how', txt, flags = re.IGNORECASE))
 
+print("for:")
 for i, ex in enumerate(re.findall(r'how', txt)):
     print(i, ex)
 
@@ -134,8 +142,11 @@ the end.
 # ~ ------------------------------------------
 # ~ example 1
 # ~ ------------------------------------------
-# ~ <re.Match object; span=(73, 76), match='how'>
-# ~ ['how', 'how']
+# ~ search 1: <re.Match object; span=(73, 76), match='how'> => how
+# ~ search 2: <re.Match object; span=(1, 4), match='How'> => How
+# ~ findall 1: ['how', 'how']
+# ~ findall 2: ['How', 'how', 'how']
+# ~ for:
 # ~ 0 how
 # ~ 1 how
 # ~ ------------------------------------------
@@ -178,4 +189,3 @@ the end.
 # ~ ------------------------------------------
 # ~ the end.
 # ~ ------------------------------------------
-
