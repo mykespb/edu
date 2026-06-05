@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-06-03 2026-06-05 1.2
+# 2026-06-03 2026-06-05 2.0
 # semerysh.py
 
 # ~ Сделать список из 10 случайных 3-значных чисел.
@@ -44,7 +44,33 @@ def main():
     print("divisors:", divs)
 
 
-main()
+# ~ main()
+
+def perm(x : int):
+
+    order = ((0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0))
+
+    sn = list(str(x))
+    
+    # ~ for var in order:
+        # ~ yield int( sn[var[0]] + sn[var[1]] + sn[var[2]] )
+
+    for d0, d1, d2 in order:
+        yield int( sn[d0] + sn[d1] + sn[d2] )
+
+    raise StopIteration
+
+
+def solver(x):
+
+    for num in perm(x):
+        if num % 7 == 0:
+            print(f"semerysh: {x} as {num} = 7 * {num // 7}")
+            break
+    else:
+        print(f"no for {x}")
+
+solver(123)
 
 
 # ~ problem:  [226, 231, 347, 407, 502, 796, 838, 896, 899, 971] => [231, 796, 896, 971]
@@ -52,6 +78,6 @@ main()
 
 # ~ https://docs.python.org/3/library/itertools.html#itertools.permutations
 
-https://docs.python.org/3/library/functions.html#int
-https://docs.python.org/3/library/stdtypes.html
-https://www.w3schools.com/python/ref_func_str.asp
+# ~ https://docs.python.org/3/library/functions.html#int
+# ~ https://docs.python.org/3/library/stdtypes.html
+# ~ https://www.w3schools.com/python/ref_func_str.asp
