@@ -10,6 +10,10 @@
 # ~ https://www.w3schools.com/python/python_regex.asp
 # ~ https://www.geeksforgeeks.org/python/re-search-in-python/
 
+# https://www.w3schools.com/python/ref_string_maketrans.asp
+# https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_find
+# https://mimo.org/glossary/python/string-find
+
 import re
 
 # ~ https://docs.python.org/3/library/re.html

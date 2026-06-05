@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-06-03 2026-06-03 1.1
+# 2026-06-03 2026-06-05 1.2
 # semerysh.py
 
 # ~ Сделать список из 10 случайных 3-значных чисел.
@@ -51,3 +51,7 @@ main()
 # ~ divisors: {231: (231, 33.0), 796: (679, 97.0), 896: (896, 128.0), 971: (917, 131.0)}
 
 # ~ https://docs.python.org/3/library/itertools.html#itertools.permutations
+
+https://docs.python.org/3/library/functions.html#int
+https://docs.python.org/3/library/stdtypes.html
+https://www.w3schools.com/python/ref_func_str.asp
