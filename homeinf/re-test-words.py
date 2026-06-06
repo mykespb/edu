@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-24 2026-06-06 1.4
+# 2025-09-24 2026-06-06 1.5
 # re-test-words.py
 
 # ~ Regular expressions: words
@@ -102,6 +102,21 @@ print('test 5')
 
 for line in txtx.strip().splitlines():
     m = re.match(r"date (?P<DATE>[\w\d.:-]+) flight (?P<FLIGHT>\w+) status (?P<STATUS>\w+)", line)
+    if m:
+        print(m['DATE'], m['FLIGHT'], m['STATUS'])
+
+print('test 6')
+
+txtx = """
+date 2026-06-04T14:00 flight ABC123 status OK
+date 2026-06-05T10:30 pvt flight RENO987 status OK
+date 2026-06-06T02:00 flight PVT14 status PLANNED
+date 2026-06-07T15:00 flight SOHO1 status POSTPONED
+date 2026-06-08T20:20 PVT flight TBD00 status DELETED
+"""
+
+for line in txtx.strip().splitlines():
+    m = re.match(r"date (?P<DATE>[\w\d.:-]+) (?i:pvt )?flight (?P<FLIGHT>\w+) status (?P<STATUS>\w+)", line)
     if m:
         print(m['DATE'], m['FLIGHT'], m['STATUS'])
 
@@ -210,13 +225,41 @@ the end.
 # ~ for:
 # ~ 0 how
 # ~ 1 how
-
-# ~ --------------- Schedule -------------------
-
+# ~ ------------------------------------------
+# ~ example 1.1 Schedule
+# ~ ------------------------------------------
+# ~ test 1
 # ~ date 2026-06-04T14:00 flight ABC123 status OK
 # ~ date 2026-06-05T10:30 flight RENO987 status OK
+# ~ test 2
 # ~ 2026-06-04T14:00 ABC123
 # ~ 2026-06-05T10:30 RENO987
+# ~ test 3
+# ~ ('2026-06-04T14:00', 'ABC123', 'OK')
+# ~ ('2026-06-05T10:30', 'RENO987', 'OK')
+# ~ ('2026-06-06T02:00', 'BARA14', 'PLANNED')
+# ~ ('2026-06-07T15:00', 'SOHO1', 'POSTPONED')
+# ~ ('2026-06-08T20:20', 'TBD00', 'DELETED')
+# ~ test 4
+# ~ 2026-06-04T14:00 ABC123 OK
+# ~ 2026-06-05T10:30 RENO987 OK
+# ~ 2026-06-06T02:00 BARA14 PLANNED
+# ~ 2026-06-07T15:00 SOHO1 POSTPONED
+# ~ 2026-06-08T20:20 TBD00 DELETED
+# ~ test 5
+# ~ 2026-06-04T14:00 ABC123 OK
+# ~ 2026-06-05T10:30 RENO987 OK
+# ~ 2026-06-06T02:00 BARA14 PLANNED
+# ~ 2026-06-07T15:00 SOHO1 POSTPONED
+# ~ 2026-06-08T20:20 TBD00 DELETED
+# ~ test 6
+# ~ 2026-06-04T14:00 ABC123 OK
+# ~ 2026-06-05T10:30 RENO987 OK
+# ~ 2026-06-06T02:00 PVT14 PLANNED
+# ~ 2026-06-07T15:00 SOHO1 POSTPONED
+# ~ 2026-06-08T20:20 TBD00 DELETED
+# ~ test 0 for Newton
+# ~ Isaac Newton
 # ~ ------------------------------------------
 # ~ example 2
 # ~ ------------------------------------------
@@ -257,3 +300,4 @@ the end.
 # ~ ------------------------------------------
 # ~ the end.
 # ~ ------------------------------------------
+
