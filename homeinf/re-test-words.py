@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2025-09-24 2026-06-05 1.2
+# 2025-09-24 2026-06-06 1.4
 # re-test-words.py
 
 # ~ Regular expressions: words
@@ -9,6 +9,7 @@
 # ~ https://docs.python.org/3/library/re.html
 # ~ https://www.w3schools.com/python/python_regex.asp
 # ~ https://www.geeksforgeeks.org/python/re-search-in-python/
+# ~ https://www.geeksforgeeks.org/python/re-match-in-python/
 
 # https://www.w3schools.com/python/ref_string_maketrans.asp
 # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_find
@@ -50,6 +51,64 @@ print("findall 2:", re.findall(r'how', txt, flags = re.IGNORECASE))
 print("for:")
 for i, ex in enumerate(re.findall(r'how', txt)):
     print(i, ex)
+
+print("""------------------------------------------
+example 1.1 Schedule
+------------------------------------------""")
+
+# ~ print("\n--------------- Schedule -------------------\n")
+
+txtx = """
+date 2026-06-04T14:00 flight ABC123 status OK
+date 2026-06-05T10:30 flight RENO987 status OK
+date 2026-06-06T02:00 flight BARA14 status PLANNED
+date 2026-06-07T15:00 flight SOHO1 status POSTPONED
+date 2026-06-08T20:20 flight TBD00 status DELETED
+"""
+
+print('test 1')
+
+for line in txtx.strip().splitlines():
+    if "OK" in line:
+        print(line)
+
+print('test 2')
+
+for line in txtx.strip().splitlines():
+    if "OK" in line:
+        ls = line.split()
+        print(ls[1], ls[3])
+
+print('test 3')
+
+for line in txtx.strip().splitlines():
+    m = re.match(r"date ([\w\d.:-]+) flight (\w+) status (\w+)", line)
+    if m:
+        print(m.groups())
+
+print('test 4')
+
+for line in txtx.strip().splitlines():
+    # ~ print(line)
+    # ~ m = re.match(r"date (\w+)", line)
+    m = re.match(r"date ([\w\d.:-]+) flight (\w+) status (\w+)", line)
+    # ~ m = re.match(r"date (\w+) flight (\w+) status (\w+)", line)
+    if m:
+        print(m[1], m[2], m[3])
+    else:
+        print("re.match failed")
+
+print('test 5')
+
+for line in txtx.strip().splitlines():
+    m = re.match(r"date (?P<DATE>[\w\d.:-]+) flight (?P<FLIGHT>\w+) status (?P<STATUS>\w+)", line)
+    if m:
+        print(m['DATE'], m['FLIGHT'], m['STATUS'])
+
+print('test 0 for Newton')
+
+m = re.match(r"(\w+) (\w+)", "Isaac Newton, physicist")
+print(m.group(0))
 
 print("""------------------------------------------
 example 2
@@ -141,8 +200,6 @@ print("""------------------------------------------
 the end.
 ------------------------------------------""")
 
-
-
 # ~ ------------------------------------------
 # ~ example 1
 # ~ ------------------------------------------
@@ -153,6 +210,13 @@ the end.
 # ~ for:
 # ~ 0 how
 # ~ 1 how
+
+# ~ --------------- Schedule -------------------
+
+# ~ date 2026-06-04T14:00 flight ABC123 status OK
+# ~ date 2026-06-05T10:30 flight RENO987 status OK
+# ~ 2026-06-04T14:00 ABC123
+# ~ 2026-06-05T10:30 RENO987
 # ~ ------------------------------------------
 # ~ example 2
 # ~ ------------------------------------------

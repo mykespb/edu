@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-06-03 2026-06-05 2.0
+# 2026-06-03 2026-06-06 2.1
 # semerysh.py
 
 # ~ Сделать список из 10 случайных 3-значных чисел.
@@ -44,7 +44,9 @@ def main():
     print("divisors:", divs)
 
 
-# ~ main()
+main()
+
+# ---------------------------------------
 
 def perm(x : int):
 
@@ -52,16 +54,17 @@ def perm(x : int):
 
     sn = list(str(x))
     
-    # ~ for var in order:
-        # ~ yield int( sn[var[0]] + sn[var[1]] + sn[var[2]] )
+    for var in order:
+        yield int( sn[var[0]] + sn[var[1]] + sn[var[2]] )
 
-    for d0, d1, d2 in order:
-        yield int( sn[d0] + sn[d1] + sn[d2] )
+    # ~ for d0, d1, d2 in order:
+        # ~ yield int( sn[d0] + sn[d1] + sn[d2] )
 
-    raise StopIteration
+    # ~ raise StopIteration
+    # ~ return 
 
 
-def solver(x):
+def solver(x : int):
 
     for num in perm(x):
         if num % 7 == 0:
@@ -70,8 +73,10 @@ def solver(x):
     else:
         print(f"no for {x}")
 
+
 solver(123)
 
+# ---------------------------------------
 
 # ~ problem:  [226, 231, 347, 407, 502, 796, 838, 896, 899, 971] => [231, 796, 896, 971]
 # ~ divisors: {231: (231, 33.0), 796: (679, 97.0), 896: (896, 128.0), 971: (917, 131.0)}
