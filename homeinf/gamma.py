@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-08 2026-06-08 1.1
+# myke 2026-06-08 2026-06-08 2.1
 # gamma.py
 
 # ~ Простая гамма
@@ -11,30 +11,30 @@
 mul = 2**(1/12)
 print("множитель:", mul)
 
-notes = "C C# D D# E F F# G G# A B H C2".split()
+notes = "c c# d d# e f f# g g# a b h C C# D D# E F F# G G# A B H C2".split()
 
 freqs = {}
-freqs['A'] = 440.
+freqs['a'] = 440.
 
 nf = 440.
-for note in "C C# D D# E F F# G G#".split()[::-1]:
+for note in "c c# d d# e f f# g g#".split()[::-1]:
     freqs[note] = nf / mul
     nf /= mul
 nf = 440.
-for note in "B H C2".split():
+for note in "b h C C# D D# E F F# G G# A B H C2".split():
     freqs[note] = nf * mul
     nf *= mul
 
 print("частоты:", freqs, "\n")
 
-print("%12s" % "", end="")
+print("%8s" % "", end="")
 for second in notes:
-    print("%-8s" % second, end="")
+    print("%-6s" % second, end="")
 print()
 for first in notes:
-    print("%8s" % first, end="")
+    print("%6s" % first, end="")
     for second in notes:
-        print("%8.2f" % (freqs[second] / freqs[first]), end="")
+        print("%6.2f" % (freqs[second] / freqs[first]), end="")
     print()        
 
 print()
