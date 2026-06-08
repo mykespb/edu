@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-08 2026-06-08 1.0
+# myke 2026-06-08 2026-06-08 1.1
 # avia-codes.py
 
 # ~ по сгенерированному списку кодов бортов самолётов определить 3 наиболее активно представленных страны.
@@ -30,8 +30,8 @@ def make_planes(num : int = 20):
     return [
         choice(tuple(table.keys())) + "-" +
         choice(string.ascii_uppercase) +
-        choice(string.ascii_uppercase) +
-        choice(string.digits) +
+        ( choice(string.ascii_uppercase) if choice([False, True]) else choice(string.digits) ) +
+        ( choice(string.ascii_uppercase) if choice([False, True]) else choice(string.digits) ) +
         choice(string.digits) 
         for _ in range(num)] 
         
@@ -42,8 +42,8 @@ def make_flights(num : int = 20):
     return [
         choice(string.ascii_uppercase) +
         choice(string.ascii_uppercase) +
-        choice(string.ascii_uppercase) +
-        choice(string.digits) +
+        ( choice(string.ascii_uppercase) if choice([False, True]) else choice(string.digits) ) +
+        ( choice(string.ascii_uppercase) if choice([False, True]) else choice(string.digits) ) +
         choice(string.digits) +
         choice(string.digits)
         for _ in range(num)]
@@ -83,9 +83,10 @@ def make_story(data):
     return text
 
 
-# ~ pprint(make_story(data))
+astory = make_story(data)
+pp(astory)
 
-story = [
+cstory = [
  'The plane EJ-UU90 for route JKT706 started at June 17, 2017 .',
  'The plane EJ-RH15 for route KAV466 started at November 19, 2018 .',
  'Aircraft EI-WW76 for good flight FVV287 launched at November 2, 2019 .',
@@ -108,7 +109,7 @@ story = [
  'The plane B-XZ60 for route VMD499 started at January 16, 2003 .'
  ]
 
-pp(story)
+pp(cstory)
 
 # -------------------- PROCESSING -----------------------
 
@@ -138,6 +139,8 @@ def solve(story):
     
     print("\n================= Solving is over. =================\n")
 
-solve(story)
+
+solve(cstory)
+solve(astory)
 
 # -------------------- THE END -----------------------
