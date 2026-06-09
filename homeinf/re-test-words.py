@@ -15,13 +15,11 @@
 # https://www.w3schools.com/python/trypython.asp?filename=demo_ref_string_find
 # https://mimo.org/glossary/python/string-find
 
-import re
-
-# ~ https://docs.python.org/3/library/re.html
 # ~ https://docs.python.org/3/howto/regex.html
-# ~ https://www.w3schools.com/python/python_regex.asp
 # ~ https://www.geeksforgeeks.org/python/python-regex-re-search-vs-re-findall/
+# ~ https://www.w3schools.com/python/ref_string_count.asp
 
+import re
 
 print("""------------------------------------------
 example 1
