@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# 2026-06-29 2026-06-29 1.0
+# 2026-06-09 2026-06-09 1.2
 # re-test-classic.py
 
 # ~ Regular expressions: classic
 
 import re
 
+# -------------------------------------------------------------------------
 # prepare
+# -------------------------------------------------------------------------
 
 def part(text):
     print(f"""
@@ -156,4 +158,73 @@ for num, addr in enumerate(re.findall(patn, txt), start=1):
 
 # -------------------------------------------------------------------------
 
+part("5.a. Числа int")
+
+txt = """
+print(re.match(r'From\s+', 'Fromage amk'))
+re.match(r'From\s+', 'From amk Thu May 14 19:12:10 1998')
+Temp was from -5 degrees till +10C.
+"""
+
+print('-------------- 1 вариант : просто список --------------')
+
+patn = re.compile(r'[+|-]?\d+')
+res = patn.findall(txt)
+print(res)
+
+print('-------------- 2 вариант : итератор --------------')
+
+for num in patn.finditer(txt):
+    print("number", num.group(), "was found at", num.span())
+
+
+part("5.b. Числа float")
+print('-------------- 1 вариант --------------')
+
+txt = """
+good numbers are 5.0, 25.25, 125.05, while bad are -45.12, 6e+12, -45.11e-10.
+"""
+
+patn = re.compile(r"[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?")
+
+for num in patn.finditer(txt):
+    print("number", num.group(), "was found at", num.span())
+
+print('-------------- 2 вариант --------------')
+
+patn = re.compile(r"""
+    [+-]?                   # ведущий знак
+    \d+                     # мантисса, целая часть
+    (?:\.\d+)?              # .., дробная часть
+    (?:[eE][+-]?\d+)?       # порядок (E, знак, цифры)
+    """,
+    re.VERBOSE)
+
+for num in patn.finditer(txt):
+    print("number", num.group(), "was found at", num.span())
+
+
+# -------------------------------------------------------------------------
+
+part("6. Группы")
+
+target_string = "The price of PINEAPPLE ice cream is 20"
+
+# two groups enclosed in separate ( and ) bracket
+result = re.search(r"(\b[A-Z]+\b).+(\b\d+)", target_string)
+
+# Extract matching values of all groups
+print(result.groups())
+# Output ('PINEAPPLE', '20')
+
+# Extract match value of group 1
+print(result.group(1))
+# Output 'PINEAPPLE'
+
+# Extract match value of group 2
+print(result.group(2))
+
+# -------------------------------------------------------------------------
 print()
+
+# -------------------------------------------------------------------------
