@@ -3109,6 +3109,13 @@ re-test-dates.py
 
 Регулярные выражения. Классика: даты.
 
+re-test-dates-simple.py
+---------------------------
+
+2026-06-11 2026-06-11 1.0
+
+Regular expressions: dates, simple version
+
 re-test-words.py
 ---------------------------
 
