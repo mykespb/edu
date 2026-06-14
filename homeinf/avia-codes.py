@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-08 2026-06-08 1.1
+# myke 2026-06-08 2026-06-12 1.2
 # avia-codes.py
 
 # ~ по сгенерированному списку кодов бортов самолётов определить 3 наиболее активно представленных страны.
@@ -10,6 +10,8 @@ from pprint import pp, pprint
 import re
 
 # -------------------- MAKING DATA -----------------------
+
+AMOUNT = 30
 
 table = {
     'G':  "Великобритания",
@@ -24,7 +26,7 @@ table = {
     }
 
 
-def make_planes(num : int = 20):
+def make_planes(num : int = AMOUNT):
     """сделать случайный список бортов"""
 
     return [
@@ -36,7 +38,7 @@ def make_planes(num : int = 20):
         for _ in range(num)] 
         
 
-def make_flights(num : int = 20):
+def make_flights(num : int = AMOUNT):
     """сделать случайный список полётов"""
 
     return [
@@ -49,7 +51,7 @@ def make_flights(num : int = 20):
         for _ in range(num)]
 
 
-def make_dates(num : int = 20):
+def make_dates(num : int = AMOUNT):
     """сделать случайный список дат"""
 
     months = "January February March April May June July August September October November December".split()
@@ -63,7 +65,7 @@ dates   = make_dates()
 
 data    = tuple(zip(planes, flights, dates))
 
-# ~ pp(data)
+pp(data)
 
 def make_story(data):
     """сделать текст на англ. яз. про аэропорт"""

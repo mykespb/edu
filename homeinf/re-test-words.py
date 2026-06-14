@@ -193,7 +193,7 @@ example 7
 
 announce1 = 'Имеется прекрасное шило!'
 print(f"{announce1=}")
-announce2 = re.sub(r'шило', 'мыло', announce1)
+announce2 = re.sub('шило', 'мыло', announce1)
 print(f"{announce2=}")
 
 print("""------------------------------------------
