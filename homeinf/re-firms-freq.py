@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-28 2026-06-14 1.5
+# 2026-04-28 2026-06-16 2.1
 # re-firms-freq.py
 
 # гистограмма отчёта о компаниях
@@ -35,9 +35,29 @@ for firm in firms:
     print( f"{firm:{kmax+1}}:", "*" * int(freqs[firm] * mult // vmax) )
 print()
 
+# ~ --- slow version with std modules:
 
+import re
+from collections import Counter
+cnt = Counter()
 
-# ~ ---
+for name in re.finditer(r"\b(\w+)\b", text):
+    if (good := name.group()) in firms:
+        cnt[good] += 1
+        print(good, end=", ")
+print("\n", cnt)
+
+# ~ companies: ['Amazon', 'Apple', 'Google', 'IBM', 'Meta', 'Microsoft', 'Nvidia', 'Yandex']
+
+# ~ Amazon    : *************************
+# ~ Apple     : ***********************************
+# ~ Google    : ****************************************
+# ~ IBM       : ********************
+# ~ Meta      : ***************
+# ~ Microsoft : **************************************************
+# ~ Nvidia    : ***************
+# ~ Yandex    : 
+
 
 # ~ For decades, the tech industry has seen a massive shift in dominance, with IBM and Microsoft laying the foundations of the computing era. In the 1980s and 1990s, IBM ruled corporate hardware, while Microsoft captured the software market with Windows. During this time, Apple struggled to find its footing, and Google did not even exist. As Microsoft grew into a monopoly, IBM slowly began shifting its focus away from personal computers toward enterprise services.
 # ~ The 2000s completely rewritten the scoreboard. Google burst onto the scene, quickly dominating internet search and challenging Yahoo and Microsoft. Meanwhile, Apple launched the iPhone, kicking off a mobile revolution that caught Microsoft off guard. At the same time, Amazon quietly evolved from an online bookstore into an e-commerce giant, while also laying the groundwork for AWS cloud computing. By 2010, Apple and Google were the new kings of tech, while IBM faded from the consumer spotlight.
