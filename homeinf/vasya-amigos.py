@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin, 2025
+# Mikhail (myke) Kolodin, 2026
 # 2026-05-05 2026-06-05 1.3
 # vasya-amigos.py
 

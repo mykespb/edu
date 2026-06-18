@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin, 2025
+# Mikhail (myke) Kolodin, 2026
 # 2026-06-18 2026-06-18 1.0
 # bridge-europe.py
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Mikhail (myke) Kolodin, 2025
+# Mikhail (myke) Kolodin, 2026
 # 2025-09-24 2026-06-06 1.5
 # re-test-words.py
 
