@@ -44,6 +44,7 @@ def solve(l1, l2):
 
     return False
 
+# ------------------------- test ---------------------
 
 l1, l2 = make()
 how = solve(l1, l2)
