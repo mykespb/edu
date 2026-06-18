@@ -45,7 +45,7 @@ for name in re.finditer(r"\b(\w+)\b", text):
     if (good := name.group()) in firms:
         cnt[good] += 1
         print(good, end=", ")
-print("\n", cnt)
+print("\n\n", cnt, "\n")
 
 # ~ companies: ['Amazon', 'Apple', 'Google', 'IBM', 'Meta', 'Microsoft', 'Nvidia', 'Yandex']
 
