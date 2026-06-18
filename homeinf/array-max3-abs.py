@@ -26,8 +26,6 @@ def make(size : int = 10) -> list[int]:
 
 # --------------------- solve ---------------------
 
-# ~ from itertools import permutations
-
 def solve(a : list[int]) -> bool:
     """solve task"""
 
