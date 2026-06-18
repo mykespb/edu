@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # myke 2026-06-18 2026-06-18 1.0
-# array-max3.py
+# array-max3-abs.py
 
 # ~ Дан случайный список целых чисел.
-# ~ Верно ли, что три самых больших числа в нём находятся рядом?
+# ~ Верно ли, что три самых больших по абс. величине числа в нём находятся рядом?
 
 from random import randint, shuffle
 
@@ -26,13 +26,16 @@ def make(size : int = 10) -> list[int]:
 
 # --------------------- solve ---------------------
 
+# ~ from itertools import permutations
+
 def solve(a : list[int]) -> bool:
     """solve task"""
 
-    m3s = sum(sorted(a)[-3:])
+    b   = [ abs(x) for x in a ] 
+    m3s = sum(sorted(b)[-3:])
 
-    for pos in range(len(a) - 3):
-        if sum(a[pos:pos+3]) == m3s:
+    for pos in range(len(b) - 3):
+        if sum(b[pos:pos+3]) == m3s:
             return True
 
     return False
