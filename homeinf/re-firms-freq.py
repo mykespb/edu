@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-28 2026-06-16 2.1
+# 2026-04-28 2026-06-18 2.2
 # re-firms-freq.py
 
 # гистограмма отчёта о компаниях
@@ -35,7 +35,7 @@ for firm in firms:
     print( f"{firm:{kmax+1}}:", "*" * int(freqs[firm] * mult // vmax) )
 print()
 
-# ~ --- slow version with std modules:
+# ~ --- version with std modules:
 
 import re
 from collections import Counter

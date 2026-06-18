@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-04-28 2026-04-28 1.0
+# 2026-04-28 2026-06-18 1.1
 # ortodroma-commi.py
 
 # ~ Найти кратчайший путь между указанными городами,
@@ -100,7 +100,7 @@ print("\nBest way for:", end=" ")
 print(*cn, sep=", ")
 
 best_way = ()
-best_dist = 1e24
+best_dist = 1.495978707e11    # au
 
 for perm in permutations(cn, len(cn)):
     dist = 0.0
