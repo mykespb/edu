@@ -159,8 +159,8 @@ def main():
 
     persons = names.strip().split("\n")
     plist, pdict = solve(persons)
-    # ~ pprint(plist)
-    # ~ pprint(pdict)
+    pprint(plist)
+    pprint(pdict)
     pshow()
 
     
