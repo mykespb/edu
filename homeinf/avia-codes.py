@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-08 2026-06-18 1.3
+# myke 2026-06-08 2026-06-19 1.4
 # avia-codes.py
 
 # ~ по сгенерированному списку кодов бортов самолётов определить 3 наиболее активно представленных страны.
@@ -74,6 +74,7 @@ def make_story(data):
         "The plane %s for route %s started at %s.",
         "Plane %s for the flight %s began at %s.",
         "Aircraft %s for good flight %s launched at %s.",
+        "Airplane %s registered as %s flew away at %s.",
         "Aircraft %s for voyage %s launched at %s.",
         )
 

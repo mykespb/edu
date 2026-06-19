@@ -738,3 +738,8 @@ def best_postals():
 best_postals()
 
 # ------------------------------------------------
+
+# ~ https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D1%80%D0%BE_%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD%D0%B0
+# ~ https://en.wikipedia.org/wiki/List_of_London_boroughs
+
+# ------------------------------------------------
