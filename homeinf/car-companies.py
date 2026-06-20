@@ -238,7 +238,9 @@ cprint(asian)
 
 part("4. богатые компании")
 
-max_rich = max( [ x['usd'] for x in companies] )
+# ~ max_rich = max( [ x['usd'] for x in companies] )
+max_rich = max( x['usd'] for x in companies )
+
 simply_rich = max_rich * 0.8
 
 richest = [ (x['name'], x['country'])

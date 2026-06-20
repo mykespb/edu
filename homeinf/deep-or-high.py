@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-06-18 2026-06-18 1.0
+# 2026-06-18 2026-06-20 1.1
 # deep-or-high.py
 
 # ~ Даны места, вершины и глубины.
@@ -205,8 +205,11 @@ locs = points['capitals'] + points['mountains'] + points['depressions']
 
 # ~ pprint(locs)
 
-super_high = max( [ x['height'] for x in locs ] )
-super_deep = min( [ x['height'] for x in locs ] )
+# ~ super_high = max( [ x['height'] for x in locs ] )
+# ~ super_deep = min( [ x['height'] for x in locs ] )
+
+super_high = max( x['height'] for x in locs )
+super_deep = min( x['height'] for x in locs )
 
 print(f"""
 Я всё нашёл:
