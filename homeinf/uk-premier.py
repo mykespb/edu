@@ -656,6 +656,26 @@ recids = [ prm['name'] for prm in primes if ',' in prm['term']]
 print(f"recidivists: {len(recids)}\n")
 print(*recids, sep="\n")
 
+#recidivists: 17
+
+# Thomas Pelham-Holles
+# Charles Watson-Wentworth
+# William Cavendish-Bentinck
+# William Pitt 'The Younger'
+# Arthur Wellesley
+# William Lamb
+# Robert Peel
+# John Russell
+# Edward Smith-Stanley
+# Henry John Temple
+# Benjamin Disraeli
+# William Ewart Gladstone
+# Robert Gascoyne-Cecil
+# Stanley Baldwin
+# Ramsay MacDonald
+# Winston Churchill
+# Harold Wilson
+
 # -----------------------------------------------------------------
 part("The End.")
 # -----------------------------------------------------------------
