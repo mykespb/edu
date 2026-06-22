@@ -153,6 +153,6 @@ def solve(story):
 
 
 solve(cstory)
-solve(astory)
+# ~ solve(astory)
 
 # -------------------- THE END -----------------------
