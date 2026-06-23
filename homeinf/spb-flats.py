@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # spb-flats.py
-# Mikhail (myke) Kolodin, 2024-2025
+# Mikhail (myke) Kolodin, 2026
 # 2026-06-23 2026-06-23 1.1
 # стоимость аренды и покупки квартир в СПб
 
