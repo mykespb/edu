@@ -339,379 +339,379 @@ famous = [
         "years": "1770–1850",
         "field": "lit",
         "education": "Hawkshead Grammar School; St John's College, Cambridge"
-},
-{
-"full_name": "Samuel Taylor Coleridge",
-"status": "None",
-"years": "1772–1834",
-"field": "lit",
-"education": "Christ's Hospital; Jesus College, Cambridge"
-},
-{
-"full_name": "John Keats",
-"status": "None",
-"years": "1795–1821",
-"field": "lit",
-"education": "John Clarke's School; King's College London"
-},
-{
-"full_name": "Percy Bysshe Shelley",
-"status": "None",
-"years": "1792–1822",
-"field": "lit",
-"education": "Eton College; University College, Oxford"
-},
-{
-"full_name": "Thomas Hardy",
-"status": "Order of Merit",
-"years": "1840–1928",
-"field": "lit",
-"education": "King's College London"
-},
-{
-"full_name": "Charlotte Brontë",
-"status": "None",
-"years": "1816–1855",
-"field": "lit",
-"education": "Clergy Daughters' School"
-},
-{
-"full_name": "Emily Brontë",
-"status": "None",
-"years": "1818–1848",
-"field": "lit",
-"education": "Clergy Daughters' School"
-},
-{
-"full_name": "Robert Burns",
-"status": "None",
-"years": "1759–1796",
-"field": "lit",
-"education": "Self-educated"
-},
-{
-"full_name": "Walter Scott",
-"status": "Baronet",
-"years": "1771–1832",
-"field": "lit",
-"education": "Royal High School, Edinburgh; University of Edinburgh"
-},
-{
-"full_name": "Alfred Tennyson",
-"status": "Baron Tennyson",
-"years": "1809–1892",
-"field": "lit",
-"education": "King Edward VI Grammar School; Trinity College, Cambridge"
-},
-{
-"full_name": "William Blake",
-"status": "None",
-"years": "1757–1827",
-"field": "art",
-"education": "Royal Academy of Arts"
-},
-{
-"full_name": "Joseph Mallord William Turner",
-"status": "None",
-"years": "1775–1851",
-"field": "art",
-"education": "Royal Academy of Arts"
-},
-{
-"full_name": "John Constable",
-"status": "None",
-"years": "1776–1837",
-"field": "art",
-"education": "Royal Academy of Arts"
-},
-{
-"full_name": "Charlie Chaplin",
-"status": "Knight",
-"years": "1889–1977",
-"field": "art",
-"education": "Central London District School"
-},
-{
-"full_name": "Alfred Joseph Hitchcock",
-"status": "Knight",
-"years": "1899–1980",
-"field": "art",
-"education": "Salesian College; St Ignatius' College"
-},
-{
-"full_name": "Paul McCartney",
-"status": "Knight",
-"years": "1942–",
-"field": "art",
-"education": "Liverpool Institute High School for Boys"
-},
-{
-"full_name": "George Harrison",
-"status": "MBE",
-"years": "1943–2001",
-"field": "art",
-"education": "Liverpool Institute High School for Boys"
-},
-{
-"full_name": "Ringo Starr (Richard Starkey)",
-"status": "Knight",
-"years": "1940–",
-"field": "art",
-"education": "Dingle Vale Secondary Modern School"
-},
-{
-"full_name": "David Bowie (David Robert Jones)",
-"status": "None (Declined Knighthood)",
-"years": "1947–2016",
-"field": "art",
-"education": "Ravens Wood School"
-},
-{
-"full_name": "Freddie Mercury (Farrokh Bulsara)",
-"status": "None",
-"years": "1946–1991",
-"field": "art",
-"education": "St. Peter's School, Panchgani; Ealing Art College"
-},
-{
-"full_name": "Elton John (Reginald Kenneth Dwight)",
-"status": "Knight",
-"years": "1947–",
-"field": "art",
-"education": "Pinner County Grammar School; Royal Academy of Music"
-},
-{
-"full_name": "Mick Jagger",
-"status": "Knight",
-"years": "1943–",
-"field": "art",
-"education": "Dartford Grammar School; London School of Economics"
-},
-{
-"full_name": "Keith Richards",
-"status": "None",
-"years": "1943–",
-"field": "art",
-"education": "Dartford Technical High School; Sidcup Art College"
-},
-{
-"full_name": "Eric Patrick Clapton",
-"status": "CBE",
-"years": "1945–",
-"field": "art",
-"education": "Kingston College"
-},
-{
-"full_name": "Jimmy Page",
-"status": "OBE",
-"years": "1944–",
-"field": "art",
-"education": "Sutton Art College"
-},
-{
-"full_name": "Robert Anthony Plant",
-"status": "CBE",
-"years": "1948–",
-"field": "art",
-"education": "King Edward VI Five Ways School"
-},
-{
-"full_name": "Ozzy Osbourne (John Michael Osbourne)",
-"status": "None",
-"years": "1948–",
-"field": "art",
-"education": "Prince Albert Road Junior School"
-},
-{
-"full_name": "Roger Waters",
-"status": "None",
-"years": "1943–",
-"field": "art",
-"education": "Cambridgeshire High School for Boys; Regent Street Polytechnic"
-},
-{
-"full_name": "David Gilmour",
-"status": "CBE",
-"years": "1946–",
-"field": "art",
-"education": "Cambridgeshire High School for Boys"
-},
-{
-"full_name": "Laurence Olivier",
-"status": "Baron Olivier",
-"years": "1907–1989",
-"field": "art",
-"education": "St Edward's School, Oxford; Central School of Speech and Drama"
-},
-{
-"full_name": "Michael Caine (Maurice Joseph Micklewhite)",
-"status": "Knight",
-"years": "1933–",
-"field": "art",
-"education": "Hackney Downs School"
-},
-{
-"full_name": "Sean Connery",
-"status": "Knight",
-"years": "1930–2020",
-"field": "art",
-"education": "Tollcross Primary School"
-},
-{
-"full_name": "J. K. Rowling (Joanne Rowling)",
-"status": "Companion of Honour",
-"years": "1965–",
-"field": "lit",
-"education": "Wyedean School; University of Exeter"
-},
-{
-"full_name": "Richard Branson",
-"status": "Knight",
-"years": "1950–",
-"field": "bus",
-"education": "Scaitcliffe School; Stowe School"
-},
-{
-"full_name": "Alan Sugar",
-"status": "Baron Sugar",
-"years": "1947–",
-"field": "bus",
-"education": "Brooke House Secondary School"
-},
-{
-"full_name": "James Dyson",
-"status": "Knight",
-"years": "1947–",
-"field": "bus",
-"education": "Gresham's School; Royal College of Art"
-},
-{
-"full_name": "Thomas Cook",
-"status": "None",
-"years": "1808–1892",
-"field": "bus",
-"education": "Self-educated"
-},
-{
-"full_name": "Bobby Moore",
-"status": "OBE",
-"years": "1941–1993",
-"field": "sport",
-"education": "Westbury Secondary Modern School"
-},
-{
-"full_name": "David Beckham",
-"status": "OBE",
-"years": "1975–",
-"field": "sport",
-"education": "Chingford Foundation School"
-},
-{
-"full_name": "Lewis Carl Davidson Hamilton",
-"status": "Knight",
-"years": "1985–",
-"field": "sport",
-"education": "The John Henry Newman School"
-},
-{
-"full_name": "Andy Murray",
-"status": "Knight",
-"years": "1987–",
-"field": "sport",
-"education": "Dunblane High School"
-},
-{
-"full_name": "Bobby Charlton",
-"status": "Knight",
-"years": "1937–2023",
-"field": "sport",
-"education": "Bedlington Grammar School"
-},
-{
-"full_name": "Steve Redgrave",
-"status": "Knight",
-"years": "1962–",
-"field": "sport",
-"education": "Great Marlow School"
-},
-{
-"full_name": "Chris Hoy",
-"status": "Knight",
-"years": "1976–",
-"field": "sport",
-"education": "George Watson's College; University of St Andrews; University of Edinburgh"
-},
-{
-"full_name": "Mo Farah",
-"status": "Knight",
-"years": "1983–",
-"field": "sport",
-"education": "Feltham Community College; St Mary's University, Twickenham"
-},
-{
-"full_name": "Ian Botham",
-"status": "Baron Botham",
-"years": "1955–",
-"field": "sport",
-"education": "Buckler's Mead Academy"
-},
-{
-"full_name": "Alexander Parkes",
-"status": "None",
-"years": "1813–1890",
-"field": "sci",
-"education": "Apprenticeship system"
-},
-{
-"full_name": "John Logie Baird",
-"status": "None",
-"years": "1888–1946",
-"field": "sci",
-"education": "Larchfield Academy; Royal Technical College; University of Glasgow"
-},
-{
-"full_name": "Tim Berners-Lee",
-"status": "Knight",
-"years": "1955–",
-"field": "sci",
-"education": "Emanuel School; Queen's College, Oxford"
-},
-{
-"full_name": "Francis Harry Compton Crick",
-"status": "Order of Merit",
-"years": "1916–2004",
-"field": "sci",
-"education": "Mill Hill School; University College London; Caius College, Cambridge"
-},
-{
-"full_name": "Rosalind Elsie Franklin",
-"status": "None",
-"years": "1920–1958",
-"field": "sci",
-"education": "St Paul's Girls' School; Newnham College, Cambridge"
-},
-{
-"full_name": "Joseph Lister",
-"status": "Baron Lister",
-"years": "1827–1912",
-"field": "sci",
-"education": "Grove House School; University College London"
-},
-{
-"full_name": "Edward Jenner",
-"status": "None",
-"years": "1749–1823",
-"field": "sci",
-"education": "Katharine Lady Berkeley's School; St George's, University of London"
-},
-{
-"full_name": "David Attenborough",
-"status": "Knight",
-"years": "1926–",
-"field": "etc",
-"education": "Wyggeston Grammar School for Boys; Clare College, Cambridge"
-}
-]
+    },
+    {
+    "full_name": "Samuel Taylor Coleridge",
+    "status": "None",
+    "years": "1772–1834",
+    "field": "lit",
+    "education": "Christ's Hospital; Jesus College, Cambridge"
+    },
+    {
+    "full_name": "John Keats",
+    "status": "None",
+    "years": "1795–1821",
+    "field": "lit",
+    "education": "John Clarke's School; King's College London"
+    },
+    {
+    "full_name": "Percy Bysshe Shelley",
+    "status": "None",
+    "years": "1792–1822",
+    "field": "lit",
+    "education": "Eton College; University College, Oxford"
+    },
+    {
+    "full_name": "Thomas Hardy",
+    "status": "Order of Merit",
+    "years": "1840–1928",
+    "field": "lit",
+    "education": "King's College London"
+    },
+    {
+    "full_name": "Charlotte Brontë",
+    "status": "None",
+    "years": "1816–1855",
+    "field": "lit",
+    "education": "Clergy Daughters' School"
+    },
+    {
+    "full_name": "Emily Brontë",
+    "status": "None",
+    "years": "1818–1848",
+    "field": "lit",
+    "education": "Clergy Daughters' School"
+    },
+    {
+    "full_name": "Robert Burns",
+    "status": "None",
+    "years": "1759–1796",
+    "field": "lit",
+    "education": "Self-educated"
+    },
+    {
+    "full_name": "Walter Scott",
+    "status": "Baronet",
+    "years": "1771–1832",
+    "field": "lit",
+    "education": "Royal High School, Edinburgh; University of Edinburgh"
+    },
+    {
+    "full_name": "Alfred Tennyson",
+    "status": "Baron Tennyson",
+    "years": "1809–1892",
+    "field": "lit",
+    "education": "King Edward VI Grammar School; Trinity College, Cambridge"
+    },
+    {
+    "full_name": "William Blake",
+    "status": "None",
+    "years": "1757–1827",
+    "field": "art",
+    "education": "Royal Academy of Arts"
+    },
+    {
+    "full_name": "Joseph Mallord William Turner",
+    "status": "None",
+    "years": "1775–1851",
+    "field": "art",
+    "education": "Royal Academy of Arts"
+    },
+    {
+    "full_name": "John Constable",
+    "status": "None",
+    "years": "1776–1837",
+    "field": "art",
+    "education": "Royal Academy of Arts"
+    },
+    {
+    "full_name": "Charlie Chaplin",
+    "status": "Knight",
+    "years": "1889–1977",
+    "field": "art",
+    "education": "Central London District School"
+    },
+    {
+    "full_name": "Alfred Joseph Hitchcock",
+    "status": "Knight",
+    "years": "1899–1980",
+    "field": "art",
+    "education": "Salesian College; St Ignatius' College"
+    },
+    {
+    "full_name": "Paul McCartney",
+    "status": "Knight",
+    "years": "1942–",
+    "field": "art",
+    "education": "Liverpool Institute High School for Boys"
+    },
+    {
+    "full_name": "George Harrison",
+    "status": "MBE",
+    "years": "1943–2001",
+    "field": "art",
+    "education": "Liverpool Institute High School for Boys"
+    },
+    {
+    "full_name": "Ringo Starr (Richard Starkey)",
+    "status": "Knight",
+    "years": "1940–",
+    "field": "art",
+    "education": "Dingle Vale Secondary Modern School"
+    },
+    {
+    "full_name": "David Bowie (David Robert Jones)",
+    "status": "None (Declined Knighthood)",
+    "years": "1947–2016",
+    "field": "art",
+    "education": "Ravens Wood School"
+    },
+    {
+    "full_name": "Freddie Mercury (Farrokh Bulsara)",
+    "status": "None",
+    "years": "1946–1991",
+    "field": "art",
+    "education": "St. Peter's School, Panchgani; Ealing Art College"
+    },
+    {
+    "full_name": "Elton John (Reginald Kenneth Dwight)",
+    "status": "Knight",
+    "years": "1947–",
+    "field": "art",
+    "education": "Pinner County Grammar School; Royal Academy of Music"
+    },
+    {
+    "full_name": "Mick Jagger",
+    "status": "Knight",
+    "years": "1943–",
+    "field": "art",
+    "education": "Dartford Grammar School; London School of Economics"
+    },
+    {
+    "full_name": "Keith Richards",
+    "status": "None",
+    "years": "1943–",
+    "field": "art",
+    "education": "Dartford Technical High School; Sidcup Art College"
+    },
+    {
+    "full_name": "Eric Patrick Clapton",
+    "status": "CBE",
+    "years": "1945–",
+    "field": "art",
+    "education": "Kingston College"
+    },
+    {
+    "full_name": "Jimmy Page",
+    "status": "OBE",
+    "years": "1944–",
+    "field": "art",
+    "education": "Sutton Art College"
+    },
+    {
+    "full_name": "Robert Anthony Plant",
+    "status": "CBE",
+    "years": "1948–",
+    "field": "art",
+    "education": "King Edward VI Five Ways School"
+    },
+    {
+    "full_name": "Ozzy Osbourne (John Michael Osbourne)",
+    "status": "None",
+    "years": "1948–",
+    "field": "art",
+    "education": "Prince Albert Road Junior School"
+    },
+    {
+    "full_name": "Roger Waters",
+    "status": "None",
+    "years": "1943–",
+    "field": "art",
+    "education": "Cambridgeshire High School for Boys; Regent Street Polytechnic"
+    },
+    {
+    "full_name": "David Gilmour",
+    "status": "CBE",
+    "years": "1946–",
+    "field": "art",
+    "education": "Cambridgeshire High School for Boys"
+    },
+    {
+    "full_name": "Laurence Olivier",
+    "status": "Baron Olivier",
+    "years": "1907–1989",
+    "field": "art",
+    "education": "St Edward's School, Oxford; Central School of Speech and Drama"
+    },
+    {
+    "full_name": "Michael Caine (Maurice Joseph Micklewhite)",
+    "status": "Knight",
+    "years": "1933–",
+    "field": "art",
+    "education": "Hackney Downs School"
+    },
+    {
+    "full_name": "Sean Connery",
+    "status": "Knight",
+    "years": "1930–2020",
+    "field": "art",
+    "education": "Tollcross Primary School"
+    },
+    {
+    "full_name": "J. K. Rowling (Joanne Rowling)",
+    "status": "Companion of Honour",
+    "years": "1965–",
+    "field": "lit",
+    "education": "Wyedean School; University of Exeter"
+    },
+    {
+    "full_name": "Richard Branson",
+    "status": "Knight",
+    "years": "1950–",
+    "field": "bus",
+    "education": "Scaitcliffe School; Stowe School"
+    },
+    {
+    "full_name": "Alan Sugar",
+    "status": "Baron Sugar",
+    "years": "1947–",
+    "field": "bus",
+    "education": "Brooke House Secondary School"
+    },
+    {
+    "full_name": "James Dyson",
+    "status": "Knight",
+    "years": "1947–",
+    "field": "bus",
+    "education": "Gresham's School; Royal College of Art"
+    },
+    {
+    "full_name": "Thomas Cook",
+    "status": "None",
+    "years": "1808–1892",
+    "field": "bus",
+    "education": "Self-educated"
+    },
+    {
+    "full_name": "Bobby Moore",
+    "status": "OBE",
+    "years": "1941–1993",
+    "field": "sport",
+    "education": "Westbury Secondary Modern School"
+    },
+    {
+    "full_name": "David Beckham",
+    "status": "OBE",
+    "years": "1975–",
+    "field": "sport",
+    "education": "Chingford Foundation School"
+    },
+    {
+    "full_name": "Lewis Carl Davidson Hamilton",
+    "status": "Knight",
+    "years": "1985–",
+    "field": "sport",
+    "education": "The John Henry Newman School"
+    },
+    {
+    "full_name": "Andy Murray",
+    "status": "Knight",
+    "years": "1987–",
+    "field": "sport",
+    "education": "Dunblane High School"
+    },
+    {
+    "full_name": "Bobby Charlton",
+    "status": "Knight",
+    "years": "1937–2023",
+    "field": "sport",
+    "education": "Bedlington Grammar School"
+    },
+    {
+    "full_name": "Steve Redgrave",
+    "status": "Knight",
+    "years": "1962–",
+    "field": "sport",
+    "education": "Great Marlow School"
+    },
+    {
+    "full_name": "Chris Hoy",
+    "status": "Knight",
+    "years": "1976–",
+    "field": "sport",
+    "education": "George Watson's College; University of St Andrews; University of Edinburgh"
+    },
+    {
+    "full_name": "Mo Farah",
+    "status": "Knight",
+    "years": "1983–",
+    "field": "sport",
+    "education": "Feltham Community College; St Mary's University, Twickenham"
+    },
+    {
+    "full_name": "Ian Botham",
+    "status": "Baron Botham",
+    "years": "1955–",
+    "field": "sport",
+    "education": "Buckler's Mead Academy"
+    },
+    {
+    "full_name": "Alexander Parkes",
+    "status": "None",
+    "years": "1813–1890",
+    "field": "sci",
+    "education": "Apprenticeship system"
+    },
+    {
+    "full_name": "John Logie Baird",
+    "status": "None",
+    "years": "1888–1946",
+    "field": "sci",
+    "education": "Larchfield Academy; Royal Technical College; University of Glasgow"
+    },
+    {
+    "full_name": "Tim Berners-Lee",
+    "status": "Knight",
+    "years": "1955–",
+    "field": "sci",
+    "education": "Emanuel School; Queen's College, Oxford"
+    },
+    {
+    "full_name": "Francis Harry Compton Crick",
+    "status": "Order of Merit",
+    "years": "1916–2004",
+    "field": "sci",
+    "education": "Mill Hill School; University College London; Caius College, Cambridge"
+    },
+    {
+    "full_name": "Rosalind Elsie Franklin",
+    "status": "None",
+    "years": "1920–1958",
+    "field": "sci",
+    "education": "St Paul's Girls' School; Newnham College, Cambridge"
+    },
+    {
+    "full_name": "Joseph Lister",
+    "status": "Baron Lister",
+    "years": "1827–1912",
+    "field": "sci",
+    "education": "Grove House School; University College London"
+    },
+    {
+    "full_name": "Edward Jenner",
+    "status": "None",
+    "years": "1749–1823",
+    "field": "sci",
+    "education": "Katharine Lady Berkeley's School; St George's, University of London"
+    },
+    {
+    "full_name": "David Attenborough",
+    "status": "Knight",
+    "years": "1926–",
+    "field": "etc",
+    "education": "Wyggeston Grammar School for Boys; Clare College, Cambridge"
+    }
+    ]
 
 # ------------------------ prepare -------------------------
 
