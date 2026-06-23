@@ -2,8 +2,15 @@
 
 # Mikhail (myke) Kolodin, 2026
 # kab-aap.py
-# 2026-06-23 2026-06-23 1.1
+# 2026-06-23 2026-06-23 1.2
 # Бардафиша СПб
+
+# ~ https://www.bard-afisha.spb.ru/
+# ~ https://www.bard-afisha.spb.ru/api/version
+# ~ https://www.bard-afisha.spb.ru/api/gethuman
+
+# ~ https://jsonviewer.stack.hu/
+# ~ https://jsonformatter.org/json-viewer
 
 # ~ import json
 
