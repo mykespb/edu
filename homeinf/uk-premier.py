@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-22 2026-06-22 1.1
+# myke 2026-06-22 2026-06-23 1.2
 # uk-premier.py
 
 # ~ дай список всех премьер-министров Великобритании, формат: list[dict], поля:
@@ -582,14 +582,15 @@ for prm in primes:
 cntmc = cnt.most_common() 
 cprint(cntmc, 40)
 
-oxford = cambridge = others = 0
+oxford = cambridge = others = eton = 0
 for prm in primes:
     edu = prm['education']
     if 'Oxford' in edu: oxford += 1
-    elif 'Cambridge' in edu: cambridge += 1
-    else: others += 1
+    if 'Cambridge' in edu: cambridge += 1
+    if 'Oxford' not in edu and 'Cambridge' not in edu: others += 1
+    if 'Eton' in edu: eton += 1
 
-print(f"\nColleges: {oxford=}, {cambridge=}, {others=}")
+print(f"\nColleges: {oxford=}, {cambridge=}, {others=}, {eton=}")
 
 
 # ~ Eton College                             | 20
@@ -645,13 +646,13 @@ print(f"\nColleges: {oxford=}, {cambridge=}, {others=}")
 # ~ University of Leeds                      | 1
 # ~ St Edmund Hall, Oxford                   | 1
 
-# ~ Colleges: oxford=31, cambridge=14, others=13
+# ~ Colleges: oxford=31, cambridge=14, others=13, eton=20
 
 # -------------------------------------------------
 part("3. List of primes - recidivists.")
 # -----------------------------------------------------------------
 
-recids = [ prm['name'] for prm in primes if ',' in prm['term']]
+recids = [ prm['name'] for prm in primes if ',' in prm['term'] ]
 
 print(f"recidivists: {len(recids)}\n")
 print(*recids, sep="\n")
