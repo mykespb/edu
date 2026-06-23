@@ -9,6 +9,8 @@
 # ~ https://www.bard-afisha.spb.ru/api/version
 # ~ https://www.bard-afisha.spb.ru/api/gethuman
 
+# ~ https://bard-wiki.net/
+
 # ~ https://jsonviewer.stack.hu/
 # ~ https://jsonformatter.org/json-viewer
 

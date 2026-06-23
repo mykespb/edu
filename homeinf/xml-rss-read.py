@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # xml-rss-read.py
-# 2026-06-23 2026-06-23 1.0
+# 2026-06-23 2026-06-23 1.1
 # Чтение ленты RSS
 # Пример: https://lenta.ru/rss
 
@@ -129,6 +129,7 @@ root = ET.fromstring(rss)
 
 # 2. print it
 
+print(root)
 print(root.tag)
 print(root.attrib)
 
@@ -140,6 +141,7 @@ print(root.attrib)
 # 4. go to items
 
 channel = root.find('channel')
+print(channel)
 
 # ~ for child in channel:
     # ~ print(child, child.tag, child.attrib)
