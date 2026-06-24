@@ -15,8 +15,7 @@ article = r"""
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[
-]{article}
+\documentclass[]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
