@@ -65,7 +65,6 @@ data = [
     {"fio": "Андрей Рублев", "life": "1360–1428", "paints": 30, "genre": "Иконопись, Древнерусская живопись"}
 ]
 
-
 # -------------------------- подготовка -------------------------
 
 from pprint import pprint
@@ -85,6 +84,14 @@ pprint(data)
 print('\n2. Покажи по алфавиту фамилий')
 
 out = sorted( [ (h['fio'].split()[-1], list(h.values()) ) for h in data ] )
+
+print( *[ o[1] for o in out], sep="\n" )
+
+# ---------- тест 3 ----------
+
+print('\n2. Покажи по производительности')
+
+out = sorted( [ (h['paints'], list(h.values()) ) for h in data ], reverse=True )
 
 print( *[ o[1] for o in out], sep="\n" )
 
