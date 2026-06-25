@@ -428,9 +428,92 @@ from pprint import pprint
 
 # ---------------------------------------------------
 
+print("#1. все по годам")
 
+data.sort(key = lambda x: x['years'] )
+
+print( *(f"{ide['years']:10} : {ide['name']}" for ide in data), sep="\n")
+
+# ~ #1. все по годам
+# ~ 1996-2005  : Microsoft Visual SourceSafe
+# ~ 1996-2010  : Rational Rose
+# ~ 1996-2026  : MATLAB
+# ~ 1996-2026  : Simulink
+# ~ 1996-2026  : Vim
+# ~ 1996-2026  : NetBeans
+# ~ 1996-2026  : Delphi (RAD Studio)
+# ~ 1997-2008  : Borland C++ Builder
+# ~ 1997-2024  : Adobe Dreamweaver
+# ~ 1997-2026  : Visual Studio
+# ~ 1998-2026  : Unreal Engine
+# ~ 2000-2026  : Enterprise Architect
+# ~ 2001-2026  : IntelliJ IDEA
+# ~ 2001-2026  : Eclipse
+# ~ 2001-2026  : WebRatio
+# ~ 2002-2026  : Jira
+# ~ 2003-2026  : Xcode
+# ~ 2003-2026  : Notepad++
+# ~ 2005-2026  : Unity
+# ~ 2005-2026  : SoapUI
+# ~ 2008-2026  : GitHub
+# ~ 2008-2026  : Sublime Text
+# ~ 2009-2026  : Qt Creator
+# ~ 2010-2026  : PyCharm
+# ~ 2010-2026  : WebStorm
+# ~ 2010-2026  : DBeaver
+# ~ 2011-2026  : GitLab
+# ~ 2011-2026  : RStudio (Posit)
+# ~ 2012-2026  : Postman
+# ~ 2012-2026  : Ansible
+# ~ 2013-2026  : Android Studio
+# ~ 2013-2026  : Docker
+# ~ 2014-2022  : Atom
+# ~ 2014-2026  : Kubernetes
+# ~ 2014-2026  : Neovim
+# ~ 2014-2026  : Jupyter Notebook
+# ~ 2014-2026  : Terraform
+# ~ 2015-2026  : Visual Studio Code
+# ~ 2016-2026  : Figma
+# ~ 2023-2026  : Cursor
 
 # ---------------------------------------------------
+
+print("## 2. все иишечки")
+
+ai = list(filter(lambda x: x['aimode'] == 'Yes', data))
+
+ai.sort(key = lambda x: x['years'] )
+
+print( *(f"{ide['years']:10} : {ide['name']}" for ide in ai), sep="\n")
+
+# ~ ## 2. все иишечки
+# ~ 1996-2026  : MATLAB
+# ~ 1996-2026  : Simulink
+# ~ 1996-2026  : Delphi (RAD Studio)
+# ~ 1997-2026  : Visual Studio
+# ~ 1998-2026  : Unreal Engine
+# ~ 2001-2026  : IntelliJ IDEA
+# ~ 2001-2026  : Eclipse
+# ~ 2002-2026  : Jira
+# ~ 2003-2026  : Xcode
+# ~ 2005-2026  : Unity
+# ~ 2008-2026  : GitHub
+# ~ 2010-2026  : PyCharm
+# ~ 2010-2026  : WebStorm
+# ~ 2010-2026  : DBeaver
+# ~ 2011-2026  : GitLab
+# ~ 2011-2026  : RStudio (Posit)
+# ~ 2012-2026  : Postman
+# ~ 2012-2026  : Ansible
+# ~ 2013-2026  : Android Studio
+# ~ 2013-2026  : Docker
+# ~ 2014-2026  : Kubernetes
+# ~ 2014-2026  : Neovim
+# ~ 2014-2026  : Jupyter Notebook
+# ~ 2014-2026  : Terraform
+# ~ 2015-2026  : Visual Studio Code
+# ~ 2016-2026  : Figma
+# ~ 2023-2026  : Cursor
 
 # ---------------------------------------------------
 print()
