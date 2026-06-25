@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # progide-hist.py
-# 2026-06-25 2026-06-25 1.2
+# 2026-06-25 2026-06-25 1.3
 
 # ~ Изучаем среды и инструменты программирования и проектирования. 
 # ~ Весь вывод на английском; формат list[dict].
@@ -428,7 +428,7 @@ from pprint import pprint
 
 # ---------------------------------------------------
 
-print("#1. все по годам")
+print("\n#1. все по годам")
 
 data.sort(key = lambda x: x['years'] )
 
@@ -478,7 +478,7 @@ print( *(f"{ide['years']:10} : {ide['name']}" for ide in data), sep="\n")
 
 # ---------------------------------------------------
 
-print("## 2. все иишечки")
+print("\n# 2. все иишечки")
 
 ai = list(filter(lambda x: x['aimode'] == 'Yes', data))
 
@@ -513,6 +513,24 @@ print( *(f"{ide['years']:10} : {ide['name']}" for ide in ai), sep="\n")
 # ~ 2014-2026  : Terraform
 # ~ 2015-2026  : Visual Studio Code
 # ~ 2016-2026  : Figma
+# ~ 2023-2026  : Cursor
+
+# ---------------------------------------------------
+
+print("\n# 3. все современные питоновские иишечки")
+
+aipm = [ ide for ide in ai if 'Python' in ide['proglangs'] and '2026' in ide['years'] ]
+
+print( *(f"{ide['years']:10} : {ide['name']}" for ide in aipm), sep="\n")
+
+# ~ # 3. все современные питоновские иишечки
+# ~ 1997-2026  : Visual Studio
+# ~ 2001-2026  : Eclipse
+# ~ 2010-2026  : PyCharm
+# ~ 2011-2026  : RStudio (Posit)
+# ~ 2012-2026  : Ansible
+# ~ 2014-2026  : Jupyter Notebook
+# ~ 2015-2026  : Visual Studio Code
 # ~ 2023-2026  : Cursor
 
 # ---------------------------------------------------
