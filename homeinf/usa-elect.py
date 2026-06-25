@@ -797,13 +797,13 @@ for pres in usa:
 # ~ 44. Barack Obama                   @ 2012 - Democratic          
 # ~ 45. Donald Trump                   @ 2016 - Republican          
 # ~ 46. Joe Biden                      @ 2020 - Democratic          
-# ~ 47. Donald Trump                   @ 2024 - Republican
+# ~ 47. Donald Trump                   @ 2024 - Republican 
 
 # ---------- тест 2 ----------
 
 print('\n2. сколько выжило и померло\n')
 
-fate = Counter( [ pres['result'] for pres in usa] )
+fate = Counter( [ pres['result'] for pres in usa ] )
 
 pprint(fate)
 
@@ -815,7 +815,7 @@ pprint(fate)
 
 print('\n3. изучаем возраст при вступлении\n')
 
-ages = Counter( [ pres['age'] for pres in usa] )
+ages = Counter( [ pres['age'] for pres in usa ] )
 
 print("возрасты:", ages)
 
