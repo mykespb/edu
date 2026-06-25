@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-25 2026-06-25 1.0
+# myke 2026-06-25 2026-06-25 1.2
 # num-solve.py
 
 # ~ Дана возрастающая функция (напр., f(x) = ln(x-e)).
@@ -12,8 +12,8 @@ def fun(x):
     """спецфункция"""
     return log(x-e)
 
-for i in range(30, 50):
-    print(i/10., fun(i/10.))
+# ~ for i in range(30, 50):
+    # ~ print(i/10., fun(i/10.))
     
 # ~ 3.0 -1.2668480994676237
 # ~ 3.1 -0.9630727134975926
@@ -52,7 +52,7 @@ def solve(fun, xfrom=0., xto=100.):
         assert rept < LREPT, "превышено число итераций"
 
         point = xfrom + (xto - xfrom) / 2.
-        print(f"{rept=}, {point=}")
+        # ~ print(f"{rept=}, {point=}")
 
         fv = fun(point)
 
@@ -61,12 +61,12 @@ def solve(fun, xfrom=0., xto=100.):
         else:
             xto = point
 
-        print(f"{xfrom=}, {xto=}")
+        # ~ print(f"{xfrom=}, {xto=}")
 
     return xfrom
 
 
-print(solve(fun, 3., 5.))
+print("решение:", solve(fun, 3., 5.))
 
 
 # ~ rept=1, point=4.0
@@ -111,4 +111,5 @@ print(solve(fun, 3., 5.))
 # ~ xfrom=3.718280792236328, xto=3.718282699584961
 # ~ rept=21, point=3.7182817459106445
 # ~ xfrom=3.7182817459106445, xto=3.718282699584961
-# ~ 3.7182817459106445
+# ~ решение: 3.7182817459106445
+
