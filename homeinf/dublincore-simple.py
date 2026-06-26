@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-25 2026-06-25 0.4
+# myke 2026-06-25 2026-06-26 1.0
 # dublincore-simple.py
 
 # ------------------------ постановка -----------------------------
@@ -14,22 +14,26 @@
 # ~ sto:   указание на результирующий формат (строка 'text', 'xml', 'jsonld')
 # ~ на выходе - текст описания в результирующем формате.
 
+# ~ Упрощения для простой версии:
+# ~ 1. все данные для каждого параметра находятся на одной строке,
+# ~ нет переводов строк внутри текстов.
+
 # ------------------------ данные -----------------------------
 
 text = """
-* dc:title — Архитектура современных веб-приложений
-* dc:creator — Иванов, П. С.
-* dc:creator — Петров, А. В.
-* dc:subject — Веб-разработка, Архитектура ПО, Python, JavaScript
-* dc:description — Учебное пособие по проектированию высоконагруженных веб-систем для студентов вузов.
-* dc:publisher — ТехноМедиа
-* dc:date — 2024
-* dc:type — Text
-* dc:format — application/pdf
-* dc:identifier — ISBN 978-5-1234-5678-9
-* dc:language — rus
-* dc:relation — Второе издание, переработанное и дополненное.
-* dc:rights — Copyright 2024, Издательство ТехноМедиа. Все права защищены.
+* dc:title - Архитектура современных веб-приложений
+* dc:creator - Иванов, П. С.
+* dc:creator - Петров, А. В.
+* dc:subject - Веб-разработка, Архитектура ПО, Python, JavaScript
+* dc:description - Учебное пособие по проектированию высоконагруженных веб-систем для студентов вузов.
+* dc:publisher - ТехноМедиа
+* dc:date - 2024
+* dc:type - Text
+* dc:format - application/pdf
+* dc:identifier - ISBN 978-5-1234-5678-9
+* dc:language - rus
+* dc:relation - Второе издание, переработанное и дополненное.
+* dc:rights - Copyright 2024, Издательство ТехноМедиа. Все права защищены.
 """
 
 xml = """
@@ -70,7 +74,116 @@ jsonld = """
 }
 """
 
+# ------------------------------------------------
+# ------------------------ подготовка -----------------------------
+
+import json
+from pprint import pp, pprint
+import re
+
+# ------------------------------------------------
 # ------------------------ обработка -----------------------------
+
+def get_dc_text(info):
+    out = {}
+    dcCreators = []
+
+    for line in info.strip().split('\n'):
+        left, right = line.split(' - ')
+        left = left.split()[-1]
+        if left == 'dc:creator':
+            dcCreators.append(right)
+        else:
+            out[left] = right
+    out['dc:creator'] = dcCreators
+
+    return out
+
+# ------------------------------------------------
+    
+def get_dc_xml(info):
+    out = {}
+    dcCreators = []
+
+    for line in info.strip().split('\n'):
+        if "<metadata " in line or "</metadata>" in line:
+            continue
+
+        pat = r"\s*<dc:(\w+)>(.+)</dc:\w+>"
+        fs  = re.search(pat, line)
+        if fs:
+            left = "dc:" + fs.group(1)
+            right = fs.group(2)
+            
+        if left == 'dc:creator':
+            dcCreators.append(right)
+        else:
+            out[left] = right
+    out['dc:creator'] = dcCreators
+
+    return out
+
+# ------------------------------------------------
+    
+def get_dc_jsonld(info):
+
+    out = {}
+    info = json.loads(info)
+    
+    for k, v in info.items():
+        if k == "@context" or k == "@type":
+            continue
+
+        out[k] = v
+
+    return out
+    
+# ------------------------------------------------
+
+def put_dc_text(info):
+
+    out = ""
+
+    for k, v in info.items():
+        if k == "dc:creator":
+            for a in v:
+                out += f"* dc:creator - {a}\n"
+        else:
+            out += f"* {k} - {v}\n"
+
+    return out
+
+# ------------------------------------------------
+    
+def put_dc_xml(info):
+    
+    out = '<metadata xmlns:dc="http://purl.org">\n'
+
+    for k, v in info.items():
+        if k == "dc:creator":
+            for a in v:
+                out += f"<dc:creator>{a}</dc:creator>\n"
+        else:
+            out += f"<{k}>{v}</k>\n"
+
+    out += '</metadata>\n'
+
+    return out
+
+
+# ------------------------------------------------
+    
+def put_dc_jsonld(info):
+
+    out = info.copy()
+    out['@context'] = {'dc': 'http://purl.org'}
+    out["@type"]    = "dc:Text"
+
+    return out
+    
+
+# ------------------------------------------------
+# ------------------------------------------------
 
 def dc_read(info: str, sfrom: str) -> dict:
     """
@@ -80,10 +193,17 @@ def dc_read(info: str, sfrom: str) -> dict:
     sfrom = sfrom.lower()
 
     assert sfrom in "text xml jsonld".split(), f"Недопустимый входной формат: '{sfrom}'"
-    ...
 
-    return info
+    res = {
+        'text':     get_dc_text(info),
+        'xml':      get_dc_xml(info),
+        'jsonld':   get_dc_jsonld(info),
+        }[sfrom]
 
+    return res
+
+
+# ------------------------------------------------
 
 def dc_write(info: dict, sto: str) -> str:
     """
@@ -93,10 +213,16 @@ def dc_write(info: dict, sto: str) -> str:
     sto   = sto.lower()
 
     assert sto in "text xml jsonld".split(), f"Недопустимый выходной формат: '{sto}'"
-    ...
 
-    return info
-    
+    res = {
+        'text':     put_dc_text(info),
+        'xml':      put_dc_xml(info),
+        'jsonld':   put_dc_jsonld(info),
+        }[sto]
+
+    return res
+
+# ------------------------------------------------
 
 def dc(info: str, sfrom: str, sto: sto) -> str:
     """
@@ -114,30 +240,70 @@ def dc(info: str, sfrom: str, sto: sto) -> str:
     return out
 
     
+# ------------------------------------------------
 # ------------------------ тесты -----------------------------
 
-# ~ TBD
+# tests ok:
 
+# test convertion to dict:
 
+print("\n\n*** text -> dict ***")
+ddc = get_dc_text(text)
+pprint(ddc)
+
+print("\n\n*** xml -> dict ***")
+ddc = get_dc_xml(xml)
+pprint(ddc)
+
+print("\n\n*** jsonld -> dict ***")
+ddc = get_dc_jsonld(jsonld)
+pprint(ddc)
+
+# test convertion from dict:
+
+print("\n\n*** dict -> text ***")
+otext = put_dc_text(ddc)
+print(otext)
+
+print("\n\n*** dict -> xml ***")
+oxml = put_dc_xml(ddc)
+print(oxml)
+
+print("\n\n*** dict -> jsonld ***")
+ojson = put_dc_jsonld(ddc)
+pprint(ojson)
+
+# tests combinations:
+
+print("\n\n*** text -> text ***")
+ddc = get_dc_text(text)
+otext = put_dc_text(ddc)
+pprint(otext)
+
+# tests asserts:
+
+# TBD: ...
+
+# ------------------------------------------------
 # ------------------------ доки -----------------------------
 
 # ~ Стандарт Dublin Core (Дублинское ядро) используется для описания цифровых ресурсов (веб-страниц, электронных книг, изображений) в формате метаданных. Он состоит из 15 базовых элементов.
 # ~ Ниже приведен пример описания той же самой книги по программированию в трех наиболее популярных форматах представления метаданных: в виде простого текстового списка, XML и JSON-LD.
-# ~ ## 1. Простой текстовый вид (Ключ — Значение)
+# ~ ## 1. Простой текстовый вид (Ключ - Значение)
 
-# ~ * dc:title — Архитектура современных веб-приложений
-# ~ * dc:creator — Иванов, П. С.
-# ~ * dc:creator — Петров, А. В.
-# ~ * dc:subject — Веб-разработка, Архитектура ПО, Python, JavaScript
-# ~ * dc:description — Учебное пособие по проектированию высоконагруженных веб-систем для студентов вузов.
-# ~ * dc:publisher — ТехноМедиа
-# ~ * dc:date — 2024
-# ~ * dc:type — Text
-# ~ * dc:format — application/pdf
-# ~ * dc:identifier — ISBN 978-5-1234-5678-9
-# ~ * dc:language — rus
-# ~ * dc:relation — Второе издание, переработанное и дополненное.
-# ~ * dc:rights — Copyright 2024, Издательство ТехноМедиа. Все права защищены.
+# ~ * dc:title - Архитектура современных веб-приложений
+# ~ * dc:creator - Иванов, П. С.
+# ~ * dc:creator - Петров, А. В.
+# ~ * dc:subject - Веб-разработка, Архитектура ПО, Python, JavaScript
+# ~ * dc:description - Учебное пособие по проектированию высоконагруженных веб-систем для студентов вузов.
+# ~ * dc:publisher - ТехноМедиа
+# ~ * dc:date - 2024
+# ~ * dc:type - Text
+# ~ * dc:format - application/pdf
+# ~ * dc:identifier - ISBN 978-5-1234-5678-9
+# ~ * dc:language - rus
+# ~ * dc:relation - Второе издание, переработанное и дополненное.
+# ~ * dc:rights - Copyright 2024, Издательство ТехноМедиа. Все права защищены.
 
 # ~ ------------------------------
 # ~ ## 2. Формат XML
@@ -195,15 +361,15 @@ def dc(info: str, sfrom: str, sto: sto) -> str:
 # ~               === URN ===
 # ~ ------------------------------------------
 
-# ~ URN (Uniform Resource Name) — это унифицированное имя ресурса, которое служит уникальным постоянным идентификатором объекта в цифровой среде [STEM]. [1, 2, 3, 4] 
+# ~ URN (Uniform Resource Name) - это унифицированное имя ресурса, которое служит уникальным постоянным идентификатором объекта в цифровой среде [STEM]. [1, 2, 3, 4] 
 # ~ В отличие от URL (который указывает, где лежит файл и по какому протоколу его скачать), URN отвечает на вопрос что это за объект, и не зависит от изменения его местоположения. Если сайт закроется или ссылка сломается, URN книги или документа останется неизменным. [5, 6, 7, 8, 9] 
 # ~ ## Структура URN
 # ~ Любой URN имеет строго определенный формат:
 # ~ urn:<NID>:<NSS> [10, 11] 
 
-# ~ * urn: — обязательный префикс (протоколхема).
-# ~ * NID (Namespace Identifier) — идентификатор пространства имен (указывает на тип системы, например: isbn, issn, uuid, ietf).
-# ~ * NSS (Namespace Specific String) — уникальная строка внутри этого пространства (номер, код, хэш). [12, 13, 14, 15, 16] 
+# ~ * urn: - обязательный префикс (протоколхема).
+# ~ * NID (Namespace Identifier) - идентификатор пространства имен (указывает на тип системы, например: isbn, issn, uuid, ietf).
+# ~ * NSS (Namespace Specific String) - уникальная строка внутри этого пространства (номер, код, хэш). [12, 13, 14, 15, 16] 
 
 # ~ ------------------------------
 # ~ ## Примеры URN из разных областей:
@@ -257,7 +423,7 @@ def dc(info: str, sfrom: str, sto: sto) -> str:
 # ~ https://ru.wikipedia.org/wiki/%D0%94%D1%83%D0%B1%D0%BB%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B5_%D1%8F%D0%B4%D1%80%D0%BE
 # ~ https://en.wikipedia.org/wiki/Dublin_Core
 
-# ~ Ду́блинское ядро́ (англ. Dublin Core) — словарь (семантическая сеть) основных понятий английского языка, предназначенный для унификации метаданных для описания широчайшего диапазона ресурсов. С 2005 года словарь представлен и в формате RDF и является популярной основой для описания ресурсов в Семантической паутине.
+# ~ Ду́блинское ядро́ (англ. Dublin Core) - словарь (семантическая сеть) основных понятий английского языка, предназначенный для унификации метаданных для описания широчайшего диапазона ресурсов. С 2005 года словарь представлен и в формате RDF и является популярной основой для описания ресурсов в Семантической паутине.
 
 # ~ Словарь разделён на два уровня:
 
