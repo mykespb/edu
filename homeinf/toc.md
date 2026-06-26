@@ -1249,6 +1249,18 @@ But for multiples of three print “Foo” instead of the number
 and for the multiples of five print “Bar”.
 For numbers which are multiples of both three and five print “FooBar”.
 
+football-2026.py
+---------------------------
+
+2026-06-27 2026-06-27 0.1
+
+ЧМФ-2026. по каждой стране, участвующей в чемпионате мира по футболу в 2026, укажи (list[json], все ключи по-англ., все значения по-русски):
+- country: страна,
+- debut: в каком году впервые участвовала,
+- times: сколько раз участвовала,
+- best: какое наивысшее место заняла,
+- medals: медали: сколько золотых (gold), серебряных (silver), бронзовых (bronze) в сумме за все годы участия
+
 friday13.py
 ---------------------------
 

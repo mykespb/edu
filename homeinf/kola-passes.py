@@ -2,223 +2,365 @@
 
 # Mikhail (myke) Kolodin, 2026
 # kola-passes.py
-# 2026-06-24 2026-06-24 1.1
+# 2026-06-24 2026-06-27 2.2
 
-# ~ перечисли хребты Кольского полуострова, укажи (list[json]):
-# ~ - название,
-# ~ - самую высокую точку,
-# ~ - перевалы (json: название, высота, категория сложности (json: зимой, летом))
+# ~ перечисли хребты, плато, все горные системы Кольского полуострова, укажи (list[json]):
+# ~ - name: название,
+# ~ - type: тип системы,
+# ~ - height: самую высокую точку,
+# ~ - passes: перевалы (json -- 
+# ~ name: название, 
+# ~ height: высота, 
+# ~ difficulty: категория сложности (json: winter: зимой, summer: летом))
 
 # -------------------------- данные -------------------------
 
-data = [
+# ~ data1 = [
+    # ~ {
+        # ~ "name": "Хибины",
+        # ~ "highest_point": "Юдычвумчорр (1208 м)",
+        # ~ "passes": [
+            # ~ {
+                # ~ "name": "Рамзая",
+                # ~ "height": 743,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Географов",
+                # ~ "height": 842,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Кукисвумчорр",
+                # ~ "height": 479,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Западный Петрелиуса",
+                # ~ "height": 843,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Восточный Арсеньева",
+                # ~ "height": 1026,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Западный Арсеньева",
+                # ~ "height": 1015,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Восточный Петрелиуса",
+                # ~ "height": 883,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Чорргор Северный",
+                # ~ "height": 1010,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Чорргор Южный",
+                # ~ "height": 850,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Рисчорр Южный",
+                # ~ "height": 895,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Рисчорр Северный",
+                # ~ "height": 920,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Безымянный",
+                # ~ "height": 830,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Умбозерский",
+                # ~ "height": 515,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Юкспорлак",
+                # ~ "height": 662,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Ворткеуайв",
+                # ~ "height": 756,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Щель",
+                # ~ "height": 630,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Аку-Аку",
+                # ~ "height": 370,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Южный Партомчорр",
+                # ~ "height": 810,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Северный Партомчорр",
+                # ~ "height": 760,
+                # ~ "difficulty": {"winter": "1А", "summer": "н/к"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Ферсмана",
+                # ~ "height": 974,
+                # ~ "difficulty": {"winter": "2А", "summer": "1Б"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Крестовый",
+                # ~ "height": 940,
+                # ~ "difficulty": {"winter": "2А", "summer": "1Б"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Орлиный",
+                # ~ "height": 990,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Лопарский",
+                # ~ "height": 960,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Тахтарвумчорр",
+                # ~ "height": 980,
+                # ~ "difficulty": {"winter": "1Б", "summer": "1А"},
+            # ~ },
+            # ~ {
+                # ~ "name": "Южный Суолуайв",
+                # ~ "height": 810,
+                # ~ "difficulty": {"winter": "н/к", "summer": "н/к"},
+            # ~ },
+        # ~ ],
+    # ~ }
+# ~ ]
+
+data2 = [
   {
     "name": "Хибины",
-    "highest_point": "Юдычвумчорр (1208 м)",
+    "type": "горная система, платообразный массив",
+    "height": {
+      "name": "Юдычвумчорр",
+      "height_m": 1201
+    },
     "passes": [
       {
         "name": "Рамзая",
         "height": 743,
         "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
+          "summer": "н/к",
+          "winter": "1А"
         }
       },
       {
-        "name": "Географов",
-        "height": 842,
+        "name": "Северный Чорргор",
+        "height": 1010,
         "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
+          "summer": "1А",
+          "winter": "1Б"
+        }
+      },
+      {
+        "name": "Южный Чорргор",
+        "height": 850,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "1А"
+        }
+      },
+      {
+        "name": "Юмъекорр",
+        "height": 671,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
         }
       },
       {
         "name": "Кукисвумчорр",
         "height": 479,
         "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
+          "summer": "н/к",
+          "winter": "н/к"
         }
       },
       {
-        "name": "Западный Петрелиуса",
-        "height": 843,
+        "name": "Арсеньева Западный",
+        "height": 998,
         "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Восточный Арсеньева",
-        "height": 1026,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Западный Арсеньева",
-        "height": 1015,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Восточный Петрелиуса",
-        "height": 883,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Чорргор Северный",
-        "height": 1010,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Чорргор Южный",
-        "height": 850,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Рисчорр Южный",
-        "height": 895,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Рисчорр Северный",
-        "height": 920,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Безымянный",
-        "height": 830,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Умбозерский",
-        "height": 515,
-        "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Юкспорлак",
-        "height": 662,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Ворткеуайв",
-        "height": 756,
-        "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Щель",
-        "height": 630,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Аку-Аку",
-        "height": 370,
-        "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Южный Партомчорр",
-        "height": 810,
-        "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Северный Партомчорр",
-        "height": 760,
-        "difficulty": {
-          "winter": "1А",
-          "summer": "н/к"
-        }
-      },
-      {
-        "name": "Ферсмана",
-        "height": 974,
-        "difficulty": {
-          "winter": "2А",
-          "summer": "1Б"
-        }
-      },
-      {
-        "name": "Крестовый",
-        "height": 940,
-        "difficulty": {
-          "winter": "2А",
-          "summer": "1Б"
-        }
-      },
-      {
-        "name": "Орлиный",
-        "height": 990,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Лопарский",
-        "height": 960,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Тахтарвумчорр",
-        "height": 980,
-        "difficulty": {
-          "winter": "1Б",
-          "summer": "1А"
-        }
-      },
-      {
-        "name": "Южный Суолуайв",
-        "height": 810,
-        "difficulty": {
-          "winter": "н/к",
-          "summer": "н/к"
+          "summer": "1А",
+          "winter": "1Б"
         }
       }
     ]
+  },
+  {
+    "name": "Ловозерские тундры",
+    "type": "горный массив",
+    "height": {
+      "name": "Ангвундасчорр",
+      "height_m": 1126
+    },
+    "passes": [
+      {
+        "name": "Геологов",
+        "height": 998,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "1А"
+        }
+      },
+      {
+        "name": "Эльморайок",
+        "height": 660,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
+        }
+      },
+      {
+        "name": "Северный Тавайок",
+        "height": 850,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "1А"
+        }
+      },
+      {
+        "name": "Куфтуай",
+        "height": 710,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "1А"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Мончетундра",
+    "type": "горный хребет",
+    "height": {
+      "name": "Хипик",
+      "height_m": 965
+    },
+    "passes": [
+      {
+        "name": "Реутчок",
+        "height": 560,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Чунатундра",
+    "type": "горный хребет",
+    "height": {
+      "name": "Эбручорр",
+      "height_m": 1115
+    },
+    "passes": [
+      {
+        "name": "Чунахлебный",
+        "height": 640,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Волчьи тундры",
+    "type": "горный хребет",
+    "height": {
+      "name": "Юкспор",
+      "height_m": 957
+    },
+    "passes": [
+      {
+        "name": "Волчий",
+        "height": 520,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Сальные тундры",
+    "type": "горный хребет",
+    "height": {
+      "name": "Элуайв",
+      "height_m": 997
+    },
+    "passes": [
+      {
+        "name": "Сальный",
+        "height": 610,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "1А"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Туадаш Тундры",
+    "type": "горный хребет",
+    "height": {
+      "name": "Чильтальд",
+      "height_m": 907
+    },
+    "passes": [
+      {
+        "name": "Чильтальд",
+        "height": 580,
+        "difficulty": {
+          "summer": "н/к",
+          "winter": "н/к"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Панские тундры",
+    "type": "горный хребет",
+    "height": {
+      "name": "Каменник",
+      "height_m": 629
+    },
+    "passes": []
+  },
+  {
+    "name": "Кейвы",
+    "type": "грядовая возвышенность, плато",
+    "height": {
+      "name": "Ягельурта",
+      "height_m": 398
+    },
+    "passes": []
   }
 ]
+
+data = data2
 
 # -------------------------- подготовка -------------------------
 
@@ -230,7 +372,7 @@ from pprint import pprint
 
 print("\n1. сколько всего перевалов?")
 
-npass = sum( len(hreb['passes']) for hreb in data ) 
+npass = sum(len(hreb["passes"]) for hreb in data)
 
 print(f"\nперевалов: {npass}")
 
@@ -239,13 +381,13 @@ print(f"\nперевалов: {npass}")
 print("\n2. опиши перевал Северный Чорргор")
 
 for hreb in data:
-    for apass in hreb['passes']:
-        if apass['name'] == 'Чорргор Северный':
+    for apass in hreb["passes"]:
+        if apass["name"] == "Северный Чорргор":
             print(f"""
 Перевал:         Северный Чорргор
-Высота:          {apass['height']}
-Категория летом: {apass['difficulty']['summer']}
-Категория зимой: {apass['difficulty']['winter']}
+Высота:          {apass["height"]}
+Категория летом: {apass["difficulty"]["summer"]}
+Категория зимой: {apass["difficulty"]["winter"]}
 """)
             break
 
