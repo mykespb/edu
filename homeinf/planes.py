@@ -4,7 +4,7 @@
 # planes.py
 # 2026-06-27 2026-06-27 1.0
 
-# ~ Самолёты частной гражданской авиации в мире. Перечисли 30 наиболее известных самолётов, включить в список украинский ANG-01, SF-50, DA-50, DA-62, PLiatus PC-24, Epic-1000, Stratos-716, Cirrus sr22t-g7, аналогичные. По ним укажи (list[dict], всё по-англ.):
+# ~ Самолёты частной гражданской авиации в мире. Перечисли 20 наиболее известных самолётов, включить в список украинский ANG-01, SF-50 G3, DA-50, DA-62, PLiatus PC-24, Epic-1000 AX, Stratos-716, Cirrus sr22t-g7, аналогичные. По ним укажи (list[dict], всё по-англ.):
 # ~ - name; название,
 # ~ - company: компания-разработчик (производитель),
 # ~ - country: страна,
@@ -12,16 +12,16 @@
 # ~ - amount: сколько выпущено бортов,
 # ~ - type: тип (винтовой, реактивный, пр.),
 # ~ - engines: количество двигателей,
-# ~ - speed_best: скорость крейсерская,
-# ~ - speed_max: скорость максимальная,
+# ~ - speed_best: скорость крейсерская (км/ч),
+# ~ - speed_max: скорость максимальная (км/ч),
 # ~ - people: сколько человек (crew: экипаж, pass: пассажиры),
-# ~ - mtom: макс. взлётная масса,
-# ~ - weight: макс. груз,
-# ~ - dist: макс. дальность,
+# ~ - mtom: макс. взлётная масса (кг),
+# ~ - weight: макс. груз (кг),
+# ~ - dist: макс. дальность (км),
 # ~ - licence: тип лицензии пилота,
 # ~ - usd: цена в тыс. USD,
-# ~ - up: длина взлётной полосы,
-# ~ - down: длина посадочной полосы.
+# ~ - up: длина взлётной полосы (м),
+# ~ - down: длина посадочной полосы (м).
 
 # -------------------------- данные -------------------------
 
@@ -49,14 +49,14 @@ data = [
     "down": 300
   },
   {
-    "name": "Vision SF50 Generation 2+",
+    "name": "Vision SF50 Generation 3",
     "company": "Cirrus Aircraft",
     "country": "USA",
-    "year": 2016,
-    "amount": 650,
+    "year": 2021,
+    "amount": 350,
     "type": "jet",
     "engines": 1,
-    "speed_best": 560,
+    "speed_best": 576,
     "speed_max": 576,
     "people": {
       "crew": 1,
@@ -66,7 +66,7 @@ data = [
     "weight": 600,
     "dist": 2360,
     "licence": "PPL / Type Rating",
-    "usd": 3250,
+    "usd": 3750,
     "up": 619,
     "down": 495
   },
@@ -137,11 +137,11 @@ data = [
     "down": 724
   },
   {
-    "name": "Epic E1000 GX",
+    "name": "Epic E1000 AX",
     "company": "Epic Aircraft",
     "country": "USA",
-    "year": 2015,
-    "amount": 95,
+    "year": 2021,
+    "amount": 60,
     "type": "turboprop",
     "engines": 1,
     "speed_best": 617,
@@ -154,7 +154,7 @@ data = [
     "weight": 500,
     "dist": 2900,
     "licence": "PPL / SET",
-    "usd": 4450,
+    "usd": 4750,
     "up": 488,
     "down": 554
   },
@@ -184,8 +184,8 @@ data = [
     "name": "Cirrus SR22T G7",
     "company": "Cirrus Aircraft",
     "country": "USA",
-    "year": 2001,
-    "amount": 10200,
+    "year": 2024,
+    "amount": 600,
     "type": "propeller",
     "engines": 1,
     "speed_best": 339,
@@ -198,9 +198,31 @@ data = [
     "weight": 602,
     "dist": 1900,
     "licence": "PPL",
-    "usd": 1050,
+    "usd": 1150,
     "up": 330,
     "down": 360
+  },
+  {
+    "name": "Daher TBM 980",
+    "company": "Daher",
+    "country": "France",
+    "year": 2026,
+    "amount": 15,
+    "type": "turboprop",
+    "engines": 1,
+    "speed_best": 611,
+    "speed_max": 611,
+    "people": {
+      "crew": 1,
+      "pass": 5
+    },
+    "mtom": 3454,
+    "weight": 666,
+    "dist": 3204,
+    "licence": "PPL / SET",
+    "usd": 6000,
+    "up": 772,
+    "down": 740
   },
   {
     "name": "Cessna 172 Skyhawk",
@@ -357,28 +379,6 @@ data = [
     "down": 661
   },
   {
-    "name": "Socata TBM 960",
-    "company": "Daher",
-    "country": "France",
-    "year": 1990,
-    "amount": 1200,
-    "type": "turboprop",
-    "engines": 1,
-    "speed_best": 611,
-    "speed_max": 611,
-    "people": {
-      "crew": 1,
-      "pass": 5
-    },
-    "mtom": 3396,
-    "weight": 650,
-    "dist": 3200,
-    "licence": "PPL / SET",
-    "usd": 4800,
-    "up": 732,
-    "down": 741
-  },
-  {
     "name": "HondaJet Elite II",
     "company": "Honda Aircraft Company",
     "country": "USA / Japan",
@@ -486,5 +486,22 @@ pprint(proptype)
 # ~ 1. сколько какого типа?
 # ~ Counter({'propeller': 11, 'jet': 6, 'turboprop': 3})
 
+# ----------------------------------------------
+
+print('2. сколько из какой страны?')
+
+country = Counter( [ p['country'] for p in data] )
+
+pprint(country)
+
+# ~ 2. сколько из какой страны?
+# ~ Counter({'USA': 11,
+         # ~ 'Austria': 2,
+         # ~ 'Switzerland': 2,
+         # ~ 'Ukraine': 1,
+         # ~ 'France': 1,
+         # ~ 'USA / Japan': 1,
+         # ~ 'Brazil': 1,
+         # ~ 'Italy': 1})
 
 # -------------------------- конец -------------------------
