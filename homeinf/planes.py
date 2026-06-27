@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # planes.py
-# 2026-06-27 2026-06-27 1.0
+# 2026-06-27 2026-06-28 1.2
 
 # ~ Самолёты частной гражданской авиации в мире. Перечисли 20 наиболее известных самолётов, включить в список украинский ANG-01, SF-50 G3, DA-50, DA-62, PLiatus PC-24, Epic-1000 AX, Stratos-716, Cirrus sr22t-g7, аналогичные. По ним укажи (list[dict], всё по-англ.):
 # ~ - name; название,
@@ -486,6 +486,7 @@ pprint(proptype)
 # ~ 1. сколько какого типа?
 # ~ Counter({'propeller': 11, 'jet': 6, 'turboprop': 3})
 
+
 # ----------------------------------------------
 
 print('2. сколько из какой страны?')
@@ -503,5 +504,74 @@ pprint(country)
          # ~ 'USA / Japan': 1,
          # ~ 'Brazil': 1,
          # ~ 'Italy': 1})
+
+
+# ----------------------------------------------
+
+print('3. сколько по каждому типу MTOM (1000-, 2000-, тяжелее)?')
+
+heavy = Counter( [
+    "light" if p['mtom'] < 1000
+    else "middle"  if p['mtom'] < 2000
+    else "heavy"
+    for p in data] )
+
+pprint(heavy)
+
+# ~ 3. сколько по каждому типу MTOM (1000-, 2000-, тяжелее)?
+# ~ Counter({'heavy': 10, 'middle': 8, 'light': 2})
+
+
+# ----------------------------------------------
+
+print('4. отсортировать по цене, разбив по миллионам')
+
+priced = sorted(data, key = lambda x: x['usd'])
+
+mil = -1
+for p in priced:
+    if (nm := p['usd'] // 1000) > mil:
+        print(f"\nсамолёты от {nm} миллионов долларов")
+        mil = nm
+    print(f"{p['name']:25} : ${p['usd']:5}K")
+
+# ~ 4. отсортировать по цене, разбив по миллионам
+
+# ~ самолёты от 0 миллионов долларов
+# ~ ANG-01 Patriot            : $  297K
+# ~ Piper PA-28 Cherokee      : $  420K
+# ~ Tecnam P2010              : $  480K
+# ~ Cessna 172 Skyhawk        : $  490K
+# ~ Cessna 182 Skylane        : $  680K
+# ~ Mooney M20 Ovation Ultra  : $  890K
+
+# ~ самолёты от 1 миллионов долларов
+# ~ Beechcraft Bonanza G36    : $ 1100K
+# ~ Diamond DA50 RG           : $ 1150K
+# ~ Cirrus SR22T G7           : $ 1150K
+# ~ Piper PA-46 Malibu Mirage : $ 1450K
+# ~ Diamond DA62              : $ 1500K
+
+# ~ самолёты от 3 миллионов долларов
+# ~ Stratos 716               : $ 3500K
+# ~ Vision SF50 Generation 3  : $ 3750K
+
+# ~ самолёты от 4 миллионов долларов
+# ~ Epic E1000 AX             : $ 4750K
+
+# ~ самолёты от 5 миллионов долларов
+# ~ Embraer Phenom 100EV      : $ 5100K
+
+# ~ самолёты от 6 миллионов долларов
+# ~ Daher TBM 980             : $ 6000K
+# ~ Cessna Citation M2 Gen2   : $ 6150K
+# ~ Pilatus PC-12 NGX         : $ 6200K
+
+# ~ самолёты от 7 миллионов долларов
+# ~ HondaJet Elite II         : $ 7200K
+
+# ~ самолёты от 13 миллионов долларов
+# ~ Pilatus PC-24             : $13000K
+
 
 # -------------------------- конец -------------------------
