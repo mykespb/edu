@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # planes.py
-# 2026-06-27 2026-06-28 1.2
+# 2026-06-27 2026-06-28 1.3
 
 # ~ Самолёты частной гражданской авиации в мире. Перечисли 20 наиболее известных самолётов, включить в список украинский ANG-01, SF-50 G3, DA-50, DA-62, PLiatus PC-24, Epic-1000 AX, Stratos-716, Cirrus sr22t-g7, аналогичные. По ним укажи (list[dict], всё по-англ.):
 # ~ - name; название,
@@ -528,11 +528,12 @@ print('4. отсортировать по цене, разбив по милли
 
 priced = sorted(data, key = lambda x: x['usd'])
 
-mil = -1
+was_mil = -1
 for p in priced:
-    if (nm := p['usd'] // 1000) > mil:
-        print(f"\nсамолёты от {nm} миллионов долларов")
-        mil = nm
+    new_mil = p['usd'] // 1000
+    if new_mil > was_mil:
+        print(f"\nсамолёты от {new_mil} миллионов долларов")
+        was_mil = new_mil
     print(f"{p['name']:25} : ${p['usd']:5}K")
 
 # ~ 4. отсортировать по цене, разбив по миллионам

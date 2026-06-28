@@ -459,8 +459,8 @@ pred = Counter()
 for region in data:
     for animal in region['animals']['predators']:
         pred.update([animal])
-    for animal in region['birds']['predators']:
-        pred.update([animal])
+    for bird in region['birds']['predators']:
+        pred.update([bird])
 
 pprint(pred)
 
