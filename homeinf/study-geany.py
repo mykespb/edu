@@ -214,6 +214,7 @@ for line in data.strip().split('\n'):
         parts += 1
     elif line.startswith('FILE_NAME_'):
         files += 1
+	# pythons += ";Python" in line
         if ";Python;" in line:
             pythons += 1
 
