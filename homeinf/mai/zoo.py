@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 
-df = pd.read_csv("zoo.csv")
+df = pd.read_csv("inozoo.csv")
 X = df[["длина", "громкость"]].values
 y = df["животное"].values
 model = KNeighborsClassifier(n_neighbors=3)
