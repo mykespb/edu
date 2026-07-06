@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # kola-passes.py
-# 2026-06-24 2026-06-27 2.3
+# 2026-06-24 2026-07-06 2.4
 
 # ~ перечисли хребты, плато, все горные системы Кольского полуострова, укажи (list[json]):
 # ~ - name: название,
@@ -396,7 +396,7 @@ for hreb in data:
 print("\n3. для каждой горной системы перечисли её перевалы")
 
 for hreb in data:
-    print(f"{hreb['name']}")
+    print(hreb['name'])
     for apass in hreb["passes"]:
         print(f"\t{apass['name']:20} -> {apass['height']:5}м")
 
