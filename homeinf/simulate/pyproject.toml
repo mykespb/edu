@@ -1,0 +1,10 @@
+[project]
+name = "simulate"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "pygame>=2.6.1",
+    "vpython>=7.6.5",
+]
