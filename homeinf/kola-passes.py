@@ -408,7 +408,8 @@ for hreb in data:
     print(hreb['name'])
     if hreb["passes"]:
         for apass in hreb["passes"]:
-            print(f"\t{apass['name']:20} -> {'простой' if apass['difficulty']['summer'] == 'н/к' and apass['difficulty']['winter'] == 'н/к' else 'сложный'}")
+            print(f"\t{apass['name']:20} -> {'простой' if apass['difficulty']['winter'] == 'н/к' else 'сложный'}")
+            # ~ print(f"\t{apass['name']:20} -> {'простой' if apass['difficulty']['summer'] == 'н/к' and apass['difficulty']['winter'] == 'н/к' else 'сложный'}")
     else:
         print("\tнет перевалов")
 
