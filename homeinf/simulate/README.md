@@ -1,10 +1,10 @@
 Testing pygame et al for atoms simulation
 =========================================
 
-2026-07-08
+Ver. of 2026-07-08
 
-atoms.py   - ok
-main.py    - ok
-sim-tk.py  - ok
-sim-vp.py  - failed
+* atoms.py   - ok
+* main.py    - ok
+* sim-tk.py  - ok
+* sim-vp.py  - failed
 
