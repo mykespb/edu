@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # study-geany.py
-# 2026-06-25 2026-07-06 1.5
+# 2026-06-25 2026-07-13 1.6
 
 # ~ В данной папке есть файл homeinf.geany с информацией о редактируемых файлах,
 # ~ ниже дано его содержание,
@@ -213,11 +213,12 @@ parts = files = pythons = 0
 for line in data.strip().split('\n'):
     if line.startswith('['):
         parts += 1
+    # ~ part += line.startswith('[')
     elif line.startswith('FILE_NAME_'):
         files += 1
-	# pythons += ";Python;" in line
-        if ";Python;" in line:
-            pythons += 1
+        pythons += ";Python;" in line
+        # ~ if ";Python;" in line:
+            # ~ pythons += 1
     elif line.startswith('EX_00_CM='):
         pv, _ = line.split(' ', maxsplit=1)
         _, ver = pv.split('=')
