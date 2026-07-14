@@ -151,7 +151,6 @@ for line, text in enumerate(article.splitlines(), start=1):
     if res:
         print(f"{line:3}. {'    ' if '\\sub' in text else ''}{res.group(1)}")
 
-
 # ---------------------- result -------------------------------
 
  # ~ 65. Introduction
