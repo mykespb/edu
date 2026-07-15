@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # tex-contents.py
-# 2026-06-23 2026-06-23 1.1
+# 2026-06-23 2026-07-15 1.2
 # Составление содержания статьи в ТеХе
 # Ищем section, subsection
 
@@ -147,6 +147,8 @@ results being regularily published.
 # ---------------------- process -------------------------------
 
 for line, text in enumerate(article.splitlines(), start=1):
+    if line.startswith('%'):
+        continue
     res = re.search(r'\\(?:sub)?section{([^}]+)}', text)
     if res:
         print(f"{line:3}. {'    ' if '\\sub' in text else ''}{res.group(1)}")
