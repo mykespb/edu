@@ -819,7 +819,7 @@ aap = {
 print("покажи все концерты")
 
 for k in aap['events']:
-    print(f"{k['datesql']}\t{k['time']}\t{k['what']}")
+    print(f"{k['date']}\t{k['time']}\t{k['what']}")
 
 # --------------------------- тест 2 ----------------------------
 

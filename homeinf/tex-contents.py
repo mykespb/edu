@@ -147,11 +147,11 @@ results being regularily published.
 # ---------------------- process -------------------------------
 
 for line, text in enumerate(article.splitlines(), start=1):
-    if line.startswith('%'):
+    if text.startswith('%'):
         continue
-    res = re.search(r'\\(?:sub)?section{([^}]+)}', text)
+    res = re.search(r'(?:sub)?section{([^}]+)}', text)
     if res:
-        print(f"{line:3}. {'    ' if '\\sub' in text else ''}{res.group(1)}")
+        print(f"{line:3}. {'    ' if r'\sub' in text else ''}{res.group(1)}")
 
 # ---------------------- result -------------------------------
 

@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # dots3line.py
-# 2026-07-15 2026-07-16 1.0
+# 2026-07-15 2026-07-17 1.1
 
 
 tests = [
@@ -17,7 +17,7 @@ tests = [
 
 EPS = 1e-6
 
-def near(f1, f2):
+def near(f1, f2=0.):
     """floats near"""
 
     return abs(f1 - f2) <= EPS
