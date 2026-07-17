@@ -1,11 +1,12 @@
 #!/usr/bin/env python
-# myke 2026-06-25 2026-07-17 2.0
+# myke 2026-06-25 2026-07-17 2.1
 # num-solve-ext.py
 
 # ~ Дана возрастающая функция (напр., f(x) = ln(x-e)).
 # ~ Численно найти её единственный корень.
 # ~ Диапазон (по умолчанию): (0; 100)
 # ~ Функции м.б. свои.
+# ~ https://www.geogebra.org/graphing?lang=ru
 
 from math import e, pi, log, sqrt, sin, cos
 
