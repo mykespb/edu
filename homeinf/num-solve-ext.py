@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-25 2026-07-17 2.1
+# myke 2026-06-25 2026-07-17 2.2
 # num-solve-ext.py
 
 # ~ Дана возрастающая функция (напр., f(x) = ln(x-e)).
@@ -54,8 +54,8 @@ print("решение:", solve(lambda x: x/2 - sqrt(x), 1., 10.))
 print(f"решаем cos(x - pi/2) -1.0 до 1.0")
 print("решение:", solve(lambda x: cos(x - pi/2), -1., 1.))
 
-print(f"решаем sin x -  cos x -1.0 до 1.0")
-print("решение:", solve(lambda x: sin(x) - cos(x), -1., 1.))
+print(f"решаем sin x -  cos x 0.0 до 2.0")
+print("решение:", solve(lambda x: sin(x) - cos(x), 0., 2.))
 
 # ~ решаем fun от 3. до 5.
 # ~ решение: 3.7182817459106445
