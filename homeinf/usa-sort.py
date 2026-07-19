@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # usa-sort.py
-# 2026-07-19 2026-07-19 1.0
+# 2026-07-19 2026-07-19 2.0
 
 # ~ "сделай сортируемую таблицу из них, указав параметры (столбцы): процент консервативного населения, безопасность, уровень экономического развития, уровень культурного развития, климат (не слишком контрастный или жаркий или влажный или опасные явления)"
 # ~ "замени слова типа "высокое" на числа от 0 до 10, сделай таблицу, пригодную к экспорту в google table"
@@ -11,7 +11,19 @@
 # ~ "добавь столбец "Dems (%)"  с долей демократического населения"
 # ~ сделай из этих данных list[list]]
 
+from enum import IntEnum
 
+class Params(IntEnum):
+    NAME    = 0
+    CONS    = 1
+    DEMS    = 2
+    SAFETY  = 3
+    ECONOMY = 4
+    CULTURE = 5
+    CLIMATE = 6
+    RATIO   = 7
+    PARTY   = 8
+    
 
 states = [
     ["State", "Cons (%)", "Dems (%)", "Safety", "Economy", "Culture", "Climate"],
@@ -72,16 +84,17 @@ states = [
 
 from pprint import pprint, pp
 
-head = states[0]
+head   = states[0]
+states = states[1:]
 
 print("\nотсортируй штаты по отношению cons/dems\n")
 
 data = []
-for d in states[1:]:
-    cd = d[1] / d[2]
+for d in states:
+    cd = Params.CONS / Params.DEMS
     data.append( d + [cd, "cons" if cd>=1. else "dems"])
     
-data.sort(key = lambda s: s[-2], reverse = True)
+data.sort(key = lambda s: s[Params.RATIO], reverse = True)
 
 print(head)
 pp(data)
