@@ -20,9 +20,9 @@ data = [
     "times": 6,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -31,9 +31,9 @@ data = [
     "times": 8,
     "best": "3-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 1
+      "gold": [],
+      "silver": [],
+      "bronze": [1954]
     }
   },
   {
@@ -42,9 +42,20 @@ data = [
     "times": 5,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
+    }
+  },
+  {
+    "country": "Англия",
+    "debut": 1950,
+    "times": 17,
+    "best": "Чемпион",
+    "medals": {
+      "gold": [1966],
+      "silver": [],
+      "bronze": [2026]
     }
   },
   {
@@ -53,9 +64,9 @@ data = [
     "times": 19,
     "best": "Чемпион",
     "medals": {
-      "gold": 3,
-      "silver": 3,
-      "bronze": 0
+      "gold": [1978, 1986, 2022],
+      "silver": [1930, 1990, 2014],
+      "bronze": []
     }
   },
   {
@@ -64,9 +75,20 @@ data = [
     "times": 15,
     "best": "3-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 1
+      "gold": [],
+      "silver": [],
+      "bronze": [2018]
+    }
+  },
+  {
+    "country": "Боливия",
+    "debut": 1930,
+    "times": 4,
+    "best": "Групповой этап",
+    "medals": {
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -75,9 +97,9 @@ data = [
     "times": 2,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -86,9 +108,9 @@ data = [
     "times": 23,
     "best": "Чемпион",
     "medals": {
-      "gold": 5,
-      "silver": 2,
-      "bronze": 2
+      "gold": [1958, 1962, 1970, 1994, 2002],
+      "silver": [1950, 1998],
+      "bronze": [1938, 1978]
     }
   },
   {
@@ -97,9 +119,9 @@ data = [
     "times": 5,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -108,9 +130,9 @@ data = [
     "times": 21,
     "best": "Чемпион",
     "medals": {
-      "gold": 4,
-      "silver": 4,
-      "bronze": 4
+      "gold": [1954, 1974, 1990, 2014],
+      "silver": [1966, 1982, 1986, 2002],
+      "bronze": [1934, 1970, 2006, 2010]
     }
   },
   {
@@ -119,9 +141,9 @@ data = [
     "times": 2,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -130,9 +152,20 @@ data = [
     "times": 4,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
+    }
+  },
+  {
+    "country": "Иордания",
+    "debut": 2026,
+    "times": 1,
+    "best": "Групповой этап",
+    "medals": {
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -141,9 +174,9 @@ data = [
     "times": 2,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -152,9 +185,9 @@ data = [
     "times": 7,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -163,42 +196,20 @@ data = [
     "times": 17,
     "best": "Чемпион",
     "medals": {
-      "gold": 1,
-      "silver": 0,
-      "bronze": 0
-    }
-  },
-  {
-    "country": "Италия",
-    "debut": 1934,
-    "times": 18,
-    "best": "Чемпион",
-    "medals": {
-      "gold": 4,
-      "silver": 2,
-      "bronze": 1
-    }
-  },
-  {
-    "country": "Иордания",
-    "debut": 2026,
-    "times": 1,
-    "best": "Дебют",
-    "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [2010],
+      "silver": [],
+      "bronze": []
     }
   },
   {
     "country": "Кабо-Верде",
     "debut": 2026,
     "times": 1,
-    "best": "Дебют",
+    "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -207,9 +218,9 @@ data = [
     "times": 3,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -218,9 +229,9 @@ data = [
     "times": 2,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -229,64 +240,31 @@ data = [
     "times": 7,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
-    "country": "Кот-д'Ивуар",
+    "country": "Кот-д’Ивуар",
     "debut": 2006,
     "times": 4,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
-    }
-  },
-  {
-    "country": "Корея",
-    "debut": 1954,
-    "times": 12,
-    "best": "4-е место",
-    "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
-    }
-  },
-  {
-    "country": "Коста-Рика",
-    "debut": 1990,
-    "times": 6,
-    "best": "1/4 финала",
-    "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
-    }
-  },
-  {
-    "country": "Кот-д'Ивуар",
-    "debut": 2006,
-    "times": 4,
-    "best": "Групповой этап",
-    "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
     "country": "Кюрасао",
     "debut": 2026,
     "times": 1,
-    "best": "Дебют",
+    "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -295,9 +273,9 @@ data = [
     "times": 7,
     "best": "4-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -306,9 +284,9 @@ data = [
     "times": 18,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -317,9 +295,9 @@ data = [
     "times": 12,
     "best": "2-е место",
     "medals": {
-      "gold": 0,
-      "silver": 3,
-      "bronze": 1
+      "gold": [],
+      "silver": [1974, 1978, 2010],
+      "bronze": [2014]
     }
   },
   {
@@ -328,9 +306,9 @@ data = [
     "times": 3,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -339,9 +317,9 @@ data = [
     "times": 4,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -350,9 +328,9 @@ data = [
     "times": 2,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -361,20 +339,9 @@ data = [
     "times": 9,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
-    }
-  },
-  {
-    "country": "Перу",
-    "debut": 1930,
-    "times": 5,
-    "best": "1/4 финала",
-    "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -383,9 +350,9 @@ data = [
     "times": 9,
     "best": "3-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 1
+      "gold": [],
+      "silver": [],
+      "bronze": [1966]
     }
   },
   {
@@ -394,9 +361,9 @@ data = [
     "times": 7,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -405,9 +372,9 @@ data = [
     "times": 4,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -416,9 +383,9 @@ data = [
     "times": 12,
     "best": "3-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 1
+      "gold": [],
+      "silver": [],
+      "bronze": [1930]
     }
   },
   {
@@ -427,9 +394,9 @@ data = [
     "times": 7,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -438,20 +405,20 @@ data = [
     "times": 3,
     "best": "3-е место",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 1
+      "gold": [],
+      "silver": [],
+      "bronze": [2002]
     }
   },
   {
     "country": "Узбекистан",
     "debut": 2026,
     "times": 1,
-    "best": "Дебют",
+    "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -460,9 +427,9 @@ data = [
     "times": 15,
     "best": "Чемпион",
     "medals": {
-      "gold": 2,
-      "silver": 0,
-      "bronze": 0
+      "gold": [1930, 1950],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -471,9 +438,9 @@ data = [
     "times": 17,
     "best": "Чемпион",
     "medals": {
-      "gold": 2,
-      "silver": 2,
-      "bronze": 2
+      "gold": [1998, 2018],
+      "silver": [2006, 2022],
+      "bronze": [1958, 1986]
     }
   },
   {
@@ -482,9 +449,9 @@ data = [
     "times": 7,
     "best": "2-е место",
     "medals": {
-      "gold": 0,
-      "silver": 1,
-      "bronze": 2
+      "gold": [],
+      "silver": [2018],
+      "bronze": [1998, 2022]
     }
   },
   {
@@ -493,9 +460,9 @@ data = [
     "times": 10,
     "best": "2-е место",
     "medals": {
-      "gold": 0,
-      "silver": 2,
-      "bronze": 0
+      "gold": [],
+      "silver": [1934, 1962],
+      "bronze": []
     }
   },
   {
@@ -504,9 +471,9 @@ data = [
     "times": 13,
     "best": "1/4 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -515,9 +482,9 @@ data = [
     "times": 13,
     "best": "2-е место",
     "medals": {
-      "gold": 0,
-      "silver": 1,
-      "bronze": 2
+      "gold": [],
+      "silver": [1958],
+      "bronze": [1950, 1994]
     }
   },
   {
@@ -526,9 +493,9 @@ data = [
     "times": 9,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -537,9 +504,9 @@ data = [
     "times": 5,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -548,9 +515,20 @@ data = [
     "times": 4,
     "best": "Групповой этап",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
+    }
+  },
+  {
+    "country": "Южная Корея",
+    "debut": 1954,
+    "times": 12,
+    "best": "4-е место",
+    "medals": {
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   },
   {
@@ -559,12 +537,13 @@ data = [
     "times": 8,
     "best": "1/8 финала",
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0
+      "gold": [],
+      "silver": [],
+      "bronze": []
     }
   }
 ]
+
 
 # -------------------------- подготовка -------------------------
 
@@ -599,7 +578,16 @@ print("их всего:", len([x for x in data if x['medals']['gold']]))
 # -----------------------------------------------------------
 print("\n4. сколько раньше были на пьедестале?")
 
-print("их всего:", len([x for x in data if sum(x['medals'].values()) ]))
+print("их всего:",
+    len([
+        1
+        for k in data
+    if
+        len(k['medals']['gold'] + 
+            k['medals']['silver'] + 
+            k['medals']['bronze'])
+    ]
+    ))
 
 # ~ 4. сколько раньше были на пьедестале?
 # ~ их всего: 16
@@ -607,8 +595,19 @@ print("их всего:", len([x for x in data if sum(x['medals'].values()) ]))
 # -----------------------------------------------------------
 print("\n5. покажи всех победителей по заслугам")
 
-sel = [ (tuple(c['medals'].values()), c['country']) for c in data if sum(c['medals'].values())]
-# ~ sel.sort(key = lambda x: x[0])
+sel = [
+    ((len(k['medals']['gold']),
+        len(k['medals']['silver']),
+        len(k['medals']['bronze'])),
+    k['country']
+    )
+    for k in data
+    if
+        len(k['medals']['gold'] + 
+            k['medals']['silver'] + 
+            k['medals']['bronze'])
+    ]
+
 sel.sort(reverse=True)
 
 print(f"{'страна':15} : медали (З,С,Б)")
@@ -621,10 +620,10 @@ for c in sel:
 # ~ --------------------------------
 # ~ Бразилия        : (5, 2, 2)
 # ~ Германия        : (4, 4, 4)
-# ~ Италия          : (4, 2, 1)
 # ~ Аргентина       : (3, 3, 0)
 # ~ Франция         : (2, 2, 2)
 # ~ Уругвай         : (2, 0, 0)
+# ~ Англия          : (1, 0, 1)
 # ~ Испания         : (1, 0, 0)
 # ~ Нидерланды      : (0, 3, 1)
 # ~ Чехия           : (0, 2, 0)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# myke 2026-06-25 2026-07-17 2.2
+# myke 2026-06-25 2026-07-17 2.3
 # num-solve-ext.py
 
 # ~ Дана возрастающая функция (напр., f(x) = ln(x-e)).
@@ -23,12 +23,12 @@ def solve(fun, xfrom=0., xto=100.):
     assert fun(xfrom) < 0., "левая граница плохая"
     assert fun(xto) > 0., "правая граница плохая"
 
-    LREPT = 1000
+    LIMREPT = 1000
     rept = 0
 
     while (abs(xto - xfrom) >= EPS):
         rept += 1
-        assert rept < LREPT, "превышено число итераций"
+        assert rept < LIMREPT, "превышено число итераций"
 
         point = xfrom + (xto - xfrom) / 2.
         # ~ print(f"{rept=}, {point=}")
