@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # football-2026.py
-# 2026-06-27 2026-06-27 1.0
+# 2026-06-27 2026-07-20 1.1
 
 # ~ ЧМФ-2026. по каждой стране, участвующей в чемпионате мира по футболу в 2026, укажи (list[json], все ключи по-англ., все значения по-русски):
 # ~ - country: страна,
@@ -48,7 +48,7 @@ data = [
     "debut": 1930,
     "times": 19,
     "best": "Чемпион",
-    "medals": { "gold": 3, "silver": 3, "bronze": 0 }
+    "medals": { "gold": 3, "silver": 4, "bronze": 0 }
   },
   {
     "country": "Бельгия",
@@ -132,7 +132,7 @@ data = [
     "debut": 1934,
     "times": 17,
     "best": "Чемпион",
-    "medals": { "gold": 1, "silver": 0, "bronze": 0 }
+    "medals": { "gold": 2, "silver": 0, "bronze": 0 }
   },
   {
     "country": "Кабо-Верде",
