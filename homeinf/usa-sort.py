@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # usa-sort.py
-# 2026-07-19 2026-07-19 2.0
+# 2026-07-19 2026-07-20 2.1
 
 # ~ "сделай сортируемую таблицу из них, указав параметры (столбцы): процент консервативного населения, безопасность, уровень экономического развития, уровень культурного развития, климат (не слишком контрастный или жаркий или влажный или опасные явления)"
 # ~ "замени слова типа "высокое" на числа от 0 до 10, сделай таблицу, пригодную к экспорту в google table"
@@ -102,7 +102,84 @@ print(head)
 
 # -----------------------------------------------------------
 
+print("\nотсортируй штаты по моим простым предпочтениям\n")
+
+def priosimple(data, prefs):
+    
+    pref_len = len(prefs)
+
+    repref = [
+        [
+            sum( [state[pref] * (pref_len - pn) 
+                for pn, pref in enumerate(prefs)]
+                ),
+            state[Params.NAME]
+        ]
+        for sn, state in enumerate(data)
+        ]
+        
+    repref.sort(reverse=True)
+
+    pp(repref)
+
+prefs = [
+    Params.SAFETY,
+    Params.CLIMATE,
+    Params.CULTURE,
+    Params.ECONOMY,
+    Params.RATIO
+    ]
+print(prefs)
+
+priosimple(data, prefs)
+
+prefs = [
+    Params.RATIO
+    ]
+print(prefs)
+
+priosimple(data, prefs)
+
 # -----------------------------------------------------------
+
+print("\nотсортируй штаты по моим простым предпочтениям\n")
+
+def priosimple(data, prefs):
+    
+    pref_len = len(prefs)
+
+    repref = [
+        [
+            sum( [state[pref] * (pref_len - pn) 
+                for pn, pref in enumerate(prefs)]
+                ),
+            state[Params.NAME]
+        ]
+        for sn, state in enumerate(data)
+        ]
+        
+    repref.sort(reverse=True)
+
+    pp(repref)
+
+prefs = [
+    Params.SAFETY,
+    Params.CLIMATE,
+    Params.CULTURE,
+    Params.ECONOMY,
+    Params.RATIO
+    ]
+print(prefs)
+
+priosimple(data, prefs)
+
+prefs = [
+    Params.RATIO
+    ]
+print(prefs)
+
+priosimple(data, prefs)
+
 
 # -----------------------------------------------------------
 print()
