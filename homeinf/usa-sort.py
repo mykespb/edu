@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # usa-sort.py
-# 2026-07-19 2026-07-20 2.1
+# 2026-07-19 2026-07-20 2.2
 
 # ~ "сделай сортируемую таблицу из них, указав параметры (столбцы): процент консервативного населения, безопасность, уровень экономического развития, уровень культурного развития, климат (не слишком контрастный или жаркий или влажный или опасные явления)"
 # ~ "замени слова типа "высокое" на числа от 0 до 10, сделай таблицу, пригодную к экспорту в google table"
@@ -84,6 +84,10 @@ states = [
 
 from pprint import pprint, pp
 
+def ppp(data):
+    for q,p in data:
+        print(f"{q:12.6f} : {p}")
+
 head   = states[0]
 states = states[1:]
 
@@ -91,7 +95,7 @@ print("\nотсортируй штаты по отношению cons/dems\n")
 
 data = []
 for d in states:
-    cd = Params.CONS / Params.DEMS
+    cd = d[Params.CONS] / d[Params.DEMS]
     data.append( d + [cd, "cons" if cd>=1. else "dems"])
     
 data.sort(key = lambda s: s[Params.RATIO], reverse = True)
@@ -102,7 +106,9 @@ print(head)
 
 # -----------------------------------------------------------
 
+print('-------------------------------------')
 print("\nотсортируй штаты по моим простым предпочтениям\n")
+print('-------------------------------------')
 
 def priosimple(data, prefs):
     
@@ -120,18 +126,31 @@ def priosimple(data, prefs):
         
     repref.sort(reverse=True)
 
-    pp(repref)
+    ppp(repref)
+
 
 prefs = [
-    Params.SAFETY,
-    Params.CLIMATE,
-    Params.CULTURE,
-    Params.ECONOMY,
-    Params.RATIO
+    Params.SAFETY,   # 5
+    Params.CLIMATE,  # 4
+    Params.CULTURE,  # 3
+    Params.ECONOMY,  # 2
+    Params.RATIO     # 1
     ]
 print(prefs)
 
 priosimple(data, prefs)
+
+print('-------------------------------------')
+
+prefs = [
+    Params.ECONOMY,  # 2
+    Params.CULTURE,  # 3
+    ]
+print(prefs)
+
+priosimple(data, prefs)
+
+print('-------------------------------------')
 
 prefs = [
     Params.RATIO
@@ -142,15 +161,17 @@ priosimple(data, prefs)
 
 # -----------------------------------------------------------
 
-print("\nотсортируй штаты по моим простым предпочтениям\n")
+print('-------------------------------------')
+print("\nотсортируй штаты по моим сложным предпочтениям\n")
+print('-------------------------------------')
 
-def priosimple(data, prefs):
+def priocomlex(data, prefs):
     
     pref_len = len(prefs)
 
     repref = [
         [
-            sum( [state[pref] * (pref_len - pn) 
+            sum( [state[pref[0]] * pref[1]
                 for pn, pref in enumerate(prefs)]
                 ),
             state[Params.NAME]
@@ -160,26 +181,41 @@ def priosimple(data, prefs):
         
     repref.sort(reverse=True)
 
-    pp(repref)
+    ppp(repref)
+
 
 prefs = [
-    Params.SAFETY,
-    Params.CLIMATE,
-    Params.CULTURE,
-    Params.ECONOMY,
-    Params.RATIO
+    [Params.SAFETY,  50],
+    [Params.CLIMATE, 42],
+    [Params.CULTURE, 64],
+    [Params.ECONOMY, 22],
+    [Params.RATIO,   88]
+    ]
+
+print(prefs)
+
+priocomlex(data, prefs)
+
+print('-------------------------------------')
+
+prefs = [
+    [Params.ECONOMY,  99],
+    [Params.CULTURE,  11],
     ]
 print(prefs)
 
-priosimple(data, prefs)
+priocomlex(data, prefs)
+
+print('-------------------------------------')
 
 prefs = [
-    Params.RATIO
+    [Params.RATIO, 100]
     ]
 print(prefs)
 
-priosimple(data, prefs)
+priocomlex(data, prefs)
 
+print('-------------------------------------')
 
 # -----------------------------------------------------------
 print()
