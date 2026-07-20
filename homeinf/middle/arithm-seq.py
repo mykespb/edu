@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2025
-# arythm-seq.py
+# arithm-seq.py
 # 2025-02-14 2025-02-23 1.1
 
 # работа с файлами. учебное
