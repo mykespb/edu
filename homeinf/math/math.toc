@@ -1,4 +1,4 @@
-Table of contents
+Table of contents "math"
 ============================
 
 2026-07-21
@@ -6,7 +6,7 @@ Table of contents
 arithm-seq.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-02-14 2025-02-23 1.1
 
 работа с файлами. учебное
@@ -21,7 +21,7 @@ Domain: middle
 bestsq.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-05-03 2024-10-28 1.1
 
 Есть квадрат 10х10, заполненный числами  от 0 до 9.
@@ -31,7 +31,7 @@ Domain: middle
 boxing-all.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-12 2025-01-12 1.0
 
 Разложить всё!
@@ -43,7 +43,7 @@ Domain: middle
 ceasares.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-01 2025-01-06 1.1
 
 Вариации на тему шифра Цезаря
@@ -54,7 +54,7 @@ Domain: middle
 checksum13.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-10-31 2026-03-14 2026-03-14 0.1
 
 Дано 13-значное число,
@@ -75,7 +75,7 @@ Domain: middle
 code-phrase.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-22 2026-04-26 1.0
 
 шифрование текста по кодовой фразе (слову)
@@ -83,7 +83,7 @@ Domain: middle
 cosine.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-23 2026-04-23 1.0
 
 Найти число, равное своему косинусу.
@@ -91,7 +91,7 @@ Domain: middle
 count-odds.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-05 2025-01-08 3.2
 
 Сделать список из нескольких (настраивается) чисел, случайно, каждое от 1 до 100 (вкл.).
@@ -100,7 +100,7 @@ Domain: middle
 cube-4d.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-10-20 2025-10-20 1.0
 
 Дан 4-мерный куб со стороной 4 из натуральных чисел.
@@ -109,7 +109,7 @@ Domain: middle
 digit-2025th.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-10-22 2025-10-22 0.1
 
 Некто выписывает подряд натуральные числа с 1, без пробелов.
@@ -119,7 +119,7 @@ Domain: middle
 eo-line.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-19 2026-04-19 0.1
 
 "even-odd in line"
@@ -131,10 +131,17 @@ Domain: middle
 (соседей считаем по кругу),
 и на 1, если она нечётна.
 
+fact-zeros.py
+--------------------------
+
+2026-07-21 2026-07-21 1.0
+
+сколькими нулями заканчивается n! ?
+
 find-num-arr.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-11-18 2025-11-18 1.0
 
 Дан упорядоченный список натуральных чисел.
@@ -144,7 +151,7 @@ Domain: middle
 find-pairs.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-10-11 2024-10-11 1.1
 
 найти пару одинаковых соседних чисел в матрице
@@ -153,7 +160,7 @@ Domain: middle
 fly-trains.py
 --------------------------
 
-Domain: middle
+Domain: math
 2021-11-26 2021-11-26 1.1
 
 про поезда и муху между ними
@@ -172,7 +179,7 @@ Domain: middle
 has-double.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-04-03 2025-04-03 0.1
 
 Проверить, есть ли в данном списке дубли (одинаковые числа).
@@ -180,7 +187,7 @@ Domain: middle
 langton-1.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-01-11 2022-01-11 2.1
 
 https://habr.com/ru/post/599275/
@@ -204,7 +211,7 @@ https://josephpetitti.com/ant
 linear-eq.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-02-03 2025-02-03 1.0
 
 Решение линейных уравнений.
@@ -213,7 +220,7 @@ a, b -> x / {}
 loop-ints.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-04-14 2025-04-14 1.0
 
 Цепочка чисел
@@ -226,7 +233,7 @@ Domain: middle
 lyshrel-196.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-06 2025-01-10 1.1
 
 проверить число на палиндромную сходимость
@@ -236,7 +243,7 @@ Domain: middle
 lyshrel-196-stat.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-06 2025-01-10 2.0
 
 проверить число на палиндромную сходимость
@@ -248,7 +255,7 @@ Domain: middle
 magic3.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-19 2026-04-19 1.0
 
 построить магический квадрат со стороной 3.
@@ -256,7 +263,7 @@ Domain: middle
 many-zeros.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-08-19 2025-08-19 1.1
 
 Больше нулей
@@ -271,7 +278,7 @@ Domain: middle
 matrix-nums.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-15 2025-01-15 1.0
 
 Найти максимальное число из цифр
@@ -292,7 +299,7 @@ Domain: middle
 maxpair.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-05-03 2024-11-04 1.3
 
 пользователь вводит строку натуральных чисел.
@@ -302,7 +309,7 @@ Domain: middle
 max-square-odd.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-08-11 2025-08-11 1.0
 
 В случайном списке целых чисел найти максимальный квадрат числа из тех, что стоят на нечётных позициях (с 0)
@@ -310,7 +317,7 @@ Domain: middle
 max-sum-digits.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-16 2025-01-16 1.1
 
 Найти число с макс. суммой цифр (натуральное, из случано заданного набора)
@@ -318,7 +325,7 @@ Domain: middle
 max-three.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-10-01
 
 Есть 3-мерный массив (куб) целых чисел.
@@ -327,7 +334,7 @@ Domain: middle
 max-triangle.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-10 2025-01-16 1.2
 
 Даны координаты углов нескольких треугольников на площади.
@@ -347,7 +354,7 @@ Domain: middle
 max-triangle-many.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-06-25 2026-06-26 2.1
 
 Даны координаты нескольких (3+) точек на плоскости.
@@ -364,7 +371,7 @@ Domain: middle
 meet2025.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-12-30 2024-12-30 1.0
 
 Вариации на тему шифра Цезаря
@@ -372,7 +379,7 @@ Domain: middle
 mk-happy.py
 --------------------------
 
-Domain: middle
+Domain: math
 2021-05-25 2021-12-04 1.2
 
 счастливые билеты
@@ -380,7 +387,7 @@ Domain: middle
 mkrects.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-04-11 v.1.0
 
 make non-intersecting rectangles in big rectangle area
@@ -388,7 +395,7 @@ make non-intersecting rectangles in big rectangle area
 my-sqrt.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-18 2025-01-20 1.2
 
 Корень
@@ -397,7 +404,7 @@ Domain: middle
 num-solve.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-06-25 2026-06-25 1.0
 
 Дана возрастающая функция (напр., f(x) = ln(x-e)).
@@ -407,7 +414,7 @@ Domain: middle
 num-solve-ext.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-06-25 2026-07-17 2.0
 
 Дана возрастающая функция (напр., f(x) = ln(x-e)).
@@ -418,7 +425,7 @@ Domain: middle
 ortodroma-commi.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-28 2026-04-28 1.0
 
 Найти кратчайший путь между указанными городами,
@@ -427,7 +434,7 @@ Domain: middle
 ortodroma-def.py
 --------------------------
 
-Domain: middle
+Domain: math
 2026-04-28 2026-04-28 1.0
 
 По 2 точкам рассчитать длину ортодромы.
@@ -435,7 +442,7 @@ Domain: middle
 otrezki.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-04-23 2022-04-23 0.1
 
 Отрезки задаются координатами своих концов на числовой оси,
@@ -447,7 +454,7 @@ Domain: middle
 pentagon.py
 --------------------------
 
-Domain: middle
+Domain: math
 2021-11-16 2021-11-26 1.4
 
 Туристы Миша и Лена решили обойти вокруг здания Пентагона (по
@@ -459,7 +466,7 @@ Domain: middle
 periodic-weather.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-02-15 2025-02-15 1.0
 
 Периодическая погода
@@ -477,7 +484,7 @@ Domain: middle
 pihalf.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-01-29 2022-02-11 1.1
 
 расчёт пи пополам как
@@ -486,7 +493,7 @@ Domain: middle
 place-996.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-11-14 2025-11-14 1.0
 
 Все натуральные числа от 1 до 1000 выписали в следующем порядке:
@@ -498,7 +505,7 @@ Domain: middle
 possible-sum.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-12-16 2024-12-16 1.0
 
 Дан набор натуральных чисел и ещё одно натуральное число - требуемая сумма.
@@ -508,7 +515,7 @@ Domain: middle
 powers-2vs3.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-05-30 2025-07-21 1.1
 
 Квадраты и кубы
@@ -519,7 +526,7 @@ Domain: middle
 powers-2vs3both.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-05-30 2025-07-21 1.1
 
 Квадраты и кубы
@@ -536,7 +543,7 @@ primes/
 q2592.py
 --------------------------
 
-Domain: middle
+Domain: math
 2022-03-24 2022-03-24 1.1
 
 2592 = 2**5 * 9**2
@@ -546,7 +553,7 @@ Domain: middle
 ru-taxes.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-01-16 2025-01-16 1.0
 
 Расчёт налогов по прогрессивной шкале в РФ с 2025 г.
@@ -563,7 +570,7 @@ https://xn--80apaohbc3aw9e.xn--p1ai/article/nalogi-v-2025-godu-chto-izmenitsya-i
 same-num-matrices.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-10-17 2025-10-17 1.0
 
 Даны 2 матрицы целых чисел (возможно, с разным числом строк и столбцов).
@@ -573,7 +580,7 @@ Domain: middle
 sequences.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-10-30 2024-10-30 1.1
 
 работа с пследовательностями
@@ -581,7 +588,7 @@ Domain: middle
 simple-math.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-10-15 2024-10-29 4.0
 
 простые задачи по математике
@@ -589,7 +596,7 @@ Domain: middle
 simple-matrix.py
 --------------------------
 
-Domain: middle
+Domain: math
 2024-10-15 2024-11-08 8.1
 
 простые задачи по работе со списками и матрицами
@@ -597,7 +604,7 @@ Domain: middle
 sqeq.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-02-09 2025-02-10 1.1
 
 Решение квадратных уравнений.
@@ -606,7 +613,7 @@ a, b, c -> x / x1, x2 / {}
 sqeqc.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-02-09 2025-02-10 1.1
 
 Решение квадратных уравнений.
@@ -616,7 +623,7 @@ a, b, c -> x / x1, x2 / {}
 super-seven.py
 --------------------------
 
-Domain: middle
+Domain: math
 2025-10-19 2025-10-19 1.0
 
 Есть список чисел.
@@ -626,7 +633,7 @@ Domain: middle
 usp.py
 --------------------------
 
-Domain: middle
+Domain: math
 2021-11-15 2021-11-15 1.3
 
 “УСП” = ускорение свободного падения.
