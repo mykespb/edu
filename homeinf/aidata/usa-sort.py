@@ -144,7 +144,7 @@ print('-------------------------------------')
 
 prefs = [
     Params.ECONOMY,  # 2
-    Params.CULTURE,  # 3
+    Params.CULTURE,  # 1
     ]
 print(prefs)
 
@@ -153,7 +153,7 @@ priosimple(data, prefs)
 print('-------------------------------------')
 
 prefs = [
-    Params.RATIO
+    Params.RATIO	# 1
     ]
 print(prefs)
 
