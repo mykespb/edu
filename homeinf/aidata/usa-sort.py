@@ -2,7 +2,7 @@
 
 # Mikhail (myke) Kolodin, 2026
 # usa-sort.py
-# 2026-07-19 2026-07-20 2.2
+# 2026-07-19 2026-07-22 2.4
 
 # ~ "сделай сортируемую таблицу из них, указав параметры (столбцы): процент консервативного населения, безопасность, уровень экономического развития, уровень культурного развития, климат (не слишком контрастный или жаркий или влажный или опасные явления)"
 # ~ "замени слова типа "высокое" на числа от 0 до 10, сделай таблицу, пригодную к экспорту в google table"
@@ -15,7 +15,7 @@ from enum import IntEnum
 
 class Params(IntEnum):
     NAME    = 0
-    CONS    = 1
+    REPS    = 1
     DEMS    = 2
     SAFETY  = 3
     ECONOMY = 4
@@ -26,7 +26,7 @@ class Params(IntEnum):
     
 
 states = [
-    ["State", "Cons (%)", "Dems (%)", "Safety", "Economy", "Culture", "Climate"],
+    ["State", "Reps (%)", "Dems (%)", "Safety", "Economy", "Culture", "Climate"],
     ["Alabama", 52, 15, 3, 4, 5, 2],
     ["Alaska", 39, 22, 3, 8, 5, 1],
     ["Arizona", 36, 31, 5, 8, 7, 4],
@@ -82,21 +82,27 @@ states = [
 
 # -----------------------------------------------------------
 
+# ~ как доступаться и печатать:
+# ~ print(states[1][Params.NAME])
+
+# -----------------------------------------------------------
+
 from pprint import pprint, pp
 
 def ppp(data):
+    """spec printer"""
     for q,p in data:
         print(f"{q:12.6f} : {p}")
 
 head   = states[0]
 states = states[1:]
 
-print("\nотсортируй штаты по отношению cons/dems\n")
+print("\nотсортируй штаты по отношению reps/dems\n")
 
 data = []
 for d in states:
-    cd = d[Params.CONS] / d[Params.DEMS]
-    data.append( d + [cd, "cons" if cd>=1. else "dems"])
+    cd = d[Params.REPS] / d[Params.DEMS]
+    data.append( d + [cd, "reps" if cd>=1. else "dems"])
     
 data.sort(key = lambda s: s[Params.RATIO], reverse = True)
 
@@ -121,7 +127,7 @@ def priosimple(data, prefs):
                 ),
             state[Params.NAME]
         ]
-        for sn, state in enumerate(data)
+        for state in data
         ]
         
     repref.sort(reverse=True)
@@ -167,16 +173,14 @@ print('-------------------------------------')
 
 def priocomlex(data, prefs):
     
-    pref_len = len(prefs)
-
     repref = [
         [
             sum( [state[pref[0]] * pref[1]
-                for pn, pref in enumerate(prefs)]
+                for pref in prefs]
                 ),
             state[Params.NAME]
         ]
-        for sn, state in enumerate(data)
+        for state in data
         ]
         
     repref.sort(reverse=True)
@@ -219,3 +223,42 @@ print('-------------------------------------')
 
 # -----------------------------------------------------------
 print()
+
+# -------------- other old versions ---------------------------------------------
+
+# ~ def priosimple(data, prefs):
+    
+    # ~ pref_len = len(prefs)
+
+    # ~ repref = [
+        # ~ [
+            # ~ sum( [state[pref] * (pref_len - pn) 
+                # ~ for pn, pref in enumerate(prefs)]
+                # ~ ),
+            # ~ state[Params.NAME]
+        # ~ ]
+        # ~ for sn, state in enumerate(data)
+        # ~ ]
+        
+    # ~ repref.sort(reverse=True)
+
+    # ~ ppp(repref)
+
+# ~ def priocomlex(data, prefs):
+    
+    # ~ pref_len = len(prefs)
+
+    # ~ repref = [
+        # ~ [
+            # ~ sum( [state[pref[0]] * pref[1]
+                # ~ for pn, pref in enumerate(prefs)]
+                # ~ ),
+            # ~ state[Params.NAME]
+        # ~ ]
+        # ~ for sn, state in enumerate(data)
+        # ~ ]
+        
+    # ~ repref.sort(reverse=True)
+
+    # ~ ppp(repref)
+
