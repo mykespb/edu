@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# cluster-colors.py
+# clustex / cluster-colors.py
 # 2026-07-27 2026-07-27 1.0
 
 # ~ Кластеризации
