@@ -24,7 +24,7 @@ def cluster(data: list[int]) -> list[list[int]]:
 
     assert len(data), "Данные должны быть"
 
-    res = [ [e] for e in data]
+    res = [ [e] for e in data ]
 
     need = True
     while need:
@@ -56,7 +56,7 @@ def cluster(data: list[int]) -> list[list[int]]:
     # var. 1
     res = sorted( [ sorted(d) for d in res ] )
     # var. 1
-    # ~ res = sorted( [ sorted(d) for d in res if d] )
+    # ~ res = sorted( [ sorted(d) for d in res if d ] )
 
     return res
 
