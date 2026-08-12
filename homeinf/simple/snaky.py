@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # simple / snaky.py
-# 2026-07-11 2026-08-12 1.3
+# 2026-07-11 2026-08-12 1.4
 # Заполнить числовой квадрат змейкой натуральными числами.
 
 def filler(size: int = 1) -> list[list[int]]:
@@ -9,7 +9,15 @@ def filler(size: int = 1) -> list[list[int]]:
     
     # ~ assert type(size) == int and size > 0, "Число раз должно быть натуральным!"
 
-    # ~ kva = []
+    kva = []
+
+    for row_num in range(size):
+        row = [ i+1 for i in range(row_num * size, (row_num+1) * size) ]
+        if row_num % 2:
+            row = row[::-1]
+        kva.append(row)
+
+    # ~ return kva
 
     # ~ for row_num in range(size):
         # ~ row = [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
@@ -22,12 +30,12 @@ def filler(size: int = 1) -> list[list[int]]:
         # ~ for row_num in range(size)
         # ~ ]
 
-    # ~ return kva
+    return kva
 
-    return [
-        [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
-        for row_num in range(size)
-        ]
+    # ~ return [
+        # ~ [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
+        # ~ for row_num in range(size)
+        # ~ ]
 
 
 def printer(kva: list[list[int]], width: int = 2) -> None :
