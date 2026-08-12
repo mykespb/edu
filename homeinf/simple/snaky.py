@@ -7,9 +7,9 @@
 def filler(size: int = 1) -> list[list[int]]:
     """make kvadrat"""
     
-    assert size > 0
+    # ~ assert type(size) == int and size > 0, "Число раз должно быть натуральным!"
 
-    kva = []
+    # ~ kva = []
 
     # ~ for row_num in range(size):
         # ~ row = [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
@@ -51,7 +51,7 @@ def one(size: int = 1):
 def main(times: int = 5):
     """many tests"""
 
-    assert 0 < times < 11
+    assert type(times) == int and 0 < times < 11, "Число раз должно быть натуральным и не более 10!"
     
     for time in range(1, times+1):
         print()
