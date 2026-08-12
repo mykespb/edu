@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # simple / snaky.py
-# 2026-07-11 2026-08-12 1.2
+# 2026-07-11 2026-08-12 1.3
 # Заполнить числовой квадрат змейкой натуральными числами.
 
 def filler(size: int = 1) -> list[list[int]]:
