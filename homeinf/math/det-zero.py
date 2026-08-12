@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # Mikhail (myke) Kolodin, 2026
-# 2026-08-12 2026-08-12 1.0
+# 2026-08-12 2026-08-12 1.1
 # det-zero.py
 
 # ~ Содержит ли данная (случайная) матрица 3 порядка хотя бы одну подматрицу с нулевым определителем
@@ -56,7 +56,8 @@ def gen_matrix():
 def solve(m):
     """solve for given matrix"""
 
-    return any( [has_1(m), has_2(m), has_3(m)] )
+#    return any( [has_1(m), has_2(m), has_3(m)] )
+    return has_1(m) or has_2(m) or has_3(m)
 
 
 def has_1(m):
@@ -65,6 +66,7 @@ def has_1(m):
     for i in range(3):
         for j in range(3):
             if det1( [[m[i][j]]] ) == 0:
+            # ~ if m[i][j] == 0:
                 return True
 
     return False
