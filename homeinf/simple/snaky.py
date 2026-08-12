@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # Miklhail (myke) Kolodin
 # simple / snaky.py
-# 2026-07-11 2026-08-11 1.1
-# Заполнить числовой квадрат змейкой.
+# 2026-07-11 2026-08-12 1.2
+# Заполнить числовой квадрат змейкой натуральными числами.
 
 def filler(size: int = 1) -> list[list[int]]:
     """make kvadrat"""
@@ -11,11 +11,23 @@ def filler(size: int = 1) -> list[list[int]]:
 
     kva = []
 
-    for row_num in range(size):
-        row = [ i for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
-        kva.append(row)
+    # ~ for row_num in range(size):
+        # ~ row = [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
+        # ~ kva.append(row)
 
-    return kva
+    # ~ return kva
+
+    # ~ kva = [
+        # ~ [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
+        # ~ for row_num in range(size)
+        # ~ ]
+
+    # ~ return kva
+
+    return [
+        [ i+1 for i in range(row_num * size, (row_num+1) * size) ][::(-1)**row_num]
+        for row_num in range(size)
+        ]
 
 
 def printer(kva: list[list[int]], width: int = 2) -> None :
@@ -53,25 +65,25 @@ main()
 
 def fake():
     print("""
- 0 
+ 1 
 
- 0  1 
- 3  2 
+ 1  2 
+ 4  3 
 
- 0  1  2 
- 5  4  3 
- 6  7  8 
+ 1  2  3 
+ 6  5  4 
+ 7  8  9 
 
- 0  1  2  3 
- 7  6  5  4 
- 8  9 10 11 
-15 14 13 12 
+ 1  2  3  4 
+ 8  7  6  5 
+ 9 10 11 12 
+16 15 14 13 
 
- 0  1  2  3  4 
- 9  8  7  6  5 
-10 11 12 13 14 
-19 18 17 16 15 
-20 21 22 23 24 
+ 1  2  3  4  5 
+10  9  8  7  6 
+11 12 13 14 15 
+20 19 18 17 16 
+21 22 23 24 25 
     """)
 
 fake()
