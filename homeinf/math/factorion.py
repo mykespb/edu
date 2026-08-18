@@ -13,19 +13,19 @@
 from functools import lru_cache
 
 @lru_cache(maxsize=None)
-def fact(n):
+def fact1(n):
     if n == 0:
         return 1
-    elif n <= 2:
+    if n <= 2:
         return n
     return n * fact(n-1)
 
 
 @lru_cache(maxsize=None)
-def fact1(n):
+def fact2(n):
     if n == 0:
         return 1
-    elif n <= 2:
+    if n <= 2:
         return n
     p = 1
     for i in range(2, n+1):
@@ -33,13 +33,16 @@ def fact1(n):
     return p
     
 
+fact = fact2
+
+
 def facts():
     LIMIT = 50000
 
     for f in range(LIMIT):
         sf   = list(str(f))
         nsf  = map(int, sf)
-        sumf = sum(fact1(x) for x in nsf)
+        sumf = sum(fact(x) for x in nsf)
 
         if f == sumf:
             print(f"{f}! = ", end="")
